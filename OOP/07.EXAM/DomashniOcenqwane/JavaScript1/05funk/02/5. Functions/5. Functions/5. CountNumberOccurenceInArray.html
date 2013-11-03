@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Count and test number occurence in array.</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/ConsoleInputOutput.css" rel="stylesheet" />
+</head>
+<body>
+   <div id="js-console">
+<!--	<label for="array">Enter an array of numbers using one space: </label>
+	<input type="text" id="array"/>
+	<br />	
+
+    <label for="number">Enter a number to look for in the array:  </label>
+	<input type="text" id="number"/>
+	<br />-->
+    
+	<a href="#" onclick="onCountNumberOccurenceTestClick()"> Click to perform of test count number occurence in array</a>
+        </div>		 
+	<script src="scripts/js-console.js"></script>
+        <script>
+
+            function onCountNumberOccurenceTestClick() {
+                //var inputArray = jsConsole.read("#array");
+                //var number = jsConsole.read("#number");
+
+                //var numbers = inputArray.split(" ");
+               
+
+               
+                TestCountNumberOccurences();
+
+
+                
+            }
+
+            function CountNumberOccurence(number, numbers) {
+                var numberCounter = 0;
+                for (var i = 0; i < numbers.length; i++) {
+                    if (numbers[i] == number) {
+                        numberCounter++;
+                    }
+                }
+                return numberCounter;
+            }
+
+            function TestCountNumberOccurences()
+            {
+                var testArrayOne = [1, 2, 3, 5, 5, 2, 2, 6, 5.0, 12 / 2];
+                jsConsole.writeLine("numbers: " + testArrayOne);
+                var numberOccurenceResult;
+                //1. Test for non-existing number
+                jsConsole.writeLine("1. Testing for non existing number - 4")
+                numberOccurenceResult = CountNumberOccurence(4, testArrayOne);
+                if (numberOccurenceResult==0) {
+                    jsConsole.writeLine("Testing for non-existing number ok!");
+                }
+                else {
+                    jsConsole.writeLine("Testing for non-existing number not ok!");
+                }
+
+                //2. Test for normally presented number - 2
+                jsConsole.writeLine("2. Test for normally presented number - 2\n");
+                numberOccurenceResult = CountNumberOccurence(2, testArrayOne);
+
+                if (numberOccurenceResult == 3) {
+                    jsConsole.writeLine("Testing for normally presented number ok!");
+                }
+                else {
+                    jsConsole.writeLine("Testing for normally presented number not ok!");
+                }
+
+                //3. Test for floating point presented number - 5
+                jsConsole.writeLine("3. Test for floating point presented number - 5");
+                numberOccurenceResult = CountNumberOccurence(5, testArrayOne);
+
+                if (numberOccurenceResult == 3) {
+                    jsConsole.writeLine("Testing for floating point number ok!");
+                }
+                else {
+                    jsConsole.writeLine("Testing for floating point number not ok!");
+                }
+
+                //4. Test for number presented as expression - 6
+                jsConsole.writeLine("4. Test for number presented as expression - 6");
+                numberOccurenceResult = CountNumberOccurence(6, testArrayOne);
+
+                if (numberOccurenceResult == 2) {
+                    jsConsole.writeLine("Testing for number presented as expression ok!");
+                }
+                else {
+                    jsConsole.writeLine("Testing for number presented as expression not ok!");
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,45 @@
+h1
+{
+	text-align: center;
+	color: #009900;
+	font-family: 'Comic Sans MS';
+	font-size: 60px;
+}
+ul
+{
+	list-style:none;
+
+}
+ul li 
+{
+    display:inline-block;
+    margin: 5px;
+    width: 20%;
+}
+ul li a 
+{
+	font-family: 'Comic Sans MS';
+	font-size: 60px;
+	text-decoration: none;
+	color: #6C488E;
+}
+ul li div
+{
+	border:solid black 1px;
+	height: 100px;
+	width:100%;
+	background-color: #E6CCFF;
+	text-align: center;
+}
+ul li div:hover
+{
+	opacity: 0.7;
+}
+body 
+{
+	background-image:url('background4.jpg'); 
+}
+nav
+{
+	margin-left: 7%;
+}

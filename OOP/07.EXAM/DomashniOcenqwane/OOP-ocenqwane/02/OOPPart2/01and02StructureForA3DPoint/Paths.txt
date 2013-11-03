@@ -1,0 +1,12 @@
+The X corrdinate is: 5
+The Y corrdinate is: 2
+The Z corrdinate is: 8
+
+The X corrdinate is: 5
+The Y corrdinate is: 2
+The Z corrdinate is: 8
+
+The X corrdinate is: 4
+The Y corrdinate is: 7
+The Z corrdinate is: 1
+

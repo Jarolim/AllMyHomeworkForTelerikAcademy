@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Exchange values</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="inputs">
+        <label for="firstNumber">Number 1</label>
+        <input type="text" id="firstNumber" name ="firstNumber" />
+        <label for="secondNumber">Number 2</label>
+        <input type="text" id="secondNumber" name ="secondNumber" />
+        <a href = "#" id="swap" onclick="swapIfGreater()"><strong>Show me the answer</strong></a>
+    </div>
+
+    <div id="js-console" class="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+   <script>
+       function swapIfGreater() {
+           var firstVal = jsConsole.readFloat("#firstNumber");
+           var secondVal = jsConsole.readFloat("#secondNumber");
+           if (firstVal > secondVal) {
+               var temp;
+               temp = firstVal;
+               firstVal = secondVal;
+               secondVal = temp;
+           }
+           jsConsole.writeLine("First number: " + firstVal);
+           jsConsole.writeLine("Second number: " + secondVal);
+       }
+   </script>
+</body>
+</html>

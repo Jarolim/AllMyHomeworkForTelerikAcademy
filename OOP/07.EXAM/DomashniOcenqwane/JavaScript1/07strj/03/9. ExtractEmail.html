@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Extract Email From String</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		var text = "An email: pzdr@gmail.com email : asfajkffa@askfaskf.bg  eeemail : hsfasf@adsa.org ";
+		jsConsole.writeLine(text);
+		var emailArr = [];
+		var index = text.indexOf("@");
+		while (index > -1) {
+			if (text[index-1]!=" " && text[index+1]!=" ") {
+				var identifier = text.substring(text.lastIndexOf(" ", index - 1), index);
+				var host = text.substring(index + 1, text.indexOf(".", index + 1));
+				var domain = text.substring(text.indexOf(".", index + 1) + 1, text.indexOf(" ", text.indexOf(".", index + 1) + 1));
+				var email = identifier + "@" + host + "." + domain;
+				emailArr.push(email);
+				index = text.indexOf("@",index+1);
+			}
+		}
+		for (var email in emailArr) {
+			jsConsole.writeLine(emailArr[email]);
+		}
+
+	</script>
+</body>
+</html>

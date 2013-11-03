@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+	<label for="tb-arrayOne">Enter an array of numbers, sepatared by ",":</label>
+	<input type="text" id="tb-arrayOne" />
+	<br />
+	<label for="tb-numberOne">Enter the element from the array which index you need to find</label>
+	<input type="text" id="tb-numberOne" />
+	<br />
+	<a href="#" onclick="execute()">Execute</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function execute() {
+			var inputOne = document.getElementById("tb-arrayOne").value;
+			var firstArr = inputOne.split(",");
+
+			var numberOne = document.getElementById("tb-numberOne").value;
+
+			var len = firstArr.length;
+			var secondArr = [];
+			var i=0;
+			function check() {
+				if(len>0){
+					var minValue = Math.min.apply(Math, firstArr);
+					secondArr[i]=minValue;
+					var positonMinValue=firstArr.indexOf(""+minValue+"");
+					firstArr.splice(positonMinValue, 1);
+					len--;
+					i++;
+					check();
+				}
+				else{
+					var startOfSearch = 0;
+               		var endOfSearch = secondArr.length - 1;
+                	var half;
+
+                	while (startOfSearch <= endOfSearch)
+	                {
+	                    half = parseInt((startOfSearch + endOfSearch) / 2);
+
+	                    if (secondArr[half] < numberOne)
+	                    {
+	                        startOfSearch = half + 1;
+	                    }
+
+	                    if (secondArr[half] > numberOne)
+	                    {
+	                        endOfSearch = half - 1;
+	                    }
+
+	                    if (secondArr[half] == numberOne)
+	                    {
+	                        jsConsole.writeLine("Index of the given element is: " + half);
+	                        break;
+	                    }
+	                }
+					
+				}
+			}
+			check();
+		}	
+
+
+
+
+	</script>
+</body>
+</html>

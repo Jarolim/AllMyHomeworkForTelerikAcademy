@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Biggest</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="inputs">
+        <label for="firstNumber">Number 1</label>
+        <input type="text" id="firstNumber" name ="firstNumber" />
+        <label for="secondNumber">Number 2</label>
+        <input type="text" id="secondNumber" name ="secondNumber" />
+         <label for="thirdNumber">Number 3</label>
+        <input type="text" id="thirdNumber" name ="thirdNumber" />
+        <a href = "#" id="swap" onclick="sortShit()"><strong>Show me the answer</strong></a>
+    </div>
+
+    <div id="js-console" class="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+   <script>
+       function sortShit() {
+           var firstNum = jsConsole.readFloat("#firstNumber");
+           var secondNum = jsConsole.readFloat("#secondNumber");
+           var thirdNum = jsConsole.readFloat("#thirdNumber");
+           if (firstNum >= secondNum && firstNum >= thirdNum) {
+               if (secondNum >= thirdNum) {
+                   jsConsole.writeLine(firstNum + " " + secondNum + " " + thirdNum);
+               }
+               else {
+                   jsConsole.writeLine(firstNum + " " + thirdNum + " " + secondNum);
+               }
+           }
+           else if (secondNum >= firstNum && secondNum >= thirdNum) {
+               if (firstNum >= thirdNum) {
+                   jsConsole.writeLine(secondNum + " " + firstNum + " " + thirdNum);
+               }
+               else {
+                   jsConsole.writeLine(secondNum + " " + thirdNum + " " + firstNum);
+               }
+           }
+           else if (thirdNum >= firstNum && thirdNum >= secondNum) {
+               if (firstNum >= secondNum) {
+                   jsConsole.writeLine(thirdNum + " " + firstNum + " " + secondNum);
+               }
+               else {
+                   jsConsole.writeLine(thirdNum + " " + secondNum + " " + firstNum);
+               }
+           }
+       }
+   </script>
+</body>
+</html>

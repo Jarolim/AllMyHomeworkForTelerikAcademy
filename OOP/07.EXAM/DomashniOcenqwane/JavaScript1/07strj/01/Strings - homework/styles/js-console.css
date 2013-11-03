@@ -1,0 +1,68 @@
+﻿.js-console {
+  margin: 0;
+}
+body .js-console {
+  margin: 0 auto;
+  padding: 5px 10px;
+  background-color: black;
+  width: 738px;
+  height: 500px;
+  font-family: Consolas;
+  font-size: 16px;
+  color: #C0C0C0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-break: break-all;
+  border: 5px solid #D4D0C8;
+}
+body .js-console > p {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+body .js-console > p > span {
+  margin: 0;
+  padding: 0;
+}
+body .js-console > p > br {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.menu {
+  margin: 0 auto;
+  width: 758px;
+  height: 29px;
+  background-image:url('menu.JPG');
+  background-size:  100% 100%;
+  padding: 0px;
+  border-left:  5px solid #D4D0C8;
+  border-right: 5px solid #D4D0C8;
+  border-top:   5px solid #D4D0C8;
+}
+img {
+  margin:0;
+}
+input[type="text"] {
+  border-radius: 5px;
+  border: 1px inset white;
+  padding-left: 5px;
+  background-color: black;
+  color: #C0C0C0;
+  font-family: Consolas;
+  font-size: 16px;
+  margin: 2px;
+}
+input[type="button"] {
+  border-radius: 4px;
+  background-color: gray;
+  color: white;
+  border:1px outset white;
+  cursor: pointer;
+  width: 65px;
+  height: 24px;
+  margin: 2px;
+}
+input[type="button"]:hover {
+  border:1px inset white;
+}

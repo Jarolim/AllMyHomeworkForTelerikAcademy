@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Homework</title>
+		<link rel="stylesheet" type="text/css" href="StyleForAllPages.css">
+	</head>
+	<body>
+		<div id = "wrapper">
+			<label id="firstLabel">7. Write an expression that checks if given positive integer number n (n ≤ 100) is prime.
+			</label>
+			<br>
+			<label for="userInput1">Please, eneter an integer number:</label>
+			<input type = "text" id="userInput1"/>
+			<br>
+			<input type="submit" value="GetTheResult" onclick="checkIfnumberIsPrime()">
+		</div>
+		<div id="home">
+			<a href="OperatorsAndExxpressions.html">Home</a>
+		</div>
+
+		<script type="text/javascript">
+
+		function checkIfnumberIsPrime()
+		{
+			var number = document.getElementById("userInput1").value;
+			var numberInt = parseInt(number);
+			var divider = 2;
+			var isPrime = true;
+			var maxDivider = Math.sqrt(numberInt);
+			while(divider<=maxDivider)
+			{
+				if (numberInt%divider==0) 
+					{
+						isPrime=false;
+						break;
+					}
+
+					divider++;
+			}
+			if (isPrime) 
+				{
+					alert("The number is prime!")
+				}
+				else
+				{
+					alert("The number is complex!")
+				}
+		}
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reverse string</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="menu"></div>
+	<div id="js-console"> 
+		Enter your string: <br />
+		<input type = "text"  id = "input"> </input>
+		<input type="button" value="Enter" onclick="onBtnClick()"/><br/>
+	</div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	function onBtnClick (){
+		var a = document.getElementById("input");
+		var string = a.value;
+		var reversed = string.split("").reverse().join("");
+		jsConsole.writeLine(reversed);
+	}
+	</script>
+</body>
+</html>

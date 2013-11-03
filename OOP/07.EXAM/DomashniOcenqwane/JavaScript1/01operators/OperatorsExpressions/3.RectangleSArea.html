@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Homework</title>
+		<link rel="stylesheet" type="text/css" href="StyleForAllPages.css">
+	</head>
+	<body>
+		<div id = "wrapper">
+			<label id="firstLabel">3. Write an expression that calculates rectangles area by given width and height.
+
+			</label>
+			<br>
+			<label for="userInput">Please, eneter height of the rectangle:</label>
+			<input type = "text" id="userInput"/>
+			<br>
+			<label for="userInput2">Please, eneter width of the rectangle:</label>
+			<input type = "text" id="userInput2"/>
+			<br>
+			<input type="submit" value="GetTheResult" onclick="getArea()">
+		</div>
+		<div id="home">
+			<a href="OperatorsAndExxpressions.html">Home</a>
+		</div>
+
+		<script type="text/javascript">
+
+		function getArea()
+		{
+			var height = document.getElementById("userInput").value;
+			var width = document.getElementById("userInput2").value;
+			var heightFloat = parseFloat(height);
+			var widthFloat = parseFloat(width)
+			var area = heightFloat*widthFloat;
+			alert("The area of the rectangle is: " + parseFloat(area));
+		}
+		</script>
+
+	</body>
+</html>

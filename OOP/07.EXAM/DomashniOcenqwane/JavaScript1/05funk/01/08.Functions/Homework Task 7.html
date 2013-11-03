@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JavaScript - Returns the index of the first element in array that is bigger than its neighbors</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#position {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: grey;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+	
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<p><strong>Homework Task 7:</strong> Write a Function that returns the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element. Use the function from the previous exercise.</p>
+	<br />
+	<p>Enter position in the test array after whis to start searching:</p>
+	<label for="position">Position: </label>
+	<input type="text" id="position" />
+	<br />
+	<a href="#" onclick="onFindFirstBiggestNeighborButtonClick()">Find</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		var array, startPosition = 0, result, i, firstBestPosition, position;
+		//Test array
+		array = [ 4, 7, 3, 1, 9, 4, 2, 5, 8, 7, 6, 7, 2, 1, 5, 7, 8, 2, 3, 1, 2, 1, 3, 4, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5 ];
+		jsConsole.writeLine("The test array: {" + array.join(", ") + "}");
+		jsConsole.writeLine(" ");
+
+		function onFindFirstBiggestNeighborButtonClick() {
+			startPosition = jsConsole.readFloat("#position");
+			
+			if (isNaN(startPosition)) {
+				jsConsole.writeLine("Not correct input! Try again!");
+			}
+			if (startPosition < 0 || startPosition > array.length) {
+				jsConsole.writeLine("Not correct input! Out of range of the array!");
+			}
+			else if (!isNaN(startPosition) && startPosition >= 0 && startPosition <= array.length){
+				for (i = startPosition; i < array.length; i++) {
+					position = i;
+					firstBestPosition = compareElementsInArray(position, array);
+					if (firstBestPosition === 1) {
+						jsConsole.writeLine("The first element after start position " + startPosition + " that is bigger than its neighbors is " + array[position] + " at position " + position);
+						break;
+					}
+				}
+				if (firstBestPosition !== 1) {
+					jsConsole.writeLine("No one element is bigger than its neighbors in that array");
+				}
+			}
+		}
+		
+		//With function from task 6 - just rewrite return result
+		function compareElementsInArray(position, array) {
+			if (position > 0 && position < array.length - 1) {
+				if (array[position] > array[position - 1] && array[position] > array[position + 1]) {
+					result = 1;
+				}
+				else {
+					result = -1;
+				}
+			}
+			if ((position === 0 && array[position] > array[position + 1]) ||
+				(position === array.length - 1 && array[position] > array[position - 1])) {
+					result = -1;
+			}
+			else if ((position === 0 && array[position] < array[position + 1]) ||
+					 (position === array.length - 1 && array[position] < array[position - 1])) {
+				result = -1;
+			}
+			return result;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find first element that is bigger than its neighbours.</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/ConsoleInputOutput.css" rel="stylesheet" />
+</head>
+<body>
+   <div id="js-console">
+	<label for="array">Enter an array of numbers using one space: </label>
+	<input type="text" id="array"/>
+	<br />
+	<a href="#" onclick="onElementIsBiggerThanNeighboursClick()"> Click to check if there is an element that is bigger than its neigbours.</a>
+        </div>		 
+	<script src="scripts/js-console.js"></script>
+        <script>
+
+            function onElementIsBiggerThanNeighboursClick() {
+                var inputArray = jsConsole.read("#array");
+                
+
+                var numbers = inputArray.split(" ");
+
+           
+                for (var i = 1; i < numbers.length; i++) {
+
+                    if (ElementIsBiggerThanNeighbours(numbers,i)) {
+                        jsConsole.writeLine("Element exists.");
+                        jsConsole.writeLine("position: " + i + " element: " + numbers[i]);
+                        return;
+                    }
+                }
+                jsConsole.writeLine("Element does not exist.")
+
+            }
+
+            function ElementIsBiggerThanNeighbours(inputArray, index) {
+                if (inputArray[index - 1] < inputArray[index] && inputArray[index + 1] < inputArray[index]) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,59 @@
+#wrapper
+{
+	
+	margin-left: 20px;
+	margin-top: 20px;
+	font-size: 20px;
+	font-family: 'Comic Sans MS';
+	width: 60%;
+}
+
+#firstLabel
+{
+	color:#336600;
+	font-weight: bold;
+}
+#wrapper label 
+{
+	color: #52A300;
+}
+
+#wrapper input[type=submit]
+{
+	border:#FF9933 1px solid;
+	font-family: 'Comic Sans MS';
+	font-size: 18px;
+	color: red;
+	background-color: #FFFF99;
+	border-radius: 5px;
+	padding: 7px;
+}
+#wrapper input[type=submit]:hover
+{
+	opacity: 0.7;
+}
+#home
+{
+	margin:20px;
+	border: 1px solid black;
+	text-align: center;
+	font-family: 'Comic Sans MS';
+	font-size: 20px;
+	border-radius: 5px;
+	width: 15%;
+	padding: 5px;
+	background-color: #6699FF;
+}
+#home a
+{
+	text-decoration: none;
+	color: white;
+}
+#home:hover
+{
+	opacity: 0.5;
+}
+body
+{
+	background-color: #E6CCFF;
+}

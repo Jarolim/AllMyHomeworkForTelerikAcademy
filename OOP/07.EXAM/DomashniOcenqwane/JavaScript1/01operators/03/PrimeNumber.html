@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Prime</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function PrimeNumber()
+        {
+            number = 5;
+
+            if (number % 2 == 0)
+            {
+                jsConsole.writeLine("The number " + number + " is prime number.");
+            }
+            else
+            {
+                jsConsole.writeLine("The number " + number + " is NOT prime number.", number);
+            }
+        }
+        PrimeNumber();
+
+        jsConsole.write(number);
+    </script>
+</body>
+</html>

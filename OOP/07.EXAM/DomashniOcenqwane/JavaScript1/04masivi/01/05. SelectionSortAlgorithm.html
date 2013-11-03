@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Our task is to sort an array in increasing order using<br /> "selection sort" algorithm.
+            Please input the array elements separated by a single white space :)</h1>
+        <div id="input">
+            <label for="input-arr">Your array:</label>
+            <input type="text" id="input-arr" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = document.getElementById("input-arr").value;
+            var myArray = input.split(" ");
+
+            for (var i = 0; i < myArray.length - 1; i++)
+            {
+                var smallest = myArray[i];
+                for (var j = i + 1; j < myArray.length; j++)
+                {
+                    if (myArray[i] > myArray[j])
+                    {
+                        smallest = myArray[j];
+                        keepValue = myArray[i];
+                        myArray[i] = myArray[j];
+                        myArray[j] = keepValue;
+                    }
+                 }
+            }
+
+            for (var index = 0; index < myArray.length; index++)
+            {
+                jsConsole.write(myArray[index] + " ");
+            }
+
+            jsConsole.writeLine();
+        }
+    </script>
+</body>
+</html>

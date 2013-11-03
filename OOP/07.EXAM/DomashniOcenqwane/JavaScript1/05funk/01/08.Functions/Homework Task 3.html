@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JavaScript - Finds all the occurrences of word in a text</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<p><strong>Homework Task 3:</strong> Write a function that finds all the occurrences of word in a text.</p>
+	<p>The search can case sensitive or case insensitive</p>
+	<p>Use function overloading</p>
+	<br />
+	<a href="#" onclick="onCheckWordsButtonClick()">Check occurences</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		var text, substring, isCaseSensitive, word, words, wordCount, index;
+		function onCheckWordsButtonClick() {
+			text = "We are living in an yellow submarine. In the sky there are no clouds. So we are drinking all the day. We will move out of it in 5 days.";
+			substring = " in ";
+			
+			jsConsole.writeLine('Test text: "' + text + '"');
+			jsConsole.writeLine("");
+			
+			CountWordOccurence(text, substring);
+			CountWordOccurence(text, substring, true);		
+		}
+        
+		//Function overloading		
+        function CountWordOccurence(text, substring, isCaseSensitive) {
+            wordCount = 0;
+			switch (arguments.length) {
+				case 2: { 
+					return wordCountCaseInsensitive();
+				}
+				case 3: { 
+					return isCaseSensitive ? wordCountCaseSensitive() : wordCountCaseInsensitive();
+				}					
+			}
+			
+			function wordCountCaseInsensitive () {
+				words = text.split(substring); //split is case-insensitive
+
+				for (word in words) {
+					wordCount++;
+				}
+				return jsConsole.writeLine("The count of word '" + substring + "' (case-insensitive search) is: " + wordCount);
+			}
+			
+			function wordCountCaseSensitive () {
+				index = text.indexOf(substring); //indexOf is case-sensitive
+
+				while (index >= 0) {
+					wordCount++;
+					index = text.indexOf(substring, index + 1);
+				}
+				return jsConsole.writeLine("The count of word '" + substring + "' (case-sensitive search) is: " + wordCount);
+			}
+        }    
+	</script>
+</body>
+</html>

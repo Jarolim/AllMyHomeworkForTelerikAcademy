@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Biggest Integer Out Of Three</title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="js-console.js"></script>
+    <script>
+        var number1 = -5;
+        var number2 = 12;
+        var number3 = 5;
+        jsConsole.writeLine(number1);
+        jsConsole.writeLine(number2);
+        jsConsole.writeLine(number3);
+        var biggestNumber = 0;
+        if (number1 > number2)
+        {
+            if (number1 > number3)
+            {
+                biggestNumber = number1;
+            }
+            else
+            {
+                biggestNumber = number3;
+            }
+        }
+        else
+        {
+            if (number2 > number3)
+            {
+                biggestNumber = number2;
+            }
+            else
+            {
+                biggestNumber = number3;
+            }
+        }
+        jsConsole.writeLine("The biggest number is: " + biggestNumber);
+    </script>    
+</body>
+</html>

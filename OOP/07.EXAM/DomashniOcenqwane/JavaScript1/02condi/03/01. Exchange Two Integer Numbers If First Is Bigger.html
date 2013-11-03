@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Exchange Two Integer Numbers If First Is Bigger</title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="js-console.js"></script>
+    <script>
+        var number1 = 5;
+        var number2 = 4;
+        jsConsole.writeLine(number1);
+        jsConsole.writeLine(number2);
+        if (number1 > number2)
+        {
+            var exchange = number1;
+            number1 = number2;
+            number2 = exchange;
+        }
+        jsConsole.writeLine(number1);
+        jsConsole.writeLine(number2);
+    </script>    
+</body>
+</html>

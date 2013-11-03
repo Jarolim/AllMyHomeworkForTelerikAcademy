@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reverse decimal</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/ConsoleInputOutput.css" rel="stylesheet" />
+</head>
+<body>
+   <div id="js-console">
+	<label for="number">Enter a number: </label>
+	<input type="text" id="number"/>
+	<br />	
+    
+	<a href="#" onclick="onReverseDecimalClick()"> Click to reverse decimal</a>
+        </div>		 
+	<script src="scripts/js-console.js"></script>
+        <script>
+           
+            function onReverseDecimalClick() {
+                var input = jsConsole.read("#number");
+
+                var reversed = ReverseNumber(input);
+
+                jsConsole.writeLine("Reversed number is: " + reversed);
+            }
+            
+            function ReverseNumber(input) {
+                var reversed="";
+                for (var i = input.length - 1; i >= 0; i--) {
+                    reversed += input[i];
+                }
+                
+                return reversed;
+            }
+            
+            
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops - while loop</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-check" onclick="onCheck()">See the numbers from 1 to your given number</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	function onCheck (){
+		var n = parseInt(document.getElementById("tb-number").value);
+		var b = 0;
+		var c = " ";
+		jsConsole.writeLine("The numbers from 1 to " + n);
+            for (var num = 1; num <= n; num++ ) {
+                    b++;
+				if (b<n) {
+					c+=(num + ", ");
+				} else {
+					c+=(num + ".");
+				}
+            }
+				jsConsole.writeLine(c);
+    }
+	</script>
+</body>
+</html>

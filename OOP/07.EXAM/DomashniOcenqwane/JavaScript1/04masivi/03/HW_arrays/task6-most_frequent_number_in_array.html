@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>the most frequent number in an array</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+	<label for="tb-arrayOne">Enter an array of numbers, sepatared by ",":</label>
+	<input type="text" id="tb-arrayOne" />
+	<br />
+	<a href="#" onclick="execute()">Execute</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function execute() {
+			var inputOne = document.getElementById("tb-arrayOne").value;
+
+		    var arrayOne = inputOne.split(',');
+		    arrayOne.sort();
+		    var getLengthN = arrayOne.length;
+		    var start = 1;
+		    var len = 1;
+		    var bestStart = 0;
+		    var bestLen = 0;
+		    var freqNumber;
+
+		    for (var i = 0; i < getLengthN; i++) {
+		        start = i + 1;
+		        if (arrayOne[i] == arrayOne[i + 1]) {
+		            start = start - len;
+		            len++;
+		            freqNumber=arrayOne[i];
+		            if (len >= bestLen) {
+		                bestLen = len;
+		                bestStart = start;  
+		            }
+		        } else {
+		            start = 1;
+		            len = 1;
+		            
+		        }
+		    }
+		    var finalResult= "The frequent number is: "+freqNumber+" / "+bestLen+"times.";
+
+
+		    jsConsole.writeLine(finalResult);
+		}	
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.DecimalToBin", "1.DecimalToBin\1.DecimalToBin.csproj", "{8A0FD71B-6247-4476-AC13-00FCD4454C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.BinnaryToDecimal", "2.BinnaryToDecimal\2.BinnaryToDecimal.csproj", "{5AB1A6C5-EF18-4C4E-B9F6-EB8E5EC988BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.HexToDecimal", "4.HexToDecimal\4.HexToDecimal.csproj", "{8DE27C3A-6A6B-4EE8-96EE-5F6861FEA376}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.DecimalToHex", "3.DecimalToHex\3.DecimalToHex.csproj", "{F1BB8582-39C6-45FA-884F-414FA9845D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.HexToBinDirect", "5.HexToBinDirect\5.HexToBinDirect.csproj", "{82DE12E1-E5CD-4E5A-AE22-16B04C9E7030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.BinToHexDirect", "6.BinToHexDirect\6.BinToHexDirect.csproj", "{9E7DBF7A-7EB2-4D12-BAD7-25176F859F97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.sBaseTorBase", "7.sTod\7.sBaseTorBase.csproj", "{1ED6351B-10B9-4642-B7EB-F1BF424636D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A0FD71B-6247-4476-AC13-00FCD4454C65}.Debug|x86.ActiveCfg = Debug|x86
+		{8A0FD71B-6247-4476-AC13-00FCD4454C65}.Debug|x86.Build.0 = Debug|x86
+		{8A0FD71B-6247-4476-AC13-00FCD4454C65}.Release|x86.ActiveCfg = Release|x86
+		{8A0FD71B-6247-4476-AC13-00FCD4454C65}.Release|x86.Build.0 = Release|x86
+		{5AB1A6C5-EF18-4C4E-B9F6-EB8E5EC988BC}.Debug|x86.ActiveCfg = Debug|x86
+		{5AB1A6C5-EF18-4C4E-B9F6-EB8E5EC988BC}.Debug|x86.Build.0 = Debug|x86
+		{5AB1A6C5-EF18-4C4E-B9F6-EB8E5EC988BC}.Release|x86.ActiveCfg = Release|x86
+		{5AB1A6C5-EF18-4C4E-B9F6-EB8E5EC988BC}.Release|x86.Build.0 = Release|x86
+		{8DE27C3A-6A6B-4EE8-96EE-5F6861FEA376}.Debug|x86.ActiveCfg = Debug|x86
+		{8DE27C3A-6A6B-4EE8-96EE-5F6861FEA376}.Debug|x86.Build.0 = Debug|x86
+		{8DE27C3A-6A6B-4EE8-96EE-5F6861FEA376}.Release|x86.ActiveCfg = Release|x86
+		{8DE27C3A-6A6B-4EE8-96EE-5F6861FEA376}.Release|x86.Build.0 = Release|x86
+		{F1BB8582-39C6-45FA-884F-414FA9845D34}.Debug|x86.ActiveCfg = Debug|x86
+		{F1BB8582-39C6-45FA-884F-414FA9845D34}.Debug|x86.Build.0 = Debug|x86
+		{F1BB8582-39C6-45FA-884F-414FA9845D34}.Release|x86.ActiveCfg = Release|x86
+		{F1BB8582-39C6-45FA-884F-414FA9845D34}.Release|x86.Build.0 = Release|x86
+		{82DE12E1-E5CD-4E5A-AE22-16B04C9E7030}.Debug|x86.ActiveCfg = Debug|x86
+		{82DE12E1-E5CD-4E5A-AE22-16B04C9E7030}.Debug|x86.Build.0 = Debug|x86
+		{82DE12E1-E5CD-4E5A-AE22-16B04C9E7030}.Release|x86.ActiveCfg = Release|x86
+		{82DE12E1-E5CD-4E5A-AE22-16B04C9E7030}.Release|x86.Build.0 = Release|x86
+		{9E7DBF7A-7EB2-4D12-BAD7-25176F859F97}.Debug|x86.ActiveCfg = Debug|x86
+		{9E7DBF7A-7EB2-4D12-BAD7-25176F859F97}.Debug|x86.Build.0 = Debug|x86
+		{9E7DBF7A-7EB2-4D12-BAD7-25176F859F97}.Release|x86.ActiveCfg = Release|x86
+		{9E7DBF7A-7EB2-4D12-BAD7-25176F859F97}.Release|x86.Build.0 = Release|x86
+		{1ED6351B-10B9-4642-B7EB-F1BF424636D4}.Debug|x86.ActiveCfg = Debug|x86
+		{1ED6351B-10B9-4642-B7EB-F1BF424636D4}.Debug|x86.Build.0 = Debug|x86
+		{1ED6351B-10B9-4642-B7EB-F1BF424636D4}.Release|x86.ActiveCfg = Release|x86
+		{1ED6351B-10B9-4642-B7EB-F1BF424636D4}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

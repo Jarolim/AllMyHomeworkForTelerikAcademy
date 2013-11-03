@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Extract URL Info</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	
+	function getProtocol(url) {
+    var protocol = url.substring(0, url.indexOf(':'));
+    return protocol;
+	}
+
+	function getServer(url) {
+    var start = url.indexOf('/') + 2;
+    var server = url.substring(start, url.indexOf('/',start));
+    return server;
+	}
+
+	function getResource(url) {
+    var thirdSlashIndex = url.indexOf('/', url.indexOf('/') + 2);
+    return url.substring(thirdSlashIndex);
+	}
+
+	var url = 'http://www.devbg.org/forum/index.php';
+	jsConsole.writeLine('Some URL : ' + url);
+	var JSONURL = {
+		protocol: getProtocol(url), server: getServer(url),
+		resource: getResource(url)
+	};
+
+	jsConsole.writeLine('The URL elements accessed through a JSON object:');
+	jsConsole.writeLine('Protocol : '+JSONURL.protocol);
+	jsConsole.writeLine('Server : ' + JSONURL.server);
+	jsConsole.writeLine('Resource : ' + JSONURL.resource);
+
+	</script>
+</body>
+</html>

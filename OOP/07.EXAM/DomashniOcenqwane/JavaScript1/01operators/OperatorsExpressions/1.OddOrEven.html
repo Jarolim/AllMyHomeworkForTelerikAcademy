@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Homework</title>
+		<link rel="stylesheet" type="text/css" href="StyleForAllPages.css">
+	</head>
+	<body>
+		<div id = "wrapper">
+			<label id="firstLabel">1. Write an expression that checks if given integer is odd or even.</label>
+			<br>
+			<label for="userInput">Please, eneter an integer number:</label>
+			<input type = "text" id="userInput"/>
+			<input type="submit" value="GetTheResult" onclick="getValue()">
+		</div>
+		<div id="home">
+			<a href="OperatorsAndExxpressions.html">Home</a>
+		</div>
+
+		<script type="text/javascript">
+
+		function getValue()
+		{
+			var usInput = document.getElementById("userInput").value;
+			var usInputInt = parseInt(usInput);
+			var oddOrEven = (usInputInt % 2==0) ?"even.":"odd.";
+			alert("The variable is " + oddOrEven);
+		}
+		</script>
+	</body>
+</html>

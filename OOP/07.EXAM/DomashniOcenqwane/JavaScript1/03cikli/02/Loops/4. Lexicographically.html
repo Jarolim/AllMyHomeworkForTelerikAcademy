@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>3.</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	    //Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects
+
+	    function getProp(obj) {
+	        var prop = [];
+	        for (var property in obj) {
+	            prop.push(property);
+	        }
+	        prop.sort();
+	        
+	        jsConsole.writeLine(obj + "- Lexicographically first: " + prop[0] + ", last: " + prop[prop.length - 1]);
+	    }
+
+	    getProp(document);
+	    getProp(window);
+	    getProp(navigator);
+
+	</script>
+
+</body>
+</html>

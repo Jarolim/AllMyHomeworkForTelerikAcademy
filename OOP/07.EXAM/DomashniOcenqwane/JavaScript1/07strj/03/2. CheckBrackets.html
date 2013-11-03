@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check Brackets In String</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    <script>
+        function checkBrackets(expression){
+			var count=0;
+			for(var i=0;i<expression.length;i++){
+				if(expression[i]=='('){
+					count++;
+				}
+				else if(expression[i]==')'){
+					count--;
+				}
+				if(count<0){
+					return false;
+				}
+			}
+			if(count!=0){
+				return false;
+			}
+			return true;
+		}
+		
+		var correct="((a+b)/5-d)";
+		var incorrect=")(a+b))";
+		
+		jsConsole.writeLine("In the expression : '"+correct+"' the brackets are put correctly? "+checkBrackets(correct));
+		jsConsole.writeLine("In the expression : '"+incorrect+"' the brackets are put correctly? "+checkBrackets(incorrect));
+		
+    </script>
+</body>
+</html>

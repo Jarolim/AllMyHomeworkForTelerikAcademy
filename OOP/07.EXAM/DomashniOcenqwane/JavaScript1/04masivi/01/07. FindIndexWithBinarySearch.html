@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Let's find the index of element in a sorted array using the binary search algorithm.
+            Our given array is:<br />
+             [1, 3, 5, 7, 12, 14, 16, 17, 21, 24, 25, 35, 37, 42, 55, 57, 69, 78, 87, 135]
+        </h1>        
+        <div id="input">
+            <label for="input-num">Element value = </label>
+            <input type="text" id="input-num" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var myArray = new Array(1, 3, 5, 7, 12, 14, 16, 17, 21, 24, 25, 35, 37, 42, 55, 57, 69, 78, 87, 135);
+            var givenNum = jsConsole.readInteger("#input-num");
+
+            if (isNaN(givenNum))
+            {
+                jsConsole.writeLine("Invalid input! The input can't be NaN. Please try again!");
+            }
+            else
+            {
+                var startOfSearch = 0;
+                var endOfSearch = myArray.length - 1;
+                var half;
+
+                while (startOfSearch <= endOfSearch)
+                {
+                    half = parseInt((startOfSearch + endOfSearch) / 2);
+
+                    if (myArray[half] < givenNum)
+                    {
+                        startOfSearch = half + 1;
+                    }
+
+                    if (myArray[half] > givenNum)
+                    {
+                        endOfSearch = half - 1;
+                    }
+
+                    if (myArray[half] == givenNum)
+                    {
+                        jsConsole.writeLine("Index of the given element is: " + half);
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

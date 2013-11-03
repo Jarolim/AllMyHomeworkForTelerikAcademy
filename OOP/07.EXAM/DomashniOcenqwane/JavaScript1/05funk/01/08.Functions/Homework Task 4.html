@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JavaScript - Count the number of divs on the web page</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<p><strong>Homework Task 4:</strong> Write a function to count the number of divs on the web page.</p>
+	<br />
+	<a href="#" onclick="getDivCount()">Check</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function getDivCount() {
+			var count = 0;
+			count = document.getElementsByTagName("div").length;
+
+			jsConsole.writeLine("In this page there are " + count + " divs");
+		}
+	</script>
+	<div id="test"></div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Change Casing Of Tagged Elements In Text</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    <script>
+		function doUpcase(text)
+	    {
+	        var indexStart = text.indexOf("<upcase>");
+	        while (indexStart>-1) {
+	            var insedeText = text.substring(indexStart + 8, text.indexOf("</upcase>", indexStart))
+	            var upperText = insedeText.toUpperCase();
+	            text = text.replace(insedeText, upperText);
+	            indexStart = text.indexOf("<upcase>", indexStart+1);
+	        }
+	        return text;
+	    }
+	    function doMixCase(text) {
+	        var indexStart = text.indexOf("<mixcase>");
+	        while (indexStart > -1) {
+	            var insedeText = text.substring(indexStart + 9, text.indexOf("</mixcase>", indexStart));
+	            var mixedText = new String(insedeText);
+	            for (var i = 0; i < mixedText.length ; i++) {
+	                if(i%2==0)
+	                {
+	                    mixedText = mixedText.replace(mixedText[i],mixedText[i].toUpperCase())
+	                }
+	                else {
+	                    mixedText = mixedText.replace(mixedText[i], mixedText[i].toLowerCase())
+	                }
+	            }
+	            text = text.replace(insedeText, mixedText);
+	            indexStart = text.indexOf("<mixcase>", indexStart + 1);
+	        }
+	        return text;
+	    }
+	    function doLowCase(text) {
+	        var indexStart = text.indexOf("<lowcase>");
+	        while (indexStart > -1) {
+	            var insedeText = text.substring(indexStart + 9, text.indexOf("</lowcase>", indexStart));
+	            var lowerText = insedeText.toLowerCase();
+	            text = text.replace(insedeText, lowerText);
+	            indexStart = text.indexOf("<lowcase>", indexStart + 1);
+	        }
+	        return text;
+	    }
+		
+		jsConsole.writeLine("We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>." +
+            "We <mixcase>don't</mixcase> have <lowcase>ANYTHING</lowcase> else.");
+	    var text = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>."
+            + "We <mixcase>don't</mixcase> have <lowcase>ANYTHING</lowcase> else.";
+	    var objText = new String(text);
+	    objText = doMixCase(objText);
+	    objText = doUpcase(objText);
+	    objText = doLowCase(objText);
+	    jsConsole.writeLine(objText);
+
+    </script>
+</body>
+</html>

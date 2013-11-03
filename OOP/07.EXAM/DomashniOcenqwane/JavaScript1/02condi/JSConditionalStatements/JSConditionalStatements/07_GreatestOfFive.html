@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Biggest</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="inputs">
+        <label for="firstNumber">Number 1</label>
+        <input type="text" id="firstNumber" name ="firstNumber" />
+        <label for="secondNumber">Number 2</label>
+        <input type="text" id="secondNumber" name ="secondNumber" />
+         <label for="thirdNumber">Number 3</label>
+        <input type="text" id="thirdNumber" name ="thirdNumber" />
+        <label for="thirdNumber">Number 4</label>
+        <input type="text" id="fourthNumber" name ="fourthNumber" />
+        <label for="thirdNumber">Number 5</label>
+        <input type="text" id="fifthNumber" name ="fifthNumber" />
+        <a href = "#" id="swap" onclick="biggest()"><strong>Show me the answer</strong></a>
+    </div>
+
+    <div id="js-console" class="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+   <script>
+       function biggest() {
+           var a = jsConsole.readFloat("#firstNumber");
+           var b = jsConsole.readFloat("#secondNumber");
+           var c = jsConsole.readFloat("#thirdNumber");
+           var d = jsConsole.readFloat("#fourthNumber");
+           var e = jsConsole.readFloat("#fifthNumber");
+           
+           if ((a >= b) && (a >= c) && (a >= d) && (a >= e)) {
+               jsConsole.writeLine("The greater number is " + a);
+           }
+           else if ((b >= a) && (b >= c) && (b >= d) && (b >= e)) {
+               jsConsole.writeLine("The greater number is " + b);
+           }
+           else if ((c >= a) && (c >= b) && (c >= d) && (c >= e)) {
+               jsConsole.writeLine("The greater number is " + c);
+           }
+           else if ((d >= a) && (d >= b) && (d >= c) && (d >= e)) {
+               jsConsole.writeLine("The greater number is " + d);
+           }
+           else if ((e >= a) && (e >= b) && (e >= c) && (e >= d)) {
+               jsConsole.writeLine("The greater number is " + e);
+           }
+       }
+   </script>
+</body>
+</html>

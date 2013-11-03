@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Replace Whitespaces In String</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    <script>
+	
+	function replaceWhitespaces(text, newSymbol) {
+		var result = '';
+		for (var i=0;i<text.length;i++) {
+			if (text[i] == ' ') {
+				result += newSymbol;
+			}
+			else {
+				result += text[i];
+			}
+		}
+		return result;
+	}
+
+	var sometext = new String(' 	Some text to replace the whitespaces in	! ');
+    jsConsole.writeLine(replaceWhitespaces(sometext, '&nbsp'));
+	
+    </script>
+</body>
+</html>

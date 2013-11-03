@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+        
+		var str1 = "We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.";
+		var searchStr1 = "in"; //searched
+		
+		var indexesArr = []; // the array preserves the indexes of the occurances of searched string
+		function setIndexesArr(searchStr, str) {
+			var startIndex = 0;
+			var searchStrLen = searchStr.length;
+			var index;
+			
+			str = str.toLowerCase(); // changing case sensitivity to false
+			searchStr = searchStr.toLowerCase();
+			
+			while ( (index = str.indexOf(searchStr, startIndex)) > -1 ) {
+				indexesArr.push(index);
+				startIndex = index + searchStrLen;
+				jsConsole.writeLine("index = " + index);
+			}
+		}
+		
+		jsConsole.writeLine("str1 = " + str1);
+		jsConsole.writeLine("searchStr1 = " + searchStr1);
+		
+		setIndexesArr(searchStr1, str1);
+		jsConsole.writeLine("indexesArr = " + indexesArr.join(", "));
+		jsConsole.writeLine("The occurance of the word \"" + searchStr1 + "\" is: " + indexesArr.length);
+				
+    </script>
+</body>
+</html>

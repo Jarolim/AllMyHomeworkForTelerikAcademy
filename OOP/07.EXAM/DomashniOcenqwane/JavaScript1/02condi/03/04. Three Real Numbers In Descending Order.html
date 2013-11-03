@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Three Real Numbers In Descending Order</title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="js-console.js"></script>
+    <script>
+        var number1 = 50.732;
+        var number2 = -4.906;
+        var number3 = 115.5
+        jsConsole.writeLine(number1);
+        jsConsole.writeLine(number2);
+        jsConsole.writeLine(number3);
+        var exchange = 0;
+        if (number1 > number2)
+        {
+            if (number1 > number3)
+            {
+                if (number2 > number3)
+                {
+                }
+                else
+                {
+                    exchange = number2;
+                    number2 = number3;
+                    number3 = exchange;
+                }
+            }
+            else
+            {
+                exchange = number1;
+                number1 = number3;
+                number3 = exchange;
+                exchange = number2;
+                number2 = number3;
+                number3 = exchange;
+            }
+        }
+        else
+        {
+            exchange = number2;
+            number2 = number1;
+            number1 = exchange;
+            if (number1 > number3)
+            {
+                if (number2 > number3)
+                {
+                }
+                else
+                {
+                    exchange = number2;
+                    number2 = number3;
+                    number3 = exchange;
+                }
+            }
+            else
+            {
+                exchange = number1;
+                number1 = number3;
+                number3 = exchange;
+                exchange = number2;
+                number2 = number3;
+                number3 = exchange;
+            }
+        }
+        jsConsole.writeLine("The three numbers in descending order: "+ number1 + ", " + number2 + ", " + number3);
+    </script>    
+</body>
+</html>

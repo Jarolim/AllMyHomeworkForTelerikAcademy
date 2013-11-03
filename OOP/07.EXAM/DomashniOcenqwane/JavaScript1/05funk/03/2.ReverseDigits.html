@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var number = 2512;
+        var numberOfDidigts = howManyDigits(number);        
+        reverseMe(number);
+
+        function howManyDigits(num) {     //count the count of digits the number has
+            var numberOfDigits = 0;
+            while ((num / (Math.pow(10, numberOfDigits))) >= 1) {
+                numberOfDigits++;
+            }
+            return numberOfDigits;
+        }        
+
+        function reverseMe(num)
+        {
+            var reversed=0;
+            var j = 0;
+            for (var i = numberOfDidigts-1; i > 0; i--) {                
+                var current = Math.ceil(num / Math.pow(10, i)-1);   //getting the current number                                               
+                reversed = reversed + current * Math.pow(10, j); //the making of reversed number
+                j++;
+                
+                num = num % (current* Math.pow(10, i)); //the new number without the first digit
+            }
+            reversed = reversed + num * Math.pow(10, j); //some bug fix
+            console.log(reversed);
+        }
+    </script>
+</body>
+</html>

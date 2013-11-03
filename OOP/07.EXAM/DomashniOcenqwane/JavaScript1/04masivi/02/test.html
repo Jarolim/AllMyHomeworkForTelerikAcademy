@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+
+	<a href="#" onclick="FindMaxSequence()">Click Me</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function FindMaxSequence() {
+
+
+	        var arr = [2, 1, 2, 6, 7, 8, 2, 3, 4, 4, 4, 4];
+	        //проверява дали има елементи в масива
+	        if (arr.length == 0) {
+	            jsConsole.writeLine("Няма елементи в масива!");
+	        }
+	        var count = 1;
+	        for (var i = 0; i < arr.length; i++) {
+	            //проверява дали има различни елементи в масива
+	            if (arr[i] == arr[i + 1]) {
+	                count++;
+	            }
+	        }
+	        if (count == arr.length) {
+	            jsConsole.writeLine("Всички елементи в масива са еднакви!" + "--> " + arr[1]);
+	        }
+
+	        var tmpValue = 0;
+	        var frequentValue = 0;
+	        var bestFrequency = 0;
+	        var tempFrequency = 1;
+	        var bestValue = 0;
+	        
+	        for (var i = 0; i < arr.length-1; i++) {
+	            tmpValue = arr[i];
+	            for (var j = 1; j < arr.length; j++) {
+	                if (tmpValue == arr[j]) {
+	                    frequentValue = tmpValue;
+	                    tempFrequency++;
+	                    if ( tempFrequency > bestFrequency) {
+	                        bestFrequency = tempFrequency;
+	                        bestValue = tmpValue;
+	                    }
+	                }
+	               
+    
+	            }
+	               
+	            tempFrequency = 0;
+	        }
+	        jsConsole.writeLine("Най-често срещаното число е --> " + bestValue + "  Брой срещания: --> " + bestFrequency);
+	    }
+	    
+    </script>
+</body>
+</html>

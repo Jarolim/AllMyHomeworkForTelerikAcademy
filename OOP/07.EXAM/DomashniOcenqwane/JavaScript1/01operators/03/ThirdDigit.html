@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Digit</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function Digit()
+        {
+             num = 4234276644;
+
+            var number = parseInt(num / 100)
+            if (number % 10 == 7)
+            {
+                jsConsole.writeLine("Third digit of " + num + " is 7");
+            }
+            else {
+                jsConsole.writeLine("Third digit is not 7");
+            }
+
+        }
+        Digit();
+
+        jsConsole.writeLine(num);
+    </script>
+</body>
+</html>

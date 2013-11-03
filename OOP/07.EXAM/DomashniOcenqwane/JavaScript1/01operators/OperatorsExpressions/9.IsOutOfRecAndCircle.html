@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Homework</title>
+		<link rel="stylesheet" type="text/css" href="StyleForAllPages.css">
+	</head>
+	<body>
+		<div id = "wrapper">
+			<label id="firstLabel">9. Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+			</label>
+
+			<br>
+			<label for="userInput1"> * Please, eneter "x" coordinate:</label>
+			<input type = "text" id="userInput1"/>
+			<br>
+			<label for="userInput2"> * Please, eneter "y" coordinate:</label>
+			<input type = "text" id="userInput2"/>
+			<br>
+			<input type="submit" value="GetTheResult" onclick="checkIfIsOutAndIn()">
+		</div>
+		<div id="home">
+			<a href="OperatorsAndExxpressions.html">Home</a>
+		</div>
+		
+
+		<script type="text/javascript">
+
+		function checkIfIsOutAndIn()
+		{
+			var xCoord = document.getElementById("userInput1").value;
+			var x = parseInt(xCoord);
+			var yCoord = document.getElementById("userInput2").value;
+			var y = parseInt(yCoord);
+
+			var expression =  Math.pow((x - 1),2) + Math.pow((y - 1),2);
+			var isWithInAnOut = (expression <= 9) && (x < -1)  && ((y > 1) || (y < -1));
+
+			alert("The point with coord:(" + x + "," + y +") is within the circle and out of the rectangle : " + isWithInAnOut );
+		}
+
+		</script>
+
+	</body>
+</html>

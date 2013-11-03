@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var text = "Hello there, I`m a text :)";
+        var word = "hello";
+        var caseSensitive = false;
+        findMe(text, word);
+        findMe(text, word, caseSensitive); //overloading
+
+        function findMe(text, word, sensitiveCase) {
+            if (sensitiveCase == false) {     //in case is not case sensitive
+                text = text.toLowerCase();
+                word = word.toLowerCase();
+            }
+            var count = 0;  //count of occurrences
+            var index = text.indexOf(word, index);
+            var wordLength = word.length;
+            while (index != -1) {   //the algorithm
+                count++;
+                index += wordLength;
+                index = text.indexOf(word, index);
+            }
+            console.log("'" + word + "'" + " is met " + count + " times");
+        }
+    </script>
+</body>
+</html>

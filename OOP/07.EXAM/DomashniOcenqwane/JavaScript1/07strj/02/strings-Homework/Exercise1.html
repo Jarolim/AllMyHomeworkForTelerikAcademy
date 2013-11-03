@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+        var str1 = "sample";
+		
+		function reverseString(str) {
+			var tempStr = "";
+			var tempChar = "";
+			for (i = str.length - 1; i >= 0; i = i - 1) {
+				tempChar = str.substr(i, 1);
+				jsConsole.writeLine(i + " = " + tempChar);
+				tempStr = tempStr + tempChar;
+			}
+			return tempStr;
+		}
+		
+		jsConsole.writeLine(str1);
+		jsConsole.writeLine(reverseString(str1));
+    </script>
+</body>
+</html>

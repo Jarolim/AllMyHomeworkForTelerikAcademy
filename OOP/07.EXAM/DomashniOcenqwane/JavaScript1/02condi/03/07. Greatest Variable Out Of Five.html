@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Greatest Variable Out Of Five</title>
+     <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="js-console.js"></script>
+    <script>
+        var number1 = -222.34;
+        var number2 = 667.3;
+        var number3 = -41.5;
+        var number4 = 0;
+        var number5 = 345;
+        jsConsole.writeLine(number1);
+        jsConsole.writeLine(number2);
+        jsConsole.writeLine(number3);
+        jsConsole.writeLine(number4);
+        jsConsole.writeLine(number5);
+        var greatestNumber = 0;
+        if ((number1 > number2) && (number1 > number3) && (number1 > number4) && (number1 > number5))
+        {
+            greatestNumber = number1;
+        }
+        if ((number2 >= number1) && (number2 >= number3) && (number2 >= number4) && (number2 >= number5))
+        {
+            greatestNumber = number2;
+        }
+        if ((number3 >= number2) && (number3 >= number1) && (number3 >= number4) && (number3 >= number5))
+        {
+            greatestNumber = number3;
+        }
+        if ((number4 >= number2) && (number4 >= number3) && (number4 >= number1) && (number4 >= number5))
+        {
+            greatestNumber = number4;
+        }
+        if ((number5 >= number2) && (number5 >= number3) && (number5 >= number4) && (number5 >= number1))
+        {
+            greatestNumber = number5;
+        }
+        jsConsole.writeLine("The greatest number is: " + greatestNumber);
+        </script>
+</body>
+</html>

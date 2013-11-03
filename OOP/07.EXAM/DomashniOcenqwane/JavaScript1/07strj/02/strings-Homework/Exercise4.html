@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+        var str = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.";
+		newStr = new String(str); // changed string to be printed
+		
+		function setTagsText (str, leftTagStr, rightTagStr) {
+			var startIndex = 0;
+			var leftIndex;
+			var rightIndex;
+			while (str.indexOf(leftTagStr, startIndex) > -1) {
+				leftIndex = str.indexOf(leftTagStr, startIndex);
+				startIndex = leftIndex + leftTagStr.length;
+				rightIndex = str.indexOf(rightTagStr, startIndex);
+				
+				var tempStr = "";
+				switch (leftTagStr) {
+					case "<upcase>":
+						tempStr = str.substr(startIndex, rightIndex - leftIndex).toUpperCase();
+						break;
+					case "<lowcase>":
+						tempStr = str.substr(startIndex, rightIndex - leftIndex).toLowerCase();
+						break;
+					case "<mixcase>":
+						//jsConsole.writeLine("startIndex = " + startIndex + " ; rightIndex = " + rightIndex + " ; rightIndex - startIndex = " + (rightIndex - startIndex)); // test
+						for (var i = startIndex; i < rightIndex; i++) {
+							//jsConsole.writeLine("i = " + i); //test
+							if ((i % 2) == 0) {
+								tempStr = tempStr + str.substr(i, 1).toUpperCase();
+							}
+							else {
+								tempStr = tempStr + str.substr(i, 1).toLowerCase();
+							}
+							//jsConsole.writeLine("i = " + i + " ; tempStr = " + tempStr); // test
+						}
+						break;
+					default:
+				}
+				jsConsole.writeLine("tempStr = " + tempStr);
+				newStr = newStr.substr(0, leftIndex) + tempStr + newStr.substr(rightIndex, str.length)
+			}
+			//str = "AAA"; //test
+		}
+		
+		jsConsole.writeLine("str = " + str);
+		jsConsole.writeLine("newStr = " + newStr);
+		jsConsole.writeLine("**********"); // new line
+		
+		setTagsText(str, "<upcase>", "</upcase>");
+		jsConsole.writeLine("newStr = " + newStr);
+		setTagsText(str, "<lowcase>", "</lowcase>");
+		jsConsole.writeLine("newStr = " + newStr);
+		setTagsText(str, "<mixcase>", "</mixcase>");
+		jsConsole.writeLine("newStr = " + newStr);
+		
+		//jsConsole.writeLine("str = " + str); // test
+		
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+﻿html,body,div,label,input,a{
+	margin:0;
+	padding:0;
+}
+
+.js-console{
+	margin:0;
+}
+
+body {
+	margin-top:10px;
+	margin-left:10px;
+
+	#content{
+		background-color:black;
+		width:801px;
+		color:white;
+		font-size:1.2em;
+		font-style:italic;
+
+		h1{
+			font-size:25px;
+			text-align:center;
+			padding-top:20px;
+			padding-bottom:20px;
+			border-top:5px solid darkblue;
+			border-bottom:5px solid darkblue;
+		}
+
+		#input{
+			padding:10px;
+
+			label{
+
+			}
+
+			input{
+				margin-right:15px;
+			}
+		}
+
+		#button{
+			margin-left:25px;
+			background-color:gray;
+			width:75px;
+			text-align:center;
+			font-style:normal;		
+
+			a{
+				text-decoration:none;
+				padding:0px 14px 1px 14px;
+				background-color:darkblue;
+				color:white;
+
+				&:hover{
+					background-color:white;
+					color:darkblue;
+				}
+			}
+		}
+	}
+
+    .js-console {
+        margin: 0;
+        padding: 5px 10px;
+        background-color: black;
+        width: 800px;
+        height: 500px;
+        font-family: Consolas;
+        font-size: 18px;
+        color: white;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        word-break: break-all;
+
+        & > p {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: block;
+
+            & > span {
+                margin: 0;
+                padding: 0;
+            }
+			& > br{
+				display:inline-block;
+				margin-bottom:5px;
+			}
+        }
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JavaScript - Returns the last digit of given integer as an English word</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: grey;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<p><strong>Homework Task 1:</strong> Write a function that returns the last digit of given integer as an English word. Examples: 512 ==> "two", 1024 ==> "four", 12309 ==> "nine".</p>
+	<p>Enter a number:</p>
+	<label for="number">Number: </label>
+	<input type="text" id="number" />
+	<br />
+	<a href="#" onclick="onSeeDigitsNameButtonClick()">See digit name</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		var number, lastDigitName, lastDigit;
+		function onSeeDigitsNameButtonClick() {			
+			number = jsConsole.readFloat("#number");
+			lastDigitName = GetLastDigitName(number);
+			jsConsole.writeLine('The English word for last digit of entered number ' + number + ' is "' + lastDigitName + '"');
+		}		
+			
+		function GetLastDigitName(number) {
+			lastDigit = Math.abs(number % 10);
+			lastDigitName;
+			switch (lastDigit) {
+				case 0: { lastDigitName = "zero"; break; }
+				case 1: { lastDigitName = "one"; break; }
+				case 2: { lastDigitName = "two"; break; }
+				case 3: { lastDigitName = "three"; break; }
+				case 4: { lastDigitName = "four"; break; }
+				case 5: { lastDigitName = "five"; break; }
+				case 6: { lastDigitName = "six"; break; }
+				case 7: { lastDigitName = "seven"; break; }
+				case 8: { lastDigitName = "eight"; break; }
+				case 9: { lastDigitName = "nine"; break; }
+				default: { lastDigitName = "Not a number"; ; break; }
+			}
+			return lastDigitName;
+		}    
+	</script>
+</body>
+</html>

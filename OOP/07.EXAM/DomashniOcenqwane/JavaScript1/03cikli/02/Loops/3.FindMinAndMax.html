@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>3.</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+<label for="tb-numbers">Enter numbers, separated by comma ",": </label>
+	<input id="tb-numbers" type="text" class="js-console-input" />
+	<a href="#" class="js-console-btn" onclick="onClick()">Print max and min</a>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+	    function onClick() {
+	        var numbers = jsConsole.readNumbersArray("#tb-numbers", ',');
+	        printMax(numbers);
+	        printMin(numbers);
+
+	    }
+
+	    function printMax(arr) {
+	        var maxIndex = 0;
+	        for (var i = 0; i < arr.length; i++) {
+	            if (arr[maxIndex] < arr[i]) {
+	                maxIndex = i;
+	            }
+	        }
+	        jsConsole.writeLine(arr[maxIndex] + " is the max number in [" + arr.join(", ") + "]");
+	    }
+
+	    function printMin(arr) {
+	        var minIndex = 0;
+	        for (var i = 0; i < arr.length; i++) {
+	            if (arr[minIndex] > arr[i]) {
+	                minIndex = i;
+	            }
+	        }
+	        jsConsole.writeLine(arr[minIndex] + " is the min number in [" + arr.join(", ") + "]");
+	    }
+
+
+	</script>
+
+</body>
+</html>

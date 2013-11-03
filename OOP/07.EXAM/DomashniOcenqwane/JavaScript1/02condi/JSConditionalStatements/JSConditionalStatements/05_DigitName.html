@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Digit Name</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="inputs">
+        <input type="text" id="firstNumber" name ="firstNumber" />
+        <a href = "#" id="swap" onclick="digitName()"><strong>Show digit name</strong></a>
+    </div>
+
+    <div id="js-console" class="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+   <script>
+       function digitName() {
+           var enteredNum = jsConsole.readFloat("#firstNumber");
+           
+           switch (enteredNum)
+           {
+               case 0: jsConsole.writeLine("Zero"); break;
+               case 1: jsConsole.writeLine("One"); break;
+               case 2: jsConsole.writeLine("Two"); break;
+               case 3: jsConsole.writeLine("Three"); break;
+               case 4: jsConsole.writeLine("Four"); break;
+               case 5: jsConsole.writeLine("Five"); break;
+               case 6: jsConsole.writeLine("Six"); break;
+               case 7: jsConsole.writeLine("Seven"); break;
+               case 8: jsConsole.writeLine("Eight"); break;
+               case 9: jsConsole.writeLine("Nine"); break;
+               default: jsConsole.writeLine("Enter a number between 0 and 9"); break;
+           }
+       }
+   </script>
+</body>
+</html>

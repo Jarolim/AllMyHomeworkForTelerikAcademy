@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JavaScript - Reverses the digits of given decimal number</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: grey;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<p><strong>Homework Task 2:</strong> Write a function that reverses the digits of given decimal number. Example: 256 ==> 652
+.</p>
+	<p>Enter a number:</p>
+	<label for="number">Number: </label>
+	<input type="text" id="number" />
+	<br />
+	<a href="#" onclick="onReverseDigitsButtonClick()">Reverse digits</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		var number, reversedNumber, revers;
+		function onReverseDigitsButtonClick() {			
+			number = jsConsole.readFloat("#number");
+			reversedNumber = ReversesDigits(number);
+			jsConsole.writeLine("Entered number " + number + " after revers is " + reversedNumber);
+		}		
+			
+		function ReversesDigits(number) {
+			revers = "";
+			if (isNaN(number)) {
+				return "Not a number";
+			}
+			if (number === 0) {
+			 revers = "0";  
+			}
+			while (number !== 0)
+			{
+				if(number < 0) {
+					revers = "-";
+					number *= (-1);
+				}				
+				revers += number % 10;
+				number = parseInt(number / 10);
+			}
+			reversedNumber = parseInt(revers);
+			return reversedNumber;
+		}    
+	</script>
+</body>
+</html>

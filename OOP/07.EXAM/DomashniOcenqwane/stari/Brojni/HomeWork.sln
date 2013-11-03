@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. BinaryRepresentationOfFloatingPointNumber", "BinaryRepresentationOfFloatingPointNumber\09. BinaryRepresentationOfFloatingPointNumber.csproj", "{DEABEA3F-FB01-4985-B9D0-64359ED16291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. ConvertDecimalNumbersToBin", "ConvertDecimalDumbersToBin\01. ConvertDecimalNumbersToBin.csproj", "{FFB05407-39A6-497A-B097-DF200CC04152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. ConvertBinaryNumbersToDecimal", "ConvertBinaryNumbersToDecimal\02. ConvertBinaryNumbersToDecimal.csproj", "{20E09748-A4E6-4BA5-BD33-80764772540E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. ConvertDecimalNumbersToHexadecimal", "ConvertDecimalNumbersToHexadecimal\03. ConvertDecimalNumbersToHexadecimal.csproj", "{0C4165DD-A157-485A-A593-140A304E8C8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. DrectlyHexadecimalNumbersToBinary", "DrectlyHexadecimalNumbersToBinary\05. DrectlyHexadecimalNumbersToBinary.csproj", "{73ACA0AC-2B18-4B35-B51C-05207CB6B36D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. DirectrlyBinaryNumbersToHexadecimal", "BinaryNumbersToHexadecimal\06. DirectrlyBinaryNumbersToHexadecimal.csproj", "{481ACFD0-884A-471F-92B2-F1DD642A6425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. ConvertHexadecimalNumbersToDecimal", "ConvertHexadecimalNumbersToDecimal\04. ConvertHexadecimalNumbersToDecimal.csproj", "{F1FD7023-1C98-442F-9396-CBDD9C62B4F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. BinaryRepresentationOfShortNumber", "BinaryRepresentationOfShortNumber\08. BinaryRepresentationOfShortNumber.csproj", "{58DBADBB-045F-4A56-BDD5-05DE5BA7179E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. ConvertFromAnyNumeralSystemToAnyOther", "ConvertFromAnyNumeralSystemToAnyOther\07. ConvertFromAnyNumeralSystemToAnyOther.csproj", "{AB08772B-A6BF-4F27-9619-6FF56386F173}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEABEA3F-FB01-4985-B9D0-64359ED16291}.Debug|x86.ActiveCfg = Debug|x86
+		{DEABEA3F-FB01-4985-B9D0-64359ED16291}.Debug|x86.Build.0 = Debug|x86
+		{DEABEA3F-FB01-4985-B9D0-64359ED16291}.Release|x86.ActiveCfg = Release|x86
+		{DEABEA3F-FB01-4985-B9D0-64359ED16291}.Release|x86.Build.0 = Release|x86
+		{FFB05407-39A6-497A-B097-DF200CC04152}.Debug|x86.ActiveCfg = Debug|x86
+		{FFB05407-39A6-497A-B097-DF200CC04152}.Debug|x86.Build.0 = Debug|x86
+		{FFB05407-39A6-497A-B097-DF200CC04152}.Release|x86.ActiveCfg = Release|x86
+		{FFB05407-39A6-497A-B097-DF200CC04152}.Release|x86.Build.0 = Release|x86
+		{20E09748-A4E6-4BA5-BD33-80764772540E}.Debug|x86.ActiveCfg = Debug|x86
+		{20E09748-A4E6-4BA5-BD33-80764772540E}.Debug|x86.Build.0 = Debug|x86
+		{20E09748-A4E6-4BA5-BD33-80764772540E}.Release|x86.ActiveCfg = Release|x86
+		{20E09748-A4E6-4BA5-BD33-80764772540E}.Release|x86.Build.0 = Release|x86
+		{0C4165DD-A157-485A-A593-140A304E8C8B}.Debug|x86.ActiveCfg = Debug|x86
+		{0C4165DD-A157-485A-A593-140A304E8C8B}.Debug|x86.Build.0 = Debug|x86
+		{0C4165DD-A157-485A-A593-140A304E8C8B}.Release|x86.ActiveCfg = Release|x86
+		{0C4165DD-A157-485A-A593-140A304E8C8B}.Release|x86.Build.0 = Release|x86
+		{73ACA0AC-2B18-4B35-B51C-05207CB6B36D}.Debug|x86.ActiveCfg = Debug|x86
+		{73ACA0AC-2B18-4B35-B51C-05207CB6B36D}.Debug|x86.Build.0 = Debug|x86
+		{73ACA0AC-2B18-4B35-B51C-05207CB6B36D}.Release|x86.ActiveCfg = Release|x86
+		{73ACA0AC-2B18-4B35-B51C-05207CB6B36D}.Release|x86.Build.0 = Release|x86
+		{481ACFD0-884A-471F-92B2-F1DD642A6425}.Debug|x86.ActiveCfg = Debug|x86
+		{481ACFD0-884A-471F-92B2-F1DD642A6425}.Debug|x86.Build.0 = Debug|x86
+		{481ACFD0-884A-471F-92B2-F1DD642A6425}.Release|x86.ActiveCfg = Release|x86
+		{481ACFD0-884A-471F-92B2-F1DD642A6425}.Release|x86.Build.0 = Release|x86
+		{F1FD7023-1C98-442F-9396-CBDD9C62B4F2}.Debug|x86.ActiveCfg = Debug|x86
+		{F1FD7023-1C98-442F-9396-CBDD9C62B4F2}.Debug|x86.Build.0 = Debug|x86
+		{F1FD7023-1C98-442F-9396-CBDD9C62B4F2}.Release|x86.ActiveCfg = Release|x86
+		{F1FD7023-1C98-442F-9396-CBDD9C62B4F2}.Release|x86.Build.0 = Release|x86
+		{58DBADBB-045F-4A56-BDD5-05DE5BA7179E}.Debug|x86.ActiveCfg = Debug|x86
+		{58DBADBB-045F-4A56-BDD5-05DE5BA7179E}.Debug|x86.Build.0 = Debug|x86
+		{58DBADBB-045F-4A56-BDD5-05DE5BA7179E}.Release|x86.ActiveCfg = Release|x86
+		{58DBADBB-045F-4A56-BDD5-05DE5BA7179E}.Release|x86.Build.0 = Release|x86
+		{AB08772B-A6BF-4F27-9619-6FF56386F173}.Debug|x86.ActiveCfg = Debug|x86
+		{AB08772B-A6BF-4F27-9619-6FF56386F173}.Debug|x86.Build.0 = Debug|x86
+		{AB08772B-A6BF-4F27-9619-6FF56386F173}.Release|x86.ActiveCfg = Release|x86
+		{AB08772B-A6BF-4F27-9619-6FF56386F173}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

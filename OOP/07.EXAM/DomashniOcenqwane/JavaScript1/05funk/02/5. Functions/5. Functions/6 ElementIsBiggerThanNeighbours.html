@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check if element at given position is bigger than its neigbours.</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/ConsoleInputOutput.css" rel="stylesheet" />
+</head>
+<body>
+   <div id="js-console">
+	<label for="array">Enter an array of numbers using one space: </label>
+	<input type="text" id="array"/>
+	<br />	
+
+    <label for="index">Enter the index of the inspected element:  </label>
+	<input type="text" id="index"/>
+	<br />
+    
+	<a href="#" onclick="onElementIsBiggerThanNeighboursClick()"> Click to check if element at given index is bigger than its neigbours.</a>
+        </div>		 
+	<script src="scripts/js-console.js"></script>
+        <script>
+
+            function onElementIsBiggerThanNeighboursClick() {
+                var inputArray = jsConsole.read("#array");
+                var index =parseInt( jsConsole.read("#index"));
+
+                var numbers = inputArray.split(" ");
+
+                if (ElementIsBiggerThanNeighbours(numbers, index)) {
+                    jsConsole.writeLine(numbers[index] + " is bigger than " + numbers[index - 1] +
+                        " and " + numbers[index + 1]);
+                }
+                else {
+                    jsConsole.writeLine(numbers[index] + " is not bigger than " + numbers[index - 1] +
+                        " and " + numbers[index + 1]);
+                }
+            }
+
+            function ElementIsBiggerThanNeighbours(inputArray, index)
+            {
+                if (inputArray[index -1] < inputArray[index] && inputArray[index+1]<inputArray[index]) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
+

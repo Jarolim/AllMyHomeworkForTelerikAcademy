@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EShop.Admin" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAkBBAAgAAAAAAIAABABAAgAAAAAAAAAE=</HashCode>
+      <FileName>Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Book" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAFgAIAAIACAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Cart" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAkABAAoAAAAAAIQAAAgAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Cart.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EShop.Customer" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEkAAAFBgwAAEAgAAAAAAAAABABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Game" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAAAEAAACAAAAAIAAAACAAAAAQAAAAEA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Movie" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAIAAAACAAAEAAIAAAACAAIAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Music" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIACAECAIggAACEIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Product" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAQBABAEAQAAgAAEgAAAAAQAgAAEAICAAAAAgAAAAiA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EShop.ProductNotAvailableException" Collapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>ProductNotAvailableException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.ProductsList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAECAAABABAAAAIAAAACAAAAABAAAA=</HashCode>
+      <FileName>ProductsList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.231" Collapsed="true" />
+  </Class>
+  <Class Name="EShop.EShopMain" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>EShopMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Promotion" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAEAIAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Promotion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EShop.ShopInformation" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEEAgAJARIAAAEAAAAgDAAAgIBAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ShopInformation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EShop.User" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAAACEAAAAgAAAAwAAAAEAAAAAABACAAAAAgAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EShop.PremiumCustomer" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>PremiumCustomer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.BuyPublisher" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>BuyPublisher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.BuySubscriber" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>BuySubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.Event" Collapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACA=</HashCode>
+      <FileName>Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.LogInPublisher" Collapsed="true">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>LogInPublisher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.LogInSubscriber" Collapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>LogInSubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EShop.ShopUI" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAgIAAAAAAAAAAAAAAgAMAAAgAAA=</HashCode>
+      <FileName>ShopUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="EShop.CustomerInformation" Collapsed="true">
+    <Position X="5.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAQAAAAAIAAAACAAAAQAAgAAAAAAAAAAA=</HashCode>
+      <FileName>CustomerInformation.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="EShop.IComment" Collapsed="true">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IComment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EShop.ILogable" Collapsed="true">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAwAAAAAAAAAAABACAAAAAAAAAAA=</HashCode>
+      <FileName>ILogable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EShop.IPrice" Collapsed="true">
+    <Position X="13.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPrice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="EShop.BooksGenres" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAABGAAAAAACAAAAALIACAAAAAAAoBAAFAQAAEQ=</HashCode>
+      <FileName>BooksEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EShop.GameGenre" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAYACABBAAAAQ=</HashCode>
+      <FileName>GameEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EShop.MovieGenre" Collapsed="true">
+    <Position X="13.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAYACAFAAAAAQ=</HashCode>
+      <FileName>MovieEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EShop.MusicGenres" Collapsed="true">
+    <Position X="10" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAApAABAAAAAAAFAkAAAAABKAEAAAAAgABACAAAA=</HashCode>
+      <FileName>MusicEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

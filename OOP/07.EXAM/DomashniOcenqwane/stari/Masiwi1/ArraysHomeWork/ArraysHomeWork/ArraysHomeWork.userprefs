@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs" ctype="Workbench">
+    <Files>
+      <File FileName="../ArraysHomeWork.sln" Line="31" Column="18" />
+      <File FileName="Program.cs" Line="16" Column="11" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="ArraysHomeWork" expanded="True">
+            <Node name="References" expanded="True" selected="True" />
+            <Node name="Properties" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

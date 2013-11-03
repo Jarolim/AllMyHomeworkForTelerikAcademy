@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Digit Name</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="inputs">
+        
+        <input type="text" id="firstNumber" name ="firstNumber" />
+        <label>x^2 + </label>
+        <input type="text" id="secondNumber" name ="secondNumber" />
+        <label>x + </label>
+        <input type="text" id="thirdNumber" name ="thirdNumber" />
+        <a href = "#" id="swap" onclick="quadratic()"><strong>show answer</strong></a>
+    </div>
+    <div id="js-console" class="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+   <script>
+       function quadratic() {
+           var xOne, xTwo, discr;
+           var a = jsConsole.readFloat("#firstNumber");
+           var b = jsConsole.readFloat("#secondNumber");
+           var c = jsConsole.readFloat("#thirdNumber");
+           discr = (b * b) - (4 * a * c);
+           if (discr < 0)
+           { jsConsole.writeLine("There are no real answers to your equation!"); }
+           else if(discr === 0)
+           {
+               xOne = ((-b) + Math.sqrt(discr)) / (2 * a);
+               jsConsole.writeLine("Your answers are: " + xOne+ " and " + xOne);
+           }
+           else if (discr > 0)
+           {
+               xOne = ((-b) + Math.sqrt(discr)) / (2 * a);
+               xTwo = ((-b) - Math.sqrt(discr)) / (2 * a);
+               jsConsole.writeLine("Your answers are: " + xOne + " and " + xTwo);
+           }          
+       }
+   </script>
+</body>
+</html>

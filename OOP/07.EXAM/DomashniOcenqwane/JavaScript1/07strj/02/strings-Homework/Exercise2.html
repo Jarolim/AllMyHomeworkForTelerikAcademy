@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+    </div>
+    <script src="scripts/js-console.js">	
+    </script>
+    <script>
+        var str1 = "((a+b)/5-d)";
+		var str2 = ")(a+b))";
+		
+		function areBracketsCorrect(str) {
+			var tempChar = "";
+			var bracketsArray = []; // dynamic array containing brackets "(" and ")"
+			for (i =  0; i <= str.length - 1; i++) {
+				tempChar = str.charAt(i);
+				jsConsole.writeLine(i + " = " + tempChar);
+				if (tempChar == "(") {
+					bracketsArray.push(tempChar);
+					jsConsole.writeLine("bracketsArray = " + bracketsArray);
+				}
+				else if (tempChar == ")") {
+					if (bracketsArray.length == 0) { //checks if array is empty
+						return false;
+					}
+					else {
+						bracketsArray.pop();
+						jsConsole.writeLine("bracketsArray = " + bracketsArray);
+					}
+				}
+			}
+			return true;
+		}
+		
+		jsConsole.writeLine("str1 = " + str1);
+		jsConsole.writeLine(areBracketsCorrect(str1));
+		
+		jsConsole.writeLine("************************"); //delimiter row
+		jsConsole.writeLine("str2 = " + str2);
+		jsConsole.writeLine(areBracketsCorrect(str2));
+    </script>
+</body>
+</html>

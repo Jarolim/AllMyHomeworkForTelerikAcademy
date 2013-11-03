@@ -1,0 +1,12 @@
+Coordinate X: 4
+Coordinate Y: 8
+Coordinate Z: 0
+---
+Coordinate X: 2
+Coordinate Y: 3
+Coordinate Z: 0
+---
+Coordinate X: 5
+Coordinate Y: 1
+Coordinate Z: 0
+---

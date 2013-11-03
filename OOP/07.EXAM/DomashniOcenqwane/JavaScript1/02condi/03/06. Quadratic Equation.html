@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Quadratic Equation</title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="js-console.js"></script>
+    <script>
+        var a = 2;
+        var b = 7;
+        var c = 5;
+        var d = (b * b) - (4 * a * c);
+        if (d < 0)
+        {
+            jsConsole.writeLine("The equation don't have real roots");
+        }
+        else
+        {
+            if (d == 0)
+            {
+                jsConsole.writeLine("The equation have one real root x = " + (-b) / (2 * a));
+            }
+            else
+            {
+                var x1 = ((-b) + Math.sqrt(d)) / (2 * a);
+                var x2 = ((-b) - Math.sqrt(d)) / (2 * a);
+                jsConsole.writeLine("The first root of the equation is x1 = " + x1);
+                jsConsole.writeLine("The first root of the equation is x2 = " + x2);
+            }
+        }
+    </script>    
+</body>
+</html>

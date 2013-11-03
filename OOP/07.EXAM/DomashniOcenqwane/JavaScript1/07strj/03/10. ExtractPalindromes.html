@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Extract Palindromes From String</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function extractPalindromes(text) {
+			var results = text.match(/("[^"]+"|[^"\s]+)/g);
+			for (var i = 0; i < results.length; i++) {
+				var reversed = '';
+				for (var k = results[i].length-1; k >= 0; k--) {
+					reversed += results[i][k];
+				}
+				if (reversed==results[i]) {
+					jsConsole.writeLine(results[i]);
+				}
+			}
+		}
+
+		var text = 'ABBA text "yeah" a text abracadabra; lamal this is an exe text!';
+		jsConsole.writeLine('Some text:');
+		jsConsole.writeLine(text);
+		jsConsole.writeLine('Palindromes extracted:');
+		extractPalindromes(text);
+
+		 
+
+	</script>
+</body>
+</html>

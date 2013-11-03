@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Format Strings Placeholders</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>							  
+
+	
+	<a href="#" class="js-console-btn" onclick="pritnTheSubstitute()">Subsitute!</a>
+    <br />
+    <br />
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+	    function pritnTheSubstitute() {
+	        var text = "Hello {0}, {1}";
+	        var words = 'there,Stamat';
+	        var wordsArr = words.split(",");	       
+	        var formated = stringFormat(text, wordsArr);
+	        jsConsole.writeLine(formated);
+	    }
+	    function stringFormat(text,wordsArr)
+	    {
+	        var strB = buildStringBuilder();
+	        var beggining = 0;
+	        var index = text.indexOf("{");
+	        while (index>-1) {
+	            var number = parseInt(text.substr(index + 1, 1));
+	            strB.append(text.substring(beggining, index - 1) + " ");
+	            strB.append(wordsArr[number] + " ");
+	            //jsConsole.writeLine(strB.toString());
+	            beggining = index + 3;
+	            index = text.indexOf("{",index+1);
+	        }
+	        return strB.toString();
+	    }
+	    function buildStringBuilder() {
+	        return {
+	            strs: [],
+	            len: 0,
+	            append: function (str) {
+	                this.strs[this.len++] = str;
+	                return this;
+	            },
+	            toString: function () {
+	                return this.strs.join("");
+	            }
+	        };
+	    }
+
+
+
+	</script>
+
+</body>
+</html>

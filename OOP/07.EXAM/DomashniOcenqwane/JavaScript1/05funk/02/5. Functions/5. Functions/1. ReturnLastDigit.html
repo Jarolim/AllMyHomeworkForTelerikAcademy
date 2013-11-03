@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Return last digit</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/ConsoleInputOutput.css" rel="stylesheet" />
+</head>
+<body>
+   <div id="js-console">
+	<label for="number">Enter a number: </label>
+	<input type="text" id="number"/>
+	<br />	
+    
+	<a href="#" onclick="onNumberLastDigitClick()"> Click to return last digit</a>
+        </div>		 
+	<script src="scripts/js-console.js"></script>
+        <script>
+            var digitNames = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
+            function onNumberLastDigitClick() {
+                var input = jsConsole.read("#number");
+
+                var lastDigitName = GetLastDigitName(input);
+                jsConsole.writeLine("Last digit name: " + lastDigitName);
+            }
+  
+            function GetLastDigitName(input) {
+                
+                return digitNames[ (input % 10).toPrecision(1)];
+            }
+        </script>
+    </body>
+</html>
+

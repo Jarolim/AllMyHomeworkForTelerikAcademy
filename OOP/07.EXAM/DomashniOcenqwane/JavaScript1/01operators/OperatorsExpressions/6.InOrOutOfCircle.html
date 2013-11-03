@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Homework</title>
+		<link rel="stylesheet" type="text/css" href="StyleForAllPages.css">
+	</head>
+	<body>
+		<div id = "wrapper">
+			<label id="firstLabel">6. Write an expression that checks if given point (x,  y) is within a circle K(O, 5).
+			</label>
+			<br>
+			<label for="userInput1">Please, eneter "x" coordinate:</label>
+			<input type = "text" id="userInput1"/>
+			<br>
+			<label for="userInput2">Please, eneter "y" coordinate:</label>
+			<input type = "text" id="userInput2"/>
+			<br>
+			<input type="submit" value="GetTheResult" onclick="getValue()">
+		</div>
+		<div id="home">
+			<a href="OperatorsAndExxpressions.html">Home</a>
+		</div>
+
+		<script type="text/javascript">
+
+		function getValue()
+		{
+			var xCoord = document.getElementById("userInput1").value;
+			var xCoordInt = parseInt(xCoord);
+			var yCoord = document.getElementById("userInput2").value;
+			var yCoordInt = parseInt(yCoord);
+			var coordExpression = (xCoordInt*xCoordInt)+(yCoordInt*yCoordInt);
+			var isWithInTheCircle = coordExpression <= 25;
+			alert("The point with coord:(" +xCoordInt+","+yCoordInt +") is within the circle : " + isWithInTheCircle );
+		}
+
+		</script>
+
+	</body>
+</html>

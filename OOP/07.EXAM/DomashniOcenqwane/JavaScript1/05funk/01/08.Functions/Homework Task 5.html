@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JavaScript - Counts how many times given number appears in given array</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: grey;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<p><strong>Homework Task 5:</strong> Write a function that counts how many times given number appears in given array. Write a test function to check if the function is working correctly.</p>
+	<p>In test array there are all digits. Enter one digit, to check how many times is appears in that array.</p>
+	<p>Enter one number:</p>
+	<label for="number">Number: </label>
+	<input type="text" id="number" />
+	<br />
+	<a href="#" onclick="onCountNumberRepresentationButtonClick()">Check</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		var number, count, i, array;
+		//Test array
+		array = [ 4, 7, 3, 1, 9, 4, 2, 5, 8, 7, 6, 7, 2, 1, 5, 7, 8, 2, 3, 1, 2, 1, 3, 4, 6, 7, 4, 5, 8, 9, 2, 1, 8, 9, 5 ];
+		jsConsole.writeLine("The test array: {" + array.join(", ") + "}");
+		jsConsole.writeLine(" ");
+		//Test functions
+		function onCountNumberRepresentationButtonClick() {
+			number = jsConsole.readFloat("#number");
+			
+			if (isNaN(number)) {
+				jsConsole.writeLine("Not correct input! Try again!");
+
+			}
+			else {
+				count = getNumberRepresentation(number, array);
+				jsConsole.writeLine("The number " + number + " is represented in " + count + " elements in that array.");
+			}
+		}
+		
+		function getNumberRepresentation(number, array) {
+			count = 0;
+			for (i = 0; i < array.length - 1; i++) {
+				if (array[i] === number) {
+					count++;
+				}
+			}
+			return count;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>HTML UL Template</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<script src="scripts/string-extensions.js"></script>
+</head>
+<body>							  
+    <div data-type="template" id="list-item">
+    <strong>-{name}-</strong> <span>-{age}-</span>
+    </div>
+
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+	    var people = [{ name: "razvigor", age: 14 }, { name: "kitodar", age: 25 }, { name: "mesemvrii", age: 35 }];
+	    var temp = document.getElementById("list-item").innerHTML;
+	    var finalArr = generateList(temp, people);
+	    for (var i = 0; i < finalArr.length; i+=2) {
+	        jsConsole.writeLine("<ul><li><strong>" + finalArr[i] + "</strong><span>" + finalArr[i + 1] + "</span></li><li>…</li>…</ul>")
+	    }
+	    function generateList(temp,people)
+	    {
+	        var holder = temp;
+	        var liArr = [];
+	        for (var person in people) {
+	            var index = temp.indexOf("{name}");
+	            var index2 = temp.indexOf("{age}");
+	            temp = temp.replace("{name}", people[person].name);
+	            liArr.push(temp.substr(index, people[person].name.length));
+	            temp = holder;
+	            temp = temp.replace("{age}", people[person].age);
+	            liArr.push(temp.substr(index2, people[person].age.toString().length));
+	            temp = holder;
+	        }
+	        return liArr;
+	    }
+
+		//jsConsole.writeLine(index);
+		//jsConsole.writeLine(index2);
+
+	</script>
+
+</body>
+</html>

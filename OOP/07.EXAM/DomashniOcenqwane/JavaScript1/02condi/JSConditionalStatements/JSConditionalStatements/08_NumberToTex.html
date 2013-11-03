@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Digit Name</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="inputs">
+        <input type="text" id="firstNumber" name ="firstNumber" />
+        <a href = "#" id="swap" onclick="digitName()"><strong>Show number name</strong></a>
+    </div>
+
+    <div id="js-console" class="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+   <script>
+       function digitName() {
+           var num = jsConsole.readInteger("#firstNumber");
+           var digits = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+           var tens = ["and", "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+           var afterDigits = ["", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eightteen", "nineteen"];
+
+           if (num > 0 && num < 10) {
+               jsConsole.writeLine(digits[num]);
+           }
+           else if (num > 10 && num < 20) {
+               var i = num % 10;
+               jsConsole.writeLine(afterDigits[i]);
+           }
+           else if ((num >= 20 && num < 100) || num == 10) {
+               var d1, d10;
+               d1 = num % 10;
+               d10 = parseInt(num / 10);
+
+               jsConsole.writeLine(tens[d10] + " " + digits[d1]);
+           }
+           else if (num >= 100 && num < 1000) {
+               var d1, d10, d100;
+               d1 = num % 10;
+               d10 = (parseInt(num / 10)) % 10;
+               d100 = parseInt(num / 100);
+               if (d1 == 0 && d10 == 0) {
+                   jsConsole.writeLine(digits[d100] + " hundred");
+               }
+               else {
+                   jsConsole.writeLine(digits[d100] + " hundred " + tens[d10] + " " + digits[d1]);
+               }
+           }
+           else {
+               jsConsole.writeLine("The number is out of range..");
+           }
+       }
+   </script>
+</body>
+</html>

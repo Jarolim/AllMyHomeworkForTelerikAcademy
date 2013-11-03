@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sign Of The Product Of Three Real Numbers</title>
+    <link href="js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="js-console.js"></script>
+    <script>
+        var number1 = -12.34;
+        var number2 = 67.3;
+        var number3 = -4.5;
+        jsConsole.writeLine(number1);
+        jsConsole.writeLine(number2);
+        jsConsole.writeLine(number3);
+        var result = 1;
+        if (number1 < 0)
+        {
+            result += 1;
+        }
+        if (number2 < 0)
+        {
+            result += 1;
+        }
+        if (number3 < 0)
+        {
+            result += 1;
+        }
+        if ((result % 2) == 0)
+        {
+            jsConsole.writeLine("The sign is -"); ;
+        }
+        else
+        {
+            jsConsole.writeLine("The sign is +");
+        }
+    </script>    
+</body>
+</html>

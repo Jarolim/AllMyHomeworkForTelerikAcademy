@@ -1,0 +1,73 @@
+﻿html,body,input{
+    font-family: Consolas;
+    font-size: 18px;
+}
+.js-console {
+    margin: 0;
+    font-size: 17px;
+}
+
+body .js-console {
+    margin: 0;
+    padding: 5px 10px;
+    background-color: black;
+    width: 800px;
+    height: 500px;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-break: break-all;
+}
+
+    body .js-console > p {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+        body .js-console > p > span {
+            margin: 0;
+            padding: 0;
+        }
+
+        body .js-console > p > br {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+/*Input fields and links*/
+label{
+    display:inline-block;
+    width:60px;
+}
+input[type='text'] {
+    width: 150px;
+    height: 15px;
+    padding:15px;
+    margin:15px;
+    
+}
+#inputs{
+    padding-left:10px;
+    border:2px solid black;
+    width:806px;
+}
+a{
+    color:black;
+}
+
+input.smaller{
+    width:25px;
+    height:30px;
+}
+
+/*Colors*/
+.red{
+    color:red;
+    font-weight:bold;
+}
+.green{
+    color:green;
+    font-weight:bold;
+}

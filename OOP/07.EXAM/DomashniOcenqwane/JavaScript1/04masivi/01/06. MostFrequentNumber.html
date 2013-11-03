@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Our task is to finds the most frequent number in an array.<br />
+            Please input the array elements separated by a single white space :)</h1>
+        <div id="input">
+            <label for="input-arr">Your array:</label>
+            <input type="text" id="input-arr" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var input = document.getElementById("input-arr").value;
+            var myArray = input.split(" ");
+            
+            var tempValue = 0;
+            var frequentValue = 0;
+            var bestFrequency = 0;
+            var tempFrequency = 1;
+            var bestValue = 0;
+
+            for (var i = 0; i < myArray.length - 1; i++)
+            {
+                tempValue = myArray[i];
+                for (var j = 1; j < myArray.length; j++)
+                {
+                    if (tempValue == myArray[j])
+                    {
+                        frequentValue = tempValue;
+                        tempFrequency++;
+                        
+                        if (tempFrequency > bestFrequency)
+                        {
+                            bestFrequency = tempFrequency;
+                            bestValue = tempValue;
+                        }
+                    }
+                 }
+
+                 tempFrequency = 0;                
+              }
+
+             jsConsole.writeLine("The most frequent value is " + bestValue + " and it's repeating " + bestFrequency + " times.");
+         }
+    </script>
+</body>
+</html>

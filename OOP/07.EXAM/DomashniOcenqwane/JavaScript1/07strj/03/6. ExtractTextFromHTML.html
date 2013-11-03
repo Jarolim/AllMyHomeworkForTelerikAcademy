@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Extract Text From HTML</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	function extractText(htmlText) {
+		var currentIndex = 0;
+		var resultingText = '';
+		for (var i = currentIndex; i < htmlText.length; i = currentIndex) {
+			if (htmlText[i]=='<') {
+				currentIndex = htmlText.indexOf('>', i) + 1;
+			}
+			else {
+				resultingText += htmlText[i];
+				currentIndex++;
+			}
+		}
+		return resultingText;
+	}
+
+	var text = '<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>';
+	jsConsole.writeLine('HTML tags removed:');
+	jsConsole.writeLine(extractText(text));
+	</script>
+</body>
+</html>

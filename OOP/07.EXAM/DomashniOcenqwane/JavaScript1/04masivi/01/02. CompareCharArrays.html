@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Our task is to compare two char arrays lexicographically (letter by letter) <br />
+            Please, enter a sequence of letters separated by ONE space for the FIRST and the SECOND array :)</h1>
+        <div id="input">
+            <label for="array-first">First char array:</label>
+            <input type="text" id="array-first" />
+
+             <label for="array-second">Second char array:</label>
+             <input type="text" id="array-second" />
+        </div>
+        <div id="button">
+            <a href="#" onclick="checkButton()">Check</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var arrFirst = document.getElementById("array-first").value;
+            var arrSecond = document.getElementById("array-second").value;
+            
+            var firstArrLen = arrFirst.length;
+            var secondArrLen = arrSecond.length;
+            var areEqual = true;
+                      
+            if (firstArrLen == secondArrLen)
+            {
+                for (var i = 0; i < firstArrLen; i++)
+                {
+                    if (arrFirst[i] != arrSecond[i])
+                    {
+                        areEqual = false;
+                        break;
+                    }         
+                }
+            }
+            else
+            {
+                areEqual = false;
+                jsConsole.writeLine("The two arrays are with different lenght!");
+            }
+
+            jsConsole.writeLine("The arrays are equal: " + areEqual)
+            jsConsole.writeLine();
+        }        
+    </script>
+</body>
+</html>

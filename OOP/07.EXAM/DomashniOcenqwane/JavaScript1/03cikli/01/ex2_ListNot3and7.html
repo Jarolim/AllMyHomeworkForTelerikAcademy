@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops - while loop</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-check" onclick="onCheck()">See result</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	function onCheck (){
+		var n = parseInt(document.getElementById("tb-number").value);
+		var a = 0;
+		var b = 0;
+		var c = " ";
+		for (var i = 1; i <= n; i++) {
+                if (i % 21!=0) {
+                    a++;
+                }
+        }  
+		jsConsole.writeLine("The numbers from 1 to " + n + " that are not divisible to 3 and 7 at the same time are: ");
+            for (var num = 1; num <= n; num++ ) 
+			if (num % 21!=0) {
+                    b++;
+				if (b<a) {
+					c+=(num + ", ");
+				} else {
+					c+=(num + ".");
+				}
+            }
+				jsConsole.writeLine(c);
+    }
+	</script>
+</body>
+</html>

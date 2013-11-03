@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Compare two char arrays lexicographically (letter by letter). </title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input{
+			display: inline-block;
+			margin-left: 5px;
+		}
+		label{
+			display: inline-block;
+			width: 333px;
+		}
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+	<label for="tb-arrayOne">Write the first array's elements, separated by " ,":</label>
+	<input type="text" id="tb-arrayOne" />
+	<br />
+	<label for="tb-arrayTwo">Write the second array's elements, separated by " ,": </label>
+	<input type="text" id="tb-arrayTwo" />
+	<br />
+	<a href="#" onclick="CompareTheArrays()"> Compare the arrays</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function CompareTheArrays() {
+			var inputOne = document.getElementById("tb-arrayOne").value;
+		    var inputTwo = document.getElementById("tb-arrayTwo").value;
+
+		    var arrayOne = inputOne.split(',');
+		    var arrayTwo = inputTwo.split(',');
+		    var arraysLenght = arrayOne.length;
+		    
+		    for(var counter=0; counter< arraysLenght; counter++){
+		    	if (arrayOne[counter]>arrayTwo[counter]) {
+
+		            jsConsole.writeLine(arrayOne[counter] + " is after " + arrayTwo[counter] + " lexicographyclly!");
+		        }
+		        else if(arrayOne[counter]==arrayTwo[counter]){
+		        	jsConsole.writeLine(arrayOne[counter] + " is the same as " + arrayTwo[counter] + " lexicographyclly!");
+		        }
+		        else {
+		            jsConsole.writeLine(arrayOne[counter] + " is before " + arrayTwo[counter] + " lexicographyclly!");
+		        }
+		    }
+		}	
+	</script>
+</body>
+</html>

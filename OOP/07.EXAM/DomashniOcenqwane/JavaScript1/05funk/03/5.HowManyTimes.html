@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = [2, 3, 4, 5, 7, 1, 2, 4, 3, 1, 2, 5, 6, 7, 2, 1, 4, 3, 6, 6, 7, 3, 2, 1, 2, 3, 4, 5, 4, 6];
+        var number = 2;
+        /*Number of occurrences of each number:
+        1 - 4
+        2 - 6
+        3 - 5
+        4 - 5 
+        5 - 3
+        6 - 4
+        7 - 3            
+        */
+        findCount(arr, number);
+        function findCount(arr, number) {
+            var count = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == number) {
+                    count++;
+                }
+            }
+            console.log(number + " is met " + count + " times");
+        }
+    </script>
+</body>
+</html>

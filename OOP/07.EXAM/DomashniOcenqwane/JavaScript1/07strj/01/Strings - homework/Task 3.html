@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search for string</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="menu"></div>
+	<div id="js-console"> 
+		Enter a string to search in this text: <br />
+		<input type = "text"  id = "input"> </input>
+		<input type="button" value="Search" onclick="onBtnClick()"/><br/>
+	</div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	var paragraph = "We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.";
+	jsConsole.writeLine(" ");
+	jsConsole.writeLine(paragraph);
+	var text = paragraph.toLowerCase();
+	function onBtnClick (){
+		var a = document.getElementById("input");
+		var string = a.value;
+		var input = string.toLowerCase();
+		var counterElement = 0 ;
+		var counterTimes = 0 ;
+		for(i=0; i<text.length; i++){
+			if (text[i]==input[0]){
+				for (j=1; j<input.length; j++){
+					if (text[i+j]==input[j]){
+						counterElement++;
+					}
+					else{
+						counterElement=0;
+						break;
+					}
+					if (counterElement==input.length-1) {
+						counterTimes++;
+						counterElement=0;
+					}		
+				}
+			}
+		}
+		switch(counterTimes){
+			case 0: jsConsole.writeLine("There is no maches"); break;
+			case 1: jsConsole.writeLine("There is 1 mach."); break;
+			default: jsConsole.writeLine("There are " + counterTimes+ " matches."); break;
+		}
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Homework</title>
+		<link rel="stylesheet" type="text/css" href="StyleForAllPages.css">
+	</head>
+	<body>
+		<div id = "wrapper">
+			<label id="firstLabel">8. Write an expression that calculates trapezoid's area by given sides a and b and height h.
+
+
+			</label>
+			<br>
+			<label for="userInput">Please, eneter first side of the trapezoid:</label>
+			<input type = "text" id="userInput"/>
+			<br>
+			<label for="userInput2">Please, eneter second side of the trapezoid:</label>
+			<input type = "text" id="userInput2"/>
+			<br>
+			<label for="userInput2">Please, eneter the height of the trapezoid:</label>
+			<input type = "text" id="userInput3"/>
+			<br>
+			<input type="submit" value="GetTheResult" onclick="getArea()">
+		</div>
+		<div id="home">
+			<a href="OperatorsAndExxpressions.html">Home</a>
+		</div>
+
+		<script type="text/javascript">
+
+		function getArea()
+		{
+			var firstSide = document.getElementById("userInput").value;
+			var secondSide = document.getElementById("userInput2").value;
+			var heightInput = document.getElementById("userInput3").value;
+
+			var a = parseInt(firstSide);
+			var b = parseInt(secondSide);
+			var height = parseInt(heightInput);
+
+			var area = ((a+b)/2)*height;
+			alert("The area of the rectangle is: " + parseFloat(area));
+		}
+		</script>
+
+	</body>
+</html>

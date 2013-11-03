@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Loops - while loop</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<label for="tb-number">N: </label>
+	<input type="text" id="tb-number" />
+
+	<a href="#" id="btn-power" onclick="onClick()">Print</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function onClick() {
+	        var n = jsConsole.readInteger("#tb-number");
+	        for (var i = 1; i <= n; i++) {
+	            jsConsole.writeLine(i)
+	        }
+	    }
+
+	</script>
+</body>
+</html>

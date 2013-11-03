@@ -1,0 +1,2 @@
+   that removes from  text file all  listed in given another text file. Handle all  exceptions in  methods.
+   that reads     from  file .txt and finds how many times each  the  is contained in another file test.txt. The result should be written in the file result.txt and the  should be sorted by the number  their occurrences in descending order. Handle all  exceptions in  methods.

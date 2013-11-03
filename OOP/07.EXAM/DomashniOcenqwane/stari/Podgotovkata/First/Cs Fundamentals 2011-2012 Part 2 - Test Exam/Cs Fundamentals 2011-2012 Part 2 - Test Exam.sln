@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenomeDecoder", "GenomeDecoder\GenomeDecoder.csproj", "{B6775F4E-FFEF-419B-9183-9E3EBA2EF557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{3CA59548-453D-4C76-BCC1-16B5316E7225}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DLines", "3DLines\3DLines.csproj", "{C9A27E4D-85F7-48AE-9EB9-C175DD36AF8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6775F4E-FFEF-419B-9183-9E3EBA2EF557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6775F4E-FFEF-419B-9183-9E3EBA2EF557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6775F4E-FFEF-419B-9183-9E3EBA2EF557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6775F4E-FFEF-419B-9183-9E3EBA2EF557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA59548-453D-4C76-BCC1-16B5316E7225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA59548-453D-4C76-BCC1-16B5316E7225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA59548-453D-4C76-BCC1-16B5316E7225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA59548-453D-4C76-BCC1-16B5316E7225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A27E4D-85F7-48AE-9EB9-C175DD36AF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A27E4D-85F7-48AE-9EB9-C175DD36AF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A27E4D-85F7-48AE-9EB9-C175DD36AF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A27E4D-85F7-48AE-9EB9-C175DD36AF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

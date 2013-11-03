@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find Substring In Given Text</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+    <script>
+		function countSubstringOccurrences(text,substring) {
+			var count = 0;
+			var index = 0;
+			var toLowerText = text.toLowerCase();
+			var toLowerSubstring = substring.toLowerCase();
+			while (true) {
+				index = toLowerText.indexOf(toLowerSubstring, index);
+				if (index != -1) {
+					count++;
+				}
+				else {
+					return count;
+				}
+				index++;
+			}
+		}
+			
+		var someText="We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.";
+		var someSubstring = "in";
+				
+		jsConsole.writeLine("In the text:");
+		jsConsole.writeLine(someText);
+		jsConsole.writeLine("Substring '" + someSubstring + "' is found " + countSubstringOccurrences(someText, someSubstring) + " times.");
+
+    </script>
+</body>
+</html>

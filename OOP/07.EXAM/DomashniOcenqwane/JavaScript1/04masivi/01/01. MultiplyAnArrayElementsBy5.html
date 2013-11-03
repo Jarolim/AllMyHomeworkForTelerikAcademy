@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <h1>Our task is to allocate array of 20 integers and initializes<br />
+             each element by its index multiplied by 5</h1>       
+        <div id="button">
+            <a href="#" onclick="checkButton()">Calculate</a>
+        </div>
+    </div>
+    
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+
+    <script>
+        function checkButton() {
+            var myArr = new Array(20);
+
+            for (var i = 0; i < myArr.length; i++)
+            {
+                myArr[i] = i * 5;
+                jsConsole.writeLine(myArr[i]);
+            }
+        }
+    </script>
+</body>
+</html>

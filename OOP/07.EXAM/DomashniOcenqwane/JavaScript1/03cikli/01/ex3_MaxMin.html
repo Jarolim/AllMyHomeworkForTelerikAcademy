@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ex5</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<input type="text" id="tb-number" />
+	<a href="#" id="btn-check" onclick="onCheck()">Insert numbers separeted by commas</a>
+	<div id="js-console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+
+	var nMin;
+	var nMinIndex;
+	var nMax;
+	var nMaxIndex;
+	
+	function findMin (n)
+	{
+		nMinIndex = 0;
+		nMin = n[nMinIndex];
+		
+		for (i in n) {
+			nCurrent = parseInt(n[i]);
+			if (nCurrent < nMin)
+			{
+				nMin = nCurrent;
+				nMinIndex = i;
+			}
+		}	
+	}
+	
+	function findMax (n)
+	{
+		nMaxIndex = 0;
+		nMax = n[nMaxIndex];
+		
+		for (i in n) {
+			nCurrent = parseInt(n[i]);
+			if (nCurrent > nMax)
+			{
+				nMax = nCurrent;
+				nMaxIndex = i;
+			}
+		}	
+	}
+	
+	function onCheck (){
+		var n = document.getElementById("tb-number").value.split(",");
+		findMin (n);		
+		jsConsole.writeLine("Min number is: " + nMin  );
+		findMax (n);		
+		jsConsole.writeLine("Max number is: " + nMax  );
+	}
+	</script>
+</body>
+</html>

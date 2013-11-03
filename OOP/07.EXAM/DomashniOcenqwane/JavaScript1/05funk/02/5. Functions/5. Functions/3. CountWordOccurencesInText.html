@@ -1,0 +1,71 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Count word occurences in text</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="styles/ConsoleInputOutput.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+        <label for="text">Enter a text: </label>
+        <input type="text" id="text" />
+        <br />
+
+        <label for="word">Enter a word: </label>
+        <input type="text" id="word" />
+        <br />
+
+        <label for="caseSensitivity">Enter "i" for case- Insensitive search or "s" case - Sensitive: </label>
+        <input type="text" id="caseSensitivity" />
+        <br />
+
+        <a href="#" onclick="onCountWordOccurencesClick()">Click count word occurences in text</a>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+
+        function onCountWordOccurencesClick() {
+            var text = jsConsole.read("#text");
+            var word = jsConsole.read("#word");
+            var caseSensitivity = jsConsole.read("#caseSensitivity")
+            var wordOccurencesCount = 0;
+
+            if (caseSensitivity == "i") {
+                wordOccurencesCount = CountWordOccurenses(word, text, caseSensitivity);
+            }
+            else {
+                //Here the "overloaded" method just doesn`t pass argument to its last param
+                //and this way a different result is returned.
+                wordOccurencesCount = CountWordOccurenses(word, text);
+            }
+            jsConsole.writeLine(wordOccurencesCount);
+
+        }
+  
+            ///"caseSensitivity" is optional parameter.
+            function CountWordOccurenses(word,text, caseSensitivity) {
+                var matchesArray;
+                var wordRegEx = word;
+                
+                if (caseSensitivity == "i") {
+                    wordRegEx = new RegExp(word, "gi");
+                }
+                else {
+                    wordRegEx = new RegExp(word, "g");
+                }
+                matchesArray = text.match(wordRegEx);
+                
+                //If no matches - null is returned and nothing will be printed on the console.
+                //That`s why I return 0;
+                if (matchesArray==null) {
+                    return 0;
+                }
+                return matchesArray.length;
+            }
+
+            
+            
+
+    </script>
+</body>
+</html>
+
