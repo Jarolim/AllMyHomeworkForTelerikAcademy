@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+    <script>
+        var docFragment = document.createDocumentFragment();
+
+        // Creates text area element with some text in it.
+        var textArea = document.createElement('textArea');
+        textArea.id = 'textArea';
+        textArea.textContent = 'Some text to test with.';
+
+        // Creates element for changing text font color.
+        var inputFontColor = document.createElement('input');
+        inputFontColor.type = 'color';
+        inputFontColor.id = 'inputFontColor';
+        inputFontColor.onchange = changeTextFontColor;
+
+        // Creates element for changing background color.
+        var inputBackgroundColor = document.createElement('input');
+        inputBackgroundColor.type = 'color';
+        inputBackgroundColor.id = 'inputBackgroundColor';
+        inputBackgroundColor.onchange = changeBackgroundColor;
+
+        // Puts elements in docFragment
+        docFragment.appendChild(textArea);
+        docFragment.appendChild(inputFontColor);
+        docFragment.appendChild(inputBackgroundColor);
+
+        // Puts all elements from docFragment into document.body
+        document.body.appendChild(docFragment);
+
+        // Returns new value for text font color.
+        function changeTextFontColor() {
+            return textArea.style.color = document.getElementById('inputFontColor').value;
+        }
+
+        // Returns new value for background color.
+        function changeBackgroundColor() {
+            textArea.style.backgroundColor = document.getElementById('inputBackgroundColor').value;
+        }
+    </script>
+</html>

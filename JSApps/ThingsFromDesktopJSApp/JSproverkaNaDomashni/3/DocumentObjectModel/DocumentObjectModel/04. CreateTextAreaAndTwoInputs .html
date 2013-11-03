@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create text area and inputs</title>
+</head>
+<body>
+    <div id="wrapper"></div>
+    <script>
+        var wrapper = document.getElementById("wrapper");
+        var textArea = document.createElement("textarea");
+        textArea.placeholder = "Write sommething";
+        var firstInput = document.createElement("input");
+        firstInput.type = "color";
+        firstInput.onchange = changeColorsOnTextArea;
+        var secondInput = document.createElement("input")
+        secondInput.type = "color";
+        secondInput.onchange = changeColorsOnTextArea
+        wrapper.appendChild(textArea);
+        wrapper.appendChild(firstInput);
+        wrapper.appendChild(secondInput);
+
+        //Load colors on text area for first load the url on browser
+        textArea.style.color = "" + firstInput.value + "";
+        textArea.style.backgroundColor = "" + secondInput.value + "";
+        ondInput.type = "color";
+
+        function changeColorsOnTextArea() {
+            textArea.style.color = "" + firstInput.value + "";
+            textArea.style.backgroundColor = "" + secondInput.value + "";
+
+        }
+    </script>
+</body>
+</html>

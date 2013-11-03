@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+
+        Function.prototype.inherit = function (parent) {
+            this.prototype = new parent();
+            this.prototype.constructor = parent;
+        }
+
+        function PropultionUnit(acceleration) {
+           this.acceleration = acceleration;
+        }
+
+        function Wheel(radius) {
+            this.radius = radius;
+
+            var acceleration = 2 * Math.PI * this.radius | 0;
+            PropultionUnit.call(this, acceleration);
+        }
+
+        Wheel.inherit(PropultionUnit);
+
+        function Nozzle(power, afterburnerSwitchIsOn) {
+            var self = this;
+            self.power = power;
+            self.afterburnerSwitchIsOn = afterburnerSwitchIsOn;
+
+            var acceleration = self.power;
+
+            if (self.afterburnerSwitchIsOn) {
+                acceleration *= 2;
+            }
+
+            PropultionUnit.call(this, acceleration);
+        }
+
+        Nozzle.inherit(PropultionUnit);
+
+        function Propeller(numberOfFins, spinDirection) {
+            var self = this;
+            self.numberOfFins = numberOfFins;
+            self.spinDirection = spinDirection;
+            var acceleration = self.numberOfFins;
+            
+            if (spinDirection === "clockwise") {
+                acceleration *= 1;
+            }
+
+            if (spinDirection === "counter-clockwise") {
+                acceleration *= -1;
+            }
+
+            PropultionUnit.call(this, acceleration);
+        }
+
+        Propeller.inherit(PropultionUnit);
+
+        function Vehicle(speed, propulsionUnit) {
+            var self = this;
+            self.speed = speed;
+            self.propulsionUnit = propulsionUnit;
+        }
+
+        Vehicle.prototype.accelerate = function () {
+            this.speed += this.propulsionUnit.acceleration;
+            console.log("Accelerated vehicle to: " + this.speed);
+        }
+
+        function LandVehicle(speed, wheelRadius) {
+
+            Vehicle.call(this, speed, new Wheel(wheelRadius));
+        }
+
+        LandVehicle.inherit(Vehicle);
+
+        LandVehicle.prototype.accelerate = function () {
+            this.speed += (this.propulsionUnit.acceleration * 4);
+            console.log("Accelerated land vehicle to: " + this.speed);
+        }
+
+        function AirVehicle(speed) {
+            Vehicle.call(this, speed, new Nozzle(5, false));
+        }
+
+        AirVehicle.inherit(Vehicle);
+
+        AirVehicle.prototype.accelerate = function () {
+            this.speed += this.propulsionUnit.acceleration;
+            console.log("Accelerated Air vehicle to: " + this.speed);
+        }
+
+        AirVehicle.prototype.turnAfterBurnerOn = function () {
+            this.propulsionUnit = new Nozzle(this.propulsionUnit.power, true);
+            console.log("Turned afterburners ON");
+        }
+
+        AirVehicle.prototype.turnAfterBurnerOff = function () {
+            this.propulsionUnit = new Nozzle(this.propulsionUnit.power, false);
+            console.log("Turned afterburners OFF");
+        }
+
+        function WaterVehicle(speed) {
+            Vehicle.call(this, speed, new Propeller(5, "clockwise"));
+        }
+
+        WaterVehicle.inherit(Vehicle);
+
+        WaterVehicle.prototype.changeDirection = function () {
+            if (this.propulsionUnit.spinDirection === "clockwise") {
+                this.propulsionUnit = new Propeller(this.propulsionUnit.numberOfFins, "counter-clockwise");
+                console.log("Counter clockwise direction");
+            }
+            else {
+                this.propulsionUnit = new Propeller(this.propulsionUnit.numberOfFins, "clockwise");
+                console.log("Clockwise direction");
+            }
+        }
+
+        WaterVehicle.prototype.accelerate = function () {
+            this.speed += this.propulsionUnit.acceleration;
+            console.log("Accelerated Water vehicle to: " + this.speed);
+        }
+
+        Function.prototype.extend = function(parent){
+            for (var i = 1; i < arguments.length; i += 1) {
+                var name = arguments[i];
+                this.prototype[name] = parent.prototype[name];
+            }
+            return this;
+        }
+
+        function AmphibiuosVehicle(isOnLand, wheelRadius) {
+            this.isOnLand = isOnLand;
+            this.wheelRadius = wheelRadius;
+            this.vehicle = null;
+
+            if (this.isOnLand) {
+                this.vehicle = new LandVehicle(0, wheelRadius);
+            }
+            else {
+                this.vehicle = new WaterVehicle(0);
+            }
+
+        }
+
+        AmphibiuosVehicle.prototype.changeTerain = function () {
+            if (this.isOnLand) {
+                this.isOnLand = false;
+                this.vehicle = new WaterVehicle(this.vehicle.speed);
+                console.log("Changing terain to water");
+            }
+            else {
+                this.isOnLand = true;
+                this.vehicle = new LandVehicle(this.vehicle.speed, this.wheelRadius);
+                console.log("Changing terain to land");
+            }
+        }
+
+        AmphibiuosVehicle.prototype.accelerate = function () {
+            this.vehicle.accelerate();
+        }
+
+        var trabant = new LandVehicle(0, 5);
+        trabant.accelerate();
+        trabant.accelerate();
+        trabant.accelerate();
+
+        var flyingCar = new AirVehicle(0);
+        flyingCar.turnAfterBurnerOff();
+        flyingCar.accelerate();
+        flyingCar.accelerate();
+        flyingCar.accelerate();
+        flyingCar.turnAfterBurnerOn();
+        flyingCar.accelerate();
+        flyingCar.accelerate();
+        flyingCar.accelerate();
+
+        var waterCar = new WaterVehicle(0);
+        waterCar.accelerate();
+        waterCar.accelerate();
+        waterCar.accelerate();
+        waterCar.changeDirection();
+        waterCar.accelerate();
+        waterCar.accelerate();
+        waterCar.accelerate();
+
+        var turtleCar = new AmphibiuosVehicle(true, 5);
+        turtleCar.accelerate();
+        turtleCar.accelerate();
+
+        turtleCar.accelerate();
+        turtleCar.accelerate();
+        turtleCar.accelerate();
+        turtleCar.changeTerain();
+        turtleCar.accelerate();
+        turtleCar.accelerate();
+        turtleCar.accelerate();
+        turtleCar.accelerate();
+    </script>
+</body>
+</html>

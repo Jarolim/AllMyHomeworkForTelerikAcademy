@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Trash Bin</title>
+    <style>
+        .hide { display: none; }
+
+        .trash {
+            position: absolute;
+            cursor: move;
+        }
+
+        .trash-bin {
+            width: 129px;
+            height: 250px;
+            background: url(images/trash-bin-closed.png) no-repeat;
+            background-size: 100%;
+        }
+
+        /* TODO: Preload */
+        .trash-bin.opened {
+            background-image: url(images/trash-bin-opened.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="trash-bin"></div>
+
+    <img src="images/trash.png" alt="Trash" width="46" height="37" draggable="true" class="trash" />
+    <img src="images/trash.png" alt="Trash" width="46" height="37" draggable="true" class="trash" />
+
+    <script src="file:///E:/GitHub/demos/j-library/src/core.js"></script>
+    <script>window.J || document.write('<script src="http://git.io/KMgc1w"><\/script>')</script>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

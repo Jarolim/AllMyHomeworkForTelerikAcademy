@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>LocalStorage polyfill - Telerik JavaScript Part 2 Course (2013) homework</title>
+<link rel="stylesheet" href="css/main.css" />
+<body>
+  <h1>LocalStorage polyfill</h1>
+
+  <form id=set-item >
+    <input name=key placeholder=key required />
+    <input name=value placeholder=value required />
+    <button type=submit >Set</button>
+  </form>
+
+  <form id=remove-item >
+    <input name=key placeholder=key required />
+    <button type=submit >Remove</button>
+  </form>
+
+  <form id=choose-storage >
+    <label>
+      Local Storage
+      <input type=radio name=storage_type value=local checked=checked />
+    </label>
+
+    <label>
+      Session Storage
+      <input type=radio name=storage_type value=session />
+    </label>
+  </form>
+
+  <table id=local-storage >
+    <thead>
+      <tr>
+        <th>Key</th><th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script src="js/main.js"></script>
+</body>

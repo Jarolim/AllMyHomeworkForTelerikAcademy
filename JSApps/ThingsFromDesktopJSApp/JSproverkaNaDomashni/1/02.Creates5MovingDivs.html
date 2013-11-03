@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body style="margin: 0; padding: 0" id="body">    
+</body>
+    <script>       
+        // Returns random color.
+        function generateRandomColor() {
+            var redComponent = (Math.random() * 255) | 0;
+            var greenComponent = (Math.random() * 255) | 0;
+            var blueComponent = (Math.random() * 255) | 0;
+
+            return "rgb(" + redComponent + "," + greenComponent + "," + blueComponent + ")";
+        }
+
+        // Generates a div.
+        function generateDiv() {
+            // Used constant variables.
+            var width = 50;
+            var height = 200;
+            var leftPos = 50;
+            var topPos = 50;
+            var borderRadius = 5;
+            var borderWidth = 2;
+
+            var div = document.createElement('div');
+            var strong = document.createElement('strong');
+            var strongContent = document.createTextNode('div');
+
+            strong.appendChild(strongContent);
+            div.appendChild(strong);
+
+            div.style.position = 'absolute';
+            div.style.left = leftPos + 'px';
+            div.style.top = topPos + 'px';
+            div.style.margin = 350 + 'px';
+            div.style.width = width + 'px';
+            div.style.height = height + 'px';
+            div.style.backgroundColor = generateRandomColor();
+            div.style.border = borderWidth + 'px solid ' + generateRandomColor();
+            div.style.borderRadius = borderRadius + 'px';
+
+            document.body.appendChild(div);
+        }
+
+        for (var i = 0; i < 5; i++) {
+            generateDiv();
+        }
+
+        // Gets all divs.
+        var allDivs = document.querySelectorAll('div');
+
+        var angle = 0;
+        var radius = 50;
+        var maxAngle = false;
+
+        // Moves all divs.
+        function animateDiv() {
+            // Calculates rotation coordinates for each div.
+            for (var i = 0; i < 5; i++) {
+                allDivs[i].style.left = Math.cos(angle + 2 * Math.PI / allDivs.length * i) / radius * 10000 + 'px';
+                allDivs[i].style.top = Math.sin(angle + 2 * Math.PI / allDivs.length * i) / radius * 10000 + 'px';
+            }
+            // Changes rotation angle.
+            angle = angle - 0.1;
+
+            // Set 100 ms timeout.
+            setTimeout(animateDiv, 100);
+        }
+
+        animateDiv();
+    </script>
+</html>
+

@@ -1,0 +1,132 @@
+﻿#game_field {		
+	margin:auto;
+	margin-top: 30px;
+	width: 70%;
+	height: 380px;
+}
+
+#question_box {
+	margin:auto;
+	margin-top: 30px;
+	width: 50%;
+	min-height: 100px;
+    color: #6B6565;
+}
+
+#player {
+	margin-left: 20%;
+	margin-top: 30px;
+	float: left;
+	width: 300px;
+	height: 100px;
+
+}
+
+#dummy_player {
+	margin-right: 20%;
+	float:right;
+	margin-top: 30px;
+	width: 300px;
+	height: 100px;
+	right: 50%
+}
+
+#mouse_pointer {
+	background-image:url('../images/world_map.png');
+	width:700px;
+	height:333px;	   
+    margin:2px;
+    margin-left: 10%;
+}
+
+#flag {
+	position:relative;
+	visibility:hidden;
+	z-index:2;
+	width:50px;
+	height:50px;
+}
+
+#dummy_flag { 
+        padding-left: 80px;
+      
+    }
+
+.container {
+	border-radius: 5px;
+	border: 1px solid black;
+	padding:10px;
+	margin:5px;
+}
+
+	.container #question_child {
+		background-color: green;
+	}
+
+	.container #player_child {
+		background-color: purple;
+	}
+	
+	.container #dummy_child {
+		background-color: orange;
+	}
+
+	.container #field_child, .container #question_child, .container #player_child, .container #dummy_child {
+        float:left;
+		height: 40px;
+		width: 80px;
+		border-radius:5px;
+		user-select:none;
+		text-align:center;
+		vertical-align:central;
+		color:white;
+		font-weight:bold; 
+		text-align:center;
+	}
+
+.flags {
+    height: 50px;
+    width: 50px;
+}
+
+#flag1 {
+    padding-top: 30px;
+}
+
+#flag2 {
+    padding-top: 60px;
+}
+
+/*Questions styles*/
+.multiple-question {
+    margin-left:100px;
+    width: 500px;
+    text-align: center;
+    border: 1px solid #000;
+    top:0px;
+}
+
+    .multiple-question td, .multiple-question th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #000;
+        border-collapse: collapse;
+    }
+
+    .short-question{
+        text-align: center;
+        width: 500px;
+    }
+
+    .short-question p{
+        font-weight: bold;
+    }
+
+    .short-question input[type=text]{
+        margin-bottom: 5px;
+    }
+
+
+/*End of questions styles*/
+
+

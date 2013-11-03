@@ -1,0 +1,25 @@
+﻿.multiple-question {
+    width: 500px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+    .multiple-question td, .multiple-question th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #000;
+        border-collapse: collapse;
+    }
+
+    .short-question{
+        text-align: center;
+        width: 500px;
+    }
+
+    .short-question p{
+        font-weight: bold;
+    }
+
+    .short-question input[type=text]{
+        margin-bottom: 5px;
+    }

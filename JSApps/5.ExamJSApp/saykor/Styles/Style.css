@@ -1,0 +1,38 @@
+﻿body {
+    font-size: 0.9em;
+}
+
+#window {
+    width: 600px;
+    position: absolute;
+}
+
+#window fieldset {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    width: 250px;
+}
+
+#window fieldset input {
+    text-align: right;
+    margin: 2px;
+}
+
+#organizer {
+    width: 300px;
+    margin: 0 auto;
+    padding: 47px 0 0 0;
+    background: url('/Images/orgHead.png') transparent no-repeat 0 0;
+    display: none;
+    position: absolute;
+}
+
+#bottom {
+    width: 300px;
+    height: 90px;
+    background: url('/Images/orgFoot.png') transparent no-repeat 0 0;
+}
+#pnlListTurns {
+    font-size: 0.8em;
+}

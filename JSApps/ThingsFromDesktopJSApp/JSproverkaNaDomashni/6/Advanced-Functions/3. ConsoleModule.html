@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Module that works with the console object</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script type="text/javascript">
+        var specialConsole = (function () {
+
+            function writeToConsole(message) {
+                if (arguments.length == 1) {
+                    console.log(message.toString());
+                }
+                else {
+                    var message = arguments[0];
+                    for (var i = 0; i < arguments.length; i++) {
+                        message = message.replace(/{(\d)}/, arguments[i + 1]);
+                    }
+                    return message.toString();
+                }
+            }
+
+            function writeLine() {
+                var text = writeToConsole.apply(null, arguments);
+                console.log(text);
+            }
+
+            function writeError() {
+                var text = writeToConsole.apply(null, arguments);
+                console.error(text);
+            }
+
+            function writeWarning() {
+                var text = writeToConsole.apply(null, arguments);
+                console.warn(text);
+            }
+
+            return {
+                writeLine: writeLine,
+                writeError: writeError,
+                writeWarning: writeWarning
+            };
+        })();
+
+        specialConsole.writeLine("Message: hello");
+        specialConsole.writeLine("Message: {0} {1}", "hello", "Pesho");
+        specialConsole.writeError("Error: {0}", "Something happened");
+        specialConsole.writeWarning("Warning: {0}", "A warning");
+    </script>
+</body>
+</html>

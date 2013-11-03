@@ -1,0 +1,249 @@
+﻿html, body, h1, form, fieldset, legend, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+.player-id, #question-label {
+    zoom: 1;
+}
+
+    .player-id:after, #question-label:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+body {
+    background: url("../images/main-bckg.jpg") repeat-x;
+    color: #fff;
+    font-weight: bolder;
+}
+
+#wrapper {
+    display: none;
+    text-align: center;
+}
+
+#question-box, #score-box, #player, #dummy-player, #welcome-screen, #message, #help-box {
+    background-color: rgba(0,0,0,0.5);
+    margin: 0 auto;
+}
+
+.container {
+    border-radius: 5px;
+    border: 3px solid #fff;
+    padding: 10px;
+    margin: 5px;
+}
+
+/*Welcome screen styles*/
+#welcome-screen {
+    margin: 150px auto;
+    width: 500px;
+    height: 350px;
+    text-align: center;
+}
+
+    #welcome-screen h1 {
+        margin-bottom: 75px;
+        font-size: 55px;
+    }
+
+    #welcome-screen form {
+        text-align: center;
+    }
+
+    #welcome-screen input {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+#nickname {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#message {
+    margin: auto;
+    margin-top: 30px;
+    width: 50%;
+    min-height: 20px;
+}
+/*End of welcome screen styles*/
+
+/*Game field styles*/
+#game-field {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 860px;
+    height: 200px;
+    background: url("/images/game-field-bckg.png") no-repeat;
+}
+
+#flags-container {
+    width: 700px;
+    height: 330px;
+    margin: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.flag {
+    position: relative;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+}
+
+.flags {
+    height: 50px;
+    width: 50px;
+}
+/*End of game field styles*/
+
+/*Questions styles*/
+#question-box {
+    margin: auto;
+    margin-top: 30px;
+    width: 50%;
+    min-height: 100px;
+}
+
+#question-label {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(59,161,12,0.5);
+    float: left;
+}
+
+.multiple-question {
+    margin-left: 100px;
+    width: 500px;
+    text-align: center;
+    border: 1px solid #fff;
+    top: 0px;
+}
+
+    .multiple-question td, .multiple-question th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #fff;
+        border-collapse: collapse;
+    }
+
+    .multiple-question td {
+        cursor: pointer;
+    }
+
+.short-question {
+    text-align: center;
+    width: 500px;
+}
+
+    .short-question p {
+        font-weight: bold;
+    }
+
+    .short-question input[type=text] {
+        margin-bottom: 5px;
+    }
+/*End of questions styles*/
+
+/*Players styles*/
+#player, #dummy-player {
+    margin-top: 30px;
+    width: 300px;
+}
+
+#player {
+    margin-left: 20%;
+    float: left;
+}
+
+#dummy-player {
+    margin-right: 20%;
+    float: right;
+    right: 50%;
+}
+
+.name {
+    float: left;
+}
+
+.points {
+    float: right;
+}
+
+.name, .points {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#player .name, #player .points {
+    background-color: rgba(255,216,0,0.5);
+}
+
+#dummy-player .name, #dummy-player .points {
+    background-color: rgba(255,106,0,0.5);
+}
+/*End of players styles*/
+
+/*Navigation styles*/
+#nickname-button, #start-game-btn, #end-game-btn, #help-btn, #score-btn {
+    background: #384313;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    display: inline-block;
+    font: 14px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin: 7px 0px 30px 7px;
+    padding: 7px 7px;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+}
+/*End of navigation styles*/
+
+/* Social Share Buttons styles */
+#social-buttons {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.social-buttons {
+    padding: 0px;
+    margin: 0px;
+}
+/* End of Social Share Buttons styles */
+
+/* Score list/Help box styles */
+#score-box, #help-box {
+    width: 860px;
+    margin-top: 25px;
+}
+
+    #score-board, #score-board p, #help-box p {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+    }
+
+.score-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#help-box p {
+    margin: auto;
+}
+/* End of score list/Help box styles */
+
+
+
+
+

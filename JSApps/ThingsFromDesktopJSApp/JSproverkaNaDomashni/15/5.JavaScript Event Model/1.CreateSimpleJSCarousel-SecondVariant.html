@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JS Console - Example</title>
+    <style>
+        .button {
+            width:50px;
+            height:50px;
+            border-radius:25px;
+            border-width:5px;
+            border-style:solid;
+            border-color: #494949; 
+            background: #191919; /* Old browsers */
+            background: -moz-radial-gradient(center, ellipse cover,  #191919 0%, #424242 52%, #606060 71%, #a3a3a3 100%); /* FF3.6+ */
+            background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#191919), color-stop(52%,#424242), color-stop(71%,#606060), color-stop(100%,#a3a3a3)); /* Chrome,Safari4+ */
+            background: -webkit-radial-gradient(center, ellipse cover,  #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-radial-gradient(center, ellipse cover,  #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* Opera 12+ */
+            background: -ms-radial-gradient(center, ellipse cover,  #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* IE10+ */
+            background: radial-gradient(ellipse at center,  #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#191919', endColorstr='#a3a3a3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            color:white;
+            font-size:24px;            
+        }
+        #leftButton {
+            position:absolute;
+            left:10px;
+            top:200px;
+        }
+        #rightButton {
+            position:absolute;
+            left:540px;
+            top:200px;
+        }
+        #imageWrapper {
+            width: 600px;
+            height:450px;
+            background-color:green;
+            position:relative;
+            left:300px;
+            top:50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="imageWrapper">
+            <img id="carouselImage" src="http://www.wallsave.com/wallpapers/1600x1200/puma/348804/puma-animals-348804.jpg" alt="img1" width="600px" height="450px"/>
+            <button id="leftButton" class="button"><</button>
+            <button id="rightButton" class="button">></button>
+        </div>
+    </div>
+    <div id="wrapper">
+    </div>    
+	<script>
+	    
+	        var module = (function () {
+	            var images = [
+                    "http://www.wallsave.com/wallpapers/1600x1200/puma/348804/puma-animals-348804.jpg",
+                    "http://4.bp.blogspot.com/-V4fKTptGkjE/TWsnzLy2hgI/AAAAAAAAC-o/1KPy7Ch6sFA/s1600/animal%2B%25288%2529-772406.jpg",
+                    "http://2.bp.blogspot.com/-xSpbXVHNyYA/TsUjXyj6jaI/AAAAAAAAAA8/VovZ9hcZWMg/s1600/3d_animals_-_Elephants.jpg",
+                    "http://www.jattyouth.com/photobyusers/data/Animals/501933a6111c2.jpg",
+                    "http://data.whicdn.com/images/16457721/animals-cool-elephant-496547_large.jpg",
+                    "http://images4.fanpop.com/image/photos/16700000/Cute-Kitten-babies-pets-and-animals-16731266-1600-1200.jpg",
+                    "http://designyoutrust.com/wp-content/uploads/2012/12/animal_images_3.jpg"];
+	            var imagesIndex = 0;
+	            var carouselImage = document.getElementById("carouselImage");
+	            var intervalId = setInterval(function () { onLeftClick() }, 5000);
+
+	            function onLeftClick() {
+	                if (imagesIndex === images.length - 1) {
+	                    imagesIndex = 0;
+	                }
+	                else {
+	                    imagesIndex++;
+	                }
+	                carouselImage.src = images[imagesIndex];
+	                clearInterval(intervalId);
+	                intervalId = setInterval(function () { onLeftClick() }, 3000);
+
+	            }
+	            function onRightClick() {
+	                if (imagesIndex === 0) {
+	                    imagesIndex = images.length - 1;
+	                }
+	                else {
+	                    imagesIndex--;
+	                }
+	                carouselImage.src = images[imagesIndex];
+	                clearInterval(intervalId);
+	                intervalId = setInterval(function () { onRightClick() }, 3000);
+	            }
+
+	            function addHandler(element, eventType, eventHandler) {
+	                if (element.addEventListener) {
+	                    element.addEventListener(eventType, eventHandler, false);
+	                } else {
+	                    element.attachEvent("on" + eventType, eventHandler);
+	                }
+	            }
+	            return {
+	                addHandler: addHandler,
+	                onRightClick: onRightClick,
+	                onLeftClick: onLeftClick
+	            };
+	        })();
+	    (function () {
+	        //var module = new module();
+	        var leftButton = document.getElementById("leftButton");
+	        module.addHandler(leftButton, 'click', module.onLeftClick);
+
+	        var rightButton = document.getElementById("rightButton");
+	        module.addHandler(rightButton, 'click', module.onRightClick);
+	    })();
+	</script>
+</body>
+</html>

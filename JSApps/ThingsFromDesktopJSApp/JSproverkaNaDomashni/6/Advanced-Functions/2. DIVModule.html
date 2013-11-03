@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Module that works with moving div elements</title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        #btn-add-rect-element {
+            margin-bottom: 20px;
+        }
+        
+        div div {
+            background-color: #fefefe;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #000000;
+            color: #838383;
+        }
+        
+        .random-rect-el {
+            width: 60px;
+            height: 30px;
+        }
+        
+        .random-circ-el {
+            border-radius: 20px;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <input type="button" id="btn-add-rect-element" value="Add rectangular element" />
+        <input type="button" id="btn-add-circ-element" value="Add circular element" />
+    </div>
+    <script type="text/javascript">
+        (function addEvent() {
+            var rectElement = document.getElementById('btn-add-rect-element');
+            if (rectElement.addEventListener) {
+                rectElement.addEventListener("click", addRectElement, false);
+            } else {
+                rectElement.attachEvent('onclick', addRectElement);
+            }
+
+            var circElement = document.getElementById('btn-add-circ-element');
+            if (circElement.addEventListener) {
+                circElement.addEventListener("click", addCircElement, false);
+            } else {
+                circElement.attachEvent('onclick', addCircElement);
+            }
+        } ());
+
+        function addRectElement() {
+            var wrapper = document.getElementById("wrapper");
+            var newRectElement = document.createElement("div");
+            var text = document.createTextNode("rect");
+
+            newRectElement.appendChild(text);
+            newRectElement.classList.add("random-rect-el");
+            randomizeDiv(newRectElement);
+            wrapper.appendChild(newRectElement);
+            moveRectElement(newRectElement);
+        }
+
+        function addCircElement() {
+            var wrapper = document.getElementById("wrapper");
+            var newCircElement = document.createElement("div");
+            var text = document.createTextNode("circ");
+
+            newCircElement.appendChild(text);
+            newCircElement.classList.add("random-circ-el");
+            randomizeDiv(newCircElement);
+            wrapper.appendChild(newCircElement);
+            moveCircElement(newCircElement);
+        }
+
+        function randomizeDiv(newDiv) {
+            newDiv.style.backgroundColor = generateRandomColor();
+            newDiv.style.color = generateRandomColor();
+            newDiv.style.borderColor = generateRandomColor();
+
+            newDiv.style.position = "absolute";
+            var maxDistanceFromScreen = 250;
+            var minDistanceFromScreen = 50;
+            var topPosition = parseInt(Math.random() * (screen.height - maxDistanceFromScreen));
+            newDiv.style.top = minDistanceFromScreen + topPosition + "px";
+            var leftPosition = parseInt(Math.random() * (screen.width - maxDistanceFromScreen));
+            newDiv.style.left = minDistanceFromScreen + leftPosition + "px";
+        }
+
+        function generateRandomColor() {
+            var red = (Math.random() * 256) | 0;
+            var green = (Math.random() * 256) | 0;
+            var blue = (Math.random() * 256) | 0;
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+        function moveRectElement(element) {
+            var currentLeft = parseInt(element.style.left);
+            var minLeft = currentLeft;
+            var maxLeft = currentLeft + 300;
+
+            var currentTop = parseInt(element.style.top);
+            var minTop = currentTop;
+            var maxTop = currentTop + 200;
+
+            var direction = "right";
+
+            setInterval(
+            function move() {
+                if (direction == "right" && currentLeft < maxLeft) {
+                    currentLeft += 10;
+                    element.style.left = currentLeft + "px";
+                }
+
+                if (direction == "right" && currentLeft >= maxLeft) {
+                    direction = "down";
+                }
+
+                if (direction == "down" && currentTop < maxTop) {
+                    currentTop += 10;
+                    element.style.top = currentTop + "px";
+                }
+
+                if (direction == "down" && currentTop >= maxTop) {
+                    direction = "left";
+                }
+
+                if (direction == "left" && currentLeft > minLeft) {
+                    currentLeft -= 10;
+                    element.style.left = currentLeft + "px";
+                }
+
+                if (direction == "left" && currentLeft <= minLeft) {
+                    direction = "top";
+                }
+
+                if (direction == "top" && currentTop > minTop) {
+                    currentTop -= 10;
+                    element.style.top = currentTop + "px";
+                }
+
+                if (direction == "top" && currentTop <= minTop) {
+                    direction = "right";
+                }
+            }
+            , 50);
+        }
+
+        function moveCircElement(element) {
+            var angle = 0;
+            var radius = 10;
+            var x = 0;
+            var y = 0;
+
+            setInterval(
+            function move() {
+                var currentX = parseInt(element.style.left);
+                var currentY = parseInt(element.style.top);
+
+                x = radius * Math.cos(angle * Math.PI / 180) + currentX;
+                y = radius * Math.sin(angle * Math.PI / 180) + currentY;
+                element.style.top = y + "px";
+                element.style.left = x + "px";
+
+                angle += 5;
+            }, 50);
+        }
+    </script>
+</body>
+</html>

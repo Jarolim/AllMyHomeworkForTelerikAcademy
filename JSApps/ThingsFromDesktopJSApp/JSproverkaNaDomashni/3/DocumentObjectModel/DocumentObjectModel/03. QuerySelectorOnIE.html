@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Query Selector</title>
+</head>
+<body>
+    <header>
+		<nav id="main-nav">
+			<ul>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Profile</a>
+				</li>
+				<li>
+					<a href="#">Friends</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+    <!-- If don't want to download jquery we can you use it from internet, but it's slower. See the next sentence -->
+    <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+
+     <script src="jQuery.js"></script>
+     <script>
+         if (typeof document.querySelector != 'function' ) {
+             document.querySelectorAll = function (selectorString) {
+                 return $(selectorString);
+             }
+
+             document.querySelector = function (selectorString) {
+                 return $(selectorString)[1];
+             }
+         }
+      
+
+         var mainNav = document.querySelector("#main-nav");
+
+         // If you are not sure that QuerySelector run properly just uncomment the next sentence.
+         //document.write("Check if QuerySelector run <br/>" + mainNav.innerHTML + "<br/>");
+
+         var navItems = mainNav.querySelectorAll("ul > li > a");
+         document.write("Check if QuerySelectorAll and QuerySelector run : <br/> <br/>");
+         for (var i = 0; i < navItems.length; i++) {        
+             document.write(navItems[i].innerHTML + "<br/>")
+
+             //Try it and in the console
+             console.log(navItems[i].innerHTML)
+         }
+    </script>
+</body>
+</html>

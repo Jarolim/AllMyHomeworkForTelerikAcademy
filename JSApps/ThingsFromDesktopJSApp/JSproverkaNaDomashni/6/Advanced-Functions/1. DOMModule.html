@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DOM Module</title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        div {
+            border: 1px solid black;
+        }
+        
+        #main-div {
+            width: 400px;
+            height: 100px;
+        }
+        
+        #inner-div {
+            width: 200px;
+            height: 50px;
+        }
+        
+        p {
+            background-color: Red;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-div">
+        Outer DIV
+        <div id="inner-div">
+            Inner DIV
+        </div>
+    </div>
+    <p>
+        First paragraph</p>
+    <p>
+        Second paragraph</p>
+    <script type="text/jscript">
+        var domModule = (function () {
+            function addToParent(selector, elementToAdd) {
+                var element = document.getElementById(selector);
+                var parentElement = element.parentNode;
+                var newElement = document.createElement(elementToAdd);
+                parentElement.appendChild(newElement);
+            }
+
+            function removeElement(selector) {
+                var elementToRemove = document.getElementById(selector);
+                elementToRemove.parentNode.removeChild(elementToRemove);
+                return false;
+            }
+
+            function attachEventHandler(selector, eventType, eventHandler) {
+                var element = document.getElementById(selector);
+
+                if (element.addEventListener) {
+                    element.addEventListener(eventType, eventHandler, false);
+                } else {
+                    element.attachEvent("on" + eventType, eventHandler);
+                }
+            }
+
+            function getElementsByCSSSelector(selector) {
+                var elements = document.querySelectorAll(selector);
+                return elements;
+            }
+
+            return {
+                addToParent: addToParent,
+                removeElement: removeElement,
+                attachEventHandler: attachEventHandler,
+                getElementsByCSSSelector: getElementsByCSSSelector
+            };
+        })();
+
+        domModule.addToParent("#main-div", "<p>");
+        domModule.removeElement("#inner-div");
+        domModule.attachEventHandler("#main-div", "onclick", function () { alert("Event attached!"); });
+        domModule.getElementsByCSSSelector("p");
+
+    </script>
+</body>
+</html>

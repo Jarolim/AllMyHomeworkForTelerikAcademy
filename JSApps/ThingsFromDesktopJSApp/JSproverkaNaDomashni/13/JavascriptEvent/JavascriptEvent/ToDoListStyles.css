@@ -1,0 +1,29 @@
+﻿body {
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: lightblue;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+    a:active {
+        color: white;
+    }
+
+input[type="text"] {
+    margin-bottom: 10px;
+}
+
+#container {
+    border-radius: 10px;
+    background-color: lightblue;
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    overflow: hidden;
+}

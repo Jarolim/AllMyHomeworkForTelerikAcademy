@@ -1,0 +1,86 @@
+﻿	
+
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body style="margin: 0; padding: 0" id="body">
+        <input id="count" type="text" name="count" />
+        <input type="submit" onclick="createDivs()" value="Enter number of divs" />
+        <div id="rap">
+     
+        </div>
+    </body>
+        <script>
+            // Used constant variables.
+            var minSize = 20;
+            var maxSize = 100;
+            var minBorderWidth = 1;
+            var maxBorderWidth = 20;
+            var minBorderRadius = 1;
+            var maxBorderRadius = 100;
+            var reduceScreenSize = 1100;
+
+            function createDivs() {
+                // Gets the number of divs to generate.
+                var numberOfDivs = parseInt(document.getElementById("count").value);
+                // 
+                var AllElementsColection = document.createDocumentFragment();
+
+                for (var i = 0; i < numberOfDivs; i++) {
+                    // Creates next div.
+                    var nextRandomDiv = document.createElement("div");
+                    // Generates random size.
+                    nextRandomDiv.style.height = generateRandomSize(minSize, maxSize);
+                    nextRandomDiv.style.width = generateRandomSize(minSize, maxSize);
+                    // Generates random colors.
+                    nextRandomDiv.style.backgroundColor = generateRandomColor();
+                    nextRandomDiv.style.color = generateRandomColor();
+                    // Generates random posicion on screen.
+                    nextRandomDiv.style.position = "absolute";
+                    nextRandomDiv.style.top = generateRandomPosition();
+                    nextRandomDiv.style.left = generateRandomPosition();
+                    // Creates a strong element.
+                    var newStrongElement = document.createElement("strong");
+                    newStrongElement.textContent = "div";
+                    nextRandomDiv.appendChild(newStrongElement);
+                    // Generates random border for next div.
+                    nextRandomDiv.style.borderStyle = "solid";
+                    nextRandomDiv.style.borderRadius = generateRandomSize(minBorderRadius, maxBorderRadius);
+                    nextRandomDiv.style.borderColor = generateRandomColor();
+                    nextRandomDiv.style.borderWidth = generateRandomSize(minBorderWidth, maxBorderWidth);
+                    // Put created div in colection.
+                    AllElementsColection.appendChild(nextRandomDiv);
+                }
+
+                var bodyElement = document.getElementById("rap");
+                // Removes previous divs.
+                while (bodyElement.firstChild) {
+                    bodyElement.removeChild(bodyElement.firstChild);
+                }
+                // Put new colection of divs.
+                bodyElement.appendChild(AllElementsColection);                
+            }
+
+            // Returns random position.
+            function generateRandomPosition() {
+                return Math.random() * (screen.width - reduceScreenSize) + "px";
+            }
+
+            // Returns random size.
+            function generateRandomSize(min, max) {
+                return ((Math.random() * (max - min) | 0) + min) + "px";
+            }
+
+            // Returns random color.
+            function generateRandomColor() {
+                var redComponent = (Math.random() * 255) | 0;
+                var greenComponent = (Math.random() * 255) | 0;
+                var blueComponent = (Math.random() * 255) | 0;
+
+                return "rgb(" + redComponent + "," + greenComponent + "," + blueComponent + ")";
+            }
+        </script>
+    </html>
+

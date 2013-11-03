@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create Div Elements</title>
+</head>
+<body>
+    <script>
+        var divContainer = document.createElement("div");
+        document.body.appendChild(divContainer);
+
+        var dFrag = document.createDocumentFragment();
+
+        for (var i = 0; i < 20; i++) {
+            var width = Math.floor(Math.random() * 80 + 20);
+            var bgColor = '#' + Math.random().toString(16).substring(4);
+            var fontColor = '#' + Math.random().toString(16).substring(4);
+            var borderColor = '#' + Math.random().toString(16).substring(4);
+            var borderRadius = Math.floor(Math.random() * 20);
+            var borderWidth = Math.floor(Math.random() * 20);
+            var positionTop = Math.floor(Math.random() * window.innerHeight);
+            var positionLeft = Math.floor(Math.random() * window.innerWidth);
+            var divInnerHtml = "<strong>div</strong>";
+            var divElement = document.createElement('div');
+
+            divElement.style.display = "block";
+            divElement.style.width = width + "px";
+            divElement.style.height = 20 + "px";
+            divElement.style.backgroundColor = bgColor;
+            divElement.style.color = fontColor;
+            divElement.style.borderColor = borderColor;
+            divElement.style.borderRadius = borderRadius + "px";
+            divElement.style.borderWidth = borderWidth + "px";
+            divElement.style.position = 'absolute';
+            divElement.style.top = positionTop + "px";
+            divElement.style.left = positionLeft + "px";
+            divElement.innerHTML = divInnerHtml;
+
+            dFrag.appendChild(divElement);
+        }
+
+        divContainer.appendChild(dFrag);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shim for querySelector() and querySelectorAll()</title>
+</head>
+<body>
+    <div id="Div1" class="divs">First Div Element</div>
+    <div id="Div2" class="divs">Second Div Element</div>
+    <div id="Div3" class="divs">Third Div Element</div>
+    <div id="Div4" class="divs">Fourth Div Element</div>
+    <div id="Div5" class="divs">Fifth Div Element</div>
+    <div id="Div6" class="divs">Sixth Div Element</div>
+
+    <script>
+        if (!document.getElementsByClassName) {
+            document.getElementsByClassName = function(classname) {
+                var a = [];
+                var re = new RegExp('(^| )' + classname + '( |$)');
+                var els = document.getElementsByTagName("*");
+                for (var i = 0, j = els.length; i < j; i++)
+                    if (re.test(els[i].className)) a.push(els[i]);
+                return a;
+            }
+        }
+
+        if (!document.querySelector || !document.querySelectorAll) {
+            document.querySelector = function (selector) {
+                var select = null;
+
+                if (selector.charAt(0) == '#') {
+                    var id = selector.substring(1);
+                    select = document.getElementById(id);
+                } else if (selector.charAt(0) == '.') {
+                    var className = selector.substring(1);
+                    select = document.getElementsByClassName(className)[0];
+                } else {
+                    var tagName = selector;
+                    select = document.getElementsByTagName(tagName)[0];
+                }
+                
+                return select;
+            }
+
+            document.querySelectorAll = function (selector) {
+                var select = null;
+
+                if (selector.charAt(0) == '.') {
+                    var className = selector.substring(1);
+                    select = document.getElementsByClassName(className);
+                } else {
+                    var tagName = selector;
+                    select = document.getElementsByTagName(tagName);
+                }
+
+                return select;
+            }
+        }
+
+        var selectDiv = document.querySelector('#Div3');
+        var selectAllDivs = document.querySelectorAll('.divs');
+
+        console.log(selectDiv.innerHTML);
+        console.log(' ------ ');
+
+        for (var i = 0; i < selectAllDivs.length; i++) {
+            console.log(selectAllDivs[i].innerHTML);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Divs Rotation</title>
+    <script>
+        function onBodyLoad() {
+            var drawSinTimer = setInterval(function () { gameLoop() }, 100);
+            // clearInterval(drawSinTimer); // function for stopping timer
+
+            var shape1 = new Shape(300,300,100);
+            var shape2 = new Shape(300,300,100);
+            var shape3 = new Shape(300,300,100);
+            var shape4 = new Shape(300,300,100);
+            var shape5 = new Shape(300,300,100);
+            document.body.appendChild(shape1.getElement());
+            document.body.appendChild(shape2.getElement());
+            document.body.appendChild(shape3.getElement());
+            document.body.appendChild(shape4.getElement());
+            document.body.appendChild(shape5.getElement());
+
+            function gameLoop() {
+                shape1.update();
+                shape2.update();
+                shape3.update();
+                shape4.update();
+                shape5.update();
+                shape1.draw();
+                shape2.draw();
+                shape3.draw();
+                shape4.draw();
+                shape5.draw();
+            }
+        }
+
+        function Shape(rotationCenterX, rotationCenterY, rotationRadius) {
+            this._rotationCenterX = rotationCenterX;
+            this._rotationCenterY = rotationCenterY;
+            this._rotationRadius = rotationRadius;
+
+            this._shapeCenterX = 0;
+            this._shapeCenterY = 0;
+            this._shapeAngle = this._getRandomInt(0,359);
+            this._shapeAngleChange = 1;
+            this._shapeWidth = 0;
+            this._shapeHeight = 0;
+
+            this._div = document.createElement("div");
+            this._div.style.display = "block";
+            this._div.style.width = this._getRandomArbitrary(20, 100) + "px";
+            this._div.style.height = this._getRandomArbitrary(20, 100) + "px";
+            this._div.style.background = this._getRandomColor();
+            this._div.style.color = this._getRandomColor();
+            this._div.style.position = "absolute";
+            this._div.style.borderStyle = "solid";
+            this._div.style.borderRadius = this._getRandomInt(0, 30) + "px";
+            this._div.style.borderColor = this._getRandomColor();
+            this._div.style.borderWidth = this._getRandomInt(1, 7) + "px";
+        }                
+        
+        Shape.prototype._degreesToRadians = function (degrees) {
+            return degrees * (Math.PI / 180);
+        }
+
+        Shape.prototype.getElement = function () {
+            return this._div;
+        }
+
+        // calc next X,Y position
+        Shape.prototype.update = function () {
+            this._shapeCenterX = this._rotationRadius *
+                Math.sin(this._degreesToRadians(this._shapeAngle)) + this._rotationCenterX;
+            this._shapeCenterY = this._rotationRadius *
+                Math.cos(this._degreesToRadians(this._shapeAngle)) + this._rotationCenterY;
+
+            this._shapeAngle += this._shapeAngleChange;
+            if (this._shapeAngle > 359) {
+                this._shapeAngle = 0;
+            }
+        }
+
+        Shape.prototype.draw = function () {
+            this._div.style.left = this._shapeCenterX + "px";
+            this._div.style.top = this._shapeCenterY + "px";
+        }
+
+        // Returns a random number between min and max
+        Shape.prototype._getRandomArbitrary = function (min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        // Returns a random integer between min and max
+        // Using Math.round() will give you a non-uniform distribution!
+        Shape.prototype._getRandomInt = function (min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Generate random css color 
+        // It generates string: rgb(x,x,x)
+        Shape.prototype._getRandomColor = function () {
+            return "rgb(" + this._getRandomInt(0, 255) + ", " + this._getRandomInt(0, 255) + ", " + this._getRandomInt(0, 255) + ")";
+        }
+    </script>
+</head>
+<body onload="onBodyLoad();">
+
+</body>
+</html>

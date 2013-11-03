@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Text Area Colors</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Colors</legend>
+        <label>
+            <input type="color" id="text-color" />
+            Text color
+        </label>
+        <label>
+            <input type="color" id="bg-color" />
+            Background color
+        </label>
+    </fieldset>
+
+    <textarea id="text">Sample text</textarea>
+
+    <script>
+        var txtColor = document.getElementById("text-color");
+        var bgColor = document.getElementById("bg-color");
+        var textarea = document.getElementById("text");
+
+        txtColor.onchange = function changeTextColor(event) {
+            textarea.style.color = event.target.value;
+        }
+
+        bgColor.onchange = function changeTextColor(event) {
+            textarea.style.background = event.target.value;
+        }
+    </script>
+</body>
+</html>

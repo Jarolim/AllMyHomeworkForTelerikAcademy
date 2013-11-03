@@ -1,0 +1,60 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Conqquiztador</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/q.js"></script>
+    <script src="game-view-model/gameField.js"></script>
+</head>
+<body>
+    <div id="game_field" class="container">
+        <div id="mouse_pointer" onclick="getPointCoordinates(event)">
+            <img id="flag" class="flags" src="images/red_flag.png" alt="Red flag">
+            <img id="flag1" class="flags" src="images/blue_flag.png" alt="Blue flag">
+            <img id="flag2" class="flags" src="images/blue_flag.png" alt="Blue flag">
+            <img id="flag3" class="flags" src="images/blue_flag.png" alt="Blue flag">
+            <img id="flag4" class="flags" src="images/blue_flag.png" alt="Blue flag">
+            <img id="flag5" class="flags" src="images/blue_flag.png" alt="Blue flag">
+        </div>
+    </div>
+    <div id="question_box" class="container">
+		<div id="question_child">
+            <h3>Question</h3>
+        </div>
+        <div id="mc-question-container"></div>
+        <script src="game-view-model/question.js"></script>
+        <script>
+            (function ($) {
+
+                $(".flags").on('click', function () {
+
+                    $.getJSON("model/bd-multiple-choice-questions.js", function (data) {
+                        var questionsNumber = data.length;
+
+                        var index = Math.floor((Math.random() * 100 + 1) % questionsNumber);
+                        var question = QuestionParser.parseMultipleChoiceQuestion(data[index]);
+
+                        // TODO: check if question is has been already shown
+                        $("#mc-question-container").html(question.render());
+
+                    });
+                });
+
+            }(jQuery));
+        </script>
+    </div>
+    <div id="player" class="container">
+	    <div id="player_child">
+            <h3>Player 1</h3>
+            <img id="player_flag"src="images/animated-flag-india.gif" alt="Flag of India">
+        </div>
+    </div>
+	<div id="dummy_player" class="container">
+	    <div id="dummy_child">
+            <h3>Player 2</h3>
+            <img id="dummy_flag"src="images/boy_cuba_flag_animated.gif" alt="Flag of India">
+        </div>
+    </div>
+</body>
+</html>

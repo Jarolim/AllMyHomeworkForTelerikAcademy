@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Testing different functionallities</title>
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/q.js"></script>
+    <script src="game-view-model/quiz-game.js"></script>
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="test-styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <button id="show-mc-question">Show multiple choice question</button>
+        <div id="mc-question-container"></div>
+        <button id="show-sa-question">Show short answer question</button>
+        <div id="sa-question-container"></div>
+    </div>
+
+
+    <div id="welcome-screen" class="container">
+        <form>
+            <h1>Welcome To BananaQuiz Game!</h1>
+            <label for="nickname">Please enter your nickname:</label>
+            <br />
+            <input type="text" id="nickname" />
+            <input type="button" id="nickname-button" value="Play!" />
+        </form>
+    </div>
+    
+    <script>
+        (function ($) {
+            var dummyPlayer = new QuizGame.DummyPlayer("Robocop")
+            var saQuestion = new QuizGame.ShortAnswerQuestion("Test", 1111, 1111, 1112);
+            var mcQuestion = new QuizGame.MultipleChoiceQuestion("Test", 3, ["a", "a", "a", "a"]);
+
+            var saAnswer = dummyPlayer.getShortQuestionAnswer(saQuestion);
+            var mcAnswer = dummyPlayer.getMultipleQuestionAnswer();
+            alert(saAnswer);
+
+            //var player = new Player("Robocop");
+            //$("#wrapper").append($("<p></p>").append(player.name + " - " + player.points + "points"));
+
+            //$("#wrapper").append($("<p></p>").append(dummyPlayer.name + " -> " + dummyPlayer.points));
+            //$("#wrapper").append($("<p></p>").append(dummyPlayer.getMultipleQuestionAnswer()));
+
+            //for (var i = 0; i < player.flags.length; i++) {
+            //    $("body").append($("<p></p>").append(player.name + " -> " + player.flags[i]));
+            //}
+
+            //var possibleAnswers = ["Yes", "May be yes", "No", "Absolutely no"];
+            //var mcQuestion = new MultipleChoiceQuestion("Do aliens exist?", "Yes, they do!", possibleAnswers);
+            //$("#mc-question-container").append(mcQuestion.render());
+
+            //var saQuestion = new ShortAnswerQuestion("How old am I?", 23, 20, 30);
+            //$("#sa-question-container").append(saQuestion.render());
+
+            //$("#show-sa-question").on('click', function () {
+
+            //    $.getJSON("model/bd-short-answer-questions.js", function (data) {
+            //        var questionsNumber = data.length;
+
+            //        var index = Math.floor((Math.random() * 100 + 1) % questionsNumber);
+            //        var question = QuestionParser.parseShortAnswerQuestion(data[index]);
+
+            //        // TODO: check if question is has been already shown
+            //        $("#sa-question-container").html(question.render());
+
+            //    });
+            //});
+
+            //$("#show-mc-question").on('click', function () {
+
+            //    $.getJSON("model/bd-multiple-choice-questions.js", function (data) {
+            //        var questionsNumber = data.length;
+
+            //        var index = Math.floor((Math.random() * 100 + 1) % questionsNumber);
+            //        var question = QuestionParser.parseMultipleChoiceQuestion(data[index]);
+
+            //        // TODO: check if question is has been already shown
+            //        $("#mc-question-container").html(question.render());
+
+            //    });
+            //});
+
+            var nickname = "";
+            $("#nickname-button").on("click", function () {
+                nickname = document.getElementById("nickname").value;
+                $("#welcome-screen").fadeOut(2000).promise().then(function () {
+                    $("#wrapper").fadeIn(2000);
+                });
+            });
+        }(jQuery));
+    </script>
+</body>
+</html>

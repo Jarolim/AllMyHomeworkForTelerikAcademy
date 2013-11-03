@@ -1,0 +1,43 @@
+
+#bin {
+  width: 213px;
+  height: 489px;
+  background: url(../img/bin-closed.jpg) left center;
+  display: inline-block;
+}
+
+#bin.opened {
+  background-image: url(../img/bin-opened.jpg);
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
+
+[draggable] {
+  cursor: move;
+  position: absolute;
+}
+
+#img1 {
+  left: 300px;
+  top: 50%;
+}
+
+#img2 {
+  left: 400px;
+  top: 70%;
+}
+
+#success {
+  margin-left: 10px;
+  width: 0;
+  height: 180px;
+  transition: width 3s;
+  vertical-align: top;
+}
+
+#success.visible {
+  width: 180px;
+}

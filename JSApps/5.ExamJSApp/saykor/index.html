@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="Styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="Styles/KendoBlueOpal.css" rel="stylesheet" />
+    <link href="Styles/Style.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+
+    <!-- start noty -->
+    <link href="Styles/buttons.css" rel="stylesheet" />
+    <script src="Scripts/noty/jquery.noty.js"></script>
+    <script src="Scripts/noty/layouts/topRight.js"></script>
+    <script src="Scripts/noty/themes/default.js"></script>
+    <!-- end noty -->
+
+    <script src="http://cdn.pubnub.com/pubnub-3.5.3.min.js"></script>
+    <script>(function () {
+        // Init
+        pubnub = PUBNUB.init({
+            publish_key: 'key',
+            subscribe_key: 'key'
+        });
+    })();</script>
+
+    <script src="Scripts/helpers.js"></script>
+    <script src="Scripts/sha1.js"></script>
+    <script src="Scripts/kendo.custom.min.js"></script>
+    <script src="Scripts/q.js"></script>
+    <script src="Scripts/notify.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/http-requester.js"></script>
+    <script src="Scripts/dataProvider.js"></script>
+    <script src="Scripts/controller.js"></script>
+    <script src="Scripts/main.js"></script>
+
+    <script>(function () {
+        // LISTEN
+        pubnub.subscribe({
+            channel: "saykor_bulls_cows",
+            message: function (m) {
+                if (m.message === "new-game") {
+                    if (m.user !== controller.provider.nickname()) {
+                        controller.loadOpenGames();
+                    }
+                }
+            },
+            connect: pubnubPublish
+        });
+    })();</script>
+
+</head>
+<body>
+    <div id="wrapper" class="k-content">
+        <div id="kwindow"></div>
+        <div id="organizer">
+            <button id="btnCreateNewGame">Create New Game</button>
+            <button id="btnReadAllMessages">Read All Messages</button>
+            <ul id="panelbar">
+                <li class="k-state-active">
+                    <span class="k-link k-state-selected">Open Games</span>
+                </li>
+                <li>My Games
+                </li>
+                <li>Games In Progress
+                </li>
+                <li>Scores
+                </li>
+            </ul>
+            <div id="bottom"></div>
+        </div>
+        <div id="pnlActiveGame">dadada</div>
+    </div>
+</body>
+</html>

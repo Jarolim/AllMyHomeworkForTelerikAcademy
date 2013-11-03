@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <style>
+        #wrapper {
+            margin-left:400px;
+        }
+        #left, #right {
+            position: absolute;
+            top: 250px;
+        }
+
+        #right {
+            left: 890px;
+        }
+
+        #big-pic {
+            display: block;
+            padding: 10px 70px;
+            width:235px;
+            margin-left:100px;
+        }
+
+        #small-pic{
+            margin-left:235px;
+            width: 75px;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <div id="buttons">
+            <a href="#"><img id="left" class="button" src="img/left.jpg" onclick="moveLeft()" alt="Alternate Text" /></a>
+            <a href="#"><img id="right" class="button" src="img/right.jpg" onclick="moveRight()" alt="Alternate Text" /></a>
+        </div>
+
+        <div id="pics">
+            </div>
+            <img class="pic" onclick="makeBigOnclick(event)" src="img/4.jpg" alt="Alternate Text" />
+            <img class="pic" onclick="makeBigOnclick(event)" src="img/2.jpg" alt="Alternate Text" />
+            <img class="pic" onclick="makeBigOnclick(event)" src="img/3.jpg" alt="Alternate Text" />
+            <img class="pic" onclick="makeBigOnclick(event)" src="img/1.jpg" alt="Alternate Text" />
+            <img class="pic" onclick="makeBigOnclick(event)" src="img/5.jpg" alt="Alternate Text" />`
+            <img class="pic" onclick="makeBigOnclick(event)" src="img/6.jpg" alt="Alternate Text" />
+        </div>
+
+ 
+
+    <script>
+        var pics = document.getElementsByClassName("pic");
+        var buttons = document.getElementsByClassName("button");
+
+        pics[0].setAttribute("id", "big-pic");
+
+        for (var i = 1; i < pics.length; i++) {
+            pics[i].setAttribute("id", "small-pic");
+        }
+
+        function moveLeft() {
+
+
+
+            var index = 0;
+
+            for (var i = 0; i < pics.length; i++) {
+                if (pics[i].getAttribute("id") === "big-pic") {
+                    index = i;
+                }
+            }
+
+            if (index === 0) {
+                pics[5].setAttribute("id", "big-pic");
+                pics[0].setAttribute("id", "small-pic");
+            }
+            else {
+                var a = document.getElementById("big-pic");
+                a.setAttribute("id", "small-pic");
+                a.previousElementSibling.setAttribute("id", "big-pic");
+            }
+
+        }
+
+        function moveRight() {
+
+            var index = 0;
+
+            for (var i = 0; i < pics.length; i++) {
+                if (pics[i].getAttribute("id") === "big-pic") {
+                    index = i;
+                }
+            }
+
+            if (index === 5) {
+                pics[0].setAttribute("id", "big-pic");
+                pics[5].setAttribute("id", "small-pic");
+            }
+            else {
+                var a = document.getElementById("big-pic");
+                a.setAttribute("id", "small-pic");
+                a.nextElementSibling.setAttribute("id", "big-pic");
+            }
+        }
+
+        function makeBigOnclick(event) {
+            //if (!event) {
+            // event = window.event;
+            //}
+            var clickedItem = event.target;
+            event.stopPropagation();
+
+
+            for (var i = 0; i < pics.length; i++) {
+                pics[i].setAttribute("id", "small-pic");
+            }
+
+
+            clickedItem.setAttribute("id", "big-pic");
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

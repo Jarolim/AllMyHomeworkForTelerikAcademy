@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Carousel</title>
+    <style>
+        body {
+            background-color: #272626;
+        }
+
+        img {
+            width: 600px;
+            height: 400px;
+        }
+
+        #leftButton {
+            width : 100px;
+             height: 100px;
+            background-image:url("images/LeftButton.jpg");
+            position:absolute;
+            top:560px;
+            
+        }
+         #rightButton {
+            width : 100px;
+             height: 100px;
+            background-image:url("images/rightButton.jpg");
+             position:absolute;
+             left:910px;
+            top:560px;
+        }
+    </style>
+</head>
+<body>
+    <button id="leftButton" class="button" onclick="leftArrow()"><</button>
+    <button id="rightButton" class="button" onclick="rightArrow()">></button>
+    <script>
+
+        var rightTimer;
+        var leftTimer;
+
+        //The conteiner
+        var div = document.createElement("div");
+        document.body.appendChild(div);
+        div.style.position = "absolut";
+        div.style.marginTop = 50 + "px";
+        div.style.marginLeft = 215 + "px";
+        div.id = "container";
+
+        //The Photos
+        var imageOne = document.createElement("img");
+        imageOne.src = "images/GiantTwo.jpg";
+        div.appendChild(imageOne)
+        var imageTwo = document.createElement("img");
+        imageTwo.src = "images/hanzelGretel.jpg";
+        div.appendChild(imageTwo)
+        var imageThree = document.createElement("img");
+        imageThree.src = "images/Hulk.jpg";
+        div.appendChild(imageThree)
+        var imageFour = document.createElement("img");
+        imageFour.src = "images/TheJoker.jpg";
+        div.appendChild(imageFour)
+        var imageFive = document.createElement("img");
+        imageFive.src = "images/TheRing.png";
+        div.appendChild(imageFive)
+        var imageSix = document.createElement("img");
+        imageSix.src = "images/two_face.jpg";
+        div.appendChild(imageSix)
+
+        var images = document.getElementsByTagName("img");
+        Carousel()
+
+        function Carousel() {
+
+            //all pictures go no visible
+            for (var index = 0, len = images.length; index < len; index++) {
+                images[index].style.display = "none";
+            }
+            //only first line come visibile
+            imageOne.style.display = "inline-block";
+            leftArrow();
+        }
+        
+        function rightArrow() {
+            clearInterval(leftTimer);
+
+            var checkCounter;
+            len = images.length;
+
+            //check if it's the last picture from the array 
+            for (var index = 0; index < len; index++) {
+                if (images[index].style.display != "none")
+                {
+                    checkCounter = index;
+                }
+            }
+                rightTimer = setInterval(function () {
+                    if (checkCounter == len - 1) {
+                        images[checkCounter].style.display = "none";
+                        checkCounter = 0;
+                        images[checkCounter].style.display = "inline-block";
+                    }
+                    else {
+                        images[checkCounter].style.display = "none";
+                        images[checkCounter + 1].style.display = "inline-block";
+                        checkCounter++;
+                    }
+                }, 3000);
+            }
+
+        function leftArrow() {
+              clearInterval(rightTimer);
+
+            var checkCounter;
+            len = images.length;
+
+            //check if it's the last picture from the array 
+            for (var index = 0; index < len; index++) {
+                if (images[index].style.display != "none") {
+                    checkCounter = index;
+                }
+            }
+            leftTimer = setInterval(function () {
+                if (checkCounter == 0) {
+                    images[checkCounter].style.display = "none";
+                    checkCounter = len-1;
+                    images[checkCounter].style.display = "inline-block";
+                }
+                else {
+                    images[checkCounter].style.display = "none";
+                    images[checkCounter - 1].style.display = "inline-block";
+                    checkCounter--;
+                }
+            }, 3000);
+        }
+       
+
+    </script>
+
+</body>
+</html>

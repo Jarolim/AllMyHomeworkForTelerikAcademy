@@ -1,0 +1,227 @@
+﻿html, body, h1, form, fieldset, legend, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+.player_id {
+    zoom: 1;
+}
+
+    .player_id:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+body {
+    background: url("../images/green-board.jpg") no-repeat;
+    color: #fff;
+    font-weight: bolder;
+}
+
+#wrapper {
+    /*display: none;*/
+}
+
+#game_field, #question_box, #player, #dummy_player, #welcome-screen {
+    background-color: rgba(0,0,0,0.3);
+}
+
+#game_field {
+    margin: auto;
+    margin-top: 50px;
+    width: 70%;
+    height: 150px;
+}
+
+#question_box {
+    margin: auto;
+    margin-top: 30px;
+    width: 50%;
+    min-height: 100px;
+    color: #6B6565;
+}
+
+#player {
+    margin-left: 20%;
+    margin-top: 30px;
+    float: left;
+    width: 300px;
+    height: 100px;
+}
+
+#dummy_player {
+    margin-right: 20%;
+    float: right;
+    margin-top: 30px;
+    width: 300px;
+    height: 100px;
+    right: 50%;
+}
+
+#mouse_pointer {
+    width: 700px;
+    height: 330px;
+    margin: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+#flag {
+    position: relative;
+    visibility: hidden;
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+}
+
+#dummy_flag {
+    padding-left: 80px;
+}
+
+.container {
+    border-radius: 5px;
+    border: 3px solid #fff;
+    padding: 10px;
+    margin: 5px;
+}
+
+    .container #question_child {
+        background-color: green;
+    }
+
+
+
+    .container #field_child, .container #question_child, .container #player_child, .container #dummy_child {
+        float: left;
+        height: 40px;
+        width: 80px;
+        border-radius: 5px;
+        user-select: none;
+        text-align: center;
+        vertical-align: central;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+
+.flags {
+    height: 50px;
+    width: 50px;
+}
+
+
+/*Welcome screen styles*/
+#welcome-screen {
+    margin: 150px auto;
+    width: 500px;
+    height: 350px;
+    text-align: center;
+}
+
+    #welcome-screen h1 {
+        margin-bottom: 75px;
+        font-size: 55px;
+    }
+
+    #welcome-screen form {
+        text-align: center;
+    }
+
+    #welcome-screen input {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+#nickname {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+/*End of welcome screen styles*/
+
+/*Questions styles*/
+.multiple-question {
+    margin-left: 100px;
+    width: 500px;
+    text-align: center;
+    border: 1px solid #fff;
+    top: 0px;
+}
+
+    .multiple-question td, .multiple-question th {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #fff;
+        border-collapse: collapse;
+    }
+
+    .multiple-question td {
+        cursor: pointer;
+    }
+
+.short-question {
+    text-align: center;
+    width: 500px;
+}
+
+    .short-question p {
+        font-weight: bold;
+    }
+
+    .short-question input[type=text] {
+        margin-bottom: 5px;
+    }
+/*End of questions styles*/
+
+
+/*Players styles*/
+.name {
+    float: left;
+}
+
+.points {
+    float: right;
+}
+
+.name, .points {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#player .name, #player .points {
+    background-color: rgba(255,216,0,0.5);
+}
+
+#dummy_player .name, #dummy_player .points {
+    background-color: rgba(255,106,0,0.5);
+}
+
+.player_flags {
+    text-align: center;
+}
+
+/*End of players styles*/
+
+/*Navigation styles*/
+
+#game_field button {
+    background: #384313;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    color: #ffffff;
+    display: inline-block;
+    font: 14px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin: 7px 0px 30px 7px;
+    padding: 7px 7px;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+}
+/*End of navigation styles*/
+
+
+

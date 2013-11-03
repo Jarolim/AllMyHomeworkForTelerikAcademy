@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DrawGraphics</title>
+</head>
+<body>
+    <canvas width="800" height="1000">Canvas not supported</canvas>
+    <script type="text/javascript">
+        ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
+
+        //bicycle
+            //bicycle wheels
+            ctx.strokeStyle = "#3A8394";
+            ctx.fillStyle = "#90CAD7"
+            ctx.lineWidth = 3;
+
+            //left wheel
+            ctx.beginPath();
+            ctx.arc(70, 700, 60, 0, 2 * Math.PI, true);
+            ctx.fill();
+            ctx.stroke();
+
+            //right wheel
+            ctx.beginPath();
+            ctx.arc(300, 700, 60, 0, 2 * Math.PI, true);
+            ctx.fill();
+            ctx.stroke();
+
+            //frame
+            ctx.moveTo(70, 700);
+            ctx.lineTo(140, 625);
+            ctx.moveTo(175, 700);
+            ctx.lineTo(70, 700);
+            ctx.moveTo(175, 700);
+            ctx.lineTo(285, 625);
+            ctx.lineTo(140, 625);
+            ctx.stroke();
+
+            //handle-bar
+            ctx.moveTo(300, 700);
+            ctx.lineTo(280, 585);
+            ctx.lineTo(312, 548);
+            ctx.moveTo(280, 585);
+            ctx.lineTo(233, 592);
+            ctx.stroke();
+
+            //seat
+            ctx.moveTo(124, 592);
+            ctx.lineTo(175, 700);
+            ctx.moveTo(124 + 25, 592);
+            ctx.lineTo(124 - 25, 592);
+            ctx.stroke();
+
+            //peddals
+            ctx.beginPath();
+            ctx.arc(173, 700, 15, 0, 2 * Math.PI, true);
+            ctx.moveTo(162, 689);
+            ctx.lineTo(148, 676);
+            ctx.moveTo(161 + 25, 688 + 20);
+            ctx.lineTo(161 + 25 + 13, 688 + 20 + 12);
+            ctx.stroke();
+
+        //ellpise functions
+        //draw ellipse functions
+        function drawVerticalEllipse(centerX, centerY, width, height) {
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY - height / 2);
+            ctx.bezierCurveTo(centerX + width / 2, centerY - height / 2,
+                centerX + width / 2, centerY + height / 2,
+                centerX, centerY + height / 2);
+            ctx.bezierCurveTo(centerX - width / 2, centerY + height / 2,
+                centerX - width / 2, centerY - height / 2,
+                centerX, centerY - height / 2);
+        }
+
+        function drawHorizontalEllipse(centerX, centerY, width, height) {
+            ctx.beginPath();
+            ctx.moveTo(centerX - width/2, centerY);
+            ctx.bezierCurveTo(
+                centerX - width / 2, centerY - height / 2,
+                centerX + width / 2, centerY - height / 2,
+                centerX + width / 2, centerY);
+            ctx.bezierCurveTo(
+                centerX + width / 2, centerY + height / 2,
+                centerX - width / 2, centerY + height / 2,
+                centerX - width / 2, centerY);
+        }
+
+        //head
+        drawHorizontalEllipse(200, 200, 140, 160);
+        ctx.fill();
+        ctx.stroke();
+        ctx.closePath();
+
+            //eyes
+            drawHorizontalEllipse(160, 175, 22, 20);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            drawHorizontalEllipse(210, 175, 22, 20);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+            
+            drawVerticalEllipse(158, 175, 8, 10);
+            ctx.fillStyle = "#3A8394";
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            drawVerticalEllipse(208, 175, 8, 10);
+            ctx.fillStyle = "#3A8394";
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            //nose
+            ctx.beginPath();
+            ctx.moveTo(185, 175);
+            ctx.lineTo(170, 207);
+            ctx.lineTo(185, 207);
+            ctx.stroke();
+            ctx.closePath();
+
+            //mouth
+            function drawCustomHorizontalEllipse(centerX, centerY, width, height) {
+                ctx.beginPath();
+                ctx.moveTo(centerX - width / 2, centerY - 4);
+                ctx.bezierCurveTo(
+                    centerX - width / 2, centerY - height / 2,
+                    centerX + width / 2, centerY - height / 2 + 2,
+                    centerX + width / 2, centerY + 4);
+                ctx.bezierCurveTo(
+                    centerX + width / 2, centerY + height / 2,
+                    centerX - width / 2, centerY + height / 2 - 2,
+                    centerX - width / 2, centerY - 4);
+            }
+
+            drawCustomHorizontalEllipse(183, 230, 51, 25);
+            ctx.fillStyle = "#90CAD7";
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+        //hat
+        //ellipse function .scale
+            function drawEllipse(context, x, y, radius, widthRatio, heightRatio) {
+            context.save();
+            context.scale(1, heightRatio / widthRatio);
+            context.beginPath();
+            context.arc(x, y, radius, 0, 2 * Math.PI);
+            context.restore();
+        }
+
+            //base
+            drawEllipse(ctx,195, 700, 80, 5, 1);
+            ctx.fillStyle = "#396693";
+            ctx.strokeStyle = "#000000";
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            //cylinder
+            ctx.beginPath();
+            ctx.fillRect(155, 42, 80, 85);
+            ctx.strokeRect(155, 42, 80, 85);
+            ctx.closePath();
+
+            ctx.beginPath();
+            drawEllipse(ctx, 195, 500, 40, 4, 1);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.fillRect(157, 75, 76, 50);
+            ctx.closePath();
+
+            ctx.beginPath();
+            drawEllipse(ctx, 195, 155, 40, 4, 1);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+        //house
+        ctx.beginPath();
+        ctx.fillStyle = "#975b5b";
+        ctx.strokeStyle = "#000000";
+
+        //both floors
+        ctx.fillRect(380, 300, 300, 220);
+        ctx.strokeRect(380, 300, 300, 220);
+
+            //door
+            ctx.moveTo(380 + 30, 300 + 220);
+            ctx.lineTo(380 + 30, 300 + 220 - 75);
+            ctx.stroke();
+            ctx.moveTo(410 + 37, 520);
+            ctx.lineTo(410 + 37, 520 - 95);
+            ctx.stroke();
+            ctx.moveTo(447 + 37, 520);
+            ctx.lineTo(447 + 37, 520 - 75);
+            ctx.stroke();
+            ctx.lineWidth = 4;
+            ctx.bezierCurveTo(
+                447 + 37, 520 - 100,
+                410, 520 - 100,
+                410, 520 - 75);
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.lineWidth = 6;
+            ctx.arc(380 + 56, 520 - 28, 3, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(380 + 78, 520 - 28, 3, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fill();
+
+            //windows
+            ctx.beginPath();
+            ctx.lineWidth = 3;
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(380 + 20, 300 + 25, 50, 32);
+
+            ctx.beginPath();
+            ctx.fillRect(380 + 20, 325 + 35, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(453, 325, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(453, 325 + 35, 50, 32);
+
+            ctx.beginPath();
+            ctx.fillRect(380 + 160, 325, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(380 + 160, 325 + 35, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(380 + 160 + 53, 325, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(380 + 160 + 53, 325 + 35, 50, 32);
+
+            ctx.beginPath();
+            ctx.fillRect(380 + 160, 300 + 115, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(380 + 160 + 53, 300 + 115, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(380 + 160, 300 + 115 + 35, 50, 32);
+            ctx.beginPath();
+            ctx.fillRect(380 + 160 + 53, 300 + 115 + 35, 50, 32);
+
+            //roof
+            ctx.fillStyle = "#975b5b";
+            ctx.beginPath();
+            ctx.moveTo(380, 300);
+            ctx.lineTo(380 + 150, 300 - 160);
+            ctx.lineTo(380 + 300, 300);
+            ctx.lineTo(380, 300);
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+                //chminey
+                ctx.beginPath()
+                ctx.moveTo(380 + 200, 300 - 40);
+                ctx.lineTo(580, 300 - 40 - 100);
+                ctx.moveTo(580 + 30, 300 - 40);
+                ctx.lineTo(580 + 30, 300 - 40 - 100);
+                ctx.fillRect(580, 160, 30, 70);
+                ctx.stroke();
+                drawEllipse(ctx, 580 + 15, 640, 15, 4, 1);
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+    </script>
+
+</body>
+</html>

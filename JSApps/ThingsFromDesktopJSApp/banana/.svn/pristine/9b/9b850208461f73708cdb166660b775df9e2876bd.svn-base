@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Testing different functionallities</title>
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/q.js"></script>
+    <link href="test-styles.css" rel="stylesheet" />
+</head>
+<body>
+    <button id="show-mc-question">Show multiple choice question</button>
+    <div id="mc-question-container"></div>
+    <button id="show-sa-question">Show short answer question</button>
+    <div id="sa-question-container"></div>
+    <script src="Game%20ViewModel/question.js"></script>
+    <script>
+        (function ($) {
+            //var question = new Question("Do aliens exist?", "Yes, they do!")
+            //$("body").append($("<p></p>").append(question.task + " -> " + question.answer));
+
+            //var possibleAnswers = ["Yes", "May be yes", "No", "Absolutely no"];
+            //var mcQuestion = new MultipleChoiceQuestion("Do aliens exist?", "Yes, they do!", possibleAnswers);
+            //$("#mc-question-container").append(mcQuestion.render());
+
+            //var saQuestion = new ShortAnswerQuestion("How old am I?", 23, 20, 30);
+            //$("#sa-question-container").append(saQuestion.render());
+
+            $("#show-sa-question").on('click', function () {
+
+                $.getJSON("Model/bd-short-answer-questions.js", function (data) {
+                    var questionsNumber = data.length;
+
+                    var index = Math.floor((Math.random() * 100 + 1) % questionsNumber);
+                    var question = QuestionParser.parseShortAnswerQuestion(data[index]);
+
+                    // TODO: check if question is has been already shown
+                    $("#sa-question-container").html(question.render());
+
+                });
+            });
+
+            $("#show-mc-question").on('click', function () {
+
+                $.getJSON("Model/bd-multiple-choice-questions.js", function (data) {
+                    var questionsNumber = data.length;
+
+                    var index = Math.floor((Math.random() * 100 + 1) % questionsNumber);
+                    var question = QuestionParser.parseMultipleChoiceQuestion(data[index]);
+
+                    // TODO: check if question is has been already shown
+                    $("#mc-question-container").html(question.render());
+
+                });
+            });
+
+
+        }(jQuery));
+    </script>
+</body>
+</html>

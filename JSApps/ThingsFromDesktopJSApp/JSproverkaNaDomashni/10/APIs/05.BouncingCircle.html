@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BouncingCircle</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="300">Canvas not supported!</canvas>
+    <script>
+        window.onload = startMoving;
+        ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
+        ctx.fillStyle = "#90CAD7";
+
+        var timeInterval = 15;
+        var x = 20;
+        var y = 20;
+        var directionVertical = "down";
+        var directionHorizontal = "right"
+
+        function startMoving() {
+            interval = setInterval(startCircle, timeInterval);
+        }
+
+
+        function startCircle() {
+            ctx.arc(x, y, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.beginPath();
+
+            if (directionVertical === "down" && directionHorizontal === "right") {
+                x++;
+                y++;
+                if (y == 280) {
+                    directionVertical = "up";
+                }
+                if (x == 480) {
+                    directionHorizontal = "left";
+                }
+            }
+
+            else if (directionVertical === "up" && directionHorizontal === "right") {
+                x++;
+                y--;
+                if (y == 20) {
+                    directionVertical = "down";
+                }
+                if (x == 480) {
+                    directionHorizontal = "left";
+                }
+            }
+
+            else if (directionVertical === "up" && directionHorizontal === "left") {
+                x--;
+                y--;
+                if (y == 20) {
+                    directionVertical = "down";
+                }
+                if (x == 20) {
+                    directionHorizontal = "right";
+                }
+            }
+
+            else if (directionVertical === "down" && directionHorizontal === "left") {
+                x--;
+                y++;
+                if (y == 280) {
+                    directionVertical = "up";
+                }
+                if (x == 20) {
+                    directionHorizontal = "right";
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+#bin {
+  width: 213px;
+  height: 489px;
+  background: url(../img/bin-closed.jpg) left center;
+  display: inline-block;
+}
+
+#bin.opened {
+  background-image: url(../img/bin-opened.jpg);
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
+
+[draggable] {
+  cursor: move;
+  position: absolute;
+}
+
+#img1 {
+  left: 300px;
+  top: 50%;
+}
+
+#img2 {
+  left: 400px;
+  top: 70%;
+}
+
+#info {
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+#your-score {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#high-score {
+  display: inline-block;
+}

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Conqquiztador</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/q.js"></script>
+</head>
+<body>
+    <div id="game_field" class="container">
+		<img id="map" src="images/map.png" alt="Map of Bulgaria" />
+        <div id="field_child">
+        </div>
+    </div>
+    <div id="question_box" class="container">
+		<div id="question_child">
+        </div>
+    </div>
+    <div id="player" class="container">
+	    <div id="third">
+        </div>
+    </div>
+	<div id="al" class="container">
+	    <div id="four">
+        </div>
+    </div>
+</body>
+</html>

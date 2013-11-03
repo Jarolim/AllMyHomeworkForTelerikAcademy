@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var tags = ["Google", "chrome", "google", "GOOGLE", "firefox", "Firefox", "fireFox",
+                    "js", "Js", "Opera", "random", "JS", "js", "jS", "FiReFoX"];
+
+        var tagCloud = generateTagCloud(tags, 17, 42);
+        document.body.appendChild(tagCloud);
+
+        function generateTagCloud(text, minFont, maxFont) {
+            
+            // Creates array containing all words from text as index
+            // and number of appearances for each word.
+            var wordsCount = countWords(text);
+
+            // Creates cloud's view.
+            var div = document.createElement("div");
+            div.style.width = "300px";
+            div.style.border = "1px solid black";
+            
+            var min = Number.MAX_VALUE;
+            var max = 0;
+            
+            // Finds number of appearances for most and less common word in text. 
+            for (var thisWord in wordsCount) {
+                if (wordsCount[thisWord] > max) {
+                    max = wordsCount[thisWord];
+                }
+                if (wordsCount[thisWord] < min) {
+                    min = wordsCount[thisWord];
+                }
+            }
+           
+            // Generates font for each word in text, depending on the number of its appearances.
+            for (var word in wordsCount) {
+                var span = document.createElement("span");
+
+                // Less common word in text gets smallest font size
+                if (min == wordsCount[word]) {
+                    span.style.fontSize = minFont + "px";
+                }
+                // Most common word in text gets largest font size
+                else if (max == wordsCount[word]) {
+                    span.style.fontSize = maxFont + "px";
+                }
+                // Other words get medium font size, depending on the number of appearances.
+                else {
+                    span.style.fontSize = minFont + ((maxFont - minFont) / ((max - wordsCount[word])+1)) + "px";
+                }
+                span.innerText = word + " ";
+                div.appendChild(span);
+            }
+
+            // Returns array, which contains number of appearances for each word in input collection "words".
+            function countWords(words) {
+                var wordsCount = {};
+                var word = {};
+                for (var i in words) {
+                    word = words[i].toLowerCase();
+                    if (wordsCount[word]) {
+                        wordsCount[word]++;
+                    }
+                    else {
+                        wordsCount[word] = 1;
+                    }
+                }
+                
+                return wordsCount;
+            }
+
+            return div;
+        }
+    </script>
+</body>
+</html>

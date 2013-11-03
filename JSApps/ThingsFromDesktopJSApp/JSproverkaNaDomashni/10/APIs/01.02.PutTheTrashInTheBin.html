@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PutTheTrashInTheBin</title>
+    <style>
+        #wrapper {
+            width: 800px;
+            height: 800px;
+        }
+
+        #trashBin {
+            position: absolute;
+            left: 40px;
+            top: 40px;
+        }
+
+        #playerNameHolder {
+            position: absolute;
+            left: 20px;
+            top: 220px;
+        }
+
+        #scoreBoard {
+            border: 1px solid black;
+            border-radius: 10px;
+            position: absolute;
+            left: 20px;
+            top: 260px;
+            width: 250px;
+            text-align: center;
+        }
+
+        li {
+            list-style-type:decimal;
+        }
+    </style>
+    <script type="text/javascript" src="scripts/web-storage-objects.js"></script>
+    <script type="text/javascript" src="scripts/web-storage-polyfill.js"></script>
+</head>
+<body>
+    <div id="binWrapper" ondragover="allowDrop(event)">
+        <img id="trashBin" src="Images/binClosed.png" width="80" height="120" 
+              ondrop="drop(event)" ondragover="changeImageToOpen(event)" ondragleave="changeImageToClose(event)" />
+    </div>
+    <div id="trashWrapper"></div>
+    <div id="playerNameHolder"></div>
+    <button onclick="createNewGame()">New Game</button>
+    <button onclick="clearLocalStorage()">Clear scoreboard</button>
+    <div id="scoreBoard"></div>
+    <script>
+        window.onload = startTimerShowScoreboard;
+
+        var timeEllapsed;
+        var startGame;
+        var endGame;
+
+        function startTimerShowScoreboard() {
+            startGame = Date.now();
+            showScoreBoard();
+        }
+
+        var wrapper = document.getElementById("trashWrapper");
+        var trash = 15;
+        var maxPositionWidth = screen.width - 100;
+        var maxPositionHeight = screen.height - 300;
+        var dfrag = document.createDocumentFragment();
+
+        for (var i = 0; i < trash; i++) {
+            var image = document.createElement("img");
+            image = setProperties(image, i);
+            dfrag.appendChild(image);
+        }
+
+        wrapper.appendChild(dfrag);
+
+        function setProperties(image, number) {
+            image.id = "trash" + number;
+            image.src = "Images/trash.png";
+            image.draggable = true;
+            image.addEventListener("dragstart", drag, false);
+            var right = (Math.random() * (maxPositionWidth - 200)) | 0;
+            image.style.right = right + "px";
+            var top = 50 + (Math.random() * (maxPositionHeight - 100)) | 0;
+            image.style.top = top + "px";
+            image.style.position = "absolute";
+
+            return image;
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("dragged-id", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("dragged-id");
+            var elementToRemove = document.getElementById(data);
+            wrapper.removeChild(elementToRemove);
+            changeImageToClose(ev);
+
+            checkIfGameOver();
+        }
+
+        function changeImageToOpen(ev) {
+            var oldImage = document.getElementById("trashBin");
+            oldImage.src = "Images/binOpened.png";
+        }
+
+        function changeImageToClose(ev) {
+            var oldImage = document.getElementById("trashBin");
+            oldImage.src = "Images/binClosed.png";
+        }
+
+        function checkIfGameOver() {
+            var trashLeft = document.getElementById("trashWrapper").childNodes;
+            if (trashLeft.length === 0) {
+                endGame = Date.now();
+
+                var nameInput = document.createElement("input");
+                nameInput.type = "text";
+                nameInput.id = "playerName"
+                nameInput.placeholder = "Enter your name"
+
+                var confirmBtn = document.createElement("button");
+                confirmBtn.innerHTML = "OK";
+                confirmBtn.id = "confirm";
+                confirmBtn.addEventListener("click", savePlayerAndScore, false);
+
+                var playerNameField = document.getElementById("playerNameHolder");
+                playerNameField.appendChild(nameInput);
+                playerNameField.appendChild(confirmBtn);
+
+                getPlayerScore();
+            }
+        }
+
+        function getPlayerScore() {
+            timeEllapsed = (endGame - startGame) / 1000;
+            alert("Your result is: \n" + timeEllapsed + "seconds" + "\nPlease enter your name and press OK");
+        }
+
+        var player = {};
+
+        function savePlayerAndScore() {
+            player.name = document.getElementById("playerName").value;
+            player.score = timeEllapsed;
+            localStorage.setObject(player.score, player);
+
+            showScoreBoard();
+        }
+
+        function showScoreBoard() {
+            var storageSortedArray = sortLocalStorage();
+
+            var resultHTML = "ScoreBoard: <ul>";
+            for (var i = 0; i < storageSortedArray.length; i++) {
+                if (i === 5) {
+                    break;
+                }
+                var key = storageSortedArray[i];
+                var playerName = localStorage.getObject(key).name
+                var playerScore = localStorage.getObject(key).score;
+                resultHTML +=
+                '<li>' + playerName + ': ' + playerScore + ' seconds'
+                '</li>';
+            }
+            resultHTML += "</ul>";
+            document.getElementById("scoreBoard").innerHTML = resultHTML;
+        }
+
+        function sortLocalStorage() {
+            var storageArray = [];
+            for (var i = 0; i < localStorage.length; i++) {
+                storageArray.push(localStorage.key(i));
+            }
+
+            storageArray.sort(compareNumbers);
+
+            return storageArray;
+        }
+
+        function compareNumbers(a, b) {
+            return a - b;
+        }
+
+        function clearLocalStorage() {
+            localStorage.clear();
+            var scoreBoard = document.getElementById("scoreBoard");
+            scoreBoard.innerHTML = "ScoreBoard:";
+        }
+
+        function createNewGame() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

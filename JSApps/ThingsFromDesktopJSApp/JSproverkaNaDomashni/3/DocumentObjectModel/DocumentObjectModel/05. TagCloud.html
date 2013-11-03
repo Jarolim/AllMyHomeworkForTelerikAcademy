@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tag Cloud</title>
+</head>
+<body>
+    <div id="wrapper"></div>
+
+    <script>
+
+        //create function remove (in the case of this excercise we can do only with slice
+        Array.prototype.remove = function (from, to) {
+            var rest = this.slice((to || from) + 1 || this.length);
+            this.length = from < 0 ? this.length + from : from;
+            return this.push.apply(this, rest);
+        };
+
+        var wrapper = document.getElementById("wrapper");
+        var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net", "css", "wordpress", "xaml", "js", "http", "web", "asp.net", "asp.net MVC", "ASP.NET MVC", "wp", "javascript", "js", "cms", "html", "javascript", "http", "http", "CMS"]
+        var divContainer = document.createElement("div");
+        divContainer.style.width = 200 + "px";
+        divContainer.appendChild(document.createTextNode("Tags :  "));
+        for (var i = 0; i < tags.length; i++) {
+            if (tags.length - 1 != i) {
+                divContainer.appendChild(document.createTextNode("\"" + tags[i] + "\"" + "  ,"))
+            } else {
+                divContainer.appendChild(document.createTextNode("\"" + tags[i] + "\"" + "  "))
+            }
+          
+        }
+
+        wrapper.appendChild(divContainer);
+        var arrayWithSizesOfTags = new Array();;
+      
+        //See how many times one tag is in the array - non intuitive
+        for (var index = 0; index < tags.length; index++) {
+            var count = 0;
+
+            for (var c = index + 1; c < tags.length; c++) {
+                if (tags[index].toLowerCase() === tags[c].toLowerCase()) {
+                    count++;
+                    tags.remove(c);
+                    c--;
+                }
+            }
+
+            arrayWithSizesOfTags.push(count);
+        }
+
+        //Make The Cloud in element div and give him css styles
+        var divCloud = document.createElement('div');
+        divCloud.style.width = 140 + 'px';
+        divCloud.style.border = 1 + 'px' + " " + "solid" + " black";
+        divCloud.style.borderRadius = 15 + "px"
+        divCloud.style.padding = 5 + "px";
+        for (var i = 0; i < tags.length; i++) {
+            console.log(arrayWithSizesOfTags[i]);
+            var giveSizeOnTags = document.createElement('span');
+            giveSizeOnTags.style.fontSize = arrayWithSizesOfTags[i] <= 0 ? 17 : (arrayWithSizesOfTags[i]+17 >= 42 ? 42 : 17 + arrayWithSizesOfTags[i]) + 'px';
+            giveSizeOnTags.appendChild(document.createTextNode(tags[i] + ' '));
+            divCloud.appendChild(giveSizeOnTags);
+        }
+
+        wrapper.appendChild(divCloud);
+
+        //Check how many times one tag was in array input
+        //document.write(arrayWithSizesOfTags);
+        //document.write(tags);
+    </script>
+</body>
+</html>

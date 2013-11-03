@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Testing Quiz Game Question</title>
+    <link href="../styles/qunit-1.11.0.css" rel="stylesheet" />
+    <script src="../scripts/qunit-1.11.0.js"></script>
+    <script src="../scripts/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/prototype.js"></script>
+    <script src="../scripts/q.min.js"></script>
+    <script src="../game-view-model/site-controller.js"></script>
+    <script src="../game-view-model/quiz-game.js"></script>
+    <script src="../game-view-model/question-parser.js"></script>
+    <script src="../game-view-model/game-renderer.js"></script>
+</head>
+<body>
+    <div id="qunit"></div>
+    <script src="testing-quizgame-question.js"></script>
+</body>
+</html>

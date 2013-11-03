@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Dom Module Demo</title>
+    </head>
+    <body>
+        <nav id="main-nav">
+            <ul>
+                <li>navItem1</li>
+                <li>navItem2</li>
+                <li>navItem3</li>
+                <li>navItem4</li>
+            </ul>
+        </nav>
+        <div id="container">
+            <button id="myTestButton" >click to test</button>
+        </div>
+        <div id="wrapper">
+            <ul>
+                <li>first element</li>
+                <li>second element</li>
+                <li>third element</li>
+                <li>
+                    <a class="button">Click me!</a>
+                </li>
+                <li>fifth element</li>
+                <li>
+                    <a class="button">Click me!</a>
+                </li>
+            </ul>
+            <ul>
+                <li>first element</li>
+                <li>second element</li>
+                <li>
+                    <a class="button">Click me!</a>
+                </li>
+                <li>forth element</li>
+            </ul>
+        </div>
+        <script src="../javascript/DomModule.js"></script>
+        <script>
+            var div = document.createElement("div");
+            div.style.borderColor = "#555";
+            div.style.borderWidth = '2px';
+            div.style.borderStyle = 'solid';
+
+            div.innerHTML = "Fun with JavaScript";
+            //change the div
+            domModule.appendChild(div, "#wrapper");
+            //remove the first li from each ul
+            domModule.removeChild("ul", "li:first-child");
+           
+            domModule.addHandler("#myTestButton", 'click',
+                                 function () {
+                                     alert("Clicked")
+                                 });
+
+
+            domModule.appendToBuffer("container", div.cloneNode(true));
+            domModule.appendToBuffer("#main-nav ul", navItem);
+    
+        </script>
+    </body>
+
+</html>

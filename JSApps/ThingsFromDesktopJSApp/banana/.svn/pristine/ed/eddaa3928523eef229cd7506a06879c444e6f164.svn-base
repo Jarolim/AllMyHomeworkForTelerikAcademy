@@ -1,0 +1,19 @@
+﻿NB !!! Assign tasks !!!
+	- Ventsi Question class( db, serialization, deser and question class);
+	- I. Ivanov
+	- I. Petrov
+	- Asya
+	- Ivo
+
+Extract from prototype.js only the logic for class create and inheritance
+research social networks integration
+	- fb login
+	- like buttons
+	- tweet result
+Q.js extract only logic for promises 
+
+! prototype.js and jquery conflict with $ call
+	-research how to change $ with something else
+
+Minify all js files when ready
+

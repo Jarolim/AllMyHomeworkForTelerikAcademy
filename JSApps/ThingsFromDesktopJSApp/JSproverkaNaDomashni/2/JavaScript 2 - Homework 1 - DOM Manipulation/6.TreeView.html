@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tree View</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+            li:hover {
+                cursor: pointer;
+            }
+
+        .childrenVisible > ul {
+            display: block;
+        }
+
+        .childrenInvisible > ul {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="childrenInvisible">List item
+            <ul>
+                <li>Sublist item</li>
+                <li>Sublist item
+                    <ul>
+                        <li>Sublist item</li>
+                        <li>Sublist item</li>
+                        <li>Sublist item</li>
+                        <li>Sublist item
+                            <ul>
+                                <li>Sublist item</li>
+                                <li>Sublist item</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Sublist item
+                    <ul>
+                        <li>Sublist item</li>
+                        <li>Sublist item</li>
+                        <li>Sublist item</li>
+                        <li>Sublist item
+                            <ul>
+                                <li>Sublist item</li>
+                                <li>Sublist item</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="childrenInvisible">List item</li>
+        <li class="childrenInvisible">List item
+            <ul>
+                <li>Sublist item
+                    <ul>
+                        <li>Sublist item</li>
+                        <li>Sublist item</li>
+                    </ul>
+                </li>
+                <li>Sublist item
+                    <ul>
+                        <li>Sublist item</li>
+                        <li>Sublist item</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="childrenInvisible">List item</li>
+    </ul>
+
+    <script>
+        var listItems = document.getElementsByTagName("li");
+
+        for (var i = 0; i < listItems.length; i++) {
+            listItems[i].className = 'childrenInvisible';
+            listItems[i].onclick = function (event) {
+                event.stopPropagation();
+
+                if (this.className == "childrenVisible") {
+                    changeClassName(this, "childrenInvisible");
+                }
+                else {
+                    changeClassName(this, "childrenVisible");
+                }
+            }
+        }
+
+        function changeClassName(listItem, className) {
+            listItem.className = className;
+        }
+    </script>
+</body>
+</html>
