@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.ColorRabbits", "1.ColorRabbits\2.ColorRabbits.csproj", "{53ECBE2A-EC6E-4E76-87B0-95CB61AEFCDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.SumOfSeries", "6.SumOfSeries\6.SumOfSeries.csproj", "{1AED0255-BE9F-41D6-8688-6A46A55A106F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53ECBE2A-EC6E-4E76-87B0-95CB61AEFCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53ECBE2A-EC6E-4E76-87B0-95CB61AEFCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53ECBE2A-EC6E-4E76-87B0-95CB61AEFCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53ECBE2A-EC6E-4E76-87B0-95CB61AEFCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AED0255-BE9F-41D6-8688-6A46A55A106F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AED0255-BE9F-41D6-8688-6A46A55A106F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AED0255-BE9F-41D6-8688-6A46A55A106F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AED0255-BE9F-41D6-8688-6A46A55A106F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
