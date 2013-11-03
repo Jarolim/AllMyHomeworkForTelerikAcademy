@@ -1,0 +1,29 @@
+﻿@model Tvvitter.ViewModels.HomePageViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <h2>All Users</h2>
+    <div class="row-fluid">
+        <span>
+            All tags:
+            @foreach (var tag in Model.Tags)
+            {
+                    <span>
+                        @Html.ActionLink(tag.Name, "TweetsByTag", new { name = tag.Name })
+                        </span>
+            }
+            </span>
+    </div>
+    <ul>
+        @foreach (var item in Model.Users)
+        {
+            <li>
+                @Html.ActionLink(item.Name, "UserPage", new { id = item.Id })
+            </li>
+        }
+    </ul>
+
+</div>

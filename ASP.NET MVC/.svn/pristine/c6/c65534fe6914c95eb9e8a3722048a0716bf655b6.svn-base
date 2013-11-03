@@ -1,0 +1,8 @@
+1. Kendo Menu instead of the default one
+2. Kendo Calendar
+3. Kendo AutoComplete - Bind to model (Client side filtering) and ServerSide filtering with DataSource
+4. Cascading DropDownLists
+5. TreeView bound to TreeViewItemModel
+6. Upload Async
+7. Admin area - Menu available for Admins only, Grid with CRUD in Area
+8. Chart and RadialGauge

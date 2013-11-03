@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MoviesApp.Models.Movie>
+
+@{
+    ViewBag.Title = "Home Page";  
+}
+
+@foreach (var item in Model)
+{
+    <div>@item.Director</div>
+    <div>@item.Id</div>
+    <div>@item.LeadFemaleActor</div>
+    <div>@item.LeadMaleActor</div>
+    <div>@item.Studio</div>
+    <div>@item.StudioAddress</div>
+    <div>@item.Title</div>
+    <div>@item.Year</div>
+
+}

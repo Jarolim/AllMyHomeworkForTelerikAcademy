@@ -1,0 +1,4 @@
+1. Home page - "See more" button with Loading and onComplete event, onError
+2. New page with List of all books - Search bar for bookdetails with PartialView
+3. More details for each book by ID and on the same action.
+4. Error handling on search bar
