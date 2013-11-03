@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Installing Kendo UI</title>
+    <!-- Styles - first common then theme-->
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.silver.min.css" rel="stylesheet" />
+
+    <!-- Scripts first jquery then kendo script-->
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/kendo.web.min.js"></script>
+</head>
+<body>
+    <div>Yey, I installed Kendo! ^_^</div>
+    <input id="datepicker" value="10/10/2011" style="width:150px;" />
+    <script>
+        $(document).ready(function () {
+            $('#datepicker').kendoDatePicker();
+        });
+    </script>
+</body>
+</html>

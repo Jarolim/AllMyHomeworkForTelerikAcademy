@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kendo Grid Widget Everlive Data</title>
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.silver.min.css" rel="stylesheet" />
+
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/kendo.web.min.js"></script>
+    <script src="../Scripts/everlive.all.min.js"></script>
+</head>
+<body>
+    <div id="grid" style="width: 800px">
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            var everl = new Everlive('m2SQ9Oi3fdoRrfRX');
+
+            everl.Users.login('Ivaylo','123456');
+
+            var dataSource = new kendo.data.DataSource({
+                type: 'everlive',
+                transport: {
+                    typeName: 'Cars',
+                },
+                schema: {
+                    model: { id: Everlive.idField }
+                },
+                pageSize: 5,
+                serverPaging: true,
+                serverSorting: true
+            });
+
+            $('#grid').kendoGrid({
+                dataSource: dataSource,
+                navigatable: true,
+                batch: true,
+                editable: true,
+                pageable: true,
+                scrollable: false,
+                sortable: true,
+                toolbar: ['create', 'save', 'cancel'],
+                columns: [
+                    { field: 'Model', title: 'Model' },
+                    { field: 'Make', title: 'Make' },
+                    { field: 'Engine', title: 'Engine' },
+                    { field: 'Year', title: 'Year' },
+                    { command: ["destroy"], title: "&nbsp;" }
+                ]
+            });
+
+        });
+    </script>
+</body>
+</html>

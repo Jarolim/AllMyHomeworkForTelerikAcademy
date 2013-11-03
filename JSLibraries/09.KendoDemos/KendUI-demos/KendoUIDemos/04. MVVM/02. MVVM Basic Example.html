@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MVVM Example</title>
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.silver.min.css" rel="stylesheet" />
+
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/kendo.web.min.js"></script>
+</head>
+<body>
+    <div id="car-add-view">
+        <div>
+            <span>Make: </span>
+            <select data-bind="source: makes, value: make" style="display: block;"></select>
+            <label>Model:
+                <input data-bind="value: model" style="display: block;" /></label>
+            <label>Year:
+                <input data-bind="value: year" style="display: block;" /></label>
+            <label>Power:
+                <input data-bind="value: power" style="display: block;" /></label>
+            <label>
+                <input type="checkbox" data-bind="checked: agreed" />I agree with the terms</label>
+            <button data-bind="enabled: agreed, click: addCar" style="display: block;">Add car</button>
+            <ul id="car-list">
+            </ul>
+            <div data-bind="visible: added">
+                <span>Car added</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/car-model.js"></script>
+    <script src="Scripts/car-view-model.js"></script>
+    <script src="Scripts/car-list.js"></script>
+
+    <script type="text/x-kendo-template" id="car-list-template">
+        <li>
+            <strong>Make: </strong>
+            <span>#: make #, </span>
+            <span>Model: </span>
+            <span>#: model #, </span>
+            <span>Year: #: year #, </span>
+            <span>Power: #: power #</span>
+        </li>
+    </script>
+</body>
+</html>

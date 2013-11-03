@@ -1,0 +1,16 @@
+﻿<div id="recipes" width="600px">
+    <div data-role="grid"
+        data-bind="source: recipes"
+        data-editable="false"
+        data-sortable="true"
+        data-pageable=" {
+                    input: true,
+                    numeric: false,
+                    pageSize:2
+                }"
+        data-columns='[{"field": "title", "title": "Title", "width": "110px", "template": "<a href = \"\\#/recipe/#: id #\">#: title#</a>"},
+        {"field": "categoryName", "title": "Category", "width": "40px"},
+        {"field": "likes", "title": "Likes", "width": "20px"},
+        {"field": "creator", "title": "Creator", "width": "110px"}]'>
+    </div>
+</div>

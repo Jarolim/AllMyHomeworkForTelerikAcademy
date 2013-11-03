@@ -1,0 +1,11 @@
+﻿<span>Search: </span>
+<input ng-model="query" />
+<ul>           
+    <li ng-repeat="recipe in recipes | filter:query">
+        <div>
+            <p><strong>{{recipe.title}}</strong></p>
+            <p>Category:{{recipe.categoryName}} By: {{recipe.creator}} Published on: {{recipe.publishDate}} Likes: {{recipe.likes}}</p>
+            <a href="#/recipes/{{recipe.id}}">View More</a>
+        </div>
+    </li>
+</ul>

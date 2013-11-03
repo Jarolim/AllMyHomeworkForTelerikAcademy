@@ -1,0 +1,17 @@
+﻿<h2>{{user.username}}</h2>
+<fieldset>
+    <legend>Change Password</legend>
+    <label for="tb-change-password">New Password</label>
+    <input type="text" ng-model="password" id="tb-change-password" />
+    <button ng-click="changePassword()">Change</button>
+</fieldset>
+<fieldset>
+    <legend>Promote to Admin</legend>
+    <button ng-click="promoteToAdmin()">Promote to Admin</button>
+</fieldset>
+<fieldset>
+    <legend>Delete User</legend>
+    <button ng-click="deleteUser()">Delete User</button>
+</fieldset>
+<span ng-model="message">{{message}}</span>
+

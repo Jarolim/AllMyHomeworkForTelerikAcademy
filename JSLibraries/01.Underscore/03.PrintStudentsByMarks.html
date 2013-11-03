@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print Students By Marks</title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore.js"></script>
+</head>
+<body>
+    <script>
+        var Student = Class.create({
+            init: function (fname, lname, age, marks) {
+                this.fname = fname;
+                this.lname = lname;
+                this.fullname = fname + " " + lname;
+                this.age = age;
+                this.marks = marks;
+            },
+
+        });
+
+        var students = [
+			new Student("Doncho", "Minkov", 24, [2, 3, 4, 5, 6]),
+			new Student("Goro", "Georgiev", 21, [2, 3, 3, 5, 6]),
+			new Student("Niki", "Kostov", 23, [2, 3, 4, 4, 6]),
+			new Student("Svetlin", "Nakov", 33, [2, 5, 5, 5, 6]),
+			new Student("Ivaylo", "Kendov", 24, [2, 6, 6, 6, 6])
+        ];
+
+        var studentWithHighestMarsks = _.max(students, function (st) {
+            return eval(st.marks.join('+')) / st.marks.length;
+        });
+
+        alert("The student with highest marks is: " + studentWithHighestMarsks.fullname);
+    </script>
+</body>
+</html>

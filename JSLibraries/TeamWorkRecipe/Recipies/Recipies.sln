@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipies", "Recipies\Recipies.csproj", "{85AFEB3F-649D-4C5F-9234-E4879EE23078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipies.Model", "Recipies.Model\Recipies.Model.csproj", "{15F94444-2022-45D3-AEE5-D73F18A8B4BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipies.Data", "Recipies.Data\Recipies.Data.csproj", "{F614E569-6559-45CD-9445-5FE184340CBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F89D4C17-59D6-46CC-BC89-9C180F3FE303}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85AFEB3F-649D-4C5F-9234-E4879EE23078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85AFEB3F-649D-4C5F-9234-E4879EE23078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85AFEB3F-649D-4C5F-9234-E4879EE23078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85AFEB3F-649D-4C5F-9234-E4879EE23078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F94444-2022-45D3-AEE5-D73F18A8B4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F94444-2022-45D3-AEE5-D73F18A8B4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F94444-2022-45D3-AEE5-D73F18A8B4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F94444-2022-45D3-AEE5-D73F18A8B4BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F614E569-6559-45CD-9445-5FE184340CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F614E569-6559-45CD-9445-5FE184340CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F614E569-6559-45CD-9445-5FE184340CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F614E569-6559-45CD-9445-5FE184340CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

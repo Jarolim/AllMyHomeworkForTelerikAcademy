@@ -1,0 +1,9 @@
+﻿<fieldset>
+	<legend>Login user</legend>
+	<label for="tb-username">Username: </label>
+	<input type="text" ng-model="user.username" id="tb-username" /><br />
+	<label for="tb-password">Password: </label>
+	<input type="text" ng-model="user.password" id="tb-password" /><br />
+	<button ng-click="loginUser()">Login</button>
+	<span ng-model="message">{{message}}</span>
+</fieldset>

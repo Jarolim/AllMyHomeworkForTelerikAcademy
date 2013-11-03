@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print Animals</title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore.js"></script>
+</head>
+<body>
+    <script>
+        var Book = Class.create({
+            init: function (title, genre, author) {
+                this.title = title;
+                this.genre = genre;
+                this.author = author;
+            },
+
+        });
+
+        var books = [
+			new Book("Dogs Book", "Animals", "Samuel"),
+			new Book("Mans Book", "Humanitarian", "Samuel"),
+			new Book("House Of Lies", "Horror", "Jo"),
+			new Book("Bananas Kingdom", "Adult", "Jo"),
+			new Book("Broken Forest", "Horror", "Samuel")
+        ];
+
+        var authors = _.countBy(books, function (book) {
+            return book.author
+        });
+
+        var authorIndex = _.max(authors);
+
+        var author = _.invert(authors)[authorIndex];
+        alert(author + " - " + authorIndex);
+    </script>
+</body>
+</html>

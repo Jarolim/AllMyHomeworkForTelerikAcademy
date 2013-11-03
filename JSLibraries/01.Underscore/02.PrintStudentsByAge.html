@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print Students By Age</title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore.js"></script>
+</head>
+<body>
+    <script>
+        var Student = Class.create({
+            init: function (fname, lname, age) {
+                this.fname = fname;
+                this.lname = lname;
+                this.fullname = fname + " " + lname;
+                this.age = age;
+            },
+
+        });
+
+        var students = [
+			new Student("Doncho", "Minkov", 24),
+			new Student("Goro", "Georgiev", 21),
+			new Student("Niki", "Kostov", 23),
+			new Student("Svetlin", "Nakov", 33),
+			new Student("Ivaylo", "Kendov", 24)
+        ];
+
+        var studentsWithAge18to24 = _.filter(students, function (st) {
+            return st.age >= 18 && st.age <= 24;
+        });
+
+        _.each(studentsWithAge18to24, function (st) {
+            alert(st.fullname);
+        })
+    </script>
+</body>
+</html>

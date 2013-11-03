@@ -1,0 +1,28 @@
+﻿#menu {
+
+width:550px;
+}
+
+#tb-logout {
+position:absolute;
+top:80px;
+left:500px;
+}
+
+#wrapper {
+
+position:absolute;
+top:20px;
+left:200px;
+}
+
+.account-info {
+
+padding:15px !important;
+}
+
+#accounts-headline {
+margin-left:180px;
+margin-bottom:15px;
+font-size:1.6em;
+}

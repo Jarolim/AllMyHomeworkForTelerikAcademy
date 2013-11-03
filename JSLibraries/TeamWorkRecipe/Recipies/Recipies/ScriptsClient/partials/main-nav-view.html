@@ -1,0 +1,22 @@
+﻿<ul id="menu">
+    <li>
+        <a href="#/">Home</a>
+    </li>
+    <li>
+        <a href="#">Categories</a>
+        <ul data-template="main-nav-view-template" data-bind ="source: categories"  id="categories-sub-menu">
+
+        </ul>
+    </li>
+    <li>
+        <a href="#/addrecipe">Add new recipe</a>
+    </li>
+</ul>
+
+
+<script type="text/x-kendo-template" id="main-nav-view-template">
+   <li>
+      <a href="\\#/categories/#: id #" >#: title #</a>
+    </li>
+
+</script>

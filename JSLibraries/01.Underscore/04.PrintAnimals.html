@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print Animals</title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore.js"></script>
+</head>
+<body>
+    <script>
+        var Animal = Class.create({
+            init: function (species, name, numberOfLegs) {
+                this.species = species;
+                this.name = name;
+                this.numberOfLegs = numberOfLegs;
+            },
+
+        });
+
+        var animals = [
+			new Animal("Dog", "Goofy", 4),
+			new Animal("Man", "Samuel", 2),
+			new Animal("Spider", "Jo", 8),
+			new Animal("Cat", "Stupid", 4),
+			new Animal("Centipede", "Mike", 171),
+            new Animal("Centipede", "John", 171)
+        ];
+
+        var groupedAnimals = _.groupBy(animals, 'species');
+
+        for (var group in groupedAnimals) {
+
+            groupedAnimals[group] = _.sortBy(groupedAnimals[group], 'numberOfLegs');
+        }
+
+        for (var group in groupedAnimals) {
+            console.log(group + " - " + groupedAnimals[group].length);
+            _.each(groupedAnimals[group], function (animal) {
+                console.log(animal);
+            });
+        }
+    </script>
+</body>
+</html>

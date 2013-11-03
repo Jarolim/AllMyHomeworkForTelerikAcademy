@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MVVM Example</title>
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.silver.min.css" rel="stylesheet" />
+
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/kendo.web.min.js"></script>
+</head>
+<body>
+
+    <div id="main-layout"></div>
+
+    <script type="text/kendo-tmpl" id="car-list">
+        <ul>
+            <li>Audi</li>
+            <li>BMW</li>
+            <li>Mercedes</li>
+        </ul>
+    </script>
+
+    <script type="text/kendo-tmpl" id="car-details-template">
+        <div>
+            <img data-bind="attr: { src: car.image, alt: car.model, title: car.model }" />
+            <div><strong>Make: </strong><span data-bind="text: car.make"></span></div>
+            <div><strong>Model: </strong><span data-bind="text: car.model"></span></div>
+            <div><strong>Year: </strong><span data-bind="text: car.year"></span></div>
+            <div><strong>Power: </strong><span data-bind="text: car.power"></span></div>
+        </div>
+    </script>
+
+    <script>
+        var carViewModel = new kendo.observable({
+            car: {
+                make: 'Opel',
+                model: 'Insignia',
+                year: 2009,
+                power: 200,
+                image: 'http://carsfolia.com/icim/vauxhall-insignia/vauxhall-insignia-02.jpg'
+            }
+        });
+
+        var layout = new kendo.Layout(
+            '<div id="no-model">' +
+            '</div>' +
+            '<div id="model">' +
+            '</div>');
+
+        var carListView = new kendo.View('car-list');
+        var carDetailView = new kendo.View('car-details-template', { model: carViewModel });
+
+        layout.render($('#main-layout'));
+        layout.showIn('#no-model', carListView);
+        layout.showIn('#model', carDetailView);
+    </script>
+</body>
+</html>

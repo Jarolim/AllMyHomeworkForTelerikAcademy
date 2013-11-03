@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/jquery.min.js"></script>
+    <script src="../Scripts/kendo.web.min.js"></script>
+</head>
+<body>
+
+    <div id="application">
+        <header>
+            <nav>
+
+            </nav>
+        </header>
+        <div id="content"></div>
+    </div>
+    <script>
+        (function () {
+            var router = new kendo.Router();
+            router.route("home", function () {
+                $("#content").html("home");
+            });
+            router.route("item/:id", function (id) {
+                $("#content").html("item - id - " + id);
+            });
+            router.route("category/:name/:id", function (categoryName, categoryId) {
+                $("#content").html("category - " + categoryName + " - id - " + categoryId);
+            });
+
+            $(function () {
+                router.start();
+            });
+        }());
+
+    </script>
+
+</body>
+</html>

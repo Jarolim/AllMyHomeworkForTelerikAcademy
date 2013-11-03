@@ -1,0 +1,18 @@
+﻿<button class="btn btn-info" id="tb-logout" data-bind="click: logout">Logout</button>
+<h1 class="btn" id="accounts-headline">Your Accounts</h1>
+<ul id="menu" data-template="account-template" data-bind="source: accounts">
+</ul>
+
+<script type="text/x-kendo-template" id="account-template">
+    <li class='balance-info'>
+       <a href="\#/account-#= Id #">
+             <span > Fullname: </span>
+            <span data-bind="text: OwnerName" > </span>
+            <span >| Balance : </span>
+           <span data-bind="text: Balance"></span>
+      </a>
+          <ul class="account-info" id="details-#= Id #">
+   
+         </ul>
+    </li>
+</script>

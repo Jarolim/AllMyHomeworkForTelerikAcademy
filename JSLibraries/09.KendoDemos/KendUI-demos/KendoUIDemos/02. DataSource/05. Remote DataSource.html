@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Remote DataSource</title>
+    <!-- Styles - first common then theme-->
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.silver.min.css" rel="stylesheet" />
+
+    <!-- Scripts first jquery then kendo script-->
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/kendo.web.min.js"></script>
+</head>
+<body>
+    <script>
+
+        $(document).ready(function () {
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: 'http://demos.kendoui.com/service/products',
+                        dataType: 'jsonp'
+                    },
+                    create: {
+                        url: 'http://demos.kendoui.com/service/products/create',
+                        dataType: 'jsonp'
+                    },
+                    destroy: {
+                        url: 'http://demos.kendoui.com/service/products/destroy',
+                        dataType: 'jsonp'
+                    },
+                    update: {
+                        url: 'http://demos.kendoui.com/service/products/update',
+                        dataType: 'jsonp'
+                    },
+                    parameterMap: function (data, type) {
+                        if (type == 'create') {
+                            return { models: kendo.stringify(data.models) };
+                        }
+
+                        if (type == 'destroy') {
+                            return { models: kendo.stringify(data.models) };
+                        }
+                    }
+                },
+                batch: true,
+                schema: {
+                    model: { id: 'ProductID' }
+                }
+            });
+
+            dataSource.sort({ field: 'ProductName', dir: 'asc' });
+
+            dataSource.fetch(function () {
+                console.log('Read: ');
+                console.log(dataSource.data());
+            });
+
+            //dataSource.add({ ProductName: 'Bottle of Water' });
+            //dataSource.add({ ProductName: 'Bottle of Coca Cola' });
+            //dataSource.add({ ProductName: 'Bottle of Beer' });
+
+            //dataSource.sync();
+
+            //dataSource.filter({ field: 'ProductName', operator: 'startswith', value: 'Bottle of' });
+
+            //dataSource.fetch(function () {
+            //    console.log('Create: ');
+            //    console.log(dataSource.data());
+            //});
+
+            //var toBeRemoved;
+
+            //for (var i = 0; i < dataSource.data().length; i++) {
+            //    if (dataSource.data()[i].ProductName == 'Bottle of Coca Cola') {
+            //        toBeRemoved = dataSource.data()[i];
+            //    }
+            //}
+
+            //dataSource.remove(toBeRemoved);
+
+            //dataSource.sync();
+
+            //dataSource.fetch(function () {
+            //    console.log('Remove: ');
+            //    console.log(dataSource.data());
+
+            //    var product = dataSource.at(0);
+
+            //    product.set('UnitPrice', 50);
+            //    dataSource.sync();
+
+            //    console.log('Update: ');
+            //    console.log(dataSource.data());
+            //});
+
+            dataSource.pageSize(10);
+            dataSource.page(2);
+
+            dataSource.fetch(function () {
+                console.log('Page 2 with Page size 10');
+                console.log(dataSource.view());
+            });
+        });
+
+    </script>
+</body>
+</html>

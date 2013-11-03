@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Application</title>
+    <script src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+    <style>
+        a {
+            margin: 30px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+            a:hover {
+                color: grey;
+                text-decoration: underline;
+            }
+
+        .marksContainer {
+            margin: 30px;
+            background-color: grey;
+        }
+
+            .marksContainer:hover {
+                background-color: lightgray;
+            }
+
+        ul {
+            list-style: none;
+            text-align: center;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+            ul li {
+                display: inline;
+                padding: 0 10px;
+            }
+    </style>
+</head>
+
+<body>
+    <script type="x-mustache-template" id="student-template">
+        <div class="student" data-id="{{id}}">
+          <strong>Student name:</strong> {{name}} - <strong>Grade:</strong> {{grade}}
+        </div>
+    </script>
+    <script type="x-mustache-template" id="mark-template">
+        <li>
+            <strong>{{subject}}</strong> {{value}}
+        </li>
+    </script>
+    <div id="container">
+    </div>
+    <div class="marksContainer" style="display: none">
+        <p>a</p>
+    </div>
+</body>
+</html>

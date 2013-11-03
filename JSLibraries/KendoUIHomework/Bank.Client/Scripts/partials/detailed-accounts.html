@@ -1,0 +1,36 @@
+﻿
+<li data-template="account-template" data-bind="source: detailedAccount">
+
+</li>
+
+<script type="text/x-kendo-template" id="account-template">
+    <div id="detailed-account-#= Id #">
+        <div>   
+                 <span > Fullname: </span>
+                <span data-bind="text: OwnerName" > </span>
+                <span >| Balance : </span>
+               <span data-bind="text: Balance"></span>
+        </div>
+        <div>   
+                 <span > Creation date: </span>
+                <span data-bind="text: CreatedOn" > </span>
+                <span >| Expiration date : </span>
+               <span data-bind="text: ExpireDate"></span>
+        </div>
+        <div>   
+                <span > Transaction log: </span>
+                <table class="table table-striped">
+                # for (var i = 0; i < Transactions.length; i++) { #
+                    <tr>
+                        <td>#=Transactions[i].LogDate# </td>
+                        <td>#=Transactions[i].UserFullName #</td>
+                        <td>#=Transactions[i].LogText #</td>
+                    </tr>
+                 # } #
+               </table>
+         </div>
+          <a class="btn btn-warning" href="\#/widhraw-#= Id #">Widhraw cash</a>
+            <div id="meney-operation"></div>
+        <a class="btn btn-info" href="\#/deposit-#= Id #">Deposit cash</a>
+    </div>
+</script>

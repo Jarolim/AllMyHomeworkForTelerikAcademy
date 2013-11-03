@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kendo Grid Widget Web API Data</title>
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.silver.min.css" rel="stylesheet" />
+
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/kendo.web.min.js"></script>
+</head>
+<body>
+    <span>Make</span><input type="text" id="make" />
+    <span>Model</span><input type="text" id="model" />
+    <span>Year</span><input type="text" id="year" />
+    <span>Power</span><input type="text" id="power" />
+    <button id="createCar">Create</button>
+    <div id="grid" style="width: 800px">
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+
+            var baseUrl = 'http://localhost:41983';
+
+            var carsDataSource = new kendo.data.DataSource({
+                data: []
+            });
+
+            jQuery.support.cors = true;
+            $.ajax({
+                url: baseUrl + '/api/cars/all',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    carsDataSource.data(data);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            var grid = $('#grid').kendoGrid({
+                dataSource: carsDataSource,
+                sortable: true,
+                columns: [
+                    { field: "Id", title: "Id" },
+                    { field: "Make", title: "Make" },
+                    { field: "Model", title: "Model" },
+                    { field: "Power", title: "Power" },
+                    { field: "Year", title: "Year" },
+                ]
+            });
+
+            $('#createCar').on('click', function () {
+                var make = $('#make').val(),
+                    model = $('#model').val(),
+                    year = parseInt($('#year').val()),
+                    power = parseInt($('#power').val());
+
+                var car = {
+                    Make: make,
+                    Model: model,
+                    Year: year,
+                    Power: power,
+                };
+
+                $.ajax({
+                    url: baseUrl + '/api/cars/add',
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType:"application/json",
+                    data: JSON.stringify(car),
+                    success: function (data) {
+                        carsDataSource.data(data);
+                        var grid = $('#grid').data('kendoGrid');
+                        grid.refresh();
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

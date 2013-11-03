@@ -1,0 +1,9 @@
+﻿
+<h2>{{recipe.title}}</h2>
+<p ng-repeat="product in recipe.products">{{product.Name}} - {{product.Quantity}}</p>
+<p>Category:<strong>{{recipe.categoryName}}</strong> By: <strong>{{recipe.creator}}</strong> Published on: <strong>{{recipe.publishDate}}</strong> Likes: <strong>{{recipe.likes}}</strong></p>
+<fieldset>
+    <legend>Delete Recipe</legend>
+    <button ng-click="deleteRecipe()">Delete Recipe</button>
+</fieldset>
+<span ng-model="message">{{message}}</span>

@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SPA</title>
+    <link href="../styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="../styles/kendo.silver.min.css" rel="stylesheet" />
+
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/kendo.web.min.js"></script>
+</head>
+<body>
+    <!-- Main HTML -->
+
+    <header>
+        <h1>
+            Luxury cars
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="#/home" id="home">Home</a>
+            </li>
+            <li>
+                <a href="#/cars" id="cars">Available Cars</a>
+            </li>
+            <li>
+                <a href="#/about" id="about">About Us</a>
+            </li>
+            <li>
+                <a href="#/contacts" id="contacts">Contacts</a>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <div id="application">
+
+        </div>
+    </section>
+
+    <!-- Templates -->
+
+    <script type="text/kendo-tmpl" id="main-layout">
+        <div id="content">
+        </div>
+    </script>
+
+    <script type="text/kendo-tmpl" id="home-layout">
+            Welcome to luxury cars. You can find more information about the cars we sell at "Available cars"
+    </script>
+
+    <script type="text/kendo-tmpl" id="available-cars-layout">
+        <ul data-bind='source: cars' data-template='car-list-template'></ul>
+    </script>
+
+    <script type="text/kendo-tmpl" id="car-list-template">
+        <li>
+               <a href="\#/cars/#= id #">#: make # #: model #</a>
+        </li>
+    </script>
+
+    <script type="text/kendo-tmpl" id="car-details-template">
+        <div>
+            <img data-bind="attr: { src: car.image, alt: car.model, title: car.model }" />
+            <div><strong>Make: </strong><span data-bind="text: car.make"></span></div>
+            <div><strong>Model: </strong><span data-bind="text: car.model"></span></div>
+            <div><strong>Year: </strong><span data-bind="text: car.year"></span></div>
+            <div><strong>Power: </strong><span data-bind="text: car.power"></span></div>
+        </div>
+    </script>
+
+    <script type="text/kendo-tmpl" id="about-us-layout">
+            Luxury cars has been providing its services to serious men and women since 2001.
+    </script>
+
+    <script type="text/kendo-tmpl" id="contact-layout">
+        <ul>
+            <li>
+                Luxury Phone: 0888 888-888
+            </li>
+            <li>
+                Luxury Address: Petrich-California
+            </li>
+            <li>
+                Luxury email: luxury@luxury.lxr
+            </li>
+        </ul>
+    </script>
+
+    <!-- Kendo SPA-->
+    <script>
+        $("nav > ul").kendoMenu({ orientation: "horizontal" });
+
+        //data of cars
+
+        var carsDataSource = new kendo.data.DataSource({
+            data: [
+            { make: 'Opel', model: 'Insignia', year: 2009, power: 200, image: 'http://carsfolia.com/icim/vauxhall-insignia/vauxhall-insignia-02.jpg' },
+            { make: 'Opel', model: 'Astra', year: 2011, power: 211, image: 'http://fastestlaps.com/photos/opel_astra_opc_2012.jpg' },
+            { make: 'Audi', model: 'A5', year: 2008, power: 255, image: 'http://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Audi_A5_Coup%C3%A9_2.0_TFSI_quattro_S_tronic_Gletscherwei%C3%9F_Facelift.JPG/280px-Audi_A5_Coup%C3%A9_2.0_TFSI_quattro_S_tronic_Gletscherwei%C3%9F_Facelift.JPG' },
+            { make: 'Audi', model: 'A8', year: 2009, power: 235, image: 'http://www.blogcdn.com/www.autoblog.com/media/2009/11/audi-a8-live-miami_-(3)_opt.jpg' },
+            { make: 'Audi', model: 'A3', year: 2005, power: 211, image: 'http://3.bp.blogspot.com/-LRMi09Veizo/UU0lbpKaRpI/AAAAAAAACJU/5N9_DGIGlYE/s320/audi+a3.jpg' },
+            { make: 'BMW', model: 'M3', year: 2010, power: 411, image: 'http://www.bmwblog.com/wp-content/uploads/292398_10150995008502393_451986615_n-1.jpg'},
+            { make: 'Mercedes', model: 'CL', year: 2011, power: 320, image: 'http://www.emercedesbenz.com/Images/Nov08/06_Vitt_Mercedes_Benz_CL_Class_Widebody/06_Vitt_Mercedes_Benz_CL_Class_Widebody_20.jpg' },
+            { make: 'Mercedes', model: 'S', year: 2005, power: 220, image: 'http://img.automobile.de/modellbilder/Mercedes-Benz-S-400-24382_1242200524143.jpg' },
+            { make: 'Mercedes', model: 'C', year: 2012, power: 100, image: 'http://www.ravianimator.com/images/auto/mercedes-3P.jpg' }
+            ]
+        });
+
+        //view model of car list
+
+        var carListViewModel = new kendo.observable({
+            model: carsDataSource,
+            cars: function () {
+                var data;
+                var self = this;
+
+                this.model.fetch(function () {
+                    data = self.model.data();
+                });
+
+                var carList = [];
+
+                for (var i = 0; i < data.length; i++) {
+                    carList.push({
+                        id: i + 1,
+                        make: data[i].make,
+                        model: data[i].model
+                    });
+                }
+
+                return carList;
+            }
+        });
+
+        //view model of car details
+        var carDetail = new kendo.observable({
+            model: carsDataSource,
+            current: 1,
+            getCar: function () {
+                var data;
+                var self = this;
+
+                this.model.fetch(function () {
+                    data = self.model.data();
+                });
+
+                var car = data[this.get("current")];
+
+                return car;
+            },
+            car: null,
+        });
+
+        //layouts
+        var layout = new kendo.Layout('main-layout');
+
+        //views
+        var homeView = new kendo.View('home-layout');
+        var listCarsView = new kendo.View('available-cars-layout', { model: carListViewModel });
+        var carDetailView = new kendo.View('car-details-template', { model: carDetail });
+        var aboutView = new kendo.View('about-us-layout');
+        var contactView = new kendo.View('contact-layout');
+
+        //nav button
+        $('#home').on('click', function () {
+            layout.showIn('#content', homeView);
+        });
+
+        $('#cars').on('click', function () {
+            layout.showIn('#content', listCarsView);
+        })
+
+        $('#contacts').on('click', function () {
+            layout.showIn('#content', contactView);
+        });
+
+        $('#about').on('click', function () {
+            layout.showIn('#content', aboutView);
+        });
+
+        //routing
+        var router = new kendo.Router({
+            init: function () {
+                layout.render('#application');
+            }
+        });
+
+        router.route('/', function () {
+            layout.showIn('#content', homeView);
+        });
+
+        router.route('/cars', function () {
+            layout.showIn('#content', listCarsView);
+        });
+
+        router.route('/cars/:id', function (id) {
+            carDetail.set("current", parseInt(id - 1));
+            carDetail.set("car", carDetail.getCar());
+            layout.showIn('#content', carDetailView);
+        });
+
+        router.route('/contacts', function () {
+            layout.showIn('#content', contactView);
+        });
+
+        router.route('/about', function () {
+            layout.showIn('#content', aboutView);
+        });
+
+        $(function () {
+            router.start();
+        });
+    </script>
+</body>
+</html>

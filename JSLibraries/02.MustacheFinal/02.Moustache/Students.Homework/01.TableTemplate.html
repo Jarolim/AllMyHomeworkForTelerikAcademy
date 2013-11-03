@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/table-view.js"></script>
+    <script src="Scripts/jquery-2.0.3.js"></script>
+    <style>
+        th 
+        {
+            padding: 10px;
+            border: 1px solid black;
+            background-color: #808080;
+        }
+        td 
+        {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        
+    </div>
+
+    <script type="x-table-template" id="table-template">
+            <th>{{fullname}} :</th>
+            {{#marks}}
+            <td>{{subject}}: <strong>{{score}}</strong></td>
+            {{/marks}}
+            {{^marks}}
+            <td>No marks yet.</td>
+            {{/marks}}
+    </script>
+
+    <script>     
+        var people;
+
+        function RenderData(data) {
+            people = data;
+            var personTemplate = Mustache.compile(document.getElementById("table-template").innerHTML);
+
+            var tableView = controls.getTableView(people);
+
+            var tableViewHtml = tableView.render(personTemplate);
+
+            document.getElementById("content").innerHTML = tableViewHtml;
+        };
+  
+        $.ajax({
+            url: "http://localhost:35339/api/students",
+            success: RenderData
+        });
+    </script>
+
+</body>
+</html>

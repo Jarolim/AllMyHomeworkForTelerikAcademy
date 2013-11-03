@@ -1,0 +1,24 @@
+﻿<section>
+    <label for="create-recipe-title-input" >Title: </label>
+    <input type="text" id="create-recipe-title-input" data-bind="value: title" />
+    <label for="create-recipe-content-input" >Content: </label>
+    <textarea id="create-recipe-content-input" data-bind="value: content"></textarea>
+
+    <select id="create-recipe-category-input" data-value-field="title" data-bind="source: categories, value: category"></select>
+
+    <label for="products">Products</label>
+    <select id="produts" data-role="combobox" data-bind="source: products,  value: product "></select>
+    <select id="measurement" data-bind="source: measurements, value: measurement"></select>
+    <input type="number" id="quantity" data-bind="value: quantity" />
+
+    <button data-bind="click: addProduct">Add product:</button>
+    <button data-bind="click: createRecipe">Create recipe:</button>
+     <div data-role="grid"
+        data-bind="source: slectedProducts"
+        data-editable="false"
+        data-columns='[{"field": "quantity", "title": "Quantity"},
+        {"field": "measurement", "title": "Measurement"},
+        {"field": "name", "title": "Product"}]'>
+    </div>
+    <span data-bind="text: message"></span>
+</section>

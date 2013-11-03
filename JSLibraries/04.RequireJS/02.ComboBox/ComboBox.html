@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Combo Box</title>
+    <script src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+
+    <style>
+        #comboBox {
+            border: 1px solid black;
+            width: 250px;
+            margin: 50px;
+        }
+
+            #comboBox p {
+                display: inline;
+            }
+
+            #comboBox img {
+                border: 1px solid black;
+                width: 100px;
+                height: 100px;
+            }
+
+        .person-item {
+            border: 1px solid black;
+            width: 150px;
+            display: inline-block;
+            background-color: #DADADA;
+            border-radius: 5px;
+            padding: 0 10px;
+            margin: 10px;
+        }
+
+            .person-item:hover {
+                background-color: grey;
+            }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script type="x-mustache-template" id="person-template">
+        <div class="person-item" id="person-item-{{id}}">
+            <strong class="person-name">{{name}}</strong>
+            <p class="person-age">: Age:{{age}}</p>
+            <img src="{{avatarUrl}}"/>
+        </div>
+    </script>
+
+    <div id="comboBox"></div>
+
+    <div id="content">
+    </div>
+</body>
+</html>
