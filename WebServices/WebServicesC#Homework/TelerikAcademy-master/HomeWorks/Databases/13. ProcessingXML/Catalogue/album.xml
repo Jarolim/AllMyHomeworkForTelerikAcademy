@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<albums>
+	<album>
+		<name>Heaven</name>
+		<artist>Bum bum</artist>
+	</album>
+	<album>
+		<name>Come On Over </name>
+		<artist>Shania Twain</artist>
+	</album>
+	<album>
+		<name>Led Zeppelin IV</name>
+		<artist>Led Zeppelin</artist>
+	</album>
+	<album>
+		<name>Send It With Love</name>
+		<artist>Shania Twain</artist>
+	</album>
+</albums>

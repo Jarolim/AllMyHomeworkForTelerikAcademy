@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JustCodeSettings Version="0.0" Timestamp="1b6f902e-e405-4a92-9232-c57ae637c18a">
+  <IgnoredErrorsAndWarningsSettings xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+    <IgnoredErrorsAndWarnings Version="2">
+      <FilePath>
+        <FileRelativePath>DictionaryRedis/Utilities.cs</FileRelativePath>
+        <ProjectRelativePath>DictionaryRedis/DictionaryRedis.csproj</ProjectRelativePath>
+        <IgnoredElement>
+          <TextualIdentifier>8353262901896000812</TextualIdentifier>
+        </IgnoredElement>
+      </FilePath>
+    </IgnoredErrorsAndWarnings>
+  </IgnoredErrorsAndWarningsSettings>
+</JustCodeSettings>

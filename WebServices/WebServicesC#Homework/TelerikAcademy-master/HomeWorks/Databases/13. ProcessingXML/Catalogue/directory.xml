@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<directories>
+	<file name="album.xml" />
+	<file name="App.config" />
+	<file name="Catalogue.csproj" />
+	<file name="catalogue.xml" />
+	<file name="Delete.cs" />
+	<file name="directory.xml" />
+	<file name="Person.txt" />
+	<file name="person.xml" />
+	<file name="Program.cs" />
+	<file name="ReadParse.cs" />
+	<file name="SearchEngines.cs" />
+	<file name="TraverseDirectories.cs" />
+	<dir name="bin" />
+	<dir name="Debug" />
+	<file name="Catalogue.exe" />
+	<file name="Catalogue.exe.config" />
+	<file name="Catalogue.pdb" />
+	<file name="Catalogue.vshost.exe" />
+	<file name="Catalogue.vshost.exe.config" />
+	<dir name="Release" />
+	<dir name="obj" />
+	<dir name="Debug" />
+	<file name="Catalogue.csproj.FileListAbsolute.txt" />
+	<file name="Catalogue.csprojResolveAssemblyReference.cache" />
+	<file name="Catalogue.exe" />
+	<file name="Catalogue.pdb" />
+	<file name="DesignTimeResolveAssemblyReferencesInput.cache" />
+	<file name="TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+	<file name="TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+	<file name="TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+	<dir name="TempPE" />
+	<dir name="Properties" />
+	<file name="AssemblyInfo.cs" />
+</directories>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="students-xml2html.xslt"?>
+<students xmlns:students="urn:school.com:Students">
+  <student>
+    <name>Mila Ivanova</name>
+    <sex>female</sex>
+    <birthdate>1978-01-01</birthdate>
+    <phone>088993344</phone>
+    <email>mila@mail.bg</email>
+    <course>Chemistry</course>
+    <specialty>chemist</specialty>
+    <facultyN>84837261</facultyN>
+    <exams>
+      <name>Math</name>
+      <tutor>Peter Vakelov</tutor>
+      <examDate>2013-01-01</examDate>
+      <score>90</score>
+      <name>Biology</name>
+      <tutor>Mina Minkova</tutor>
+      <examDate>2013-01-09</examDate>
+      <score>65</score>
+    </exams>
+  </student>
+  <student>
+    <name>Georgy Vakilov</name>
+    <sex>male</sex>
+    <birthdate>1982-02-01</birthdate>
+    <phone>0899122122</phone>
+    <email>georgy@mail.bg</email>
+    <course>Chemistry</course>
+    <specialty>chemist</specialty>
+    <facultyN>22995588</facultyN>
+    <exams>
+      <name>Biology</name>
+      <tutor>Mina Minkova</tutor>
+      <examDate>2013-01-04</examDate>
+      <score>90</score>
+      <name>Chemistry Part One</name>
+      <tutor>Evgeny Hinkov</tutor>
+      <score>55</score>
+      <name>Math</name>
+      <tutor>Peter Vakelov</tutor>
+      <examDate>2013-02-01</examDate>
+      <score>90</score>
+    </exams>
+  </student>
+</students>
