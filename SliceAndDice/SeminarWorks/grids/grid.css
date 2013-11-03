@@ -1,0 +1,52 @@
+﻿body {
+}
+.grid {
+    width:960px;
+}
+
+    .grid:after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+
+.coll {
+    float: left;
+}
+
+.coll-1 {
+    width: 80px;
+}
+.coll-2 {
+    width: 160px;
+}
+.coll-3 {
+    width: 240px;
+}
+.coll-4 {
+    width: 320px;
+}
+.coll-5 {
+    width: 400px;
+}
+.coll-6 {
+    width: 480px;
+}
+.coll-7 {
+    width: 560px;
+}
+.coll-8 {
+    width: 640px;
+}
+.coll-9{
+    width: 720px;
+}
+.coll-10 {
+    width: 800px;
+}
+.coll-11 {
+    width: 880px;
+}
+.coll-12 {
+    width: 960px;
+}

@@ -1,0 +1,720 @@
+body, div, p, span, article, section, time, hgroup, h1, h2, h3, ul, nav, li, button, img, a,   header{
+	padding:0;
+	margin:0;
+}
+
+article, section, hgroup    , nav{
+	display:block;
+}
+
+body, button, h1, h2, p ,a, footer{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.clearfix{
+	zoom:1;
+}
+
+.clearfix:after {
+	clear:both;
+	content:"";
+	height:1px;
+	display:block;
+}
+
+div.background {
+	width:100%;
+		background:#829aa7;
+}
+
+div.white {
+	
+	background:white;
+}
+
+.text-center{
+	text-align:center;
+}
+
+p {
+	
+	font-size:14px;
+	color:#555e58;
+	text-align:justify;
+}
+
+a {
+	text-decoration:none;
+}
+
+div#first-bg{
+	background: #3e9bc6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3e9bc6 0%, #c0cdd3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3e9bc6), color-stop(100%,#c0cdd3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3e9bc6 0%,#c0cdd3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3e9bc6 0%,#c0cdd3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3e9bc6 0%,#c0cdd3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3e9bc6 0%,#c0cdd3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e9bc6', endColorstr='#c0cdd3',GradientType=0 ); /* IE6-9 */
+
+}
+
+h1{
+	
+	font-size:72px;
+	font-weight:800;
+	color:white;
+	text-shadow:0 1px 2px #4e4f4f;
+	text-align:center;
+
+}
+h2{
+	
+	font-size:36px;
+	font-weight:400;
+	color:white;
+	text-shadow:0 1px 2px #4e4f4f;
+	text-align:center;
+}
+
+article a.read-more {
+			
+			border-radius:4px;
+			font-size:13px;
+			border:1px solid ;
+			padding:6px;
+			float:right;
+			
+		}
+
+		
+		
+		
+		
+article.middle {
+		margin-left:70px;
+		margin-right:70px;
+	}
+section.center {
+	max-width:960px;
+	margin:0 auto;
+	
+}
+/* First Page .. Header*/
+
+#page-header {
+	width:990px;
+	padding-top:50px;
+	margin-left:-21px;
+	
+}
+	a#logo {
+		margin-right:30px;
+		font-family: "Myriad Pro", sans-serif;
+		font-size:48px;
+		color:white;
+		text-shadow:0 1px 2px #4e4f4f;
+		text-decoration:none;
+		letter-spacing:-3px;
+	}
+		header#page-header nav {
+			display: inline-block;
+			
+			*display:inline;
+			zoom:1;
+		}
+			
+			ul#main-nav li{
+				display:inline-block;
+				*display:inline;
+				zoom:1;
+			}
+				ul#main-nav li a{
+					text-decoration:none;
+					margin-right:4px;
+					font-family: "Open Sans", sans-serif;
+					font-weight:400;
+					color:white;
+					font-size:13px;
+					text-shadow:0 1px 2px #4e4f4f;
+					padding:9px 13px;
+					
+				}
+				ul#main-nav li.current a{
+					background:#186387;
+					 box-shadow: inset 0 0  4px 2px #7e7e7e;
+					 -webkit-box-shadow: inset 0 0  4px 2px #7e7e7e;
+					 -moz-box-shadow: inset 0 0  4px 2px #7e7e7e;
+					 border-radius:5px;
+					 
+				}
+					
+						
+					
+						div#rotator h1.section-header {
+							font-weight:300;
+							text-align:left;
+							font-family: "Myriad Pro", sans-serif;
+							font-size:60px;
+							letter-spacing:-4px;
+						}
+							div#rotator hgroup {
+								padding-left:175px;
+								margin-top:84px;
+							}
+								div#rotator h2 {
+									padding-left:22px;
+									text-align:left;
+								}
+							div#header-image {
+								width:100%;
+								margin-top:43px;
+					
+							}
+								div.image-rows {
+									
+									
+									background:#7c93b8;
+									border-top-left-radius: 5px;
+									border-top-right-radius: 5px;
+								}
+								
+								div#third {
+									width:100%;
+									height:175px;
+								}
+								div#second {
+									width:79%;
+									height:60px;
+									margin:0 auto;
+								}
+								
+								div#first {
+									width:40%;
+									height:60px;
+									margin:0 auto;
+								}
+	
+/* Second Page (Services) >> */
+
+
+	article.cols{
+		width:27.6041%;
+		max-width:265px;
+		padding:2px;
+		display:inline-block;
+		*display:inline;
+		zoom:1;
+		
+		
+	}
+	
+	article.services {
+		margin-top:77px;
+		
+	}
+	
+		article.services div.image{
+			margin:0 auto;
+			width:120px;
+			height:120px;
+			background-image: url("../imgs/circle-services.png");
+		}
+		article.services h1{
+			font-weight:300;
+			font-size:24px;
+			color:#afaeae;
+			text-shadow:none;
+			
+		}
+		
+		article.services  p{
+			height:165px;
+			overflow:hidden;
+		
+		}
+		
+		article.services a.read-more {
+			background:#f8f8f8;
+			border:1px solid #e0dddd;
+			color:#b3b2b2;
+			margin-top: 20px;
+		}
+		article a.read-more:hover {
+			
+			background-color:#186f96;
+			color:white;
+			
+		}
+		div#services-important{
+			margin-top:90px;
+			margin-bottom:120px;
+		}
+			div#services-important h1{
+				font-size:24px;
+				text-align:center;
+				color:#555e58;
+				text-shadow:none;
+			}
+			div#services-important h1 span{
+				font-size:42px;
+				
+			}
+			
+			div#services-important p {
+					padding:0 30px;
+					font-size:20px;
+					font-weight:300;
+					text-align:center;
+			}
+		
+
+/* Third Page (News) >> */		
+
+	article.news h1{
+		font-size:22px;
+		font-weight:800;
+	}
+	
+	article.news div.image{
+			margin:0 auto;
+			width:82px;
+			height:82px;
+			background-image: url("../imgs/circle-news.png");
+
+		}	
+		
+	article.news p {
+		color:white;
+		text-shadow:0 1px 2px #4e4f4f;
+		
+	}
+	article.news footer {
+		font-size:13px;
+		text-shadow:0 1px 2px #4e4f4f;
+		color:#b0bab4;
+	}
+	
+		article.news a.read-more {
+			background:#68716b;
+			border:1px solid #3d433f;
+			color:#3d433f;
+			margin-top: 20px;
+		}
+		article.news a.read-more:hover {
+			background:#186f96;
+			color:white;
+			
+		}
+		
+	section#news div.text-center {
+		padding-top:60px;
+		padding-bottom:127px;
+		
+	}
+	 a.more-blog {
+		background:#5e6661;
+		font-size:30px;
+		font-weight:300;
+		color: white;
+		border-radius:4px;
+		border:1px solid #313a34;
+		padding:15px;
+		text-shadow:0 1px 2px #4e4f4f;
+	}
+		
+		
+/* Page 3 Work & feedback*/
+section#work hgroup {
+	padding-top:50px;
+	padding-bottom:120px;
+}
+	 h1.gray-header, h2.gray-header{
+		color:#636b66;
+		text-shadow:none;
+	}
+	
+	article.work {
+		width:266px;
+		height:266px;
+		position:relative;
+		padding:0;
+		background-image: url("../imgs/work-circle.png");
+		
+	}
+	
+	article.work  div {
+		position:absolute;
+		top:90px;
+		color:#4a524d;
+		text-align:center;
+	}
+	
+	section#work article.middle {
+		width:268px;
+		height:266px;
+		background-image: url("../imgs/work-circle-middle.png");
+	}
+		
+		article.work time {
+			font-family:"Open Sans", sans-serif ;
+			font-size:14px;
+		}
+		
+		article.work a {
+			float:none;
+			display:inline-block;
+			margin-top:5px;
+			background:#f7f7f7;
+			color:#b9b8b8;
+			border:1px solid #b9b8b8;
+			
+		}
+		
+		section#work div.text-center {
+			padding-top:60px;
+			padding-bottom:120px;
+		}
+		section#work a.more-blog {
+			
+		background:#fff;
+		font-size:30px;
+		font-weight:300;
+		color: #6d7470;
+		border-radius:4px;
+		border:1px solid #e0dddd;
+		padding:15px;
+		text-shadow:0 1px 2px #4e4f4f;
+		text-shadow:none;
+	}
+		
+		
+		
+/* Prices*/
+
+	section#prices hgroup {
+		padding-top:85px;
+		padding-bottom:45px;
+	}
+
+		div#price-table {
+			width:100%;
+			background:#465662;
+			overflow:hidden;
+		}
+			ul.prices {
+				width:33%;
+				display:inline-block;
+				
+				
+			}
+				ul.prices li {
+					margin-left:-4px;
+					padding: 25px 0;
+					
+					list-style-type:none;
+					text-align:center;
+					color:white;
+					font-size:14px;
+					color:white;
+					
+					border-bottom:1px solid #35424c;
+				}
+				ul.prices li.caption {
+					background:#3f4e59;
+					font-size:22px;
+					color:white;
+					font-weight:800;
+					
+					
+				}
+					ul.prices li a{
+					font-size:14px;
+					color:white;
+					text-shadow:0 1px 2px black;
+					
+				}
+					ul.prices li.checked{
+					background-image:url("../imgs/check.png") ;
+					background-repeat:no-repeat;
+					background-position:45px 22px ;
+				}
+				ul.prices li.unchecked{
+					background-image:url("../imgs/unchecked.png") ;
+					background-repeat:no-repeat;
+					background-position:45px 22px ;
+				}
+					
+				ul.prices li.price {
+					font-size:72px;
+					line-height:72px;
+				}
+					section#prices div.text-center {
+						padding-top:60px;
+						padding-bottom:120px;
+					}
+					
+				
+	/* Last Page*/
+	
+section#bottom {
+	padding-top:90px;
+	border-bottom:1px solid light-grey;
+}
+	article.bottom h1{
+			font-weight:300;
+			font-size:24px;
+			color:#afaeae;
+			text-shadow:none;
+			
+		}
+		article.bottom h1 {
+			padding-bottom:20px;
+			font-weight:800;
+			text-align:left;
+			font-size:18px;
+			color:#4a524d;
+		}
+		article.bottom h1.telerik {
+			padding-bottom:5px;
+			font-family:"Myriad Pro", sans-serif;
+			font-weight:normal;
+			
+			color:#4a524d;
+			font-size:38px;
+			letter-spacing:-3px;
+		}
+		article.bottom  p{
+			height:auto;
+			text-align:left;
+			
+		
+		}
+		
+		article.bottom  p.copy{
+			font-size:14px;
+			font-style:oblique;
+			color: #bfbfbf;
+			padding:5px 0;
+		
+		}
+		
+/* FOOTER*/
+
+footer.page-footer {
+	text-align:right;
+}
+
+	
+footer.page-footer p{
+	width:100%;
+	max-width:960px;
+	padding-top:67px;
+	margin:0 auto;
+	color:#555e58;
+	font-family:"Myriad Pro", sans-serif;
+	font-size:14px;
+	text-align:right;
+}
+
+		
+		/* resolution 769px*/
+		
+		
+@media screen and (max-width:768px){
+section.center {
+	width:100%;
+	max-width:768px;
+	margin:0 auto;
+	
+}
+	#page-header {
+	
+	overflow:hidden;
+	padding-top:50px;
+	margin-left:25px;
+	
+}
+	a#logo {
+		margin-right:20px;
+		font-size:36px;
+	}
+		ul#main-nav li a{
+					
+			margin-right:4px;
+
+		}
+	
+	
+/* page 1*/
+article.cols{
+		width:27.6041%;
+		max-width:200px;
+		padding:5px;
+	}
+		
+article.middle {
+		margin-left:52px;
+		margin-right:52px;
+}
+	
+article.work {
+		width:207px;
+		height:207px;
+		background: url("../imgs/work-circle-768.png") no-repeat;
+		
+	}
+	
+	article.work  div {
+		top:68px;
+		font-size:14px;
+	}
+	
+	section#work article.middle {
+		width:207px;
+		height:207px;
+		background: url("../imgs/work-circle-middle-768.png") no-repeat;
+		background-position:3px;
+	}
+	
+	
+	/*Prices*/
+		ul.prices {
+				width:33%;
+				display:inline-block;
+				max-width:243px;
+			}
+				
+	
+	ul.prices li.checked{
+					
+					background-position:33px 22px ;
+				}
+				ul.prices li.unchecked{
+					background-image:url("../imgs/unchecked.png") ;
+					background-repeat:no-repeat;
+					background-position:33px 22px ;
+				}
+	
+	
+		ul.prices li a{
+					font-size:12px;			
+				}
+	
+	
+		}
+		
+		
+/* 480px*/
+
+@media screen and (max-width:480px){
+	section.center {
+	max-width:480px;
+	margin:0 auto;
+	
+}
+	header#page-header{
+		text-align:center;
+		width:480px;
+	}
+	
+	a#logo {
+		display:block;
+		font-size:48px;
+		
+	}
+	
+	ul#main-nav li{
+				display:block;
+				background:#186387;
+					 box-shadow: inset 0 0  4px 2px #7e7e7e;
+					 -webkit-box-shadow: inset 0 0  4px 2px #7e7e7e;
+					 -moz-box-shadow: inset 0 0  4px 2px #7e7e7e;
+					 border-radius:5px;
+					 -moz-border-radius:5px;
+					 -webkit-border-radius:5px;
+					 margin:5px;
+					 padding:4px 20px;
+			}
+	
+					ul#main-nav li a {
+						font-size:22px;
+					}
+				
+					ul#main-nav li.current a{
+					background:transparent;
+					 box-shadow: none;
+					 -webkit-box-shadow: none;
+					 -moz-box-shadow: none;
+					 border-radius:5px;
+					 
+				}
+				
+				div#rotator hgroup{
+					padding-left:40px;;
+					
+				}
+					div#rotator h1.section-header {
+							
+							font-size:48px;
+							letter-spacing:0;
+						}
+						div#rotator h2{
+							
+							font-size:24px;
+							letter-spacing:0;
+						}
+					
+			article.cols{
+				width:100%;
+				max-width:435px;
+		}
+			article.middle {
+				margin-left:0;
+				margin-right:0;
+		
+				
+		}	
+		article div.image {
+			display:none;
+		}
+		
+		
+					 
+		article.work {
+		width:129px;
+		height:129px;
+		position:relative;
+		padding:0;
+		background-image: url("../imgs/work-circle-480.png");
+		
+	}
+	
+	article.work  div {
+		display:none;
+	}
+	
+	section#work{
+		text-align:center;
+		
+	}
+	section#work article.middle {
+		width:129px;
+		height:129px;
+		background-image: url("../imgs/work-circle-480.png");
+	}
+					 
+	ul.prices {
+				width:100%;
+				max-width:440px;
+				display:inline-block;
+				
+				
+			}
+					 
+					 
+					 
+					 
+					 
+				}
+					

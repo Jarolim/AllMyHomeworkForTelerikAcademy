@@ -1,0 +1,228 @@
+#wrapper{
+	max-width: 100%;
+	margin: auto;
+	font-family: "Open Sans";
+}
+hgroup{
+	margin: auto;
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-family: "Open Sans";
+	color: #fff;
+}
+body, html{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+article, footer{
+	padding-top: 70px;
+	padding-bottom: 75px;
+}
+
+/* MAIN HEADER */
+#main-header{
+	background-image: url("feat-img.png");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background: #3095c5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3095c5 0%, #c2ced3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3095c5), color-stop(100%,#c2ced3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3095c5 0%,#c2ced3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3095c5 0%,#c2ced3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3095c5 0%,#c2ced3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3095c5 0%,#c2ced3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3095c5', endColorstr='#c2ced3',GradientType=0 ); /* IE6-9 */
+	text-align: center;
+	color: #fff;
+	height: 660px;
+	text-shadow: 1px 1px #016492;
+}
+#main-header h1{
+	font-size: 57px;
+	font-style: 900;
+}
+#main-header h2{
+	font-size: 26px;
+	font-weight: 100;
+}
+
+/* LOGO */
+#logo{
+	font-family: "Myriad Pro";
+	font-size: 24px;
+}
+
+/* MAIN NAVIGATION */
+#main-nav{
+	font-size: 10px;
+	font-style: 400;
+	display: inline-block;
+}
+#main-nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-left: 30px;
+}
+#main-nav li{
+	display: inline-block;
+	margin: 20px;
+}
+/* FIRST ARTICLE */
+article:nth-of-type(1){
+	padding-top: 0;
+}
+article:nth-of-type(1) section {
+	background-image: url("service-img.png");
+	background-position: center top;
+	background-repeat: no-repeat;
+	color: #555E58;
+	display: inline-block;
+	font-size: 11px;
+	margin-left: 7%;
+	margin-top: 70px;
+	max-width: 23%;
+	padding-top: 150px;
+}
+article:nth-of-type(1) section h2{
+	font-style: light;
+	font-size: 18px;
+	color: #a3a2a2;
+} 
+/* SECOND ARTICLE - NEWS AND UPDATES */
+article:nth-of-type(2){
+	background: #829aa7;
+	margin-top: 70px;
+}
+article:nth-of-type(2) section {
+	color: #555E58;
+	display: inline-block;
+	font-size: 11px;
+	margin-left: 7%;
+	max-width: 23%;
+}
+article:nth-of-type(2) header hgroup h1{
+	text-shadow: 1px 1px #464c48;
+	font-size: 51px;
+}
+article:nth-of-type(2) header hgroup h2{
+	text-shadow: 1px 1px #464c48;
+	font-size: 27px;
+}
+article:nth-of-type(2) section header h1{
+	font-size: 18px;
+}
+article:nth-of-type(2) section header {
+	margin-top: 54px;
+	text-align: center;
+}
+.news-button{
+	display: inline-block;
+	width: 84px;
+	height: 83px;
+	background-image: url("news-button.png");
+	background-position: center;
+	margin: auto;
+}
+
+/* THIRD ARTICLE - WORK AND FEEDBACK */
+article:nth-of-type(3){
+	background: #f5f5f5;
+}
+article:nth-of-type(3) header hgroup h1{
+	color: #636b66;
+	text-shadow: 1px 1px #ffffff;
+	font-size: 51px;
+}
+article:nth-of-type(3) header hgroup h2{
+	color: #636b66;
+	text-shadow: 1px 1px #ffffff;
+	font-size: 27px;
+}
+.projects-buttons{
+	width: 268px;
+	height: 268px;
+	display: inline-block;
+	background-image: url("projects-buttons.png");
+	padding: 0;
+	margin: 0;
+}
+
+/* FORTH ARTICLE - PLANS AND PRICING */
+article:nth-of-type(4){
+	background: #829aa7;
+	text-align: center;
+
+}
+article:nth-of-type(4) hgroup {
+  margin: auto auto 5%;
+  text-align: center;
+}
+article:nth-of-type(4) ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background: #3e4d58;
+	color: #fff;
+	text-shadow: 1px 0 #1D2123;
+}
+article:nth-of-type(4) li {
+  border: 1px outset #3C4B55;
+  font-size: 10px;
+  padding: 30px 61px;
+}
+article:nth-of-type(4) .package-headings{
+	font-size: 20px;
+}
+article:nth-of-type(4) header hgroup h1{
+	text-shadow: 1px 1px #464c48;
+	font-size: 51px;
+}
+article:nth-of-type(4) header hgroup h2{
+	text-shadow: 1px 1px #464c48;
+	font-size: 27px;
+}
+.view-more-button {
+  background: none repeat scroll 0 0 #3C4A53;
+  border: 1px outset #091922;
+  border-radius: 6px 6px 6px 6px;
+  color: #FFFFFF;
+  display: block;
+  font-size: 23px;
+  font-weight: 300;
+  margin: 4% auto auto;
+  padding: 1%;
+  text-shadow: 1px 2px #091922;
+  width: 260px;
+  text-align: center;
+}
+#view-more-projects-button {
+  background: none repeat scroll 0 0 #F5F5F5;
+  color: #6D7470;
+  text-shadow: none;
+}
+/* FOOTER */
+footer section {
+	color: #555E58;
+	display: inline-block;
+	font-size: 11px;
+	margin-left: 7%;
+	max-width: 23%;
+}
+footer h1, footer h2{
+	color: #555e58;
+	text-align: left;
+}
+footer h1 {
+  font-size: 25px;
+  font-weight: 600;
+}

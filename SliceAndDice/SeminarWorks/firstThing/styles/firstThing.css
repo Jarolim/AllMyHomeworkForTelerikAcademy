@@ -1,0 +1,185 @@
+﻿/*==============================================*/
+/*                   CSS RESET                  */
+/*==============================================*/
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, small, strong, dl, dt, dd, ol, ul, li, article, aside, footer, header, nav, section, time {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-image: url(/images/bkg.png);
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*==============================================*/
+/*                   WEB WRAPPER                */
+/*==============================================*/
+#wrapper {
+    margin: 35px auto;
+    margin-left: 35px; /*donno*/
+    width: 960px;
+    background: #fff;
+    padding: 15px; /*all sides*/
+    box-shadow: 0 0 10px #000;
+}
+/*==============================================*/
+/*                   WEB HEADER                 */
+/*==============================================*/
+#web_nav {
+    margin-top: 30px;
+    background: #00ff90;
+    height: 41px;
+    line-height: 41px; /*trick to center the ...*/
+}
+
+    #web_nav ul li {
+        display: inline-block;
+    }
+
+        #web_nav ul li a {
+            padding: 11px;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: bold;
+            font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+            font-size: 14px;
+        }
+        #web_nav ul li a:hover {
+            background: #fff;
+            color: #00ff90;
+        }
+
+       /*ako nqmam font*/
+/*@font-face {
+    font-family: "";
+    url:"";
+}*/
+    
+/*==============================================*/
+/*                   WEB Portfolio                 */
+/*==============================================*/
+
+#web_portfolio {
+    margin-top: 30px;
+}
+
+#web_portfolio img {
+    border: solid #dedede 1px;
+    padding: 6px;
+}
+
+#web_portfolio .slider_img {
+    margin-top:10px;
+}
+
+    .slider_img  li{
+    display:inline-block;
+    margin-right:5px;
+}
+
+/*==============================================*/
+/*                   WEB CONTENT                 */
+/*==============================================*/
+
+#web_content{
+    border-top: dashed 2px #0ff;
+    padding-top: 50px;
+    margin-top:30px;
+}
+
+/*HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK HACK*/
+#web_content:after {
+    content: " ";
+    display:block;
+    clear: both;
+}
+
+#main_web {
+    width:600px;
+    float:left;
+}
+
+#side_web {
+    width:300px;
+    float:right;
+}
+
+.post_min {
+    background: #eee;
+    padding: 18px 15px;
+    width: 230px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.post_max {
+    background: #eee;
+    padding: 18px 15px;
+    width: 230px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+    .post_min h2 {
+        font-size: 28px;
+        color: #00ff90;
+    }
+    .post_min p {
+        margin-top:10px;
+        margin: 10px 0;
+    }
+
+a {
+    color: #00ff90;
+    font-size: 15px;
+}
+.post_max {
+    width:100%;
+    border: 1px solid black;
+}
+#mins_posts:after {
+    content: " ";
+    display:block;
+    clear:both;
+}
+
+.side h2 {
+    background: #0ff;
+    padding: 10px;
+    font-size: 19px;
+}
+    .side p{
+        margin: 10px 0;
+
+}
+
+/*==============================================*/
+/*                   WEB FOOTER                 */
+/*==============================================*/
+
+#web_footer {
+    background: #4800ff;
+    color:#fff;
+    padding: 0 10px;
+}

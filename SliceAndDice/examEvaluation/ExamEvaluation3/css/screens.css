@@ -1,0 +1,145 @@
+@media screen and (min-width: 490px) and (max-width: 760px){
+	hgroup h2 { 
+		font-size: 60px; /* <ie9 */
+		font-size: 6.0rem; 
+	}
+
+	hgroup p { 
+		font-size: 30px; /* <ie9 */
+		font-size: 3.0rem; 
+	}
+
+	h3, section header h3 { 
+		font-size: 18px; /* <ie9 */
+		font-size: 1.8rem; 
+	}
+
+	div[role="page"] div[role="page-content"] {
+		width: 760px;
+	}
+
+	.home-graphic-container {
+		width: 90%; height: 220px;
+	}
+
+	article.round {
+		width: 203px;
+		height: 150px;
+
+		padding-top: 53px; 
+	}
+
+	.button-large { margin-left: -16px; }
+	
+	.foot-note,
+	body > footer { 
+		display: none; 
+	}
+}
+
+@media screen and (max-width: 480px){
+	hgroup h2 { 
+		font-size: 18px; /* <ie9 */
+		font-size: 4.8rem; 
+	
+		letter-spacing: -0.05%;
+		letter-spacing: -0.05em; 
+	}
+
+	hgroup p { 
+		font-size: 24px; /* <ie9 */
+		font-size: 2.4rem; 
+		
+		letter-spacing: -0.05%; /* <ie9 */
+		letter-spacing: -0.05em; 
+	}
+	
+	h3, section header h3 { 
+		font-family: "OpenSansExtraBold", sans-serif; 
+
+		font-size: 18px; /* <ie9 */
+		font-size: 1.8rem; 
+	}
+	
+	a.button-large { margin-left: 0; }
+
+	div.columns-three section header img {
+		display: none;
+	}
+
+	body > div.header > header a.logo, 
+	body > div.header > header nav { 
+		display: block; text-align: center; 		
+	}
+	
+	body > div.header > header nav { 
+		width: 80%;
+		margin-left: auto; margin-right: auto;
+	}
+
+	ul.main-nav { display: block; }
+
+	ul.main-nav li {
+		display: block;
+	}
+
+	ul.main-nav li.not-resposive { display: none; }
+	
+	ul.main-nav li a {
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+
+		background-color: #186387;
+		box-shadow: inset 0 0 7px #7e7e7e;
+		-moz-box-shadow: inset 0 0 7px #7e7e7e;
+		-webkit-box-shadow: inset 0 0 7px #7e7e7e;
+		ms-box-shadow: inset 0 0 7px #7e7e7e;
+		
+		font-size: 30px;
+		font-size: 3.0rem;
+
+		line-height: 40px;
+	}
+
+	div[role="page"] {
+		padding-bottom: 80px; padding-top: 80px;
+	}
+
+	div[role="page"] div[role="page-content"] {
+		width: 480px;
+	}
+
+	.home-graphic-container {
+		width: 100%; height: 134px;
+	}
+
+	div.columns-three {
+		float: none;
+		display: block;
+		width: 100%;
+	}
+
+	.portfolio div.columns-three {
+		float: left; width: 33%; display: inline;
+	}
+
+	article.round {
+		width: 128px;
+		height: 118px;
+
+		padding-top: 10px;
+	}
+
+	article.round * { display: none }
+
+	div.columns-three header .article-thumb-placeholder { display: none; }
+
+	div[role="page-content"].plans div.columns-three:last-child { display: none; }
+
+	.foot-note,
+	body > footer { 
+		display: none; 
+	}
+
+}
