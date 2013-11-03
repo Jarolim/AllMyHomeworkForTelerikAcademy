@@ -1,0 +1,30 @@
+﻿<!--Create a text area and two inputs with type="color"
+Make the font color of the text area as the value of the first color input
+Make the background color of the text area as the value of the second input-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pick a color</title>
+    <link href="styles/04.PickAColor.css" rel="stylesheet" />
+</head>
+<body>
+    Please pick a background color:
+    <input type="color" name="background" onchange="setBackground()" />
+    Please pick a font color:
+    <input type="color" name="font" onchange="setFontColor()" />
+    <textarea id="textarea">The Shortest Horror Story:
+                        The last man on Earth sat alone in a room. 
+                        There was a knock on the door.</textarea>
+
+    <script>
+        var textarea = document.getElementsByTagName('textarea')[0];
+
+        function setBackground() {
+            return textarea.style.backgroundColor = document.getElementsByName('background')[0].value;
+        }
+        function setFontColor() {
+            return textarea.style.color = document.getElementsByName('font')[0].value;
+        }
+    </script>
+</body>
+</html>

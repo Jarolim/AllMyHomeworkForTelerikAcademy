@@ -1,0 +1,83 @@
+﻿<!--Create a TODO list with the following UI controls
+☻1☻Form input for new Item
+☻2☻Button for adding the new Item
+☻3☻Button for deleting some item
+☻4☻Show and Hide Button-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>TODO list: </h2>
+    <input type="text" id="addItem" />
+    <button id="add-btn" onclick="addItem()">Add new</button>
+    <button id="remove-btn" onclick="removeItems()">Remove selected</button>
+    <button id="hide-btn" onclick="hideSelected()">Hide selected</button>
+    <button id="show-btn" onclick="show()">Show hidden</button>
+
+    <ul id="todo"></ul>
+
+    <script>
+        var todoList = document.getElementById("todo");
+
+        function addItem() {
+            var value = document.getElementById("addItem").value;
+            var item = document.createElement("li");
+            item.innerHTML = value;
+            item.onclick = markItem;
+            todoList.appendChild(item);
+        }
+
+        function markItem(event) {
+            if (!event) event = window.event; //This is a fix for IE.
+
+            var target = event.srcElement;
+
+            if (target.style.border == "1px solid red") {
+                target.style.color = "black";
+            }
+            else {
+                target.style.border = "1px solid red";
+            }
+        }
+
+        function removeItems() {
+            for (var i = 0; i < todoList.childNodes.length; i++) {
+                var current = todoList.childNodes[i];
+
+                if (current.style.border == "1px solid red") {
+                    todoList.removeChild(current);
+                    i--;
+                }
+            }
+        }
+
+        function hideSelected() {
+            for (var i = 0; i < todoList.childNodes.length; i++) {
+                var current = todoList.childNodes[i];
+
+                if (current.style.border == "1px solid red") {
+                    current.style.color = "black";
+                    current.style.display = "none";
+                }
+            }
+        }
+
+        function show() {
+            for (var i = 0; i < todoList.childNodes.length; i++) {
+                var current = todoList.childNodes[i];
+
+                if (current.style.display == "none") {
+                    current.style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

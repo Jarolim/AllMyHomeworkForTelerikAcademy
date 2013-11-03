@@ -1,0 +1,118 @@
+﻿<!--Create a module that works with moving div elements. Implement functionality for:
+☻1☻Add new moving div element to the DOM
+☻2☻The module should generate random background, font and border colors for the div element
+☻3☻All the div elements are with the same width and height
+☻4☻The movements of the div elements can be either circular or rectangular
+☻5☻The elements should be moving all the time
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ModuleForWorkingWithMovingDivs</title>
+</head>
+<body>
+    <button onclick="movingDivs.add('rectangle')">Add Div To Rectangular Movement</button>
+    <button onclick="movingDivs.add('circle')">Add Div To Circular Movement</button>
+    <script>
+
+        var movingDivs = module();
+
+
+        function module() {
+
+            function CreateDiv() {
+                var createdDivElement = document.createElement("div");
+                createdDivElement.style.width = "50px";
+                createdDivElement.style.height = "50px";
+                createdDivElement.style.color = randomColor();
+                createdDivElement.style.border = "3px" + " solid " + randomColor();
+                createdDivElement.style.backgroundColor = randomColor();
+                createdDivElement.style.position = "absolute";
+                createdDivElement.innerText = "div";
+                createdDivElement.style.textAlign = "center";
+                
+                function randomNum(start, end) {
+                    return Math.floor(Math.random() * (end - start + 1)) + start;
+                }
+
+                function randomColor() {
+                    return 'rgba(' + [randomNum(0, 255),randomNum(0, 255),randomNum(0, 255),randomNum(0, 255)].join(', ') + ')';
+                }
+
+                return createdDivElement;
+            }
+
+            function movementRectangular(element) {
+                var top = 50;
+                var left = 50;
+                setInterval(function () {
+                    if (top <= 300 && left == 50) {
+                        top++;
+                    }
+                    else if (left <= 200 && top > 199) {
+                        left++;
+                    }
+                    else if (left > 199 && top >= 50) {
+                        top--;
+                    }
+
+                    else if (top < 51 && left >= 50) {
+                        left--;
+                    }
+                    element.style.top = top + "px";
+                    element.style.left = left + "px";
+                }, 2);
+            }
+
+            function movementCircular(element) {
+                element.setAttribute("angleAttr", "0");
+                element.style.left = "650px";
+                element.style.top = "200px";
+
+                setInterval(function () {
+                    var angleInRadians = (element.getAttribute("angleAttr")) * (Math.PI / 180);
+                    var left = 150 * Math.cos(angleInRadians) + 700;
+                    var top = 150 * Math.sin(angleInRadians) + 500;
+                    console.log(angleInRadians);
+                    element.style.left = left + "px";
+                    element.style.top = top + "px";
+                    element.attributes.angleAttr.nodeValue++;
+                }, 3);
+            }
+
+
+            function add(type) {
+                if (type === "rectangle") {
+
+                    function addRect() {
+                        var createdDivElement = CreateDiv();
+
+                        document.body.appendChild(createdDivElement);
+
+                        movementRectangular(createdDivElement);
+                    }
+
+                    addRect();
+                }
+                if (type === "circle") {
+
+                    function addCircle() {
+                        var createdDivElement = CreateDiv();
+                        createdDivElement.style.borderRadius = "50px";
+
+                        document.body.appendChild(createdDivElement);
+
+                        movementCircular(createdDivElement);
+                    }
+
+                    addCircle();
+                }
+            }
+
+            return {
+                add: add
+            }
+        }
+    </script>
+</body>
+</html>

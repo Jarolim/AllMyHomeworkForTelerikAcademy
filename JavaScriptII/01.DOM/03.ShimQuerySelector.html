@@ -1,0 +1,26 @@
+﻿<!--Write a script that shims querySelector and querySelectorAll in older browsers-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shim query selector</title>
+    <script src="Scripts/03.ShimQuerySelector.js"></script>
+</head>
+<body>
+    <span>I believe that if life gives you<br /></span>
+    <span>lemons, you should make<br /></span>
+    <span>lemonade ... And try to find somebody<br /></span>
+    <span>whose life has given them<br /></span>
+    <span>beer, and have a party.<br /></span>
+    <script>
+        var allDivs = document.querySelectorAll("span");
+
+        for (var i = 0; i < allDivs.length; i++) {
+            allDivs[i].style.backgroundColor = 'green';
+            allDivs[i].style.color = 'yellow';
+        }
+
+        var firstDiv = document.querySelector("span");
+        firstDiv.style.color = 'orange';
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+﻿<!--Create a Simple JS Carousel with N images and two arrows for image control -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Carousel</title>
+    <style>
+        #container {
+            width: 1200px;
+            height: 600px;
+        }
+
+            #container img {
+                width: 900px;
+                height: 500px;
+                position: absolute;
+                margin-left: 100px;
+                border:1px solid black;
+            }
+
+            #container #left-arrow {
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                margin-left: 45px;
+                margin-top: 225px;
+                padding: 5px;
+                border: 5px solid white;
+                border-radius: 50px;
+            }
+
+                #container #left-arrow:hover {
+                    border: 5px solid blue;
+                    border-radius: 50px;
+                }
+
+            #container #right-arrow {
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                margin-left: 1005px;
+                margin-top: 230px;
+                padding: 5px;
+                border: 5px solid white;
+                border-radius: 50px;
+            }
+
+                #container #right-arrow:hover {
+                    border: 5px solid blue;
+                    border-radius: 50px;
+                }
+
+        #logo {
+            margin-left:450px;
+            font-size:45px;
+            font-style:italic;
+            color:blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="logo">JS Slider</div>  
+    <div id="container">
+        <img id="left-arrow" src="images/left-arrow.png" onclick="carousel.previousImage();" />
+        <img id="right-arrow" src="images/right-arrow.png" onclick="carousel.nextImage();" />
+    </div>
+
+    <script>
+
+        var carousel = (function () {
+            var images = [];
+            var currentImage = 0;
+            var intervalID;
+
+            function appendImage(name) {
+                var container = document.getElementById("container");
+                var image = document.createElement("img");
+                image.setAttribute("src", "images/" + name);
+                image.style.display = "none";
+                images.push(image);
+                container.appendChild(image);
+            }
+
+            function updateContainer() {
+                images[currentImage].style.display = "none";
+                currentImage += 1;
+                if (currentImage == images.length) {
+                    currentImage = 0;
+                }
+                images[currentImage].style.display = "";
+            }
+
+            function nextImage() {
+                clearInterval(intervalID);
+                updateContainer();
+                start();
+            }
+
+            function previousImage() {
+                clearInterval(intervalID);
+                images[currentImage].style.display = "none";
+                currentImage -= 1;
+                if (currentImage == -1) {
+                    currentImage = images.length - 1;
+                }
+                images[currentImage].style.display = "";
+                start();
+            }
+
+            // Change on its own.
+            function start() {
+                images[currentImage].style.display = "";
+                intervalID = setInterval(updateContainer, 5000);
+            }
+
+            return {
+                appendImage: appendImage,
+                start: start,
+                nextImage: nextImage,
+                previousImage: previousImage
+            }
+        })();
+
+
+        carousel.appendImage("image1.jpg");
+        carousel.appendImage("image2.jpg");
+        carousel.appendImage("image3.jpg");
+        carousel.appendImage("image4.jpg");
+        carousel.start();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="accordion.js"></script>
+    <script src="local-storage-accordion.js"></script>
+</head>
+<body>
+    <div id="accordion-holder"></div>
+    <div id="copied-accordion-holder"></div>
+    <script>
+
+        var accordion = controls.getAccordion("#accordion-holder");
+
+        var webItem = accordion.add("Web");
+            var htmlItem = webItem.add("HTML");
+                htmlItem.add("4.1");
+                htmlItem.add("5");
+
+        var mobileItem = accordion.add("Mobile");
+        accordion.add("Desktop");
+        accordion.add("Embedded");
+
+        accordion.render();
+
+        mobileItem.add("Android");
+        mobileItem.add("IOS");
+        mobileItem.add("Mozilla OS");
+
+        accordion.render();
+
+        //555555555start
+        //console.log(accordion.serialize()); test
+        var serialized = accordion.serialize();
+        localStorage.setObject("acc", serialized);
+
+        console.log(serialized);
+        console.log(localStorage.getObject("acc"));
+        //555555555end
+
+        //6666666666666666start
+        var data = localStorage.getObject("acc");
+        controls.buildAccordion(data);
+        //6666666666666666end
+    </script>
+</body>
+</html>

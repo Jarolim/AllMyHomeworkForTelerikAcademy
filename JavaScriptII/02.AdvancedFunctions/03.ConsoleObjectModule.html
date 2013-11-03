@@ -1,0 +1,64 @@
+﻿<!--Create a module to work with the console object.Implement functionality for:
+☻1☻Writing a line to the console 
+☻2☻Writing a line to the console using a format
+☻3☻Writing to the console should call toString() to each element
+☻4☻Writing errors and warnings to the console with and without format-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Special Console</title>
+</head>
+<body>
+    <p>Check the console for results</p>
+	<script>
+	    var specialConsole = (function () {
+	      
+	        function formatText(value, optionalParams) {
+	            var text = "";
+
+	            if (value) {
+	                text = value.toString();
+
+	                if (optionalParams) {
+	                    for (var i = 0, len = arguments.length; i < len - 1; i++) {
+	                        var pattern = "\\{" + i + "\\}";
+	                        var regex = new RegExp(pattern, "g");
+
+	                        text = text.replace(regex, arguments[i + 1].toString());
+	                    }
+	                }
+	            }
+
+	            return text;
+	        }
+
+	        function writeLine() {
+	            var text = formatText.apply(null, arguments);
+	            console.log(text);
+	        }
+
+	        function writeError() {
+	            var text = formatText.apply(null, arguments);
+	            console.error(text);
+	        }
+
+	        function writeWarning() {
+	            var text = formatText.apply(null, arguments);
+	            console.warn(text);
+	        }
+
+	        return {
+	            writeLine: writeLine,
+	            writeError: writeError,
+	            writeWarning: writeWarning
+	        }
+	    })();
+
+        //The tests
+	    specialConsole.writeLine("Message: hello");
+	    specialConsole.writeLine("Message: {0}", "hello");
+	    specialConsole.writeError("Error: {0}", "Something happened");
+	    specialConsole.writeWarning("Warning: {0}", "A warning");
+	</script>
+</body>
+</html>

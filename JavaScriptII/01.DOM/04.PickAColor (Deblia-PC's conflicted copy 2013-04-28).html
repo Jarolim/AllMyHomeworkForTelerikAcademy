@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<!--Task 04-->
+<!--Create a text area and two inputs with type="color"
+Make the font color of the text area as the value of the first color input
+Make the background color of the text area as the value of the second input-->
+
+<html>
+<head>
+    <title></title>
+    <style>
+        input {
+            display:block;
+        }
+        #area {
+            width:200px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    Background Color:
+    <input type="color" name="background" onchange="setBackground()" />
+    Font Color:
+    <input type="color" name="font" onchange="setFontColor()" />
+    <textarea id="area">The Shortest Horror Story:
+                        The last man on Earth sat alone in a room. 
+                        There was a knock on the door.</textarea>
+    <script>
+        var textarea = document.getElementsByTagName('textarea')[0];
+
+        function setBackground() {
+            return textarea.style.backgroundColor = document.getElementsByName('background')[0].value;
+        }
+        function setFontColor() {
+            return textarea.style.color = document.getElementsByName('font')[0].value;
+
+        }
+    </script>
+
+</body>
+</html>

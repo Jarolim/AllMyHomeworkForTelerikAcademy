@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="JSexam.js"></script>
+    <script src="lovalhost.js"></script>
+    <style>
+        div {
+            padding:20px;
+            margin:20px;
+            border: 1px solid black;
+        }
+        img {
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-gallery-holder"></div>
+
+    <script>
+        var gallery = controls.getImageGallery("#image-gallery-holder");
+
+        gallery.addImage("JS Ninja", "images/js-ninja.png");
+        gallery.addImage("JS Ninja", "images/js-ninja.png");
+        gallery.addImage("JS Ninja", "images/js-ninja.png");
+
+        var ninjasAlbum = gallery.addAlbum("Ninjas");
+            ninjasAlbum.addImage("JS Ninja 2", "images/js-ninja.png");
+            ninjasAlbum.addImage("JS Ninja 2", "images/js-ninja.png");
+            ninjasAlbum.addImage("JS Ninja 2", "images/js-ninja.png");
+
+        var ninjasAlbum = gallery.addAlbum("UberNinjas");
+            ninjasAlbum.addImage("JS Ninja 3", "images/js-ninja.png");
+            ninjasAlbum.addImage("JS Ninja 3", "images/js-ninja.png");
+            ninjasAlbum.addImage("JS Ninja 3", "images/js-ninja.png");
+
+            gallery.render(); // working correct
+
+            var kidsAlbum = ninjasAlbum.addAlbum("Kids Ninjas");
+                kidsAlbum.addImage("Kid Ninja", "images/js-ninja.png");
+                kidsAlbum.addImage("Kid Ninja", "images/js-ninja.png");
+                kidsAlbum.addImage("Kid Ninja", "images/js-ninja.png");
+                var parentsAlbum = kidsAlbum.addAlbum("Parents Ninjas");
+                    parentsAlbum.addImage("Parents Ninja", "images/js-ninja.png");
+                    parentsAlbum.addImage("Parents Ninja", "images/js-ninja.png");
+                    parentsAlbum.addImage("Parents Ninja", "images/js-ninja.png");
+                //Task 4 -----start
+                console.log(gallery.serialize());
+                var serialized = gallery.serialize();
+                localStorage.setObject("gallery", serialized);
+
+                console.log(serialized);
+                console.log(localStorage.getObject("gallery"));
+                //Task 4 -----end
+        gallery.render();
+
+
+
+    </script>
+
+</body>
+</html>

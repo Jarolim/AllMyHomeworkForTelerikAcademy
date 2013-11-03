@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<!--Draw a circle that flies inside a box
+When it reaches an edge, it should bounce that edge
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bounce Ball</title>
+</head>
+<style>
+     body, div, span {
+        margin:0px;
+        padding:0px;
+    }
+
+    #ball {
+        width:50px;
+        height:50px;
+
+        border-radius:40px;
+        background-color:green;
+        display:inline-block;
+        position:absolute;
+    }
+    canvas {
+        margin-left:100px;
+        margin-top:50px;
+    }
+    </style>
+<body>
+    <canvas width="1000" height="1000">Canvas not supported</canvas>
+        <div id="ball"></div>
+ <script>
+     // the playground
+     var ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
+     ctx.strokeStyle = "red";
+     ctx.lineWidth = 5;
+     ctx.fillStyle = "orange";
+     ctx.strokeRect(10, 10, 400, 500);
+
+     var ball = document.getElementById("ball");
+     var TOP_POS_MAX = 510;
+     var TOP_POS_MIN = 60;
+     var LEFT_POS_MAX = 460;
+     var LEFT_POS_MIN = 110;
+
+     var directionTop = 1;
+     var directionLeft = 1;
+     var leftPosCurrent = 200;
+     var topPosCurrent = 200;
+
+     setInterval(function () {
+         topPosCurrent += directionTop;
+         leftPosCurrent += directionLeft;
+         if (topPosCurrent == TOP_POS_MAX) {
+             directionTop *= -1;
+         }
+
+         if (leftPosCurrent == LEFT_POS_MAX) {
+             directionLeft *= -1;
+         }
+
+         if (topPosCurrent == TOP_POS_MIN) {
+             directionTop *= -1;
+         }
+
+         if (leftPosCurrent == LEFT_POS_MIN) {
+             directionLeft *= -1;
+         }
+
+         ball.style.left = leftPosCurrent + "px";
+         ball.style.top = topPosCurrent + "px";
+     }, 2);
+    </script>
+</body>
+</html>

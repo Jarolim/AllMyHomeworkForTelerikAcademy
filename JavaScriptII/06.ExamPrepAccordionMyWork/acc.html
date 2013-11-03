@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="acc.js"></script>
+    <script src="localhost.js"></script>
+</head>
+<body>
+    <div id="accordion-holder"></div>
+
+    <script>
+        var accordion = controls.getAccordion("#accordion-holder");
+        var webItem = accordion.add("Web");
+        var htmlItem = webItem.add("HTML");
+        htmlItem.add("4.1");
+        htmlItem.add("5");
+
+        var mobileItem = accordion.add("Mobile");
+        accordion.add("Desktop");
+        accordion.add("Embedded");
+
+        accordion.render();
+
+        mobileItem.add("Android");
+        mobileItem.add("IOS");
+        mobileItem.add("Mozilla OS");
+
+        accordion.render();
+
+
+
+
+    </script>
+
+
+</body>
+</html>
