@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. ArithmeticOperations", "02. ArithmeticOperations\02. ArithmeticOperations.csproj", "{E885883A-2B1B-4BE9-AAE8-FF34F17CF250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. MathOperations", "03. MathOperations\03. MathOperations.csproj", "{BDCDB0DE-4A40-4C6E-94AB-7D528FA2CA84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Sorting", "04. Sorting\04. Sorting.csproj", "{E9586370-2772-47AB-8443-6D06DC862254}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E885883A-2B1B-4BE9-AAE8-FF34F17CF250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E885883A-2B1B-4BE9-AAE8-FF34F17CF250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E885883A-2B1B-4BE9-AAE8-FF34F17CF250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E885883A-2B1B-4BE9-AAE8-FF34F17CF250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCDB0DE-4A40-4C6E-94AB-7D528FA2CA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCDB0DE-4A40-4C6E-94AB-7D528FA2CA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCDB0DE-4A40-4C6E-94AB-7D528FA2CA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCDB0DE-4A40-4C6E-94AB-7D528FA2CA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9586370-2772-47AB-8443-6D06DC862254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9586370-2772-47AB-8443-6D06DC862254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9586370-2772-47AB-8443-6D06DC862254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9586370-2772-47AB-8443-6D06DC862254}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
