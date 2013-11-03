@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DequeImplementedWithLinkedListT</name>
+    </assembly>
+    <members>
+        <member name="T:MyDeque`1">
+            <summary>
+            Provides static methods for a linear collection that supports element insertion and removal at both ends
+            </summary>
+        </member>
+        <member name="M:MyDeque`1.Count">
+            <summary>
+            returns the number of elements in the Deque
+            </summary>
+        </member>
+        <member name="M:MyDeque`1.PushLast(`0)">
+            <summary>
+            inserts element at the end of the Deque
+            </summary>
+            <param name="item">index of the item</param>
+        </member>
+        <member name="M:MyDeque`1.PushFirst(`0)">
+            <summary>
+            inserts element at the beginning of the Deque
+            </summary>
+            <param name="item">index of the item</param>
+        </member>
+        <member name="M:MyDeque`1.PopLast">
+            <summary>
+            removes and returns the element at the end of the Deque
+            </summary>
+        </member>
+        <member name="M:MyDeque`1.PopFirst">
+            <summary>
+            removes and returns the element at the beginning of the Deque
+            </summary>
+        </member>
+        <member name="M:MyDeque`1.PeekLast">
+            <summary>
+            returns the element at the end of the Deque without removing it
+            </summary>
+        </member>
+        <member name="M:MyDeque`1.PeekFirst">
+            <summary>
+            returns the element at the beginning of the Deque without removing it
+            </summary>
+        </member>
+        <member name="M:MyDeque`1.Clear">
+            <summary>
+            clears the Deque. It will be empty after this operation completes
+            </summary>
+        </member>
+        <member name="M:MyDeque`1.Contains(`0)">
+            <summary>
+            returns true if this collection contains the specified element
+            </summary>
+            <param name="item">the specified element</param>
+        </member>
+    </members>
+</doc>

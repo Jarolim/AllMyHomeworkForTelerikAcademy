@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Clear method">
+    <HelpKINode Title="Deque(T).Clear Method " Url="html/ba331e48-b95a-cd21-4882-eb3bcac1db4f.htm" />
+    <HelpKINode Title="IDeque(T).Clear Method " Url="html/fd5d2b16-8fd3-c607-92eb-541f7dcf0912.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Contains method">
+    <HelpKINode Title="Deque(T).Contains Method " Url="html/50cb1bc0-baab-4e0f-357a-d9c80fcea24f.htm" />
+    <HelpKINode Title="IDeque(T).Contains Method " Url="html/bb940f89-8d09-1c38-09ec-8097ed141265.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Count method">
+    <HelpKINode Title="Deque(T).Count Method " Url="html/6efe91ec-a21d-3c05-baa9-f7ff70d2404d.htm" />
+    <HelpKINode Title="IDeque(T).Count Method " Url="html/66ded247-d9ee-f9d0-a865-e25d26c4053b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deque namespace" Url="html/b6e4a4fa-0f76-7a34-3984-a3c74ed60c65.htm" />
+  <HelpKINode Title="Deque(Of T) class">
+    <HelpKINode Title="Deque(T) Class" Url="html/362eb0a0-70ce-47dd-8cae-76618e264418.htm" />
+    <HelpKINode Title="Deque(T) Members" Url="html/fb9c8dde-fd25-9ade-a4a8-406596951de0.htm" />
+    <HelpKINode Title="about Deque(Of T) class" Url="html/362eb0a0-70ce-47dd-8cae-76618e264418.htm" />
+    <HelpKINode Title="all members" Url="html/fb9c8dde-fd25-9ade-a4a8-406596951de0.htm" />
+    <HelpKINode Title="constructor" Url="html/ae9cdd2e-f941-559c-a215-3eb6f8fc0e20.htm" />
+    <HelpKINode Title="methods" Url="html/23d94ad2-fbcd-8422-a974-aa0ba830f9f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deque(Of T).Clear method" Url="html/ba331e48-b95a-cd21-4882-eb3bcac1db4f.htm" />
+  <HelpKINode Title="Deque(Of T).Contains method" Url="html/50cb1bc0-baab-4e0f-357a-d9c80fcea24f.htm" />
+  <HelpKINode Title="Deque(Of T).Count method" Url="html/6efe91ec-a21d-3c05-baa9-f7ff70d2404d.htm" />
+  <HelpKINode Title="Deque(Of T).Deque constructor" Url="html/ae9cdd2e-f941-559c-a215-3eb6f8fc0e20.htm" />
+  <HelpKINode Title="Deque(Of T).PeekFirst method" Url="html/c2d7364c-9cad-8669-3064-b39df3e6447a.htm" />
+  <HelpKINode Title="Deque(Of T).PeekLast method" Url="html/477f20ad-92be-ab36-d7d7-05a1b5b4233c.htm" />
+  <HelpKINode Title="Deque(Of T).PopFirst method" Url="html/f179384c-8a4b-d739-01fb-6204f825d7dc.htm" />
+  <HelpKINode Title="Deque(Of T).PopLast method" Url="html/b204d090-c477-762a-860b-13c33a9bf333.htm" />
+  <HelpKINode Title="Deque(Of T).PushFirst method" Url="html/302396b0-badf-4b24-1e23-89b65ea5df8b.htm" />
+  <HelpKINode Title="Deque(Of T).PushLast method" Url="html/145ff625-a0d9-9f0d-264a-7aeace5e66c9.htm" />
+  <HelpKINode Title="Deque.Deque(Of T) class">
+    <HelpKINode Title="Deque(T) Class" Url="html/362eb0a0-70ce-47dd-8cae-76618e264418.htm" />
+    <HelpKINode Title="Deque(T) Members" Url="html/fb9c8dde-fd25-9ade-a4a8-406596951de0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deque.Deque&lt;T&gt; class">
+    <HelpKINode Title="Deque(T) Class" Url="html/362eb0a0-70ce-47dd-8cae-76618e264418.htm" />
+    <HelpKINode Title="Deque(T) Members" Url="html/fb9c8dde-fd25-9ade-a4a8-406596951de0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deque.IDeque(Of T) interface">
+    <HelpKINode Title="IDeque(T) Interface" Url="html/b2ba55c8-3b5f-3f25-71c1-ea4009f3c8ac.htm" />
+    <HelpKINode Title="IDeque(T) Members" Url="html/d7311bcc-23a4-1d00-3b10-4e2f3a86828b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deque.IDeque&lt;T&gt; interface">
+    <HelpKINode Title="IDeque(T) Interface" Url="html/b2ba55c8-3b5f-3f25-71c1-ea4009f3c8ac.htm" />
+    <HelpKINode Title="IDeque(T) Members" Url="html/d7311bcc-23a4-1d00-3b10-4e2f3a86828b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deque&lt;T&gt; class">
+    <HelpKINode Title="Deque(T) Class" Url="html/362eb0a0-70ce-47dd-8cae-76618e264418.htm" />
+    <HelpKINode Title="Deque(T) Members" Url="html/fb9c8dde-fd25-9ade-a4a8-406596951de0.htm" />
+    <HelpKINode Title="about Deque&lt;T&gt; class" Url="html/362eb0a0-70ce-47dd-8cae-76618e264418.htm" />
+    <HelpKINode Title="all members" Url="html/fb9c8dde-fd25-9ade-a4a8-406596951de0.htm" />
+    <HelpKINode Title="constructor" Url="html/ae9cdd2e-f941-559c-a215-3eb6f8fc0e20.htm" />
+    <HelpKINode Title="methods" Url="html/23d94ad2-fbcd-8422-a974-aa0ba830f9f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deque&lt;T&gt;.Clear method" Url="html/ba331e48-b95a-cd21-4882-eb3bcac1db4f.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.Contains method" Url="html/50cb1bc0-baab-4e0f-357a-d9c80fcea24f.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.Count method" Url="html/6efe91ec-a21d-3c05-baa9-f7ff70d2404d.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.Deque constructor" Url="html/ae9cdd2e-f941-559c-a215-3eb6f8fc0e20.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.PeekFirst method" Url="html/c2d7364c-9cad-8669-3064-b39df3e6447a.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.PeekLast method" Url="html/477f20ad-92be-ab36-d7d7-05a1b5b4233c.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.PopFirst method" Url="html/f179384c-8a4b-d739-01fb-6204f825d7dc.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.PopLast method" Url="html/b204d090-c477-762a-860b-13c33a9bf333.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.PushFirst method" Url="html/302396b0-badf-4b24-1e23-89b65ea5df8b.htm" />
+  <HelpKINode Title="Deque&lt;T&gt;.PushLast method" Url="html/145ff625-a0d9-9f0d-264a-7aeace5e66c9.htm" />
+  <HelpKINode Title="IDeque(Of T) interface">
+    <HelpKINode Title="IDeque(T) Interface" Url="html/b2ba55c8-3b5f-3f25-71c1-ea4009f3c8ac.htm" />
+    <HelpKINode Title="IDeque(T) Members" Url="html/d7311bcc-23a4-1d00-3b10-4e2f3a86828b.htm" />
+    <HelpKINode Title="about IDeque(Of T) interface" Url="html/b2ba55c8-3b5f-3f25-71c1-ea4009f3c8ac.htm" />
+    <HelpKINode Title="all members" Url="html/d7311bcc-23a4-1d00-3b10-4e2f3a86828b.htm" />
+    <HelpKINode Title="methods" Url="html/2dcd5bfd-b659-1d26-c30e-225087d557f6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDeque(Of T).Clear method" Url="html/fd5d2b16-8fd3-c607-92eb-541f7dcf0912.htm" />
+  <HelpKINode Title="IDeque(Of T).Contains method" Url="html/bb940f89-8d09-1c38-09ec-8097ed141265.htm" />
+  <HelpKINode Title="IDeque(Of T).Count method" Url="html/66ded247-d9ee-f9d0-a865-e25d26c4053b.htm" />
+  <HelpKINode Title="IDeque(Of T).PeekFirst method" Url="html/fcf7f366-346a-b7df-b1e9-e8e8e9d16a75.htm" />
+  <HelpKINode Title="IDeque(Of T).PeekLast method" Url="html/2490a487-ce5e-6889-6a95-453d72cb871e.htm" />
+  <HelpKINode Title="IDeque(Of T).PopFirst method" Url="html/01b391f6-5beb-c03f-0ce7-1818724d9707.htm" />
+  <HelpKINode Title="IDeque(Of T).PopLast method" Url="html/18092afb-7d4c-9e31-93e0-2c1f995a4617.htm" />
+  <HelpKINode Title="IDeque(Of T).PushFirst method" Url="html/206d3352-007c-1c92-d2dd-56bd5b4966c0.htm" />
+  <HelpKINode Title="IDeque(Of T).PushLast method" Url="html/6e139c39-a093-9f7a-ba64-e36259209364.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt; interface">
+    <HelpKINode Title="IDeque(T) Interface" Url="html/b2ba55c8-3b5f-3f25-71c1-ea4009f3c8ac.htm" />
+    <HelpKINode Title="IDeque(T) Members" Url="html/d7311bcc-23a4-1d00-3b10-4e2f3a86828b.htm" />
+    <HelpKINode Title="about IDeque&lt;T&gt; interface" Url="html/b2ba55c8-3b5f-3f25-71c1-ea4009f3c8ac.htm" />
+    <HelpKINode Title="all members" Url="html/d7311bcc-23a4-1d00-3b10-4e2f3a86828b.htm" />
+    <HelpKINode Title="methods" Url="html/2dcd5bfd-b659-1d26-c30e-225087d557f6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IDeque&lt;T&gt;.Clear method" Url="html/fd5d2b16-8fd3-c607-92eb-541f7dcf0912.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.Contains method" Url="html/bb940f89-8d09-1c38-09ec-8097ed141265.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.Count method" Url="html/66ded247-d9ee-f9d0-a865-e25d26c4053b.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.PeekFirst method" Url="html/fcf7f366-346a-b7df-b1e9-e8e8e9d16a75.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.PeekLast method" Url="html/2490a487-ce5e-6889-6a95-453d72cb871e.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.PopFirst method" Url="html/01b391f6-5beb-c03f-0ce7-1818724d9707.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.PopLast method" Url="html/18092afb-7d4c-9e31-93e0-2c1f995a4617.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.PushFirst method" Url="html/206d3352-007c-1c92-d2dd-56bd5b4966c0.htm" />
+  <HelpKINode Title="IDeque&lt;T&gt;.PushLast method" Url="html/6e139c39-a093-9f7a-ba64-e36259209364.htm" />
+  <HelpKINode Title="PeekFirst method">
+    <HelpKINode Title="Deque(T).PeekFirst Method " Url="html/c2d7364c-9cad-8669-3064-b39df3e6447a.htm" />
+    <HelpKINode Title="IDeque(T).PeekFirst Method " Url="html/fcf7f366-346a-b7df-b1e9-e8e8e9d16a75.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PeekLast method">
+    <HelpKINode Title="Deque(T).PeekLast Method " Url="html/477f20ad-92be-ab36-d7d7-05a1b5b4233c.htm" />
+    <HelpKINode Title="IDeque(T).PeekLast Method " Url="html/2490a487-ce5e-6889-6a95-453d72cb871e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PopFirst method">
+    <HelpKINode Title="Deque(T).PopFirst Method " Url="html/f179384c-8a4b-d739-01fb-6204f825d7dc.htm" />
+    <HelpKINode Title="IDeque(T).PopFirst Method " Url="html/01b391f6-5beb-c03f-0ce7-1818724d9707.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PopLast method">
+    <HelpKINode Title="Deque(T).PopLast Method " Url="html/b204d090-c477-762a-860b-13c33a9bf333.htm" />
+    <HelpKINode Title="IDeque(T).PopLast Method " Url="html/18092afb-7d4c-9e31-93e0-2c1f995a4617.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PushFirst method">
+    <HelpKINode Title="Deque(T).PushFirst Method " Url="html/302396b0-badf-4b24-1e23-89b65ea5df8b.htm" />
+    <HelpKINode Title="IDeque(T).PushFirst Method " Url="html/206d3352-007c-1c92-d2dd-56bd5b4966c0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PushLast method">
+    <HelpKINode Title="Deque(T).PushLast Method " Url="html/145ff625-a0d9-9f0d-264a-7aeace5e66c9.htm" />
+    <HelpKINode Title="IDeque(T).PushLast Method " Url="html/6e139c39-a093-9f7a-ba64-e36259209364.htm" />
+  </HelpKINode>
+</HelpKI>

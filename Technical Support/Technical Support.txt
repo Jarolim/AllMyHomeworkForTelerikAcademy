@@ -1,0 +1,183 @@
+WHAT CAN TICKETS BE:
+
+1)Support Tickets
+2)Bug Reports
+3)Feature Request
+4)Forum Posts
+5)Code Library / KB Articles
+6)Others (General Feedback, Customer Care, etc.)
+
+ANSWERING TICKETS:
+
+1)Introduction
+2)Body
+3)Conclusion
+
+
+1)Detailed information 
+2)Working sample project 
+(This is the ideal case)
+
+////////When "Question / Problem not directly related to company’s products"
+
+Example 1:
+Sending information from the client to the server via JavaScript is  not directly related to RadControls,
+ but is a general programming task. There are several ways to do that and which one you would choose depends 
+ entirely on you and on the exact setup that you have – more information on this matter is available in
+ various  resources on the Internet. For example, if you are working with postbacks, you could use __doPostback()
+ (link to an article which  covers this subject in details). If you are using RadAjax, you could use 
+ RadAjaxManager’s ajaxRequest() / ajaxRequestWithTarget()  methods (links to the online documentation 
+ of RadAjaxManager’s client-side API) to do that. 
+ 
+ Example 2:
+ This problem is not directly related to RadXXX but to the way the browser works – you will experience the 
+ same behavior if you are using YYYYY (standard controls). For your convenience I attached a small sample 
+ to this thread that reproduces the same problem – as you can see, there are no RadControls in it, only 
+ standard HTML / ASP.NET controls.
+
+ ///////////When "Ask for additional details!"
+
+ Hello Ben, 
+I tried to reproduce the problem locally but to no avail – everything is working as expected on our side. 
+Please provide the following details – hopefully they will help us pinpoint the exact reason for this behavior:
+	1)What is the exact browser’s version that you are using? 
+	2)In the ticket info, you have noted that you are using version XXXX of RadXXX. Could you please confirm that? 
+	3)Please send us the exact steps to reproduce the problem. If possible, send us some screenshots of the 
+	observed behavior. 
+For convenience I prepared a small sample, based on the information that you provided so far and attached it to
+this thread. Could you please check it and let me know how it differs from your real setup? 
+Thank you in advance for your patience and cooperation. 
+
+
+//////ANGRY
+
+Please let me help you. explain to me the problem in detail.
+
+I can understand your frustration with
+
+
+//////Bullets
+
+The solution for this scenario is the following:
+O-Add a MS SplitContainer control in your inner form
+O-In the left split panel add a docking manager
+O-Add a DockPanel
+
+/////HIGHLIGHT
+
+Show empathy. :
+
+“I can see your point on the matter” 
+“I can understand how this issue is frustrating you.”  
+“I am sorry to see your disappointment.”
+
+
+Write something positive :
+
+“As we can see your point on the matter, we’ve decided to…”
+“Let me see how we can get this fixed.” 
+
+
+Show the customer that their problem is your main concern. :
+
+
+“How long have you had this problem?” 
+“Thank you for your detailed report. The information helped us find the cause for the issue. 
+Basically our controls…, this is why a better approach is to…”
+“Unfortunately we will have to further investigate the case to find the cause and fix it.
+ However, in the meantime we’ve come up with the following workaround.
+
+Positive language pattern:
+
+"Congratulations on your new business.  To register your business name, we need some additional information.
+  If you return the attached form, with highlighted areas filled in, we will be able to send you your business
+  registration certificate within two weeks.  We wish you success in your new endeavor." 
+
+
+“That is a good question. Let me find out for you.”
+
+ //////CHANGE TO
+ 
+“We cannot do that.” : to
+“What you can do is take a look at those sample projects and use them to start building your logic following 
+these tutorials.”
+
+“You will have to…”  : to
+“One option would be for you to…” 
+“I want to get started on this right away and it would be great if you could send …” 
+ “I would suggest trying …”
+
+ “We can’t fix this now.” to -> “We will do our best to fix it as soon as possible.”
+ “The control doesn’t support this functionality.” to ->
+ ”We will create a feature request based on your feedback and if it gathers enough popularity, 
+ we will definitely consider its implementation.”
+
+
+///////TEMPLATES
+---------------------------------------------------------------------------------
+Hello [NAME],
+ …
+Thank you for contacting Telerik Support(us).
+ …
+I hope this information helps. Please let me know if I can assist you any further. Thank you in advance.
+ …
+Regards
+---------------------------------------------------------------------------------
+If Communication Continues
+Hello [NAME],
+ …
+Thank you for getting back to us.
+ …
+I hope this information helps. I will be glad to assist you further.
+ …
+Regards
+-----------------------------------------------------------------------------------
+Ending Communication
+Hello [NAME],
+ …
+I am glad that the issue you were facing is now resolved. Please do not hesitate to contact us if you have any additional questions.
+ …
+It was pleasure for me to assist you. Wish you a great day.
+ …
+Regards
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
