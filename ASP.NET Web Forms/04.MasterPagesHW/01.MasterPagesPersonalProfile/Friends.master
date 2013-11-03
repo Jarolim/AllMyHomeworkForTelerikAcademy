@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master"
+    AutoEventWireup="true" CodeBehind="Friends.master.cs"
+    Inherits="MasterPageDemo.Contacts" %>
+
+<asp:Content ID="ContentMain" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
+    <h1>Friends Information</h1>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderContacts" runat="server" />
+    <p>Glad to be my friend.</p>
+</asp:Content>

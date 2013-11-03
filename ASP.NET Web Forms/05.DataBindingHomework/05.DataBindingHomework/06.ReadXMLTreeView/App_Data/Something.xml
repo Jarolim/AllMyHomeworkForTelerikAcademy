@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Something Title="Something Title">
+  <Chapter Heading="Chapter 1">
+    <Section Heading="Section 1">
+    </Section>
+    <Section Heading="Section 2">
+    </Section>
+  </Chapter>
+  <Chapter Heading="Chapter 2">
+    <Section Heading="Section 1">
+    </Section>
+  </Chapter>
+  <Chapter Heading="Best chapter Ever">
+    <Section Heading ="First part">
+      <Chapter Heading="Best chapter Never">
+        <Section Heading ="First part"></Section>
+        <Section Heading ="Second part"></Section>
+        <Section Heading ="Last part"></Section>
+      </Chapter>
+    </Section>
+    <Section Heading ="Second part"></Section>
+    <Section Heading ="Last part"></Section>
+  </Chapter>
+</Something>

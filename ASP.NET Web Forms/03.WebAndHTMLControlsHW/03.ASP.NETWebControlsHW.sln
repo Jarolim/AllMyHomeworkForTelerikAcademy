@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. HtmlServerGenerateRandom", "Html-Server-Controls\1. HtmlServerGenerateRandom.csproj", "{F611F9E8-5E76-49E9-A192-54E70B9C1B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. WebServerGenerateRandom", "Web-Server-Controls\2. WebServerGenerateRandom.csproj", "{11B64991-3F7C-42F8-AB9A-26FFFF51A79A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F611F9E8-5E76-49E9-A192-54E70B9C1B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F611F9E8-5E76-49E9-A192-54E70B9C1B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F611F9E8-5E76-49E9-A192-54E70B9C1B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F611F9E8-5E76-49E9-A192-54E70B9C1B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11B64991-3F7C-42F8-AB9A-26FFFF51A79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B64991-3F7C-42F8-AB9A-26FFFF51A79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B64991-3F7C-42F8-AB9A-26FFFF51A79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B64991-3F7C-42F8-AB9A-26FFFF51A79A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

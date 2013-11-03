@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WebChatEntitiesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="WebChatEntitiesModelStoreContainer">
+          <EntitySet Name="Channels" EntityType="WebChatEntitiesModel.Store.Channels" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Messages" EntityType="WebChatEntitiesModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Messages_Channels" Association="WebChatEntitiesModel.Store.FK_Messages_Channels">
+            <End Role="Channels" EntitySet="Channels" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Channels">
+          <Key>
+            <PropertyRef Name="ChannelId" />
+          </Key>
+          <Property Name="ChannelId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ChannelName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MessageAuthor" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MessageDate" Type="datetime" Nullable="false" />
+          <Property Name="MessageText" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="ChannelId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Messages_Channels">
+          <End Role="Channels" Type="WebChatEntitiesModel.Store.Channels" Multiplicity="1" />
+          <End Role="Messages" Type="WebChatEntitiesModel.Store.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Channels">
+              <PropertyRef Name="ChannelId" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="ChannelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebChatEntitiesModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WebChatEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Channels" EntityType="WebChatEntitiesModel.Channel" />
+          <EntitySet Name="Messages" EntityType="WebChatEntitiesModel.Message" />
+          <AssociationSet Name="FK_Messages_Channels" Association="WebChatEntitiesModel.FK_Messages_Channels">
+            <End Role="Channels" EntitySet="Channels" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Channel">
+          <Key>
+            <PropertyRef Name="ChannelId" />
+          </Key>
+          <Property Name="ChannelId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ChannelName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Messages" Relationship="WebChatEntitiesModel.FK_Messages_Channels" FromRole="Channels" ToRole="Messages" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageAuthor" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MessageDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MessageText" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ChannelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Channel" Relationship="WebChatEntitiesModel.FK_Messages_Channels" FromRole="Messages" ToRole="Channels" />
+        </EntityType>
+        <Association Name="FK_Messages_Channels">
+          <End Role="Channels" Type="WebChatEntitiesModel.Channel" Multiplicity="1" />
+          <End Role="Messages" Type="WebChatEntitiesModel.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Channels">
+              <PropertyRef Name="ChannelId" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="ChannelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WebChatEntitiesModelStoreContainer" CdmEntityContainer="WebChatEntities">
+          <EntitySetMapping Name="Channels">
+            <EntityTypeMapping TypeName="WebChatEntitiesModel.Channel">
+              <MappingFragment StoreEntitySet="Channels">
+                <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+                <ScalarProperty Name="ChannelName" ColumnName="ChannelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="WebChatEntitiesModel.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="MessageAuthor" ColumnName="MessageAuthor" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+                <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

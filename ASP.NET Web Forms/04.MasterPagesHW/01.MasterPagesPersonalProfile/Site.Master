@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Site.master.cs" Inherits="MasterPageDemo.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="formMain" runat="server">
+        <header id="header">
+            User Profile.
+        </header>
+        <aside id="sidebar">
+            <div class="sidebar-title">Menu</div>
+            <ul>
+                <li><a href="~/PersonalInfo.aspx" runat="server">Personal Information</a></li>
+                <li><a href="~/AdditionalInfo.aspx" runat="server">Additional Information</a></li>
+                <li>
+                    <span>Friends</span>
+                    <ul>
+                        <li><a  href="~/FriendJennifer.aspx" runat="server">Samuel Jackson</a></li>
+                        <li><a href="~/FriendSamuel.aspx" runat="server">Jeniffer Lawrence</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <section id="main-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">        
+            </asp:ContentPlaceHolder>
+        </section>
+        <footer id="footer">
+            (c) 2013 by Samuel Jackson Corp.
+        </footer>
+    </form>
+</body>
+
+</html>
