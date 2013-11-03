@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title></head>
+<body>
+    <form method="post" action="Index.aspx" id="form1">
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="EZg+vJzQNH6z9pdmnIM97macX2WTXFP13xBuin4T+sCUJcJC/v8Q2vY9zWMSLJIx7tXECvIIP1OqqfKeiYrEnD1+oTk04CUHH8+CzHGk07Y6x8iWBcvd3qtmbjNE6quf6CWEAuZOhlz217UXTJWcWcGuI6kiobRW2xC9nf7V/z8pAOao000mnR3F8eBIdq48HW40rnvc2hRW20CQDwhb/6+NV1uyKY+zXvodPmXzmujyGLwlZ0ZugRAR67LsMnUBsuEiwcy1M7YrB1XIahhTU9F5It2zTH4j2txW0AU56+Os2ZnQb5OFo6YfCyF4jzB0i3UgXR/aGJB+M7vihYgPFZb8jw0FXgwki/mSFdtNI8Xq1rE+K27x0fX03ozD9PPUsPAkVVuUUfOxoUX/vALhBJsf31Axttz+/PuXnBDKoSlMD18pqGHqbOTAzWWNp3L/ZUk4iD457j2cX9uUZ1ehgbX2PzGhvyp5i7EVDZ81Am4=" />
+</div>
+        <div>
+            Book Title
+            <input name="txtBookTitle" type="text" id="txtBookTitle" /><br />
+            Book Author
+            <input name="txtBookAuthor" type="text" id="txtBookAuthor" /><br />
+            <a id="btnInsert" href="javascript:__doPostBack(&#39;btnInsert&#39;,&#39;&#39;)">Insert</a>
+            <div>
+	<table cellspacing="0" rules="all" border="1" id="grdResult" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Action</th><th scope="col">Title</th><th scope="col">Author</th>
+		</tr><tr>
+			<td><a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Edit$0&#39;)">Edit</a>&nbsp;<a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Delete$0&#39;)">Delete</a></td><td>gagagw53434</td><td>64dnjd</td>
+		</tr><tr>
+			<td><a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Edit$1&#39;)">Edit</a>&nbsp;<a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Delete$1&#39;)">Delete</a></td><td>book</td><td>23432</td>
+		</tr><tr>
+			<td><a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Edit$2&#39;)">Edit</a>&nbsp;<a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Delete$2&#39;)">Delete</a></td><td>book</td><td>23432</td>
+		</tr><tr>
+			<td><a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Edit$3&#39;)">Edit</a>&nbsp;<a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Delete$3&#39;)">Delete</a></td><td>book543</td><td>23432</td>
+		</tr><tr>
+			<td><a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Edit$4&#39;)">Edit</a>&nbsp;<a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Delete$4&#39;)">Delete</a></td><td>book543</td><td>23432 rg</td>
+		</tr><tr>
+			<td><a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Edit$5&#39;)">Edit</a>&nbsp;<a href="javascript:__doPostBack(&#39;grdResult&#39;,&#39;Delete$5&#39;)">Delete</a></td><td>book543543  trt</td><td>23432 rg </td>
+		</tr>
+	</table>
+</div>
+            Search Book By Name:
+            <input name="txtSearch" type="text" id="txtSearch" />
+            <a id="btnSearch" href="javascript:__doPostBack(&#39;btnSearch&#39;,&#39;&#39;)">Search</a><br />
+            <a id="btnGeneratePdf" href="javascript:__doPostBack(&#39;btnGeneratePdf&#39;,&#39;&#39;)">Generate result to pdf</a>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SuperMarketModel" fillColor="62, 62, 65" isDefault="true">
+    <DomainModelMoniker name="/SuperMarketModel" />
+    <nestedChildShapes>
+      <classShape Id="f196666f-f457-4c86-9de6-8a389f26be53" absoluteBounds="0.75, 0.75, 1.5, 1.7627718098958334" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SuperMarketModel/Vendor" />
+        <nestedChildShapes>
+          <elementListCompartment Id="91ff9e90-0828-4def-ba0e-4d8021c5456c" absoluteBounds="0.76500000000000012, 1.26, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="31b9a1f6-aa48-4671-bbae-cf6da81fe966" absoluteBounds="0.76500000000000012, 1.9039925130208333, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="a7c3d384-eef1-4cf1-bc1b-f4f22ba84197" absoluteBounds="0.76500000000000012, 2.1633821614583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="d797f8e6-030a-4a2b-a33d-6af6fec7816c" absoluteBounds="2.75, 0.75, 1.5, 2.3396761067708329" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SuperMarketModel/Product" />
+        <nestedChildShapes>
+          <elementListCompartment Id="d96441e1-425f-40c6-a1e4-ecb4fb6d4039" absoluteBounds="2.765, 1.2599999999999998, 1.4700000000000002, 1.2108968098958333" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="25528e1a-739e-411c-85ae-cf7cc629868a" absoluteBounds="2.765, 2.4808968098958335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="9477896a-4a3c-4654-b60c-e082c73d04e4" absoluteBounds="2.765, 2.7402864583333333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+      <classShape Id="1162b5c0-f3b3-4d58-9868-d4ed61d11e6b" absoluteBounds="4.75, 0.75, 1.5, 1.7627718098958329" fillColor="225, 249, 128, 67" outlineColor="213, 71, 0" textColor="White">
+        <DomainClassMoniker name="/SuperMarketModel/Measure" />
+        <nestedChildShapes>
+          <elementListCompartment Id="ca811981-3ef9-419c-82ce-f5016ad4bd2d" absoluteBounds="4.765, 1.2599999999999998, 1.4700000000000002, 0.63399251302083326" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="3bc3022e-64e2-4c10-9dc5-508702b79edc" absoluteBounds="4.765, 1.9039925130208335, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="6875132d-d2f8-4594-b4d0-c6a016b88f7b" absoluteBounds="4.765, 2.1633821614583333, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>

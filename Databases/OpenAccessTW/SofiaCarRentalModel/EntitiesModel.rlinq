@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel" namespace="OpenAccessModel9" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="EntitiesModel" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="OpenAccessModel9" default="true">
+      <orm:class name="RentalRate" uniqueId="febb8264-f5de-4d19-a2bf-31c9f2d6278b">
+        <orm:table name="RentalRates" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_rentalRateID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_rentalRateID" property="RentalRateID" behavior="readwrite" uniqueId="20dee67b-a871-4222-83fc-2c19f46d750c" type="System.Int32">
+          <orm:column name="RentalRateID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_categoryID" property="CategoryID" behavior="readwrite" uniqueId="dfcccad0-4311-42c9-bd0d-34bf94856dc7" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CategoryID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_daily" property="Daily" behavior="readwrite" uniqueId="1e347b16-a29a-4d0d-ae93-44c73b935320" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Daily" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+        </orm:field>
+        <orm:field name="_weekly" property="Weekly" behavior="readwrite" uniqueId="5c7e8bd4-1aa8-4400-ae74-45bb75a6b1ac" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Weekly" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+        </orm:field>
+        <orm:field name="_monthly" property="Monthly" behavior="readwrite" uniqueId="c4105609-4c27-4e2e-91bb-c4780f24b342" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Monthly" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+        </orm:field>
+        <orm:field name="_category" property="Category" behavior="readwrite" uniqueId="b6ef4fb3-337e-48a0-b956-e7f0a2c8f1f4" type="OpenAccessModel9.Category">
+          <orm:reference uniqueId="9af9d9ba-9b3f-44de-ad22-c9fef170f42c">
+            <orm:sharedfield name="_categoryID" target-class="OpenAccessModel9.Category" target-field="_categoryID" />
+            <orm:constraint name="FK_RentalRateCategory" destination-table="Categories" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="RentalOrder" uniqueId="92d834d9-0ae6-4b6a-8e4b-8a032031b5cf">
+        <orm:table name="RentalOrders" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_rentalOrderID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_rentalOrderID" property="RentalOrderID" behavior="readwrite" uniqueId="cd9ee6a5-6d05-4d3a-ad62-e97dcbe32735" type="System.Int32">
+          <orm:column name="RentalOrderID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_dateProcessed" property="DateProcessed" behavior="readwrite" uniqueId="7b054d48-305f-4f74-a3c4-67b6afee3aad" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="DateProcessed" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_employeeID" property="EmployeeID" behavior="readwrite" uniqueId="0364117a-d757-4117-b82f-7404e1ac4d58" type="System.Int32">
+          <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_customerID" property="CustomerID" behavior="readwrite" uniqueId="8a8e0880-0d34-4818-8c2f-76695e6c3ed6" type="System.Int32">
+          <orm:column name="CustomerID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_carID" property="CarID" behavior="readwrite" uniqueId="13b2d609-ffd8-459e-9507-c2e9c6f9f4dc" type="System.Int32">
+          <orm:column name="CarID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_tankLevel" property="TankLevel" behavior="readwrite" uniqueId="84380e8c-ea25-4cc8-8705-4551a43b98c8" type="System.String">
+          <orm:column name="TankLevel" sql-type="varchar" nullable="true" length="40" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_mileageStart" property="MileageStart" behavior="readwrite" uniqueId="14a909dc-a7fe-4300-bca4-2d40541c8d9d" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="MileageStart" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_mileageEnd" property="MileageEnd" behavior="readwrite" uniqueId="2d27b41a-a9b8-4a10-b0c9-fa7cdbf8dd37" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="MileageEnd" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_rentStartDate" property="RentStartDate" behavior="readwrite" uniqueId="213442ff-48dc-47e9-8985-f2b76f1827f2" type="System.DateTime">
+          <orm:column name="RentStartDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_rentEndDate" property="RentEndDate" behavior="readwrite" uniqueId="1b6e33fd-072c-4297-a82d-77edadfa57d4" type="System.DateTime">
+          <orm:column name="RentEndDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_days" property="Days" behavior="readwrite" uniqueId="a0aadc5f-6bf6-4142-a70c-69a88778c469" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Days" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_rateApplied" property="RateApplied" behavior="readwrite" uniqueId="4db7d000-3895-4c14-951a-80b69fea17d6" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="RateApplied" sql-type="money" nullable="true" length="0" scale="0" ado-type="Currency" />
+        </orm:field>
+        <orm:field name="_orderTotal" property="OrderTotal" behavior="readwrite" uniqueId="5e544eee-50a0-48d1-98fc-49c2558dacba" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="OrderTotal" sql-type="money" nullable="true" length="0" scale="0" ado-type="Currency" />
+        </orm:field>
+        <orm:field name="_orderStatus" property="OrderStatus" behavior="readwrite" uniqueId="a03bf6e1-8403-4b45-bb07-04fd21abc4ea" type="System.String">
+          <orm:column name="OrderStatus" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_car" property="Car" behavior="readwrite" uniqueId="0ce4fa66-ca29-4b04-ba5a-56f0c520186c" type="OpenAccessModel9.Car">
+          <orm:reference uniqueId="df2cf6f3-6668-4f33-af98-b72998e0fa2a">
+            <orm:sharedfield name="_carID" target-class="OpenAccessModel9.Car" target-field="_carID" />
+            <orm:constraint name="FK_Cars" destination-table="Cars" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_customer" property="Customer" behavior="readwrite" uniqueId="81c05900-154d-4522-88dd-333eb05b2b27" type="OpenAccessModel9.Customer">
+          <orm:reference uniqueId="16604686-1808-43ff-8b9e-dea352c5c18b">
+            <orm:sharedfield name="_customerID" target-class="OpenAccessModel9.Customer" target-field="_customerID" />
+            <orm:constraint name="FK_Customers" destination-table="Customers" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_employee" property="Employee" behavior="readwrite" uniqueId="41e7947f-6683-49ec-b32d-d987eab6c4d3" type="OpenAccessModel9.Employee">
+          <orm:reference uniqueId="cf534974-9e70-41ac-a6b0-c07b785bdbe4">
+            <orm:sharedfield name="_employeeID" target-class="OpenAccessModel9.Employee" target-field="_employeeID" />
+            <orm:constraint name="FK_Employees" destination-table="Employees" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Employee" uniqueId="67781adf-f1a3-4cfa-aec2-12179a384c3c">
+        <orm:table name="Employees" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_employeeID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_employeeID" property="EmployeeID" behavior="readwrite" uniqueId="612411dc-659f-469f-a057-f56c3de39334" type="System.Int32">
+          <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_employeeNumber" property="EmployeeNumber" behavior="readwrite" uniqueId="82c0a0fa-44f1-402e-ba10-2c86ee26aa43" type="System.String">
+          <orm:column name="EmployeeNumber" sql-type="nchar" nullable="true" length="5" scale="0" ado-type="UnicodeStringFixedLength" />
+        </orm:field>
+        <orm:field name="_firstName" property="FirstName" behavior="readwrite" uniqueId="3dea1cd6-7977-4ae1-be5b-8cdc4918015c" type="System.String">
+          <orm:column name="FirstName" sql-type="varchar" nullable="true" length="32" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_lastName" property="LastName" behavior="readwrite" uniqueId="21c58a73-2a1b-42b8-b4b9-a6b545c6068e" type="System.String">
+          <orm:column name="LastName" sql-type="varchar" nullable="false" length="32" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_fullName" property="FullName" behavior="readwrite" uniqueId="7340d03a-17f2-4915-9fca-6cf90713d8da" type="System.String">
+          <orm:column name="FullName" sql-type="varchar" nullable="true" length="66" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_title" property="Title" behavior="readwrite" uniqueId="4d7bb308-8cec-4a09-9737-38d4a845b25f" type="System.String">
+          <orm:column name="Title" sql-type="varchar" nullable="true" length="80" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_hourlySalary" property="HourlySalary" behavior="readwrite" uniqueId="1b949101-fe54-4c41-a286-a260beae892e" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="HourlySalary" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+        </orm:field>
+        <orm:field name="_rentalOrders" property="RentalOrders" behavior="readwrite" uniqueId="93febee5-0f0e-4342-95e5-8ba66865ca21" type="OpenAccessModel9.RentalOrder">
+          <orm:collection element-class="OpenAccessModel9.RentalOrder" inverse-field="_employee" order-by="" uniqueId="cf534974-9e70-41ac-a6b0-c07b785bdbe4" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Customer" uniqueId="a98fa64b-295f-46fc-a92d-b88472399c67">
+        <orm:table name="Customers" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_customerID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_customerID" property="CustomerID" behavior="readwrite" uniqueId="c426389f-a6c2-44ff-9983-3126b7170d56" type="System.Int32">
+          <orm:column name="CustomerID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_drvLicNumber" property="DrvLicNumber" behavior="readwrite" uniqueId="248da6a9-fb53-4f45-8c5c-7b1fd97466eb" type="System.String">
+          <orm:column name="DrvLicNumber" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_fullName" property="FullName" behavior="readwrite" uniqueId="60ef725d-2ace-4f08-8af3-38a7dbe28065" type="System.String">
+          <orm:column name="FullName" sql-type="varchar" nullable="true" length="80" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_address" property="Address" behavior="readwrite" uniqueId="f033c78f-18fc-461f-9aab-38819c577512" type="System.String">
+          <orm:column name="Address" sql-type="varchar" nullable="false" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_country" property="Country" behavior="readwrite" uniqueId="3553ad08-d072-4b7b-9a37-a6bb6b43bbc0" type="System.String">
+          <orm:column name="Country" sql-type="varchar" nullable="false" length="100" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_city" property="City" behavior="readwrite" uniqueId="025b5f26-1c09-4914-a5a1-9643a3330ffa" type="System.String">
+          <orm:column name="City" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_state" property="State" behavior="readwrite" uniqueId="a42f4ded-4152-4b24-b13e-1cd942f73c23" type="System.String">
+          <orm:column name="State" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_zIPCode" property="ZIPCode" behavior="readwrite" uniqueId="192647f7-3738-4cb7-a484-d38dbdecdc97" type="System.String">
+          <orm:column name="ZIPCode" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_rentalOrders" property="RentalOrders" behavior="readwrite" uniqueId="d4065d02-a643-48ff-ac5e-efdd57250314" type="OpenAccessModel9.RentalOrder">
+          <orm:collection element-class="OpenAccessModel9.RentalOrder" inverse-field="_customer" order-by="" uniqueId="16604686-1808-43ff-8b9e-dea352c5c18b" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Category" uniqueId="0777e273-a532-4505-afc4-6cf4115fbcb9">
+        <orm:table name="Categories" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_categoryID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_categoryID" property="CategoryID" behavior="readwrite" uniqueId="d4910b61-fe54-4816-8cc9-b8335cb08ad0" type="System.Int32">
+          <orm:column name="CategoryID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_categoryName" property="CategoryName" behavior="readwrite" uniqueId="3b4cea85-bf97-476f-b257-1a0b0207635d" type="System.String">
+          <orm:column name="CategoryName" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_imageFileName" property="ImageFileName" behavior="readwrite" uniqueId="af58b326-426e-4fb7-9005-174c737be97b" type="System.String">
+          <orm:column name="ImageFileName" sql-type="varchar" nullable="true" length="256" scale="0" has-default-value="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_rentalRates" property="RentalRates" behavior="readwrite" uniqueId="8ec5c47c-46ee-458b-be13-1f4d9141760d" type="OpenAccessModel9.RentalRate">
+          <orm:collection element-class="OpenAccessModel9.RentalRate" inverse-field="_category" order-by="" uniqueId="9af9d9ba-9b3f-44de-ad22-c9fef170f42c" />
+        </orm:field>
+        <orm:field name="_cars" property="Cars" behavior="readwrite" uniqueId="d6ab33ce-8ab9-4adf-8645-c81b8d162a95" type="OpenAccessModel9.Car">
+          <orm:collection element-class="OpenAccessModel9.Car" inverse-field="_category" order-by="" uniqueId="267e5ddc-f0bb-4996-b96a-d397a9105b0c" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Car" uniqueId="960e773d-3aed-4826-91e7-05371412fd9c">
+        <orm:table name="Cars" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_carID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_carID" property="CarID" behavior="readwrite" uniqueId="c9644711-39b1-4bb1-a62a-4f8bc993f3b4" type="System.Int32">
+          <orm:column name="CarID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_tagNumber" property="TagNumber" behavior="readwrite" uniqueId="a9b59bb2-b68b-4142-8b04-474ff27ab54c" type="System.String">
+          <orm:column name="TagNumber" sql-type="varchar" nullable="false" length="20" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_make" property="Make" behavior="readwrite" uniqueId="e91f7073-a93d-47fa-8b71-f52766696500" type="System.String">
+          <orm:column name="Make" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_model" property="Model" behavior="readwrite" uniqueId="936b640d-c385-4b38-8dfe-888e58884bc5" type="System.String">
+          <orm:column name="Model" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_carYear" property="CarYear" behavior="readwrite" uniqueId="3128a48a-dd4d-479b-94b8-b9dace6f20c6" type="System.Nullable`1[[System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CarYear" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        </orm:field>
+        <orm:field name="_categoryID" property="CategoryID" behavior="readwrite" uniqueId="ccb1ef63-c292-491a-936a-527de1a91400" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="CategoryID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_mp3Player" property="Mp3Player" behavior="readwrite" uniqueId="94899ce0-e46c-4ae5-bd25-a5b192dc4aa0" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Mp3Player" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_dVDPlayer" property="DVDPlayer" behavior="readwrite" uniqueId="61d76075-5979-4b0f-81f7-2cfe7596e813" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="DVDPlayer" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_airConditioner" property="AirConditioner" behavior="readwrite" uniqueId="59379c58-02f2-4b89-9c49-610b07c3ac77" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="AirConditioner" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_aBS" property="ABS" behavior="readwrite" uniqueId="8876ddb8-1032-40d9-b133-c34a40f36017" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ABS" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_aSR" property="ASR" behavior="readwrite" uniqueId="de9d5020-5a8b-42a0-966d-6c59a32c31c4" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ASR" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_navigation" property="Navigation" behavior="readwrite" uniqueId="d5a42d03-3861-4523-839b-8da3690332c0" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Navigation" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_available" property="Available" behavior="readwrite" uniqueId="8c103189-ad80-4b3d-8b1d-104f69b56744" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Available" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="_latitude" property="Latitude" behavior="readwrite" uniqueId="b1554b61-8001-4f2c-8dc9-b5023f78d97c" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Latitude" sql-type="float" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_longitude" property="Longitude" behavior="readwrite" uniqueId="158bc415-79ec-43ed-8545-b684c53a3c75" type="System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Longitude" sql-type="float" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Double" />
+        </orm:field>
+        <orm:field name="_imageFileName" property="ImageFileName" behavior="readwrite" uniqueId="a3c856d2-e8f2-4fc8-b497-523cd364e3b2" type="System.String">
+          <orm:column name="ImageFileName" sql-type="varchar" nullable="true" length="256" scale="0" has-default-value="true" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="_rating" property="Rating" behavior="readwrite" uniqueId="3faeb2c0-6708-4f44-9110-cbf524188b28" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="Rating" sql-type="decimal" nullable="true" length="9" scale="2" has-default-value="true" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_numberOfRatings" property="NumberOfRatings" behavior="readwrite" uniqueId="ed877758-26fe-4786-b89d-7507548a423c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="NumberOfRatings" sql-type="int" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_rentalOrders" property="RentalOrders" behavior="readwrite" uniqueId="19661ebc-c92b-4764-82cd-9ae34d3728e4" type="OpenAccessModel9.RentalOrder">
+          <orm:collection element-class="OpenAccessModel9.RentalOrder" inverse-field="_car" order-by="" uniqueId="df2cf6f3-6668-4f33-af98-b72998e0fa2a" />
+        </orm:field>
+        <orm:field name="_category" property="Category" behavior="readwrite" uniqueId="51a32873-87dc-477f-94bc-f9ecfcd62be1" type="OpenAccessModel9.Category">
+          <orm:reference uniqueId="267e5ddc-f0bb-4996-b96a-d397a9105b0c">
+            <orm:sharedfield name="_categoryID" target-class="OpenAccessModel9.Category" target-field="_categoryID" />
+            <orm:constraint name="FK_Categories" destination-table="Categories" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="IX_Cars_TagNumber" unique="true">
+          <orm:columnMapping>
+            <orm:column name="TagNumber" sql-type="varchar" nullable="false" length="20" scale="0" ado-type="StringVariableLength" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="RentalRates">
+        <orm:column name="RentalRateID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="CategoryID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="Daily" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+        <orm:column name="Weekly" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+        <orm:column name="Monthly" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+        <orm:constraint name="FK_RentalRateCategory" destination-table="Categories">
+          <orm:column name="CategoryID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="RentalOrders">
+        <orm:column name="RentalOrderID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="DateProcessed" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="CustomerID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="CarID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="TankLevel" sql-type="varchar" nullable="true" length="40" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="MileageStart" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="MileageEnd" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="RentStartDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="RentEndDate" sql-type="datetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="Days" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="RateApplied" sql-type="money" nullable="true" length="0" scale="0" ado-type="Currency" />
+        <orm:column name="OrderTotal" sql-type="money" nullable="true" length="0" scale="0" ado-type="Currency" />
+        <orm:column name="OrderStatus" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:constraint name="FK_Cars" destination-table="Cars">
+          <orm:column name="CarID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="FK_Customers" destination-table="Customers">
+          <orm:column name="CustomerID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="FK_Employees" destination-table="Employees">
+          <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="Employees">
+        <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="EmployeeNumber" sql-type="nchar" nullable="true" length="5" scale="0" ado-type="UnicodeStringFixedLength" />
+        <orm:column name="FirstName" sql-type="varchar" nullable="true" length="32" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="LastName" sql-type="varchar" nullable="false" length="32" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="FullName" sql-type="varchar" nullable="true" length="66" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Title" sql-type="varchar" nullable="true" length="80" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="HourlySalary" sql-type="smallmoney" nullable="true" length="0" scale="0" ado-type="Currency" />
+      </orm:table>
+      <orm:table name="Customers">
+        <orm:column name="CustomerID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="DrvLicNumber" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="FullName" sql-type="varchar" nullable="true" length="80" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Address" sql-type="varchar" nullable="false" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Country" sql-type="varchar" nullable="false" length="100" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="City" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="State" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="ZIPCode" sql-type="varchar" nullable="true" length="20" scale="0" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="Categories">
+        <orm:column name="CategoryID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="CategoryName" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="ImageFileName" sql-type="varchar" nullable="true" length="256" scale="0" has-default-value="true" ado-type="StringVariableLength" />
+      </orm:table>
+      <orm:table name="Cars">
+        <orm:column name="CarID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="TagNumber" sql-type="varchar" nullable="false" length="20" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Make" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="Model" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="CarYear" sql-type="smallint" nullable="true" length="0" scale="0" ado-type="Int16" />
+        <orm:column name="CategoryID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="Mp3Player" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="DVDPlayer" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="AirConditioner" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="ABS" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="ASR" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="Navigation" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="Available" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:column name="Latitude" sql-type="float" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Double" />
+        <orm:column name="Longitude" sql-type="float" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Double" />
+        <orm:column name="ImageFileName" sql-type="varchar" nullable="true" length="256" scale="0" has-default-value="true" ado-type="StringVariableLength" />
+        <orm:column name="Rating" sql-type="decimal" nullable="true" length="9" scale="2" has-default-value="true" ado-type="Decimal" />
+        <orm:column name="NumberOfRatings" sql-type="int" nullable="true" length="0" scale="0" has-default-value="true" ado-type="Int32" />
+        <orm:index name="IX_Cars_TagNumber" unique="true">
+          <orm:columnMapping>
+            <orm:column name="TagNumber" sql-type="varchar" nullable="false" length="20" scale="0" ado-type="StringVariableLength" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:constraint name="FK_Categories" destination-table="Categories">
+          <orm:column name="CategoryID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:procedure name="GetRentalOrdersForCar">
+        <orm:procedure-parameter name="CarID" sql-type="int" length="0" scale="0" nullable="true" ado-type="Int32" mode="in" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" />
+        <orm:result-sets />
+      </orm:procedure>
+      <orm:procedure name="GetProfitFromCar">
+        <orm:procedure-parameter name="CarID" sql-type="int" length="0" scale="0" nullable="true" ado-type="Int32" mode="in" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" />
+        <orm:result-sets />
+      </orm:procedure>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+      <orm:source-strategy>Property</orm:source-strategy>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=.\sqlexpress;Initial Catalog=SofiaCarRental_v2.2;Integrated Security=True</AppConfigConnectionString>
+    <InitialCatalog>SofiaCarRental_v2.2</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <GenerateDataAnnotationAttributes>true</GenerateDataAnnotationAttributes>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+    <UseSchemaAsNamespace>true</UseSchemaAsNamespace>
+    <CreateDiagramPerSchema>true</CreateDiagramPerSchema>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="febb8264-f5de-4d19-a2bf-31c9f2d6278b" name="RentalRate" namespace="OpenAccessModel9" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="20dee67b-a871-4222-83fc-2c19f46d750c" name="RentalRateID" type="Int32" label="RentalRateID : Int32" kind="Persistent" identity="true" fieldName="_rentalRateID" />
+      <Property Id="dfcccad0-4311-42c9-bd0d-34bf94856dc7" name="CategoryID" type="Int32" label="CategoryID : Int32" nullable="true" kind="Persistent" fieldName="_categoryID" />
+      <Property Id="1e347b16-a29a-4d0d-ae93-44c73b935320" name="Daily" type="Decimal" label="Daily : Decimal" nullable="true" kind="Persistent" fieldName="_daily" />
+      <Property Id="c4105609-4c27-4e2e-91bb-c4780f24b342" name="Monthly" type="Decimal" label="Monthly : Decimal" nullable="true" kind="Persistent" fieldName="_monthly" />
+      <Property Id="5c7e8bd4-1aa8-4400-ae74-45bb75a6b1ac" name="Weekly" type="Decimal" label="Weekly : Decimal" nullable="true" kind="Persistent" fieldName="_weekly" />
+      <AssociationTargets>
+        <Association Id="9af9d9ba-9b3f-44de-ad22-c9fef170f42c" SourceMultiplicity="ZeroOne" name="RentalRateHasCategory">
+          <DomainClassMoniker name="/EntitiesModel/Category" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="3c9a9ab0-994f-4eb1-b592-a4497b63adc4">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Category/RentalRates" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="ecde87cf-23c3-4f23-bb98-c514c58b61ea">
+              <NavigationalPropertyMoniker name="/EntitiesModel/RentalRate/Category" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="1d6981b6-c2c5-4e04-a81a-931c04271f2d">
+          <NavigationalProperty Id="b6ef4fb3-337e-48a0-b956-e7f0a2c8f1f4" name="Category" type="Category" label="Category : Category" nullable="true" kind="Persistent" fieldName="_category" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="92d834d9-0ae6-4b6a-8e4b-8a032031b5cf" name="RentalOrder" namespace="OpenAccessModel9" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="cd9ee6a5-6d05-4d3a-ad62-e97dcbe32735" name="RentalOrderID" type="Int32" label="RentalOrderID : Int32" kind="Persistent" identity="true" fieldName="_rentalOrderID" />
+      <Property Id="13b2d609-ffd8-459e-9507-c2e9c6f9f4dc" name="CarID" type="Int32" label="CarID : Int32" kind="Persistent" fieldName="_carID" />
+      <Property Id="8a8e0880-0d34-4818-8c2f-76695e6c3ed6" name="CustomerID" type="Int32" label="CustomerID : Int32" kind="Persistent" fieldName="_customerID" />
+      <Property Id="7b054d48-305f-4f74-a3c4-67b6afee3aad" name="DateProcessed" type="DateTime" label="DateProcessed : DateTime" nullable="true" kind="Persistent" fieldName="_dateProcessed" />
+      <Property Id="a0aadc5f-6bf6-4142-a70c-69a88778c469" name="Days" type="Int32" label="Days : Int32" nullable="true" kind="Persistent" fieldName="_days" />
+      <Property Id="0364117a-d757-4117-b82f-7404e1ac4d58" name="EmployeeID" type="Int32" label="EmployeeID : Int32" kind="Persistent" fieldName="_employeeID" />
+      <Property Id="2d27b41a-a9b8-4a10-b0c9-fa7cdbf8dd37" name="MileageEnd" type="Int32" label="MileageEnd : Int32" nullable="true" kind="Persistent" fieldName="_mileageEnd" />
+      <Property Id="14a909dc-a7fe-4300-bca4-2d40541c8d9d" name="MileageStart" type="Int32" label="MileageStart : Int32" nullable="true" kind="Persistent" fieldName="_mileageStart" />
+      <Property Id="a03bf6e1-8403-4b45-bb07-04fd21abc4ea" name="OrderStatus" label="OrderStatus : String" kind="Persistent" fieldName="_orderStatus" />
+      <Property Id="5e544eee-50a0-48d1-98fc-49c2558dacba" name="OrderTotal" type="Decimal" label="OrderTotal : Decimal" nullable="true" kind="Persistent" fieldName="_orderTotal" />
+      <Property Id="4db7d000-3895-4c14-951a-80b69fea17d6" name="RateApplied" type="Decimal" label="RateApplied : Decimal" nullable="true" kind="Persistent" fieldName="_rateApplied" />
+      <Property Id="1b6e33fd-072c-4297-a82d-77edadfa57d4" name="RentEndDate" type="DateTime" label="RentEndDate : DateTime" kind="Persistent" fieldName="_rentEndDate" />
+      <Property Id="213442ff-48dc-47e9-8985-f2b76f1827f2" name="RentStartDate" type="DateTime" label="RentStartDate : DateTime" kind="Persistent" fieldName="_rentStartDate" />
+      <Property Id="84380e8c-ea25-4cc8-8705-4551a43b98c8" name="TankLevel" label="TankLevel : String" kind="Persistent" fieldName="_tankLevel" />
+      <AssociationTargets>
+        <Association Id="df2cf6f3-6668-4f33-af98-b72998e0fa2a" SourceMultiplicity="One" name="RentalOrderHasCar">
+          <DomainClassMoniker name="/EntitiesModel/Car" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="edb6ed8f-4f43-4147-a91b-0bd972b9061d">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Car/RentalOrders" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="4216c520-c6ea-4ae7-a98a-7f88cb007f69">
+              <NavigationalPropertyMoniker name="/EntitiesModel/RentalOrder/Car" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="16604686-1808-43ff-8b9e-dea352c5c18b" SourceMultiplicity="One" name="RentalOrderHasCustomer">
+          <DomainClassMoniker name="/EntitiesModel/Customer" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="7e06d620-c497-4cf9-a3eb-a4399d2337c5">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Customer/RentalOrders" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="7cfce6bc-2a3f-4e62-b093-6ac5eeca28c8">
+              <NavigationalPropertyMoniker name="/EntitiesModel/RentalOrder/Customer" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="cf534974-9e70-41ac-a6b0-c07b785bdbe4" SourceMultiplicity="One" name="RentalOrderHasEmployee">
+          <DomainClassMoniker name="/EntitiesModel/Employee" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="3055930b-ba8b-40d0-b775-13fad6d37a04">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Employee/RentalOrders" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="dea741d8-b1d7-4666-991f-5b0978dd4d56">
+              <NavigationalPropertyMoniker name="/EntitiesModel/RentalOrder/Employee" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="277983c5-16ea-4622-bc0b-c43e40645a48">
+          <NavigationalProperty Id="0ce4fa66-ca29-4b04-ba5a-56f0c520186c" name="Car" type="Car" label="Car : Car" nullable="true" kind="Persistent" fieldName="_car" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="d181b4e1-cd32-493c-a5ca-cb06df9a24b7">
+          <NavigationalProperty Id="81c05900-154d-4522-88dd-333eb05b2b27" name="Customer" type="Customer" label="Customer : Customer" nullable="true" kind="Persistent" fieldName="_customer" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="c3a2f11a-9552-4172-90b4-22f9ef4ac97c">
+          <NavigationalProperty Id="41e7947f-6683-49ec-b32d-d987eab6c4d3" name="Employee" type="Employee" label="Employee : Employee" nullable="true" kind="Persistent" fieldName="_employee" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="67781adf-f1a3-4cfa-aec2-12179a384c3c" name="Employee" namespace="OpenAccessModel9" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="612411dc-659f-469f-a057-f56c3de39334" name="EmployeeID" type="Int32" label="EmployeeID : Int32" kind="Persistent" identity="true" fieldName="_employeeID" />
+      <Property Id="82c0a0fa-44f1-402e-ba10-2c86ee26aa43" name="EmployeeNumber" label="EmployeeNumber : String" kind="Persistent" fieldName="_employeeNumber" />
+      <Property Id="3dea1cd6-7977-4ae1-be5b-8cdc4918015c" name="FirstName" label="FirstName : String" kind="Persistent" fieldName="_firstName" />
+      <Property Id="7340d03a-17f2-4915-9fca-6cf90713d8da" name="FullName" label="FullName : String" kind="Persistent" fieldName="_fullName" />
+      <Property Id="1b949101-fe54-4c41-a286-a260beae892e" name="HourlySalary" type="Decimal" label="HourlySalary : Decimal" nullable="true" kind="Persistent" fieldName="_hourlySalary" />
+      <Property Id="21c58a73-2a1b-42b8-b4b9-a6b545c6068e" name="LastName" label="LastName : String" kind="Persistent" fieldName="_lastName" />
+      <Property Id="4d7bb308-8cec-4a09-9737-38d4a845b25f" name="Title" label="Title : String" kind="Persistent" fieldName="_title" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="e00e00e1-6b91-4574-936b-38914bed7cbe">
+          <NavigationalProperty Id="93febee5-0f0e-4342-95e5-8ba66865ca21" name="RentalOrders" type="IList&lt;RentalOrder&gt;" label="RentalOrders : IList&lt;RentalOrder&gt;" nullable="true" kind="Persistent" fieldName="_rentalOrders" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="a98fa64b-295f-46fc-a92d-b88472399c67" name="Customer" namespace="OpenAccessModel9" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="c426389f-a6c2-44ff-9983-3126b7170d56" name="CustomerID" type="Int32" label="CustomerID : Int32" kind="Persistent" identity="true" fieldName="_customerID" />
+      <Property Id="f033c78f-18fc-461f-9aab-38819c577512" name="Address" label="Address : String" kind="Persistent" fieldName="_address" />
+      <Property Id="025b5f26-1c09-4914-a5a1-9643a3330ffa" name="City" label="City : String" kind="Persistent" fieldName="_city" />
+      <Property Id="3553ad08-d072-4b7b-9a37-a6bb6b43bbc0" name="Country" label="Country : String" kind="Persistent" fieldName="_country" />
+      <Property Id="248da6a9-fb53-4f45-8c5c-7b1fd97466eb" name="DrvLicNumber" label="DrvLicNumber : String" kind="Persistent" fieldName="_drvLicNumber" />
+      <Property Id="60ef725d-2ace-4f08-8af3-38a7dbe28065" name="FullName" label="FullName : String" kind="Persistent" fieldName="_fullName" />
+      <Property Id="a42f4ded-4152-4b24-b13e-1cd942f73c23" name="State" label="State : String" kind="Persistent" fieldName="_state" />
+      <Property Id="192647f7-3738-4cb7-a484-d38dbdecdc97" name="ZIPCode" label="ZIPCode : String" kind="Persistent" fieldName="_zIPCode" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="21af133b-e6f3-4928-a281-8d8e70a93f21">
+          <NavigationalProperty Id="d4065d02-a643-48ff-ac5e-efdd57250314" name="RentalOrders" type="IList&lt;RentalOrder&gt;" label="RentalOrders : IList&lt;RentalOrder&gt;" nullable="true" kind="Persistent" fieldName="_rentalOrders" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="0777e273-a532-4505-afc4-6cf4115fbcb9" name="Category" namespace="OpenAccessModel9" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="d4910b61-fe54-4816-8cc9-b8335cb08ad0" name="CategoryID" type="Int32" label="CategoryID : Int32" kind="Persistent" identity="true" fieldName="_categoryID" />
+      <Property Id="3b4cea85-bf97-476f-b257-1a0b0207635d" name="CategoryName" label="CategoryName : String" kind="Persistent" fieldName="_categoryName" />
+      <Property Id="af58b326-426e-4fb7-9005-174c737be97b" name="ImageFileName" label="ImageFileName : String" kind="Persistent" fieldName="_imageFileName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="a2417d34-13f7-41cf-bd7d-8417ff48ef5e">
+          <NavigationalProperty Id="8ec5c47c-46ee-458b-be13-1f4d9141760d" name="RentalRates" type="IList&lt;RentalRate&gt;" label="RentalRates : IList&lt;RentalRate&gt;" nullable="true" kind="Persistent" fieldName="_rentalRates" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="1c553751-676d-4e41-8efa-351174b5f311">
+          <NavigationalProperty Id="d6ab33ce-8ab9-4adf-8645-c81b8d162a95" name="Cars" type="IList&lt;Car&gt;" label="Cars : IList&lt;Car&gt;" nullable="true" kind="Persistent" fieldName="_cars" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="960e773d-3aed-4826-91e7-05371412fd9c" name="Car" namespace="OpenAccessModel9" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="c9644711-39b1-4bb1-a62a-4f8bc993f3b4" name="CarID" type="Int32" label="CarID : Int32" kind="Persistent" identity="true" fieldName="_carID" />
+      <Property Id="8876ddb8-1032-40d9-b133-c34a40f36017" name="ABS" type="Boolean" label="ABS : Boolean" nullable="true" kind="Persistent" fieldName="_aBS" />
+      <Property Id="59379c58-02f2-4b89-9c49-610b07c3ac77" name="AirConditioner" type="Boolean" label="AirConditioner : Boolean" nullable="true" kind="Persistent" fieldName="_airConditioner" />
+      <Property Id="de9d5020-5a8b-42a0-966d-6c59a32c31c4" name="ASR" type="Boolean" label="ASR : Boolean" nullable="true" kind="Persistent" fieldName="_aSR" />
+      <Property Id="8c103189-ad80-4b3d-8b1d-104f69b56744" name="Available" type="Boolean" label="Available : Boolean" nullable="true" kind="Persistent" fieldName="_available" />
+      <Property Id="3128a48a-dd4d-479b-94b8-b9dace6f20c6" name="CarYear" type="Int16" label="CarYear : Int16" nullable="true" kind="Persistent" fieldName="_carYear" />
+      <Property Id="ccb1ef63-c292-491a-936a-527de1a91400" name="CategoryID" type="Int32" label="CategoryID : Int32" nullable="true" kind="Persistent" fieldName="_categoryID" />
+      <Property Id="61d76075-5979-4b0f-81f7-2cfe7596e813" name="DVDPlayer" type="Boolean" label="DVDPlayer : Boolean" nullable="true" kind="Persistent" fieldName="_dVDPlayer" />
+      <Property Id="a3c856d2-e8f2-4fc8-b497-523cd364e3b2" name="ImageFileName" label="ImageFileName : String" kind="Persistent" fieldName="_imageFileName" />
+      <Property Id="b1554b61-8001-4f2c-8dc9-b5023f78d97c" name="Latitude" type="Double" label="Latitude : Double" nullable="true" kind="Persistent" fieldName="_latitude" />
+      <Property Id="158bc415-79ec-43ed-8545-b684c53a3c75" name="Longitude" type="Double" label="Longitude : Double" nullable="true" kind="Persistent" fieldName="_longitude" />
+      <Property Id="e91f7073-a93d-47fa-8b71-f52766696500" name="Make" label="Make : String" kind="Persistent" fieldName="_make" />
+      <Property Id="936b640d-c385-4b38-8dfe-888e58884bc5" name="Model" label="Model : String" kind="Persistent" fieldName="_model" />
+      <Property Id="94899ce0-e46c-4ae5-bd25-a5b192dc4aa0" name="Mp3Player" type="Boolean" label="Mp3Player : Boolean" nullable="true" kind="Persistent" fieldName="_mp3Player" />
+      <Property Id="d5a42d03-3861-4523-839b-8da3690332c0" name="Navigation" type="Boolean" label="Navigation : Boolean" nullable="true" kind="Persistent" fieldName="_navigation" />
+      <Property Id="ed877758-26fe-4786-b89d-7507548a423c" name="NumberOfRatings" type="Int32" label="NumberOfRatings : Int32" nullable="true" kind="Persistent" fieldName="_numberOfRatings" />
+      <Property Id="3faeb2c0-6708-4f44-9110-cbf524188b28" name="Rating" type="Decimal" label="Rating : Decimal" nullable="true" kind="Persistent" fieldName="_rating" />
+      <Property Id="a9b59bb2-b68b-4142-8b04-474ff27ab54c" name="TagNumber" label="TagNumber : String" kind="Persistent" fieldName="_tagNumber" />
+      <AssociationTargets>
+        <Association Id="267e5ddc-f0bb-4996-b96a-d397a9105b0c" SourceMultiplicity="ZeroOne" name="CarHasCategory">
+          <DomainClassMoniker name="/EntitiesModel/Category" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="0e82071a-c86c-4f36-8ebc-7421641b2f40">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Category/Cars" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="c1582b2e-9ffa-4a2e-9196-6fd8f10ea185">
+              <NavigationalPropertyMoniker name="/EntitiesModel/Car/Category" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="a4150f89-9d91-4071-b318-65197d9e5dac">
+          <NavigationalProperty Id="19661ebc-c92b-4764-82cd-9ae34d3728e4" name="RentalOrders" type="IList&lt;RentalOrder&gt;" label="RentalOrders : IList&lt;RentalOrder&gt;" nullable="true" kind="Persistent" fieldName="_rentalOrders" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="d860afca-eee8-41b9-bc0d-48a29615dbe9">
+          <NavigationalProperty Id="51a32873-87dc-477f-94bc-f9ecfcd62be1" name="Category" type="Category" label="Category : Category" nullable="true" kind="Persistent" fieldName="_category" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="2f0f38f7-47b6-4762-aa65-d313eca16199">
+      <domainContainer name="EntitiesModel" namespace="OpenAccessModel9" showPropertiesCompartment="true">
+        <entitySetProperty name="RentalRates" namespace="OpenAccessModel9" type="RentalRate" label="RentalRates : IQueryable&lt;OpenAccessModel9.RentalRate&gt;" />
+        <entitySetProperty name="RentalOrders" namespace="OpenAccessModel9" type="RentalOrder" label="RentalOrders : IQueryable&lt;OpenAccessModel9.RentalOrder&gt;" />
+        <entitySetProperty name="Employees" namespace="OpenAccessModel9" type="Employee" label="Employees : IQueryable&lt;OpenAccessModel9.Employee&gt;" />
+        <entitySetProperty name="Customers" namespace="OpenAccessModel9" type="Customer" label="Customers : IQueryable&lt;OpenAccessModel9.Customer&gt;" />
+        <entitySetProperty name="Categories" namespace="OpenAccessModel9" type="Category" label="Categories : IQueryable&lt;OpenAccessModel9.Category&gt;" />
+        <entitySetProperty name="Cars" namespace="OpenAccessModel9" type="Car" label="Cars : IQueryable&lt;OpenAccessModel9.Car&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

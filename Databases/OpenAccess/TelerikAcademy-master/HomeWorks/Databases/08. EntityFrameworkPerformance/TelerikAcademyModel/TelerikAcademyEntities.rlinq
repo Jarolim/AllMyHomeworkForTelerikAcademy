@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="TelerikAcademyEntities" namespace="TelerikAcademyModel" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="TelerikAcademyEntities" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="TelerikAcademyModel" default="true">
+      <orm:class name="User" uniqueId="4b4948fc-2d5a-4f49-ae59-13f3baadd1c5">
+        <orm:table name="Users" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_userID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_userID" property="UserID" behavior="readwrite" uniqueId="6e6a0e9b-fc7f-4a3f-b466-78e59fa8b8f4" type="System.Int32">
+          <orm:column name="UserID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_username" property="Username" behavior="readwrite" uniqueId="c95cfc07-14a9-4b0c-988e-6b0e6dbcc0f3" type="System.String">
+          <orm:column name="Username" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_fullName" property="FullName" behavior="readwrite" uniqueId="3db66b6d-9e6c-40f3-a00e-a600a35d56b2" type="System.String">
+          <orm:column name="FullName" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_pass" property="Pass" behavior="readwrite" uniqueId="2b5c648b-cbce-4393-b949-a4505c3bb52f" type="System.String">
+          <orm:column name="Pass" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_lastLoginTime" property="LastLoginTime" behavior="readwrite" uniqueId="13e6b7c1-9eda-4794-94ea-4113a90674b8" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="LastLoginTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_groupID" property="GroupID" behavior="readwrite" uniqueId="00fd79cb-f849-4fc7-8e6d-75d746e5bd0d" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="GroupID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_group" property="Group" behavior="readwrite" uniqueId="00072c1d-d869-44ec-97aa-89d43115089d" type="TelerikAcademyModel.Group">
+          <orm:reference uniqueId="51a0555a-4680-481b-935f-e8cb488e19d8">
+            <orm:sharedfield name="_groupID" target-class="TelerikAcademyModel.Group" target-field="_groupID" />
+            <orm:constraint name="FK_Users_Groups" destination-table="Groups" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Town" uniqueId="ea2b4c6c-c24d-42b9-930b-753706dfca5b">
+        <orm:table name="Towns" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_townID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_townID" property="TownID" behavior="readwrite" uniqueId="05681fec-a870-4454-90c7-e3539b14b082" type="System.Int32">
+          <orm:column name="TownID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="76f595ed-8243-48a0-a614-3613c54527e6" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_addresses" property="Addresses" behavior="readwrite" uniqueId="20ec4cec-fc16-4c60-a871-4d0613f45409" type="TelerikAcademyModel.Address">
+          <orm:collection element-class="TelerikAcademyModel.Address" inverse-field="_town" order-by="" uniqueId="8694ebdd-1a55-46d0-88a0-bb5d8456ded9" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Project" uniqueId="0d1a137b-dc02-4002-b02f-9ec90d46be17">
+        <orm:table name="Projects" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_projectID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_projectID" property="ProjectID" behavior="readwrite" uniqueId="cfbb2f44-78b5-431d-a24a-0083f6bef878" type="System.Int32">
+          <orm:column name="ProjectID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="17789828-e3f2-4540-8694-707f894643a5" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_description" property="Description" behavior="readwrite" uniqueId="5642e3d6-bb79-4faf-88e5-f9ee998f09b9" type="System.String">
+          <orm:column name="Description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        </orm:field>
+        <orm:field name="_startDate" property="StartDate" behavior="readwrite" uniqueId="585030fb-513b-4ea4-aaf8-968a0eb7284d" type="System.DateTime">
+          <orm:column name="StartDate" sql-type="smalldatetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_endDate" property="EndDate" behavior="readwrite" uniqueId="4a058fa8-b771-48dc-9d66-cfa317b46ca8" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="EndDate" sql-type="smalldatetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_employees" property="Employees" behavior="readwrite" uniqueId="adc08802-e6be-4ce3-9550-f7ded00da00d" type="TelerikAcademyModel.Employee">
+          <orm:collection element-class="TelerikAcademyModel.Employee" inverse-field="_projects" order-by="" uniqueId="93fec639-0890-49bd-8078-1a6ad996c034" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Group" uniqueId="83a6c777-dc95-4566-85bb-85c4dc4c22ef">
+        <orm:table name="Groups" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_groupID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_groupID" property="GroupID" behavior="readwrite" uniqueId="930fdad3-944e-455a-a9f6-ceb14752ab42" type="System.Int32">
+          <orm:column name="GroupID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_groupName" property="GroupName" behavior="readwrite" uniqueId="def10434-35ec-48fc-b3a9-1f69f54f6376" type="System.String">
+          <orm:column name="GroupName" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_users" property="Users" behavior="readwrite" uniqueId="355303e5-b650-4338-b5b0-f82b88b75cf7" type="TelerikAcademyModel.User">
+          <orm:collection element-class="TelerikAcademyModel.User" inverse-field="_group" order-by="" uniqueId="51a0555a-4680-481b-935f-e8cb488e19d8" />
+        </orm:field>
+        <orm:index name="UK_GroupName" unique="true">
+          <orm:columnMapping>
+            <orm:column name="GroupName" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Employee" uniqueId="cd7ac340-98fb-412b-a159-b4d97008e435">
+        <orm:table name="Employees" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_employeeID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_employeeID" property="EmployeeID" behavior="readwrite" uniqueId="ad0e24d7-56f0-4669-83f9-d3db905cfe0b" type="System.Int32">
+          <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_firstName" property="FirstName" behavior="readwrite" uniqueId="fad44824-70a2-440e-a5bd-c1d894230f0b" type="System.String">
+          <orm:column name="FirstName" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_lastName" property="LastName" behavior="readwrite" uniqueId="95205e8b-471e-4df5-a59c-e55da2f000e0" type="System.String">
+          <orm:column name="LastName" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_middleName" property="MiddleName" behavior="readwrite" uniqueId="3547036b-6dbc-4eb2-89b4-ce3ca2372774" type="System.String">
+          <orm:column name="MiddleName" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_jobTitle" property="JobTitle" behavior="readwrite" uniqueId="30297ef0-254f-479d-a5d2-8f0c8bf5c00e" type="System.String">
+          <orm:column name="JobTitle" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_departmentID" property="DepartmentID" behavior="readwrite" uniqueId="b4c30c40-b8ec-4499-a489-7c7d1b31503f" type="System.Int32">
+          <orm:column name="DepartmentID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_managerID" property="ManagerID" behavior="readwrite" uniqueId="98414c95-e82b-4aab-8f6b-35fe7d6e7ebb" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="ManagerID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_hireDate" property="HireDate" behavior="readwrite" uniqueId="cdbc477f-cb99-4e42-b2f7-693bc2f69075" type="System.DateTime">
+          <orm:column name="HireDate" sql-type="smalldatetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+        <orm:field name="_salary" property="Salary" behavior="readwrite" uniqueId="3f447cc7-5c6c-4672-a3f1-cf104fa4c0fb" type="System.Decimal">
+          <orm:column name="Salary" sql-type="money" nullable="false" length="0" scale="0" ado-type="Currency" />
+        </orm:field>
+        <orm:field name="_addressID" property="AddressID" behavior="readwrite" uniqueId="f3d042f8-bdbb-4337-9071-e12fa7626f21" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="AddressID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_address" property="Address" behavior="readwrite" uniqueId="28ae273d-d33a-4dae-ba63-5355ac709a96" type="TelerikAcademyModel.Address">
+          <orm:reference uniqueId="cf4a5765-8e14-4937-8438-d8c27d353044">
+            <orm:sharedfield name="_addressID" target-class="TelerikAcademyModel.Address" target-field="_addressID" />
+            <orm:constraint name="FK_Employees_Addresses" destination-table="Addresses" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_department" property="Department" behavior="readwrite" uniqueId="4bc52fb3-9ff6-4ac0-af64-9e6953e05304" type="TelerikAcademyModel.Department">
+          <orm:reference uniqueId="e466239e-319e-4e98-a3dc-ca34e9725750">
+            <orm:sharedfield name="_departmentID" target-class="TelerikAcademyModel.Department" target-field="_departmentID" />
+            <orm:constraint name="FK_Employees_Departments" destination-table="Departments" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_employee1" property="Employee1" behavior="readwrite" uniqueId="ff2e3256-dd75-4110-b876-4d226c9ff702" type="TelerikAcademyModel.Employee">
+          <orm:reference uniqueId="b344eb5b-c241-4bff-aa7e-bf6122c53945">
+            <orm:sharedfield name="_managerID" target-class="TelerikAcademyModel.Employee" target-field="_employeeID" />
+            <orm:constraint name="FK_Employees_Employees" destination-table="Employees" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_employees" property="Employees" behavior="readwrite" uniqueId="403eef33-1c35-4ee5-8461-e5391d4f8159" type="TelerikAcademyModel.Employee">
+          <orm:collection element-class="TelerikAcademyModel.Employee" inverse-field="_employee1" order-by="" uniqueId="b344eb5b-c241-4bff-aa7e-bf6122c53945" />
+        </orm:field>
+        <orm:field name="_departments" property="Departments" behavior="readwrite" uniqueId="e8b06bc4-68cb-4ff2-84d3-f98cb8cfbe8e" type="TelerikAcademyModel.Department">
+          <orm:collection element-class="TelerikAcademyModel.Department" inverse-field="_employee" order-by="" uniqueId="21b4a10d-f2e5-4f75-a163-23e54e1a9755" />
+        </orm:field>
+        <orm:field name="_projects" property="Projects" behavior="readwrite" uniqueId="888f80a0-3cc6-43c1-8487-1cf2648ca2e6" type="TelerikAcademyModel.Project">
+          <orm:join-table uniqueId="93fec639-0890-49bd-8078-1a6ad996c034" association-name="EmployeesHaveProjects">
+            <orm:table name="EmployeesProjects" join-table="true" />
+            <orm:owner>
+              <orm:constraint name="FK_EmployeesProjects_Employees" destination-table="Employees">
+                <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" target-class="TelerikAcademyModel.Employee" target-field="_employeeID" />
+              </orm:constraint>
+            </orm:owner>
+            <orm:value>
+              <orm:constraint name="FK_EmployeesProjects_Projects" destination-table="Projects">
+                <orm:column name="ProjectID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" target-class="TelerikAcademyModel.Project" target-field="_projectID" />
+              </orm:constraint>
+            </orm:value>
+          </orm:join-table>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Department" uniqueId="0743e0ea-b6ee-40ce-9a56-45c18b514ff1">
+        <orm:table name="Departments" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_departmentID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_departmentID" property="DepartmentID" behavior="readwrite" uniqueId="12163ec6-563e-41ac-a331-cd7c58195886" type="System.Int32">
+          <orm:column name="DepartmentID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_name" property="Name" behavior="readwrite" uniqueId="883d4899-552a-4c10-88a3-317ddce3d9d5" type="System.String">
+          <orm:column name="Name" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_managerID" property="ManagerID" behavior="readwrite" uniqueId="c6278609-d90c-429e-95d4-1ecc1feba9cc" type="System.Int32">
+          <orm:column name="ManagerID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_employees" property="Employees" behavior="readwrite" uniqueId="4dca9fe5-9baa-414f-9e0d-fb38b361f5e8" type="TelerikAcademyModel.Employee">
+          <orm:collection element-class="TelerikAcademyModel.Employee" inverse-field="_department" order-by="" uniqueId="e466239e-319e-4e98-a3dc-ca34e9725750" />
+        </orm:field>
+        <orm:field name="_employee" property="Employee" behavior="readwrite" uniqueId="3ad75b47-7a5d-4892-903e-344f7d37643b" type="TelerikAcademyModel.Employee">
+          <orm:reference uniqueId="21b4a10d-f2e5-4f75-a163-23e54e1a9755">
+            <orm:sharedfield name="_managerID" target-class="TelerikAcademyModel.Employee" target-field="_employeeID" />
+            <orm:constraint name="FK_Departments_Employees" destination-table="Employees" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="Address" uniqueId="d8fdd1c5-5e85-47f1-951e-55b88666146b">
+        <orm:table name="Addresses" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_addressID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_addressID" property="AddressID" behavior="readwrite" uniqueId="feb4af70-2840-4579-b10a-1cf55b59f057" type="System.Int32">
+          <orm:column name="AddressID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_addressText" property="AddressText" behavior="readwrite" uniqueId="2de95273-5fc1-4494-ba4e-7a2a7198a528" type="System.String">
+          <orm:column name="AddressText" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_townID" property="TownID" behavior="readwrite" uniqueId="97797ff5-47f5-46c0-9df4-d277f779c2be" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="TownID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_employees" property="Employees" behavior="readwrite" uniqueId="ed45e914-1959-49ac-a96a-a6210f1c0b22" type="TelerikAcademyModel.Employee">
+          <orm:collection element-class="TelerikAcademyModel.Employee" inverse-field="_address" order-by="" uniqueId="cf4a5765-8e14-4937-8438-d8c27d353044" />
+        </orm:field>
+        <orm:field name="_town" property="Town" behavior="readwrite" uniqueId="d64e2ab4-bd4d-4bbf-b4c9-0610e8f5404c" type="TelerikAcademyModel.Town">
+          <orm:reference uniqueId="8694ebdd-1a55-46d0-88a0-bb5d8456ded9">
+            <orm:sharedfield name="_townID" target-class="TelerikAcademyModel.Town" target-field="_townID" />
+            <orm:constraint name="FK_Addresses_Towns" destination-table="Towns" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="Users">
+        <orm:column name="UserID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Username" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="FullName" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Pass" sql-type="nvarchar" nullable="true" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="LastLoginTime" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="GroupID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:constraint name="FK_Users_Groups" destination-table="Groups">
+          <orm:column name="GroupID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="Towns">
+        <orm:column name="TownID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="Projects">
+        <orm:column name="ProjectID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="Description" sql-type="ntext" nullable="true" length="0" scale="0" ado-type="UnicodeStringInfiniteLength" />
+        <orm:column name="StartDate" sql-type="smalldatetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="EndDate" sql-type="smalldatetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+      </orm:table>
+      <orm:table name="Groups">
+        <orm:column name="GroupID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="GroupName" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:index name="UK_GroupName" unique="true">
+          <orm:columnMapping>
+            <orm:column name="GroupName" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+      <orm:table name="EmployeesProjects" join-table="true">
+        <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="ProjectID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:constraint name="FK_EmployeesProjects_Employees" destination-table="Employees">
+          <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="FK_EmployeesProjects_Projects" destination-table="Projects">
+          <orm:column name="ProjectID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="Employees">
+        <orm:column name="EmployeeID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="FirstName" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="LastName" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="MiddleName" sql-type="nvarchar" nullable="true" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="JobTitle" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="DepartmentID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ManagerID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="HireDate" sql-type="smalldatetime" nullable="false" length="0" scale="0" ado-type="DateTime" />
+        <orm:column name="Salary" sql-type="money" nullable="false" length="0" scale="0" ado-type="Currency" />
+        <orm:column name="AddressID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:constraint name="FK_Employees_Addresses" destination-table="Addresses">
+          <orm:column name="AddressID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="FK_Employees_Departments" destination-table="Departments">
+          <orm:column name="DepartmentID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="FK_Employees_Employees" destination-table="Employees">
+          <orm:column name="ManagerID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="Departments">
+        <orm:column name="DepartmentID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="Name" sql-type="nvarchar" nullable="false" length="50" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="ManagerID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:constraint name="FK_Departments_Employees" destination-table="Employees">
+          <orm:column name="ManagerID" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="Addresses">
+        <orm:column name="AddressID" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="AddressText" sql-type="nvarchar" nullable="false" length="100" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="TownID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:constraint name="FK_Addresses_Towns" destination-table="Towns">
+          <orm:column name="TownID" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+      <orm:source-strategy>Property</orm:source-strategy>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>TelerikAcademyConnection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=.\SQLExpress;Initial Catalog=TelerikAcademy;Integrated Security=True</AppConfigConnectionString>
+    <InitialCatalog>TelerikAcademy</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+    <UseSchemaAsNamespace>true</UseSchemaAsNamespace>
+    <CreateDiagramPerSchema>true</CreateDiagramPerSchema>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="4b4948fc-2d5a-4f49-ae59-13f3baadd1c5" name="User" namespace="TelerikAcademyModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="6e6a0e9b-fc7f-4a3f-b466-78e59fa8b8f4" name="UserID" type="Int32" label="UserID : Int32" kind="Persistent" identity="true" fieldName="_userID" />
+      <Property Id="3db66b6d-9e6c-40f3-a00e-a600a35d56b2" name="FullName" label="FullName : String" kind="Persistent" fieldName="_fullName" />
+      <Property Id="00fd79cb-f849-4fc7-8e6d-75d746e5bd0d" name="GroupID" type="Int32" label="GroupID : Int32" nullable="true" kind="Persistent" fieldName="_groupID" />
+      <Property Id="13e6b7c1-9eda-4794-94ea-4113a90674b8" name="LastLoginTime" type="DateTime" label="LastLoginTime : DateTime" nullable="true" kind="Persistent" fieldName="_lastLoginTime" />
+      <Property Id="2b5c648b-cbce-4393-b949-a4505c3bb52f" name="Pass" label="Pass : String" kind="Persistent" fieldName="_pass" />
+      <Property Id="c95cfc07-14a9-4b0c-988e-6b0e6dbcc0f3" name="Username" label="Username : String" kind="Persistent" fieldName="_username" />
+      <AssociationTargets>
+        <Association Id="51a0555a-4680-481b-935f-e8cb488e19d8" SourceMultiplicity="ZeroOne" name="UserHasGroup">
+          <DomainClassMoniker name="/TelerikAcademyEntities/Group" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="65995eeb-19a5-4fa4-997b-b64de40c10a9">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Group/Users" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="7e4569c0-dcaf-43a8-84ae-102c16e6a070">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/User/Group" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="866b783d-9e0e-4c9f-bb58-4f3a5497001c">
+          <NavigationalProperty Id="00072c1d-d869-44ec-97aa-89d43115089d" name="Group" type="Group" label="Group : Group" nullable="true" kind="Persistent" fieldName="_group" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="ea2b4c6c-c24d-42b9-930b-753706dfca5b" name="Town" namespace="TelerikAcademyModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="05681fec-a870-4454-90c7-e3539b14b082" name="TownID" type="Int32" label="TownID : Int32" kind="Persistent" identity="true" fieldName="_townID" />
+      <Property Id="76f595ed-8243-48a0-a614-3613c54527e6" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="147dee72-0f89-415a-bbda-d4c4be26e12b">
+          <NavigationalProperty Id="20ec4cec-fc16-4c60-a871-4d0613f45409" name="Addresses" type="IList&lt;Address&gt;" label="Addresses : IList&lt;Address&gt;" nullable="true" kind="Persistent" fieldName="_addresses" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="0d1a137b-dc02-4002-b02f-9ec90d46be17" name="Project" namespace="TelerikAcademyModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="cfbb2f44-78b5-431d-a24a-0083f6bef878" name="ProjectID" type="Int32" label="ProjectID : Int32" kind="Persistent" identity="true" fieldName="_projectID" />
+      <Property Id="5642e3d6-bb79-4faf-88e5-f9ee998f09b9" name="Description" label="Description : String" kind="Persistent" fieldName="_description" />
+      <Property Id="4a058fa8-b771-48dc-9d66-cfa317b46ca8" name="EndDate" type="DateTime" label="EndDate : DateTime" nullable="true" kind="Persistent" fieldName="_endDate" />
+      <Property Id="17789828-e3f2-4540-8694-707f894643a5" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <Property Id="585030fb-513b-4ea4-aaf8-968a0eb7284d" name="StartDate" type="DateTime" label="StartDate : DateTime" kind="Persistent" fieldName="_startDate" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="eb98d431-4091-42e9-be6a-231f72295ab0">
+          <NavigationalProperty Id="adc08802-e6be-4ce3-9550-f7ded00da00d" name="Employees" type="IList&lt;Employee&gt;" label="Employees : IList&lt;Employee&gt;" nullable="true" kind="Persistent" fieldName="_employees" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="83a6c777-dc95-4566-85bb-85c4dc4c22ef" name="Group" namespace="TelerikAcademyModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="930fdad3-944e-455a-a9f6-ceb14752ab42" name="GroupID" type="Int32" label="GroupID : Int32" kind="Persistent" identity="true" fieldName="_groupID" />
+      <Property Id="def10434-35ec-48fc-b3a9-1f69f54f6376" name="GroupName" label="GroupName : String" kind="Persistent" fieldName="_groupName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="7a76be43-6bf3-42cc-ab66-b8c67c8ca0b3">
+          <NavigationalProperty Id="355303e5-b650-4338-b5b0-f82b88b75cf7" name="Users" type="IList&lt;User&gt;" label="Users : IList&lt;User&gt;" nullable="true" kind="Persistent" fieldName="_users" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="cd7ac340-98fb-412b-a159-b4d97008e435" name="Employee" namespace="TelerikAcademyModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="ad0e24d7-56f0-4669-83f9-d3db905cfe0b" name="EmployeeID" type="Int32" label="EmployeeID : Int32" kind="Persistent" identity="true" fieldName="_employeeID" />
+      <Property Id="f3d042f8-bdbb-4337-9071-e12fa7626f21" name="AddressID" type="Int32" label="AddressID : Int32" nullable="true" kind="Persistent" fieldName="_addressID" />
+      <Property Id="b4c30c40-b8ec-4499-a489-7c7d1b31503f" name="DepartmentID" type="Int32" label="DepartmentID : Int32" kind="Persistent" fieldName="_departmentID" />
+      <Property Id="fad44824-70a2-440e-a5bd-c1d894230f0b" name="FirstName" label="FirstName : String" kind="Persistent" fieldName="_firstName" />
+      <Property Id="cdbc477f-cb99-4e42-b2f7-693bc2f69075" name="HireDate" type="DateTime" label="HireDate : DateTime" kind="Persistent" fieldName="_hireDate" />
+      <Property Id="30297ef0-254f-479d-a5d2-8f0c8bf5c00e" name="JobTitle" label="JobTitle : String" kind="Persistent" fieldName="_jobTitle" />
+      <Property Id="95205e8b-471e-4df5-a59c-e55da2f000e0" name="LastName" label="LastName : String" kind="Persistent" fieldName="_lastName" />
+      <Property Id="98414c95-e82b-4aab-8f6b-35fe7d6e7ebb" name="ManagerID" type="Int32" label="ManagerID : Int32" nullable="true" kind="Persistent" fieldName="_managerID" />
+      <Property Id="3547036b-6dbc-4eb2-89b4-ce3ca2372774" name="MiddleName" label="MiddleName : String" kind="Persistent" fieldName="_middleName" />
+      <Property Id="3f447cc7-5c6c-4672-a3f1-cf104fa4c0fb" name="Salary" type="Decimal" label="Salary : Decimal" kind="Persistent" fieldName="_salary" />
+      <AssociationTargets>
+        <Association Id="cf4a5765-8e14-4937-8438-d8c27d353044" SourceMultiplicity="ZeroOne" name="EmployeeHasAddress">
+          <DomainClassMoniker name="/TelerikAcademyEntities/Address" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="1986f5eb-ef3c-43cf-9795-48ed6a2de4db">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Address/Employees" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="05cd6022-bee1-480e-bc2a-80200e306c84">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Employee/Address" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="e466239e-319e-4e98-a3dc-ca34e9725750" SourceMultiplicity="One" name="EmployeeHasDepartment">
+          <DomainClassMoniker name="/TelerikAcademyEntities/Department" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="f1e962f8-15c4-4a5f-8d29-77a998c71076">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Department/Employees" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="8c9897a8-eafe-495b-a58c-7a039e62e160">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Employee/Department" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="b344eb5b-c241-4bff-aa7e-bf6122c53945" SourceMultiplicity="ZeroOne" name="EmployeeHasEmployee">
+          <DomainClassMoniker name="/TelerikAcademyEntities/Employee" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="6e77cf56-f6ca-48c3-83ff-a7488e437327">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Employee/Employees" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="f50283ea-fab1-4909-a8f0-0bd52771e404">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Employee/Employee1" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="93fec639-0890-49bd-8078-1a6ad996c034" name="EmployeesHaveProjects">
+          <DomainClassMoniker name="/TelerikAcademyEntities/Project" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="25844d7d-272a-46aa-9296-e9a719ce4700">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Project/Employees" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="9e4c9c75-aa4f-490e-9d16-476010afd289">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Employee/Projects" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="ffe5bfc0-ecd9-4310-bc25-440da917756b">
+          <NavigationalProperty Id="28ae273d-d33a-4dae-ba63-5355ac709a96" name="Address" type="Address" label="Address : Address" nullable="true" kind="Persistent" fieldName="_address" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="8539509a-020e-418e-b885-12c16203d3ce">
+          <NavigationalProperty Id="4bc52fb3-9ff6-4ac0-af64-9e6953e05304" name="Department" type="Department" label="Department : Department" nullable="true" kind="Persistent" fieldName="_department" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="f1d0c1e1-5b92-4df8-a47f-0db31a4d4a95">
+          <NavigationalProperty Id="ff2e3256-dd75-4110-b876-4d226c9ff702" name="Employee1" type="Employee" label="Employee1 : Employee" nullable="true" kind="Persistent" fieldName="_employee1" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="7f048b35-c82e-45b2-ad22-c81abde4889b">
+          <NavigationalProperty Id="403eef33-1c35-4ee5-8461-e5391d4f8159" name="Employees" type="IList&lt;Employee&gt;" label="Employees : IList&lt;Employee&gt;" nullable="true" kind="Persistent" fieldName="_employees" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="66a8c412-48f3-47a7-b225-bb508d2f6673">
+          <NavigationalProperty Id="e8b06bc4-68cb-4ff2-84d3-f98cb8cfbe8e" name="Departments" type="IList&lt;Department&gt;" label="Departments : IList&lt;Department&gt;" nullable="true" kind="Persistent" fieldName="_departments" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="9db2a7ab-7bd7-4f43-90ea-baea220c2ebe">
+          <NavigationalProperty Id="888f80a0-3cc6-43c1-8487-1cf2648ca2e6" name="Projects" type="IList&lt;Project&gt;" label="Projects : IList&lt;Project&gt;" nullable="true" kind="Persistent" fieldName="_projects" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="0743e0ea-b6ee-40ce-9a56-45c18b514ff1" name="Department" namespace="TelerikAcademyModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="12163ec6-563e-41ac-a331-cd7c58195886" name="DepartmentID" type="Int32" label="DepartmentID : Int32" kind="Persistent" identity="true" fieldName="_departmentID" />
+      <Property Id="c6278609-d90c-429e-95d4-1ecc1feba9cc" name="ManagerID" type="Int32" label="ManagerID : Int32" kind="Persistent" fieldName="_managerID" />
+      <Property Id="883d4899-552a-4c10-88a3-317ddce3d9d5" name="Name" label="Name : String" kind="Persistent" fieldName="_name" />
+      <AssociationTargets>
+        <Association Id="21b4a10d-f2e5-4f75-a163-23e54e1a9755" SourceMultiplicity="One" name="DepartmentHasEmployee">
+          <DomainClassMoniker name="/TelerikAcademyEntities/Employee" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="b367d5a6-576b-4996-a097-2037d4141042">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Employee/Departments" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="f2c511b5-c549-4089-a1b2-ad066d905bd4">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Department/Employee" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="1fad503b-2ae1-4166-a7d8-acdf6165e243">
+          <NavigationalProperty Id="4dca9fe5-9baa-414f-9e0d-fb38b361f5e8" name="Employees" type="IList&lt;Employee&gt;" label="Employees : IList&lt;Employee&gt;" nullable="true" kind="Persistent" fieldName="_employees" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="4039ed47-721f-40c6-8cb2-cd9b2153af30">
+          <NavigationalProperty Id="3ad75b47-7a5d-4892-903e-344f7d37643b" name="Employee" type="Employee" label="Employee : Employee" nullable="true" kind="Persistent" fieldName="_employee" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="d8fdd1c5-5e85-47f1-951e-55b88666146b" name="Address" namespace="TelerikAcademyModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="feb4af70-2840-4579-b10a-1cf55b59f057" name="AddressID" type="Int32" label="AddressID : Int32" kind="Persistent" identity="true" fieldName="_addressID" />
+      <Property Id="2de95273-5fc1-4494-ba4e-7a2a7198a528" name="AddressText" label="AddressText : String" kind="Persistent" fieldName="_addressText" />
+      <Property Id="97797ff5-47f5-46c0-9df4-d277f779c2be" name="TownID" type="Int32" label="TownID : Int32" nullable="true" kind="Persistent" fieldName="_townID" />
+      <AssociationTargets>
+        <Association Id="8694ebdd-1a55-46d0-88a0-bb5d8456ded9" SourceMultiplicity="ZeroOne" name="AddressHasTown">
+          <DomainClassMoniker name="/TelerikAcademyEntities/Town" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="0ed3293d-91f3-4e82-a463-ddc9831c36ed">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Town/Addresses" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e44a4cf4-2ec7-448a-9c27-12dbcc6c25d8">
+              <NavigationalPropertyMoniker name="/TelerikAcademyEntities/Address/Town" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="7747685e-55a3-4537-9614-393f37f7eef2">
+          <NavigationalProperty Id="ed45e914-1959-49ac-a96a-a6210f1c0b22" name="Employees" type="IList&lt;Employee&gt;" label="Employees : IList&lt;Employee&gt;" nullable="true" kind="Persistent" fieldName="_employees" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="73ffcad2-7174-45b0-9e7d-dd1b3abef9bf">
+          <NavigationalProperty Id="d64e2ab4-bd4d-4bbf-b4c9-0610e8f5404c" name="Town" type="Town" label="Town : Town" nullable="true" kind="Persistent" fieldName="_town" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="9f1862e7-c61f-43dd-9fd6-59b227af652d">
+      <domainContainer name="TelerikAcademyEntities" namespace="TelerikAcademyModel" showPropertiesCompartment="true">
+        <entitySetProperty name="Users" namespace="TelerikAcademyModel" type="User" label="Users : IQueryable&lt;TelerikAcademyModel.User&gt;" />
+        <entitySetProperty name="Towns" namespace="TelerikAcademyModel" type="Town" label="Towns : IQueryable&lt;TelerikAcademyModel.Town&gt;" />
+        <entitySetProperty name="Projects" namespace="TelerikAcademyModel" type="Project" label="Projects : IQueryable&lt;TelerikAcademyModel.Project&gt;" />
+        <entitySetProperty name="Groups" namespace="TelerikAcademyModel" type="Group" label="Groups : IQueryable&lt;TelerikAcademyModel.Group&gt;" />
+        <entitySetProperty name="Employees" namespace="TelerikAcademyModel" type="Employee" label="Employees : IQueryable&lt;TelerikAcademyModel.Employee&gt;" />
+        <entitySetProperty name="Departments" namespace="TelerikAcademyModel" type="Department" label="Departments : IQueryable&lt;TelerikAcademyModel.Department&gt;" />
+        <entitySetProperty name="Addresses" namespace="TelerikAcademyModel" type="Address" label="Addresses : IQueryable&lt;TelerikAcademyModel.Address&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

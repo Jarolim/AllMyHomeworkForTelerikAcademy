@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<search-results>
+	<result-set>
+		<review>
+			<date>22.1.2012 г.</date>
+			<content>Low-quality, don’t read this</content>
+			<book>
+				<title>SQL Tutorial</title>
+				<price>0.0000</price>
+				<price>http://www.w3schools.com/sql/</price>
+			</book>
+		</review>
+		<review>
+			<date>30.1.2013 г.</date>
+			<content>
+        Excellent material, a thorough analysis on MS SQL performance optimization. Book chapters are well structured with lots of examples. I enjoyed reading it a couple of times!
+      </content>
+			<book>
+				<authors>Sajal Dam,Grant Fritchey,</authors>
+				<title>SQL Server 2008 Query Performance Tuning Distilled (Expert's Voice in SQL Server)</title>
+				<ISBN>9781430219026</ISBN>
+				<price>35.0300</price>
+				<price>http://www.amazon.com/SQL-Server-Performance-Tuning/dp/1430219025</price>
+			</book>
+		</review>
+		<review>
+			<date>17.7.2013 г.</date>
+			<content>
+        I will suggest this book for DBAs and SQL Programmers who want to know the theories behind Index and Statistics, Blocking and Deadlocking + Fragmentation.
+      </content>
+			<book>
+				<authors>Sajal Dam,Grant Fritchey,</authors>
+				<title>SQL Server 2008 Query Performance Tuning Distilled (Expert's Voice in SQL Server)</title>
+				<ISBN>9781430219026</ISBN>
+				<price>35.0300</price>
+				<price>http://www.amazon.com/SQL-Server-Performance-Tuning/dp/1430219025</price>
+			</book>
+		</review>
+		<review>
+			<date>26.7.2013 г.</date>
+			<content>Better learn XML at W3 Schools: http://www.w3schools.com/xml/</content>
+			<book>
+				<authors>John Shirrell,</authors>
+				<title>XML: A Deep Understanding</title>
+				<price>0.0000</price>
+				<price>http://www.xmlbook.info</price>
+			</book>
+		</review>
+		<review>
+			<date>26.7.2013 г.</date>
+			<content>Easy to understand tutorial. Thank you W3 Schools!</content>
+			<book>
+				<title>SQL Tutorial</title>
+				<price>0.0000</price>
+				<price>http://www.w3schools.com/sql/</price>
+			</book>
+		</review>
+		<review>
+			<date>26.7.2013 г.</date>
+			<content>Outdated. Written in 1999, useless today…</content>
+			<book>
+				<authors>John Shirrell,</authors>
+				<title>XML: A Deep Understanding</title>
+				<price>0.0000</price>
+				<price>http://www.xmlbook.info</price>
+			</book>
+		</review>
+	</result-set>
+	<result-set>
+		<result-set />
+	</result-set>
+</search-results>

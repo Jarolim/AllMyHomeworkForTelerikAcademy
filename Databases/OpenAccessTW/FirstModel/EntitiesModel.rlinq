@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="EntitiesModel" namespace="FirstModel" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="EntitiesModel" backend="mssql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="FirstModel" default="true">
+      <orm:class name="FirstEntity" use-default-mapping="true" uniqueId="ba8a5aa6-9b4d-4d77-984f-110d161c7e87">
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="527b84d5-e5ee-4d92-89ee-167b762d4fb1" type="System.Int32">
+          <orm:column name="Id" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" converter="OpenAccessRuntime.Data.IntConverter" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_property" property="Property" uniqueId="e8f35803-c1ae-4066-9160-77cac1c2fc27" type="System.String">
+          <orm:column name="Property" sql-type="varchar" nullable="true" length="255" scale="0" converter="OpenAccessRuntime.Data.VariableLengthStringConverter" ado-type="Varchar" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="DomainClass1" inheritance-modifier="vertical" uniqueId="aa2c8116-7883-4186-ad60-a57f3f9be075" persistent-baseclass="FirstModel.FirstEntity" inheritance="new-table">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="8f720121-f26a-424e-a4c3-1257abf18d87" type="System.Int32" />
+      </orm:class>
+      <orm:class name="DomainClass2" uniqueId="df676d81-084b-4196-a7a3-37499f1c917f">
+        <orm:identity>
+          <orm:single-field field-name="_id" />
+        </orm:identity>
+        <orm:field name="_id" property="Id" uniqueId="3bcc1bfe-1c2b-4b09-9638-93cec368e9a0" type="System.Int32" />
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="" />
+    <orm:relational-naming-settings>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+      <orm:source-strategy>Property</orm:source-strategy>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <SaveConnectionStringInAppConfig>false</SaveConnectionStringInAppConfig>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="ba8a5aa6-9b4d-4d77-984f-110d161c7e87" name="FirstEntity" namespace="FirstModel" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="527b84d5-e5ee-4d92-89ee-167b762d4fb1" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+      <Property Id="e8f35803-c1ae-4066-9160-77cac1c2fc27" name="Property" label="Property : String" fieldName="_property" />
+      <inheritors>
+        <inheritance Id="d25fe33d-8e8f-4497-9ae1-0d9fc71ae0f4">
+          <DomainClassMoniker name="/EntitiesModel/DomainClass1" />
+        </inheritance>
+      </inheritors>
+    </DomainClass>
+    <DomainClass Id="aa2c8116-7883-4186-ad60-a57f3f9be075" name="DomainClass1" namespace="FirstModel" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="8f720121-f26a-424e-a4c3-1257abf18d87" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+    </DomainClass>
+    <DomainClass Id="df676d81-084b-4196-a7a3-37499f1c917f" name="DomainClass2" namespace="FirstModel" showPropertiesCompartment="true" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="3bcc1bfe-1c2b-4b09-9638-93cec368e9a0" name="Id" type="System.Int32" label="Id : System.Int32" identity="true" fieldName="_id" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="4ae41567-951b-4dac-ac49-0a5511b0a3a7">
+      <domainContainer name="EntitiesModel" namespace="FirstModel" showPropertiesCompartment="true">
+        <entitySetProperty name="FirstEntities" namespace="FirstModel" type="FirstEntity" label="FirstEntities : IQueryable&lt;FirstModel.FirstEntity&gt;" />
+        <entitySetProperty name="DomainClass1" namespace="FirstModel" type="DomainClass1" label="DomainClass1 : IQueryable&lt;FirstModel.DomainClass1&gt;" />
+        <entitySetProperty name="DomainClass2" namespace="FirstModel" type="DomainClass2" label="DomainClass2 : IQueryable&lt;FirstModel.DomainClass2&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

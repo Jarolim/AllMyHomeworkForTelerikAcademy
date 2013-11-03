@@ -1,0 +1,3 @@
+Hello
+One of the updates in VS make the DB a little strange  but it is working 
+so it must look like at the pictire. 

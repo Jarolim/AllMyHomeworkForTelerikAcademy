@@ -1,0 +1,4 @@
+DELETE FROM Reviews
+DELETE FROM Books_Authors
+DELETE FROM Books
+DELETE FROM Authors

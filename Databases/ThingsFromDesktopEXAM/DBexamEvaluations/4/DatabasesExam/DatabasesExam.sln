@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Model", "Bookstore.Model\BookStore.Model.csproj", "{DC96D077-35A7-49BC-A094-69AFD525B67F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Client", "BookStore.Client\BookStore.Client.csproj", "{B6DAA90B-2D63-460E-9C3D-BCF16FA0D300}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC96D077-35A7-49BC-A094-69AFD525B67F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC96D077-35A7-49BC-A094-69AFD525B67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC96D077-35A7-49BC-A094-69AFD525B67F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC96D077-35A7-49BC-A094-69AFD525B67F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DAA90B-2D63-460E-9C3D-BCF16FA0D300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DAA90B-2D63-460E-9C3D-BCF16FA0D300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DAA90B-2D63-460E-9C3D-BCF16FA0D300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DAA90B-2D63-460E-9C3D-BCF16FA0D300}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

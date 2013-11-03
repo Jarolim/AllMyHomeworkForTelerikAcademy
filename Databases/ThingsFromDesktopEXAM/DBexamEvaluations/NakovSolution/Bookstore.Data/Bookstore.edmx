@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BookstoreModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BookstoreModelStoreContainer">
+          <EntitySet Name="Authors" EntityType="BookstoreModel.Store.Authors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Authors_Books" EntityType="BookstoreModel.Store.Authors_Books" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Books" EntityType="BookstoreModel.Store.Books" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reviews" EntityType="BookstoreModel.Store.Reviews" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Authors_Books_Authors" Association="BookstoreModel.Store.FK_Authors_Books_Authors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="Authors_Books" EntitySet="Authors_Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Authors_Books_Books" Association="BookstoreModel.Store.FK_Authors_Books_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="Authors_Books" EntitySet="Authors_Books" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Authors" Association="BookstoreModel.Store.FK_Reviews_Authors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Books" Association="BookstoreModel.Store.FK_Reviews_Books">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Authors">
+          <Key>
+            <PropertyRef Name="AuthorId" />
+          </Key>
+          <Property Name="AuthorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Authors_Books">
+          <Key>
+            <PropertyRef Name="AuthorId" />
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="AuthorId" Type="int" Nullable="false" />
+          <Property Name="BookId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Books">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Name="BookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ISBN" Type="char" MaxLength="13" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Url" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="ReviewId" />
+          </Key>
+          <Property Name="ReviewId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorId" Type="int" />
+          <Property Name="BookId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Authors_Books_Authors">
+          <End Role="Authors" Type="BookstoreModel.Store.Authors" Multiplicity="1" />
+          <End Role="Authors_Books" Type="BookstoreModel.Store.Authors_Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="AuthorId" />
+            </Principal>
+            <Dependent Role="Authors_Books">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Authors_Books_Books">
+          <End Role="Books" Type="BookstoreModel.Store.Books" Multiplicity="1" />
+          <End Role="Authors_Books" Type="BookstoreModel.Store.Authors_Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="BookId" />
+            </Principal>
+            <Dependent Role="Authors_Books">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Authors">
+          <End Role="Authors" Type="BookstoreModel.Store.Authors" Multiplicity="0..1" />
+          <End Role="Reviews" Type="BookstoreModel.Store.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="AuthorId" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Books">
+          <End Role="Books" Type="BookstoreModel.Store.Books" Multiplicity="1" />
+          <End Role="Reviews" Type="BookstoreModel.Store.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="BookId" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BookstoreModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BookstoreEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Authors" EntityType="BookstoreModel.Author" />
+          <EntitySet Name="Books" EntityType="BookstoreModel.Book" />
+          <EntitySet Name="Reviews" EntityType="BookstoreModel.Review" />
+          <AssociationSet Name="FK_Reviews_Authors" Association="BookstoreModel.FK_Reviews_Authors">
+            <End Role="Author" EntitySet="Authors" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Books" Association="BookstoreModel.FK_Reviews_Books">
+            <End Role="Book" EntitySet="Books" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="Authors_Books" Association="BookstoreModel.Authors_Books">
+            <End Role="Author" EntitySet="Authors" />
+            <End Role="Book" EntitySet="Books" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="AuthorId" />
+          </Key>
+          <Property Type="Int32" Name="AuthorId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Reviews" Relationship="BookstoreModel.FK_Reviews_Authors" FromRole="Author" ToRole="Review" />
+          <NavigationProperty Name="Books" Relationship="BookstoreModel.Authors_Books" FromRole="Author" ToRole="Book" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="BookId" />
+          </Key>
+          <Property Type="Int32" Name="BookId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Type="String" Name="ISBN" MaxLength="13" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="19" Scale="4" />
+          <Property Type="String" Name="Url" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reviews" Relationship="BookstoreModel.FK_Reviews_Books" FromRole="Book" ToRole="Review" />
+          <NavigationProperty Name="Authors" Relationship="BookstoreModel.Authors_Books" FromRole="Book" ToRole="Author" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="ReviewId" />
+          </Key>
+          <Property Type="Int32" Name="ReviewId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AuthorId" />
+          <Property Type="Int32" Name="BookId" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Author" Relationship="BookstoreModel.FK_Reviews_Authors" FromRole="Review" ToRole="Author" />
+          <NavigationProperty Name="Book" Relationship="BookstoreModel.FK_Reviews_Books" FromRole="Review" ToRole="Book" />
+        </EntityType>
+        <Association Name="FK_Reviews_Authors">
+          <End Type="BookstoreModel.Author" Role="Author" Multiplicity="0..1" />
+          <End Type="BookstoreModel.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Author">
+              <PropertyRef Name="AuthorId" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="AuthorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Books">
+          <End Type="BookstoreModel.Book" Role="Book" Multiplicity="1" />
+          <End Type="BookstoreModel.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="BookId" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Authors_Books">
+          <End Type="BookstoreModel.Author" Role="Author" Multiplicity="*" />
+          <End Type="BookstoreModel.Book" Role="Book" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BookstoreModelStoreContainer" CdmEntityContainer="BookstoreEntities">
+          <EntitySetMapping Name="Authors">
+            <EntityTypeMapping TypeName="BookstoreModel.Author">
+              <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="BookstoreModel.Book">
+              <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="BookstoreModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Authors_Books" TypeName="BookstoreModel.Authors_Books" StoreEntitySet="Authors_Books">
+            <EndProperty Name="Book">
+              <ScalarProperty Name="BookId" ColumnName="BookId" />
+            </EndProperty>
+            <EndProperty Name="Author">
+              <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
